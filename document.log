@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  30 JUN 2017 13:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  30 JUN 2017 14:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1509,18 +1509,18 @@ Package braids Warning: This package was designed using PGF2.10; you are using
 ) (./document.aux)
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 371.
-LaTeX Font Info:    ... okay on input line 371.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 371.
-LaTeX Font Info:    ... okay on input line 371.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 371.
-LaTeX Font Info:    ... okay on input line 371.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 371.
-LaTeX Font Info:    ... okay on input line 371.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 371.
-LaTeX Font Info:    ... okay on input line 371.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 371.
-LaTeX Font Info:    ... okay on input line 371.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 483.
+LaTeX Font Info:    ... okay on input line 483.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 483.
+LaTeX Font Info:    ... okay on input line 483.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 483.
+LaTeX Font Info:    ... okay on input line 483.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 483.
+LaTeX Font Info:    ... okay on input line 483.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 483.
+LaTeX Font Info:    ... okay on input line 483.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 483.
+LaTeX Font Info:    ... okay on input line 483.
 \c@lstlisting=\count286
  ABD: EveryShipout initializing macros
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -1587,13 +1587,13 @@ e
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
- on input line 371.
+ on input line 483.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 372.
+LaTeX Font Info:    Try loading font information for U+msa on input line 484.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 372.
+LaTeX Font Info:    Try loading font information for U+msb on input line 484.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1605,71 +1605,74 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 433.
+
+LaTeX Warning: Citation `Coecke17' on page 3 undefined on input line 505.
+
+[3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 545.
 
  (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 433.
- [3]
-Overfull \hbox (1.88936pt too wide) in paragraph at lines 444--445
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 545.
+
+Overfull \hbox (1.88936pt too wide) in paragraph at lines 556--557
 []\OT1/cmr/m/n/10 Pentagon ax-iom: the fol-low-ing di-a-gram com-mutes for all 
 ob-jects $\OML/cmm/m/it/10 W; X; Y; Z$
  []
 
 [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 522--524
+Underfull \hbox (badness 10000) in paragraph at lines 634--636
 
  []
 
 [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 542--544
 
- []
+LaTeX Warning: Citation `Lawvere63' on page 8 undefined on input line 659.
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 649--651
+Underfull \hbox (badness 10000) in paragraph at lines 699--701
 
  []
 
 [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 742--744
+Underfull \hbox (badness 10000) in paragraph at lines 794--796
 
  []
 
-[11] [12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 888--890
-
- []
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 893--896
+[11] [12] [13] [14]
+Underfull \hbox (badness 10000) in paragraph at lines 940--942
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 893--896
+Underfull \hbox (badness 10000) in paragraph at lines 945--948
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 945--948
 
  []
 
 [15] [16] [17] [18] [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 1054--1055
+Underfull \hbox (badness 10000) in paragraph at lines 1106--1107
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1057--1058
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1067--1069
+Underfull \hbox (badness 10000) in paragraph at lines 1109--1110
 
  []
 
 [21]
-Overfull \hbox (56.501pt too wide) detected at line 1099
+Underfull \hbox (badness 10000) in paragraph at lines 1119--1121
+
+ []
+
+
+Overfull \hbox (56.501pt too wide) detected at line 1151
 \OML/cmm/m/it/10 P[]e\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 + \
 OML/cmm/m/it/10 yw[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 xw[][] P[]e\OT1/cmr/m/
 n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 yw[]\OT1/cmr/m/n
@@ -1680,35 +1683,54 @@ n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 yw[]\OT1/cmr/m/n
  yw[]
  []
 
-[22] [23] (./document.aux) ) 
+[22] (./document.bbl
+Underfull \hbox (badness 1902) in paragraph at lines 25--28
+[]\OT1/cmr/m/n/10 M. Mueger.  Ten-sor cat-e-gories: A se-lec-tive guided tour. 
+ \OT1/cmr/m/it/10 eprint
+ []
+
+! Misplaced alignment tab character &.
+l.37 \newblock Harper &
+                        Row, 1966.
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+) [23] (./document.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 37345 strings out of 493014
- 890346 string characters out of 6133351
- 1059147 words of memory out of 5000000
- 40240 multiletter control sequences out of 15000+600000
+ 37372 strings out of 493014
+ 890852 string characters out of 6133351
+ 1064439 words of memory out of 5000000
+ 40264 multiletter control sequences out of 15000+600000
  12468 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,23n,103p,10453b,704s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5
-.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.p
-fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
-b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam1
-0.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/m
-sbm10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbo
-ls/msbm7.pfb>
-Output written on document.pdf (23 pages, 267471 bytes).
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on document.pdf (23 pages, 270853 bytes).
 PDF statistics:
  154 PDF objects out of 1000 (max. 8388607)
  109 compressed objects within 2 object streams
