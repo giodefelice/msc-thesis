@@ -25,9 +25,348 @@
 \newcommand{\Tau}{\mathrm{T}}
 \newcommand{\ham}{\mathcal{H}}
 
-\title{A Categorical Semantics for Topological Quantum Computation}
+\title{Categorical Semantics for Topological Quantum Computation}
 \author{Giovanni de Felice}
 \date{April 2017}
+
+%%%TIKZ:
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{trees, patterns}
+\usetikzlibrary{positioning}
+\usepackage{tikz,ifthen,calc}
+\usepackage{tkz-euclide}
+\usetikzlibrary{shapes,snakes}
+\usetikzlibrary{calc,intersections, fit, knots, hobby, positioning, patterns}
+\usepackage{braids}
+
+%%%categorical diagrams:
+\tikzset{
+	buffer/.style={
+		draw,
+		shape border rotate=180,
+		regular polygon,
+		regular polygon sides=3,
+		node distance=2cm,
+		minimum height=4em
+	}
+}
+%%%HOPF ALGEBRAS:
+\newcommand{\mult}{
+	\begin{tikzpicture}[scale=0.2, black/.style={scale=0.5,draw,shape=circle,fill=black}]
+	\node[black] (0) at (0, 0) {};
+	\draw (1,-1) to (0);
+	\draw (-1,-1) to (0);
+	\draw (0) to (0,1);
+	\end{tikzpicture}
+}
+\newcommand{\unit}{
+	\begin{tikzpicture}[scale=0.2, black/.style={scale=0.5,draw,shape=circle,fill=black}]
+	\node[black] (0) at (0, 0) {};
+	\draw (0) to (0,1);
+	\end{tikzpicture}
+}
+\newcommand{\comult}{
+	\begin{tikzpicture}[scale=0.2, black/.style={scale=0.5,draw,shape=circle,fill=white}]
+	\node[black] (0) at (0, 0) {};
+	\draw (1,1) to (0);
+	\draw (-1,1) to (0);
+	\draw (0) to (0,-1);
+	\end{tikzpicture}
+}
+
+\newcommand{\counit}{
+	\begin{tikzpicture}[scale=0.2, black/.style={scale=0.5,draw,shape=circle,fill=white}]
+	\node[black] (0) at (0, 0) {};
+	\draw (0) to (0,-1);
+	\end{tikzpicture}
+}
+
+\newcommand{\antipode}{
+	\begin{tikzpicture}[scale=0.2, black/.style={scale=0.5,draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[black] (0) at (0, 0) {};
+	\draw (0) to (0,-1);
+	\draw (0) to (0,1);
+	\end{tikzpicture}
+}
+
+\newcommand{\associativity}{
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[scale=0.8]
+\node[draw,circle,fill=black] (0) at (0,0.5) {};
+\node[draw,circle,fill=black] (1) at (0.5,0) {};
+\draw (0) to (1);
+\draw (-1,-0.5) to (0);
+\draw (0,-0.5) to (1);
+\draw (1,-0.5) to (1);
+\draw (0) to (0,1);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.8]
+\node[draw,circle,fill=black] (0) at (0.5,0.5) {};
+\node[draw,circle,fill=black] (1) at (0,0) {};
+\draw (0) to (1);
+\draw (-0.5,-0.5) to (1);
+\draw (0.5,-0.5) to (1);
+\draw (1.5,-0.5) to (0);
+\draw (0) to (0.5,1);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+}
+\newcommand{\unitlaw}{
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[scale=0.8]
+\node[draw,circle,fill=black] (0) at (0,0.5) {};
+\node[draw,circle,fill=black] (1) at (0.5,0) {};
+\draw (0) to (1);
+\draw (-0.5,0) to (0);
+\draw (0) to (0,1);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.8]
+\draw (0,0) to (0,1);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.8]
+\node[draw,circle,fill=black] (0) at (0,0.5) {};
+\node[draw,circle,fill=black] (1) at (-0.5,0) {};
+\draw (0) to (1);
+\draw (0.5,0) to (0);
+\draw (0) to (0,1);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+}
+\newcommand{\coassociativity}{
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[scale=0.8]
+\node[draw,circle,fill=white] (0) at (0,-0.5) {};
+\node[draw,circle,fill=white] (1) at (0.5,0) {};
+\draw (0) to (1);
+\draw (-1,0.5) to (0);
+\draw (0,0.5) to (1);
+\draw (1,0.5) to (1);
+\draw (0) to (0,-1);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.8]
+\node[draw,circle,fill=white] (0) at (0.5,-0.5) {};
+\node[draw,circle,fill=white] (1) at (0,0) {};
+\draw (0) to (1);
+\draw (-0.5,0.5) to (1);
+\draw (0.5,0.5) to (1);
+\draw (1.5,0.5) to (0);
+\draw (0) to (0.5,-1);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+}
+\newcommand{\counitlaw}{
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[scale=0.8]
+\node[draw,circle,fill=white] (0) at (0,-0.5) {};
+\node[draw,circle,fill=white] (1) at (0.5,0) {};
+\draw (0) to (1);
+\draw (-0.5,0) to (0);
+\draw (0) to (0,-1);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.8]
+\draw (0,0) to (0,1);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.8]
+\node[draw,circle,fill=white] (0) at (0,-0.5) {};
+\node[draw,circle,fill=white] (1) at (-0.5,0) {};
+\draw (0) to (1);
+\draw (0.5,0) to (0);
+\draw (0) to (0,-1);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+}
+
+\newcommand{\bialgebralaw}{
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[scale=0.8]
+\node[draw,circle,fill=white] (0) at (0,0) {};
+\node[draw,circle,fill=white] (1) at (1,0) {};
+\node[draw,circle,fill=black] (2) at (0,1) {};
+\node[draw,circle,fill=black] (3) at (1,1) {};
+\draw (0) to (2);
+\draw (0) to (3);
+\draw (1) to (2);
+\draw (1) to (3);
+\draw (0,-0.5) to (0);
+\draw (1,-0.5) to (1);
+\draw (0,1.5) to (2);
+\draw (1,1.5) to (3);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.8]
+\node[draw,circle,fill=black] (0) at (0.5,0) {};
+\node[draw,circle,fill=white] (1) at (0.5,1) {};
+\draw (0) to (1);
+\draw (0,-0.5) to (0);
+\draw (1,-0.5) to (0);
+\draw (0,1.5) to (1);
+\draw (1,1.5) to (1);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+}
+\newcommand{\hopflaw}{
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[draw,circle,fill=white] (0) at (0,0) {};
+	\node[draw,circle,fill=black] (1) at (0,1) {};
+	\node[scale=0.8,squr] (2) at (0.5,0.5) {};
+	\draw[bend left=80] (0) to (1);
+	\draw[bend right] (0) to (2);
+	\draw[bend right] (2) to (1);
+	\draw (0,-0.5) to (0);
+	\draw (0,1.5) to (1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[draw,circle,fill=white] (0) at (0,0) {};
+	\node[draw,circle,fill=black] (1) at (0,1) {};
+	\draw (0,-0.5) to (0);
+	\draw (0,1.5) to (1);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+}
+
+\newcommand{\symAB}{
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+	\node (0) at (-0.5, -0.7) {$A$};
+	\node (0) at (-0.5, 0.7) {$B$};
+	\node (1) at (0.5, -0.7) {$B$};
+	\node (1) at (0.5, 0.7) {$A$};
+	\draw [->] (-0.5, -0.5) to (0.5, 0.5);
+	\draw [->] (0.5, -0.5) to (-0.5, 0.5);
+	\end{tikzpicture}
+}
+
+\newcommand{\symequation}{
+	\begin{equation*}
+	\begin{gathered}
+	\begin{tikzpicture}
+	\node (0) at (-1, -1.2) {$A$};
+	\node (0) at (0, -1.2) {$B$};
+	\draw [->] (-1, -1)--(0,0)--(-1,1);
+	\draw [->] (0, -1)--(-1,0)--(0,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}
+	\node (0) at (-0.8, -1.2) {$A$};
+	\node (0) at (0, -1.2) {$B$};
+	\draw [->] (-0.8, -1)--(-0.8,1);
+	\draw [->] (0, -1)--(0,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation*}
+}
+
+\newcommand{\cupA}{	
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
+	\node (0) at (0, 0.2) {$A$};
+	\node (1) at (1, 0.2) {$A^*$};
+	\draw [bend right=90, looseness=1.5, postaction=decorate] (0,0) to (1,0);
+	\end{tikzpicture}}
+
+\newcommand{\capA}{	
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
+	\node (0) at (0, -0.2) {$A$};
+	\node (1) at (1, -0.2) {$A^*$};
+	\draw [bend left=90, looseness=1.5, postaction=decorate] (0,0) to (1,0);
+	\end{tikzpicture}}
+
+\newcommand{\snake}{
+	\begin{equation*}
+	\begin{gathered}
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
+	\node (0) at (0, 0.7) {$A$};
+	\node (4) at (2, -0.7){$A$};
+	\draw [bend right=90, looseness=1.5, postaction=decorate] (0, 0) to (1, 0);
+	\draw [bend left=90, looseness=1.5, postaction=decorate] (1, 0) to (2, 0);
+	\draw [postaction=decorate] (2, 0) to (2, -0.5);
+	\draw [postaction=decorate] (0, 0.5) to (0, 0);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
+	\node (0) at (0, 0.7) {$A$};
+	\node (4) at (0, -0.7){$A$};
+	\draw [postaction=decorate] (0, 0.5) to (0, -0.5);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation*}}
+
+\newcommand{\snakestar}{
+	\begin{equation*}
+	\begin{gathered}
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
+	\node (0) at (0, -0.7) {$A^*$};
+	\node (4) at (2, 0.7){$A^*$};
+	\draw [bend left=90, looseness=1.5, postaction=decorate] (0, 0) to (1, 0);
+	\draw [bend right=90, looseness=1.5, postaction=decorate] (1, 0) to (2, 0);
+	\draw [postaction=decorate] (2, 0) to (2, 0.5);
+	\draw [postaction=decorate] (0, -0.5) to (0, 0);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+	\node (0) at (0, 0.7) {$A^*$};
+	\node (4) at (0, -0.7){$A^*$};
+	\draw [postaction=decorate] (0, 0.5) to (0, -0.5);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation*}
+}
+
+\newcommand{\fusionijk}{
+	\begin{tikzpicture}[scale=0.6,decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+	\node (0) at (-0.9, -0.3) {$i$};
+	\node (1) at (0.9, -0.3) {$j$};
+	\node (2) at (0.4, 0.6) {$k$};
+	\draw [postaction=decorate] (-1, -1) to(0,0);
+	\draw [postaction=decorate] (1,-1) to (0,0);
+	\draw [postaction=decorate] (0,0) to (0,1.3);
+	\end{tikzpicture}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
 \maketitle
@@ -51,6 +390,51 @@ categories, functors, natural transformations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Monoidal categories}
+In this section, we set in place the basic definitions and diagrammatic  intuitions which we will use throughout the thesis.\\
+%%CATEGORIES:
+Recall that a category is a collection of objects and arrows such that arrows compose in the sense if $f$ and $g$ are arrows as below then there is an arrow $g \circ f$ as follows: 	
+\begin{center}
+	\begin{tikzpicture}
+	\node (0) at (-1, 0) {$A$};
+	\node (1) at (0, 0.5) {$B$};
+	\node (2) at (1, 0) {$C$};
+	\node (3) at (-0.7, 0.4) {$f$};
+	\node (3) at (0.7, 0.4) {$g$};
+	\node (3) at (0, -0.3) {$g\circ f$};
+	\draw [->] (0) to (1);
+	\draw [->] (1) to (2);
+	\draw [->] (0) to (2);
+	\end{tikzpicture}
+\end{center}
+The above diagram is a statement about categories, and it has exactly the same information to its dual diagram. Where objects are one-dimensional wires and morphisms are one dimensional cells:
+\begin{center}
+	\begin{tikzpicture}
+	\node (0) at (-1, -1.2) {$A$};
+	\node (1) at (-1.4, -0.1) {$B$};
+	\node (2) at (-1, 1.2) {$C$};
+	\node (3) at (1, -1.2) {$A$};
+	\node (4) at (1, 1.2) {$C$};
+	\node[scale=0.9,draw,circle] (5) at (-1, -0.5) {$f$};
+	\node[draw,circle] (6) at (-1, 0.4) {$g$};
+	\node[scale=0.8,draw,circle] (7) at (1, 0) {$g\circ f$};
+	\node (8) at (0, 0) {$=$};
+	\draw (0) to (5);
+	\draw (5) to (6);
+	\draw [->] (6) to (2);
+	\draw (3) to (7);
+	\draw [->] (7) to (4);
+	\end{tikzpicture}
+\end{center}
+Category theory is a really good language for talking about equivalences and relationships between structures.
+Given two categories $\mathcal{C}$ and $\mathcal{D}$ a functor $F: \mathcal{C} \rightarrow \mathcal{D}$ is a transformation taking objects of $\mathcal{C}$ to objects of $\mathcal{D}$ and arrows to arrows preserving the inner structure of the category (i.e identity arrows and composition).
+\begin{definition}
+	A functor $F:\mathcal{C} \rightarrow \mathcal{D}$ is a mapping that
+	\begin{itemize}
+		\item associates an object $F(X)$ of $\mathcal{D}$ to each object $X$ of $\mathcal{C}$.
+		\item associates to each morphism $f:X \rightarrow Y$ a morphism $F(f): F(X) \rightarrow F(Y)$ such that $F(id_X)=id_Y$ and $F(g\circ f)= F(g)\circ F(f)$ for all morphisms $f:X \rightarrow Y$ and $g:Y \rightarrow Z$.
+	\end{itemize}
+\end{definition}For instance there is a functor $Q: Sets \rightarrow Hilb$ called `1st quantization' and taking a set to the free hilbert space generated by that set. It is easy to see that $Q$ also preserves the monoidal structure as well as the symmetry morphisms, we say $Q$ is a symmetric monoidal functor.
+%%%MONOIDAL CATEGORIES:
 Recall that a monoid is a triple $(X, \times, 1)$ where $X$ is a set, $1 \in X$ and $\times$ is an associative and unital multiplication on $X$. The notion of a monoidal category is the categorification of a monoid. Elements of the set are replaced by objects in a category $\mathcal{C}$, multiplication by a bifunctor $\otimes: \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$ and the equalities in the unit and association axioms are replaced by natural isomorphisms. In order for this new structure to be well-behaved we will also need to impose compatibility conditions.
 We obtain the following definition:
 \begin{definition}
@@ -67,37 +451,199 @@ The category $Sets$ of sets and functions is monoidal with the cartesian product
 The category $Vect_k$ of vector spaces over a field $k$ is monoidal with the usual tensor product $\otimes$ and the one dimensional vector space $k$ as unit object.\\
 The category $Rel$ of sets and relations is monoidal with the cartesian product $\times$ and the singleton as unit object.
 \end{example}
+
+The more structure comes with a category the more complicated diagrams we can draw. For the moment our diagrams can only be one dimensional because we have only one notion of composition. Monoidal categories are categories $\mathcal{C}$ equipped with a bifunctor $\otimes : \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$, a unit object $I$ and natural unitors and associators satisfying certain coherence conditions. The rigorous definition can be found in [maclane]. Monoidal categories have a two-dimensional diagrammatic language. The presence of unitors and associators and the conditions they satisfy make sure that this graphical language is well behaved. We write the tensor of two morphisms $f \otimes g : A \otimes B \rightarrow C \otimes D$ simply putting them side by side:
+\begin{center}
+	\begin{tikzpicture}
+	\node (0) at (0, -1.2) {$A$};
+	\node (1) at (1, -1.2) {$B$};
+	\node (2) at (0, 1.2) {$C$};
+	\node (3) at (1, 1.2) {$D$};
+	\node[draw,circle] (5) at (0, 0) {$f$};
+	\node[draw,circle] (6) at (1, 0) {$g$};
+	\draw (0) to (5);
+	\draw [->] (5) to (2);
+	\draw (1) to (6);
+	\draw [->] (6) to (3);
+	\end{tikzpicture}
+\end{center}
+In our diagrams we can picture the unit $I$ of the tensor as the plane on which we are drawing. Indeed we could imagine drawing as many copies as we wanted of $id_I$ on the previous diagram to obtain obtain an equivalent diagram as $id_I \otimes f = f$ for any morphism $f$. So really the identity on $I$ is just the empty diagram which we can stick next to any diagram we like. Processes from the unit $I$ to some object $A$ are called `states' of $A$ and we draw them as follows:
+\begin{center}
+	\begin{tikzpicture}
+	\node[buffer] (1) {$a$}; 
+	\node (2) at (0.2,0.7) {$A$};
+	\draw (1)--(0,1);
+	\end{tikzpicture}
+\end{center}
+
+%%%DIAGRAMS:
 The above is the classical introduction to monoidal categories as a category with some extra structure. Monoidal categories can also be seen as degenerate 2-categories. Although this viewpoint requires one additional initial step of abstraction (the definition of a 2-category), we will see that it will give us the diagrammatic language for monoidal categories for free. For the rigorous definition of a 2-category we refer to [BAEZ], for our purposes we will only need the intuition. A 2-category is a collection of objects with 1-arrows between them and 2-arrows between the 1-arrows. Note that there are two ways of composing the 2-arrows, vertically and horizontally. (DIAGRAMS-...) Taking the dual diagrams we obtain the diagrammatic language. Monoidal categories are 2-categories with only one 0-object called $1$. We can think of it as the underlying plane or the empty diagram, wires carry systems (1-arrows), boxes are morphisms (2-arrows). We recover the given definition of monoidal category by calling 1-arrow objects, and 2-arrows morphisms. The unit object $1$ is then the identity 1-arrow $1 \rightarrow 1$ which we will denote by $1$. 
 \begin{definition}
 Given a system $A$, a state of is a morphism $1 \rightarrow A$. A costate (or effect) of $A$ is a morphism $A \rightarrow 1$. We denote them as folows in the diagrammatic language.
 \end{definition}
 \begin{example}
-In the category $Sets$ states and costates of a set $X$ are elements $x\in X$. In $Vect_k$ states are vectors and costates are functionals. Note that the diagrammatic notation provides a two-dimensional generalisation of Dirac's notation.
+The category $Sets$ of sets and functions has monoidal structure given by the Cartesian product of sets. The product $A \times B$ of sets $A$ and $B$, satisfies the universal properties of a categorical product, in the sense that we have projections $p_1$ and $p_2$ such that if $f$ and $g$ are maps from some set $C$ there is a unique function $h$ making the following diagram commute:
+\begin{center}
+	\begin{tikzpicture}
+	\node (0) at (-1, 0) {$A$};
+	\node (1) at (1, 0) {$B$};
+	\node (2) at (0, 1) {$A \times B$};
+	\node (3) at (0, -1) {$C$};
+	\node (4) at (0.2, 0) {$h$};
+	\node (5) at (-0.8, 0.6) {$p_1$};
+	\node (6) at (0.8, 0.6) {$p_2$};
+	\node (7) at (-0.8, -0.6) {$f$};
+	\node (8) at (0.8, -0.6) {$g$};
+	\draw [->] (2) to (0);
+	\draw [->] (2) to (1);
+	\draw [->] (3) to (1);
+	\draw [->] (3) to (0);
+	\draw [->] (3) to (2);
+	\end{tikzpicture}
+\end{center}
+Because of this property all states of $(Sets,\times)$ are separable. This category is the ambient Cartesian world of classical physics.
 \end{example}
+\begin{example}
+In $Vect_k$ states are vectors and costates are functionals. Note that the diagrammatic notation provides a two-dimensional generalisation of Dirac's notation. The category $Hilb$ of Hilbert spaces and linear maps is monoidal when equipped with the usual tensor product $\otimes$. Note that $\otimes$ is not a categorical product, and in fact we can have entangled states. Quantum mechanics is based on $(Hilb, \otimes)$ as shown by Vicary [categorical quantum notes].
+\end{example}
+
 \begin{definition}
 Scalars in a monoidal category are morphisms $1 \rightarrow 1$.
 \end{definition}
-The category $Sets$ has only one scalar. $Rel$ has two scalars forming the cyclic group $\mathbb{Z}_2$ under composition. $Vect_k$ has scalars from $k$. Given a vector and a functional we obtain a scalar by composing them analgously to Dirac's formalism.
+The category $Sets$ has only one scalar. $Rel$ has two scalars forming the cyclic group $\mathbb{Z}_2$ under composition. $Vect_k$ has scalars from $k$. Given a vector and a functional we obtain a scalar by composing them analogously to Dirac's formalism.\\
+Both $Sets$ and $Hilb$ are examples of symmetric monoidal categories.In the sense that  any pair of objects $A,B$ has a symmetry morphism
+\begin{center}
+	\symAB	
+\end{center}
+Satisfying:
+\symequation
 
 \subsection{Hopf symmetry}
-Using the diagrammatic tools developed in the previous section we will now recover the most basic algebraic structures mathematicians use to talk about symmetry.
-\subsubsection{Monoids and comonoids}
+Now that we have set in place a diagrammatic machinery based on monoidal categories, let us make use of it. In this section we will meet some mathematical structures which have been used by mathematicians to describe symmetry. The notion of Hopf algebras is a powerful generalization of that of a group. Since their discovery in the 1940s, Hopf algebras have been used in various fields of pure mathematics (such as number theory, algebraic geometry, and representation theory) and have found applications in Quantum mechanics. We will talk about some of these applications in this thesis.\\
 \begin{definition}
-monoids
+	A monoid is a pair (\mult, \unit) satisfying associativity: \associativity
+	and the unit law: \unitlaw
 \end{definition}
+Simply flipping all the diagrams we obtain the notion of a comonoid.
 \begin{definition}
-comonoid
+	A comonoid is a pair (\comult, \counit) satisfying coassociativity: \coassociativity and the counit law: \counitlaw
 \end{definition}
-Let us introduce some of the groups we will meet: $\mathbb{Z}_2$, $S_3$, $U(N)$.
-characters = costates
+Monoids are well known, examples include the natural numbers under addition, lists of some alphabet under concatenation and any group. The most common example of a comonoid is the copy map on any set with `delete' as counit.
+Monoids and comonoids are simple structures that we can stick together to form more complicated ones. Bialgebras arise from one type of interaction of a monoid and comonoid.
+\begin{definition}
+	A bialgebra is a tuple (\mult, \unit, \comult, \counit) satisfying the fllowing laws:
+	\bialgebralaw
+	
+\end{definition}
+We will now describe the monoidal category $Hopf$. This category is of a different nature to the ones we have seen so far. We will define $Hopf$ as is often done to define abstract algebraic structures: using generators and relations. $Hopf$ is a symmetric monoidal category with objects generated under tensoring by a single object $X$. This means that we are only allowed one type of wire when drawing diagrams about $Hopf$ but we can use as many copies as we like and we can make swaps with them. Categories satisfying these properties are called $PROP$s in the category theoretic jargon, they are useful syntactic tools as we will see. Morphisms in $Hopf$ are generated by the following diagrams:
+\begin{center}
+	\mult , \unit , \comult , \counit , \antipode
+\end{center}
+Where (\mult, \unit) is a monoid (we will call those morphisms black spiders) an (\comult, \counit) is a comonoid (white spiders).
+The black and white spiders interact as described by the bialgebra laws and the antipode satisfies the Hopf law.\\
+\bialgebralaw
+\hopflaw
 
-\subsubsection{The $Hopf$ PROP}
-\begin{definition}
-Bialgebra
-\end{definition}
-\begin{definition}{Hopf}
 
-\end{definition}
+$Hopf$ is an abstract algebraic structure which carries some axioms, we can instantiate those axioms in some other monoidal category $\mathcal{C}$ by considering monoidal functors $F: Hopf \rightarrow \mathcal{C}$.  The choice of such functor corresponds to the choice of one object from $\mathcal{C}$ and morphisms on that object respecting the defining relations of $Hopf$. On its own $Hopf$ has no clear interpretation, it just defines a syntax, but if $\mathcal{C}$ is a semantic category (i.e one with a clear interpretation) then $F$ is a `filling' of the syntax with meaning. This reasoning was first proposed by Lawvere [Lawvere functorial semantics]. In the following we will see that $Hopf$ is a good syntax to talk about symmetry. \\
+Let us start by  instantiating $G: Hopf \rightarrow Sets$. This corresponds to choosing a set $G$, with a binary function $G \times G \rightarrow G$ (or multiplication) with a unit. Using the counit rule it is easy to see that the comultiplication in $Sets$ must be the copy map $g \mapsto (g,g)$ so that the antipode is the morphism $g \mapsto g^{-1}$ and $G$ forms a group. Groups have been used by mathematicians and physicists to describe symmetry. \\
+If we instantiate in $Hilb$, $H:Hopf \rightarrow Hilb$ is called a Hopf Algebra.
+\begin{center}
+	\begin{tikzpicture}
+	\node (0) at (-1, 0) {$Sets$};
+	\node (1) at (1, 0) {$Hilb$};
+	\node (2) at (0, 1) {$Hopf$};
+	\node (5) at (-0.8, 0.6) {$G$};
+	\node (6) at (0.8, 0.6) {$H$};
+	\node (7) at (0, -0.3) {$Q$};
+	\draw [->] (2) to (0);
+	\draw [->] (2) to (1);
+	\draw [->] (0) to (1);
+	\end{tikzpicture}
+\end{center}
+Clearly from the diagram we see that group algebras $\mathbb{C}G$ are hopf algebras by post-composing $G$ with $Q$. In this case the comultiplication in $Hilb$ is the linearisation of the copy map (the copy map on some basis extended linearly to the whole Hilbert space) which is co-commutative. For a general $H:Hopf \rightarrow Hilb$ this doesn't have to be the case. Hopf algebras provide a broader framework to talk about symmetry, as we can have non co-commutative Hopf algebras. Quantization of the notion of symmetry, symmetries of quantum systems. Physically we will see that Hopf algebras allow to talk about local symmetries and exchange statistics on the same footing. In particular if the Hopf algebra is not cocommutative the exchange statistics can be highly non-trivial, in which case they will describe the symmetries of anyons.\\
+Recall that a group describes the symmetries of some space $X$ when it acts on it (e.g crystals, classical symmetries= symmetries of sets). If we apply the same reasoning to Hopf Algebras we have to make $H$ act on some quantum state space (i.e Hilbert space). So our object of study is not $H$ on its own but rather a module (or representation) of $H$. In the diagrammatic language we depict it as follows:
+\begin{center}
+	\begin{tikzpicture}[scale=0.9, black/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node (0) at (0, -1.2) {$V$};
+	\node[black] (1) at (0, 0) {};
+	\node (2) at (0, 1) {};
+	\node (3) at (-0.7, -1.2) {$H$};
+	\draw (0) to (1);
+	\draw (1) to (2);
+	\draw (3) to (1);
+	\end{tikzpicture}
+\end{center}
+Where $V$ is a finite dimensional vector space. Note that the above diagram represents a process in $Vect$. All the diagrams we will be drawing from now on are about vector spaces and linear maps. In order for $V$ to be a representation the following must hold.
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[scale=0.7, squr/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, black/.style={draw,shape=circle,fill=black}]
+\node (0) at (0, -2.2) {};
+\node[squr] (1) at (0, 0) {};
+\node (2) at (0, 1) {};
+\node[black] (3) at (-0.8, -1) {};
+\draw (0) to (1);
+\draw (1) to (2);
+\draw (3) to (1);
+\draw (-1.3, -2) to (3);
+\draw (-0.5, -2) to (3);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.7, squr/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, black/.style={draw,shape=circle,fill=black}]
+\node (0) at (0, -2.2) {};
+\node[squr] (1) at (0, 0) {};
+\node (2) at (0, 1) {};
+\node[squr] (3) at (0, -1) {};
+\draw (0) to (3);
+\draw (3) to (1);
+\draw (1) to (2);
+\draw (3) to (1);
+\draw (-1.3, -2) to (1);
+\draw (-0.5, -2) to (3);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+Suppose $V$ and $W$ are representations of $H$, then we say $f:V \rightarrow W$ is an intertwiner if:
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[scale=0.7, squr/.style={draw,regular polygon,
+	regular polygon sides=4,fill=black}]
+\node (0) at (0, -2.2) {$V$};
+\node[squr] (1) at (0, 0) {};
+\node (2) at (0, 1.2) {$W$};
+\node[scale=0.8,draw,circle] (3) at (0, -1) {$f$};
+\draw (0) to (3);
+\draw (3) to (1);
+\draw (1) to (2);
+\draw (3) to (1);
+\draw (-1.5, -2) to (1);
+\end{tikzpicture}	
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.7, squr/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node (0) at (0, -2.2) {$V$};
+\node[scale=0.8,draw,circle] (1) at (0, 0) {$f$};
+\node (2) at (0, 1.2) {$W$};
+\node[squr] (3) at (0, -1) {};
+\draw (0) to (3);
+\draw (3) to (1);
+\draw (1) to (2);
+\draw (3) to (1);
+\draw (-1, -2) to (3);
+\end{tikzpicture}	
+\end{gathered}
+\end{equation}
+Where the black square denotes the action of $H$ on $W$. We obtain in this way the category of representations of $H$ denoted $Rep(H)$, where objects are $H$-modules and arrows intertwiners. This category has really nice structure induced from the properties of $H$.
+$Rep(H)$ are braided fusion categories and are models for topological quantum computation, $Rep(\mathbb{C}G)$ gives Permutational quantum computing.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%?%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Hopf Algebras and Quantum groups}
 quasitriangular hopf algebras \\
