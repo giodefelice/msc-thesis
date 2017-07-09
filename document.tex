@@ -395,7 +395,7 @@
 \newcommand{\symequation}{
 	\begin{equation*}
 	\begin{gathered}
-	\begin{tikzpicture}
+	\begin{tikzpicture}[scale=0.7]
 	\node (0) at (-1, -1.2) {$A$};
 	\node (0) at (0, -1.2) {$B$};
 	\draw [->] (-1, -1)--(0,0)--(-1,1);
@@ -404,7 +404,7 @@
 	\end{gathered}
 	\, = \,
 	\begin{gathered}
-	\begin{tikzpicture}
+	\begin{tikzpicture}[scale=0.7]
 	\node (0) at (-0.8, -1.2) {$A$};
 	\node (0) at (0, -1.2) {$B$};
 	\draw [->] (-0.8, -1)--(-0.8,1);
@@ -431,7 +431,7 @@
 \newcommand{\snake}{
 	\begin{equation*}
 	\begin{gathered}
-	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
+	\begin{tikzpicture}[scale=0.7,decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
 	\node (0) at (0, 0.7) {$A$};
 	\node (4) at (2, -0.7){$A$};
 	\draw [bend right=90, looseness=1.5, postaction=decorate] (0, 0) to (1, 0);
@@ -442,7 +442,7 @@
 	\end{gathered}
 	\, = \,
 	\begin{gathered}
-	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
+	\begin{tikzpicture}[scale=0.7,decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
 	\node (0) at (0, 0.7) {$A$};
 	\node (4) at (0, -0.7){$A$};
 	\draw [postaction=decorate] (0, 0.5) to (0, -0.5);
@@ -453,7 +453,7 @@
 \newcommand{\snakestar}{
 	\begin{equation*}
 	\begin{gathered}
-	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
+	\begin{tikzpicture}[scale=0.7,decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
 	\node (0) at (0, -0.7) {$A^*$};
 	\node (4) at (2, 0.7){$A^*$};
 	\draw [bend left=90, looseness=1.5, postaction=decorate] (0, 0) to (1, 0);
@@ -464,7 +464,7 @@
 	\end{gathered}
 	\, = \,
 	\begin{gathered}
-	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+	\begin{tikzpicture}[scale=0.7,decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
 	\node (0) at (0, 0.7) {$A^*$};
 	\node (4) at (0, -0.7){$A^*$};
 	\draw [postaction=decorate] (0, 0.5) to (0, -0.5);
@@ -525,15 +525,15 @@ Recall that a category is a collection of objects and arrows such that arrows co
 \end{center}
 The above diagram is a statement about categories, and it has exactly the same information to its dual diagram. Where objects are one-dimensional wires and morphisms are one dimensional cells:
 \begin{center}
-	\begin{tikzpicture}
-	\node (0) at (-1, -1.2) {$A$};
+	\begin{tikzpicture}[scale=0.7]
+	\node (0) at (-1, -1.4) {$A$};
 	\node (1) at (-1.4, -0.1) {$B$};
-	\node (2) at (-1, 1.2) {$C$};
-	\node (3) at (1, -1.2) {$A$};
-	\node (4) at (1, 1.2) {$C$};
-	\node[scale=0.9,draw,circle] (5) at (-1, -0.5) {$f$};
-	\node[draw,circle] (6) at (-1, 0.4) {$g$};
-	\node[scale=0.8,draw,circle] (7) at (1, 0) {$g\circ f$};
+	\node (2) at (-1, 1.4) {$C$};
+	\node (3) at (1, -1.4) {$A$};
+	\node (4) at (1, 1.4) {$C$};
+	\node[scale=0.6,draw,circle] (5) at (-1, -0.5) {$f$};
+	\node[scale=0.7,draw,circle] (6) at (-1, 0.4) {$g$};
+	\node[scale=0.5,draw,circle] (7) at (1, 0) {$g\circ f$};
 	\node (8) at (0, 0) {$=$};
 	\draw (0) to (5);
 	\draw (5) to (6);
@@ -571,13 +571,13 @@ The category $Rel$ of sets and relations is monoidal with the cartesian product 
 
 The more structure comes with a category the more complicated diagrams we can draw. For the moment our diagrams can only be one dimensional because we have only one notion of composition. Monoidal categories are categories $\mathcal{C}$ equipped with a bifunctor $\otimes : \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$, a unit object $I$ and natural unitors and associators satisfying certain coherence conditions. The rigorous definition can be found in [maclane]. Monoidal categories have a two-dimensional diagrammatic language. The presence of unitors and associators and the conditions they satisfy make sure that this graphical language is well behaved. We write the tensor of two morphisms $f \otimes g : A \otimes B \rightarrow C \otimes D$ simply putting them side by side:
 \begin{center}
-	\begin{tikzpicture}
+	\begin{tikzpicture}[scale=0.7]
 	\node (0) at (0, -1.2) {$A$};
 	\node (1) at (1, -1.2) {$B$};
 	\node (2) at (0, 1.2) {$C$};
 	\node (3) at (1, 1.2) {$D$};
-	\node[draw,circle] (5) at (0, 0) {$f$};
-	\node[draw,circle] (6) at (1, 0) {$g$};
+	\node[scale=0.7,draw,circle] (5) at (0, 0) {$f$};
+	\node[scale=0.7,draw,circle] (6) at (1, 0) {$g$};
 	\draw (0) to (5);
 	\draw [->] (5) to (2);
 	\draw (1) to (6);
@@ -586,15 +586,44 @@ The more structure comes with a category the more complicated diagrams we can dr
 \end{center}
 In our diagrams we can picture the unit $I$ of the tensor as the plane on which we are drawing. Indeed we could imagine drawing as many copies as we wanted of $id_I$ on the previous diagram to obtain obtain an equivalent diagram as $id_I \otimes f = f$ for any morphism $f$. So really the identity on $I$ is just the empty diagram which we can stick next to any diagram we like. Processes from the unit $I$ to some object $A$ are called `states' of $A$ and we draw them as follows:
 \begin{center}
-	\begin{tikzpicture}
-	\node[buffer] (1) {$a$}; 
-	\node (2) at (0.2,0.7) {$A$};
+	\begin{tikzpicture}[scale=0.7]
+	\node[scale=0.7,buffer] (1) {$a$}; 
+	\node (2) at (0.3,0.7) {$A$};
 	\draw (1)--(0,1);
 	\end{tikzpicture}
 \end{center}
 
 %%%DIAGRAMS:
-The above is the classical introduction to monoidal categories as a category with some extra structure. Monoidal categories can also be seen as degenerate 2-categories. Although this viewpoint requires one additional initial step of abstraction (the definition of a 2-category), we will see that it will give us the diagrammatic language for monoidal categories for free. For the rigorous definition of a 2-category we refer to [BAEZ], for our purposes we will only need the intuition. A 2-category is a collection of objects with 1-arrows between them and 2-arrows between the 1-arrows. Note that there are two ways of composing the 2-arrows, vertically and horizontally. (DIAGRAMS-...) Taking the dual diagrams we obtain the diagrammatic language. Monoidal categories are 2-categories with only one 0-object called $1$. We can think of it as the underlying plane or the empty diagram, wires carry systems (1-arrows), boxes are morphisms (2-arrows). We recover the given definition of monoidal category by calling 1-arrow objects, and 2-arrows morphisms. The unit object $1$ is then the identity 1-arrow $1 \rightarrow 1$ which we will denote by $1$. 
+The above is the classical introduction to monoidal categories as a category with some extra structure. It is perhaps useful to understand monoidal categories as degenerate 2-categories. Although this viewpoint requires one additional initial step of abstraction (the definition of a 2-category), we will see that it will give us the diagrammatic language for monoidal categories for free. For the rigorous definition of a 2-category we refer to [BAEZ], for our purposes we will only need the intuition. A 2-category is a collection of objects with 1-arrows between them and 2-arrows between the 1-arrows. Note that there are two ways of composing the 2-arrows:
+\begin{itemize}
+	\item vertical composition:
+	\begin{center}
+		\begin{tikzpicture}
+			\node (0) at (0,0) {.};
+			\node (1) at (2,0) {.};
+			\draw[->] (0) to (1);
+			\draw[->, bend right=90] (0) to (1);
+			\draw[->, bend left=90] (0) to (1);
+			\draw[double, thick, ->] (1,-0.6) to (1,-0.2);
+			\draw[double, thick, ->] (1,0.2) to (1,0.6);
+		\end{tikzpicture}
+	\end{center}
+	\item parallel composition:
+	\begin{center}
+		\begin{tikzpicture}
+		\node (0) at (0,0) {.};
+		\node (1) at (2,0) {.};
+		\node (2) at (4,0) {.};
+		\draw[->, bend right=40] (0) to (1);
+		\draw[->, bend left=40] (0) to (1);
+		\draw[->, bend right=40] (1) to (2);
+		\draw[->, bend left=40] (1) to (2);
+		\draw[double, thick, ->] (1,-0.2) to (1,0.2);
+		\draw[double, thick, ->] (3,-0.2) to (3,0.2);
+		\end{tikzpicture}
+	\end{center}
+\end{itemize}
+Taking the Poincaré dual of the above diagrams we obtain the diagrammatic language. Monoidal categories are 2-categories with only one 0-object called $1$. We can think of it as the underlying plane or the empty diagram, wires carry systems (1-arrows), boxes are morphisms (2-arrows). We recover the given definition of monoidal category by calling 1-arrow objects, and 2-arrows morphisms. The unit object $1$ is then the identity 1-arrow $1 \rightarrow 1$ which is simply denoted $1$. 
 \begin{definition}[States and costates]
 Given a system $A$, a state of is a morphism $1 \rightarrow A$. A costate (or effect) of $A$ is a morphism $A \rightarrow 1$. We denote them as folows in the diagrammatic language.
 \end{definition}
@@ -627,28 +656,169 @@ In $Vect_k$ states are vectors and costates are functionals. Note that the diagr
 \begin{definition}[Scalars]
 Scalars in a monoidal category are morphisms $1 \rightarrow 1$.
 \end{definition}
-The category $Sets$ has only one scalar. $Rel$ has two scalars forming the cyclic group $\mathbb{Z}_2$ under composition. $Vect_k$ has scalars from $k$. Given a vector and a functional we obtain a scalar by composing them analogously to Dirac's formalism.\\
+The category $Sets$ has only one scalar. $Rel$ has two scalars forming the cyclic group $\mathbb{Z}_2$ under composition. $Vect_k$ has scalars from $k$. Given a vector and a functional we obtain a scalar by composing them analogously to Dirac's formalism.
+\begin{definition}[Braided monoidal category]
+	A braided monoidal category is a monoidal category $\mathcal{C}$ equipped with a natural isomorphism $B_{a,b} : a \otimes b \rightarrow b \otimes a$ called braiding, subject to the following compatibility conditions (called hexagon equations):
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+		\node (0) at (-1,0) {$(a\otimes b) \otimes c$};
+		\node (1) at (-0.5,1) {$a\otimes (b \otimes c)$};
+		\node (2) at (1.5,1) {$(b\otimes c)\otimes a$};
+		\node (3) at (2,0) {$b\otimes (c\otimes a)$};
+		\node (4) at (-0.5,-1) {$(b\otimes a)\otimes c$};
+		\node (5) at (1.5,-1) {$b\otimes (a\otimes c)$};
+		\draw [->] (0)--(1) node[midway,left] {$\alpha_{a,b,c}$};
+		\draw [->] (1)--(2) node[midway,above] {$B_{a,b \otimes c}$};
+		\draw [->] (2)--(3) node[midway,right] {$\alpha_{b,c,a}$};
+		\draw [->] (0)--(4) node[midway,left] {$B_{a,b} \otimes id_c$};
+		\draw [->] (4)--(5) node[midway,below] {$\alpha_{b,a,c}$};
+		\draw [->] (5)--(3) node[midway,right] {$id_b \otimes B_{a,c}$};
+		\end{tikzpicture}
+	\end{center}
+	\begin{center}
+		\begin{tikzpicture}[scale=2]
+		\node (0) at (-1,0) {$a\otimes (b \otimes c)$};
+		\node (1) at (-0.5,1) {$(a\otimes b) \otimes c$};
+		\node (2) at (1.5,1) {$c\otimes (a\otimes b)$};
+		\node (3) at (2,0) {$(c\otimes a)\otimes b$};
+		\node (4) at (-0.5,-1) {$a\otimes (c\otimes b)$};
+		\node (5) at (1.5,-1) {$(a\otimes c)\otimes b$};
+		\draw [->] (0)--(1) node[midway,left] {$\alpha_{a,b,c}$};
+		\draw [->] (1)--(2) node[midway,above] {$B_{a\otimes b,c}$};
+		\draw [->] (2)--(3) node[midway,right] {$\alpha_{c,a,b}$};
+		\draw [->] (0)--(4) node[midway,left] {$id_a \otimes B_{b,c}$};
+		\draw [->] (4)--(5) node[midway,below] {$\alpha_{a,c,b}$};
+		\draw [->] (5)--(3) node[midway,right] {$B_{a,c} \otimes id_b$};
+		\end{tikzpicture}
+	\end{center}
+	
+\end{definition}
+In the diagrammatic language this means we have braidings:
+\begin{center}
+	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node (0) at (0.5,0.5) {};
+	\node (1) at (-0.1,-0.4) {$A$};
+	\node (2) at (1.1,-0.4) {$B$};
+	\draw (0,1) to (1,0);
+	\draw (0,0) to (0);
+	\draw (0) to (1,1);
+	\end{tikzpicture}
+	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node (0) at (0.5,0.5) {};
+	\node (1) at (-0.1,-0.4) {$B$};
+	\node (2) at (1.1,-0.4) {$A$};
+	\draw (0,0) to (1,1);
+	\draw (0,1) to (0);
+	\draw (0) to (1,0);
+	\end{tikzpicture}
+\end{center}
+for any $A$ and $B$, satifying:
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+\node (0) at (0.5,0.5) {};
+\node (1) at (-0.1,-0.4) {$A$};
+\node (2) at (1.1,-0.4) {$B$};
+\node (3) at (0.5,1.5) {};
+\draw (1,0)--(0,1)--(1,2);
+\draw (0,0)--(0)--(1,1)--(3)--(0,2);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+\node (1) at (0,-0.4) {$A$};
+\node (2) at (0.9,-0.4) {$B$};
+\draw (0.8,0)--(0.8,2);
+\draw (0.1,0)--(0.1,2);
+\end{tikzpicture}
+\end{gathered}
+\quad;\quad
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+\node (0) at (0.5,0.5) {};
+\node (1) at (-0.1,-0.4) {$B$};
+\node (2) at (1.1,-0.4) {$A$};
+\node (3) at (0.5,1.5) {};
+\draw (1,0)--(0)--(0,1)-- (3)--(1,2);
+\draw (0,0)--(1,1)--(0,2);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+\node (1) at (0,-0.4) {$B$};
+\node (2) at (0.9,-0.4) {$A$};
+\draw (0.8,0)--(0.8,2);
+\draw (0.1,0)--(0.1,2);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+The compatibility conditions are obvious statements in the diagrammatic calculus, for instance the first hexagon equation just says:
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6]
+\node (0) at (0.5,0.5) {};
+\node (1) at (-0.1,-0.4) {$A$};
+\node (2) at (1.1,-0.4) {$B$};
+\node (3) at (2.1,-0.4) {$C$};
+\node (4) at (1.5,2.5) {};
+\draw (0,0)--(1,1)--(1,2)--(2,3);
+\draw (1,0)--(0)--(0,1)--(0,3);
+\draw (2,0)--(2,2)--(4)--(1,3);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6]
+\node (0) at (1.3,2.2) {};
+\node (1) at (0.4,-0.4) {$A$};
+\node (2) at (1.5,-0.4) {$B$};
+\node (3) at (2.2,-0.4) {$C$};
+\node (4) at (1.5,2.5) {};
+\draw (0.5,0)--(0.5,1.5)--(1,2)--(2,3);
+\draw (1.7,0)--(1.7,1.7)--(0)--(0.5,3);
+\draw (2,0)--(2,2)--(4)--(1,3);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
 Both $Sets$ and $Hilb$ are examples of symmetric monoidal categories in the following sense.
-\begin{definition}
-	A monoidal category is symmetric if any pair of objects $A,B$ has a symmetry morphism
+\begin{definition}[Symmetric monoidal category]
+	A monoidal category is symmetric if any pair of objects $A,B$ has a symmetry morphism:
 	\begin{center}
 		\symAB	
 	\end{center}
 	Satisfying:
 	\symequation
 \end{definition}
-One important difference between $Sets$ and $Hilb$ is that $Hilb$ exhibits duality.
+We will now describe some new classes of examples of monoidal categories. These are of a different nature to the categories we have seen so far.
+\begin{definition}[PROPs]
+	A $PROP$ (products and permutations category) is a strict symmetric monoidal category where every object is of the form $x^{\otimes n}$ for a single object $x$ and $n \geq 0$.
+\end{definition}
+This means that we are only allowed one type of wire when drawing diagrams about $PROPs$ but we can use as many copies as we like and we can make swaps with them. Categories satisfying these properties are useful syntactic tools as we will see.
+One way to think of a $PROP$ $A$ is as an abstract algebraic structure carrying some axioms, we can then instantiate those axioms in some other symmetric monoidal category $\mathcal{C}$ by considering symmetric monoidal functors $F: A \rightarrow \mathcal{C}$. We call such functors algebras or models of $A$ in $\mathcal{C}$. If $A$ is defined in terms of generators and relations (as is most often done), the choice of such functor corresponds to the choice of one object from $\mathcal{C}$ and morphisms on that object respecting the defining relations of $A$. On its own $A$ has no clear interpretation, it just defines a syntax, but if $\mathcal{C}$ is a semantic category (i.e one with a clear interpretation) then $F$ is a `filling' of the syntax with meaning. This reasoning was first proposed in Lawvere's Phd thesis in 1963 \cite{Lawvere63}.\\
+It will sometimes be useful to drop the `permutational' structure of $PROPs$.
+\begin{definition}[PRO]
+	A $PRO$ (products category) is a strict monoidal category where every object is of the form $x^{\otimes n}$ for a single object $x$ and $n \geq 0$.
+\end{definition}
+The semantic categories we will consider the most are $Sets$ and $Hilb$. One important difference between them is that $Hilb$ exhibits duality.
 \begin{definition}[Rigidity]
-	Let $\mathcal{C}$ be a monoidal category and $A\in obj(\mathcal{C})$. A (left) dual of $A$ is an object $A^*$ with morphisms
+	Let $\mathcal{C}$ be a monoidal category and $A\in obj(\mathcal{C})$. A left-dual of $A$ is an object $A^*$ with morphisms
 	\begin{center}
 		\cupA \, \capA
 	\end{center}
 	Satisfying the snake equations:
 	\snake
 	\snakestar
-	If every object has a dual, we say that $\mathcal{C}$ is rigid.
+	If every object has a left-dual, we say that $\mathcal{C}$ is left-rigid.
+	Similarly we can define right-duals and right-rigid categories by interchanging the roles of $A$ and $A^\star$ in the definition.
 \end{definition}
-
 \begin{definition}
 	Pivotal, spherical...
 \end{definition}
@@ -658,33 +828,29 @@ One important difference between $Sets$ and $Hilb$ is that $Hilb$ exhibits duali
 
 \subsubsection{From groups to Hopf algebras}
 Now that we have set in place a diagrammatic machinery based on monoidal categories, let us make use of it. In this section we will meet some mathematical structures which have been used by mathematicians to describe symmetry. The notion of Hopf algebras is a powerful generalization of that of a group. Since their discovery in the 1940s, Hopf algebras have been used in various fields of pure mathematics (such as number theory, algebraic geometry, and representation theory) and have found applications in Quantum mechanics. We will talk about some of these applications in this thesis.
-\begin{definition}
-	A monoid is a pair (\mult, \unit) satisfying associativity: \associativity
+\begin{definition}[Monoid]
+	$\Delta$ is a $PRO$ generated by morphisms (\mult, \unit) satisfying associativity: \associativity
 	and the unit law: \unitlaw
 \end{definition}
-Simply flipping all the diagrams we obtain the dual notion of a comonoid.
-\begin{definition}
-	A comonoid is a pair (\comult, \counit) satisfying coassociativity: \coassociativity and the counit law: \counitlaw
+Models of $\Delta$ in monoidal categories are called monoids and they are very well known, examples include the natural numbers under addition, lists of some alphabet under concatenation and any group. Taking the opposite category $\Delta^{op}$ corresponds to flipping all the diagrams.
+\begin{definition}[Comonoid]
+	$\Delta^{op}$ is a $PRO$ generated (\comult, \counit) satisfying coassociativity: \coassociativity and the counit law: \counitlaw
 \end{definition}
-Monoids are well known, examples include the natural numbers under addition, lists of some alphabet under concatenation and any group. The most common example of a comonoid is the copy map on any set with `delete' as counit.
+Models of these are comonoids, the most common example is the copy map on any set with `delete' as counit.
 Monoids and comonoids are simple structures that we can stick together to form more complicated ones. Bialgebras arise from one type of interaction of a monoid and comonoid.
-\begin{definition}
-	A bialgebra is a tuple (\mult, \unit, \comult, \counit) satisfying the fllowing laws:
+\begin{definition}[Bialgebra]
+	$Bialg$ is a $PROP$ generated by (\mult, \unit, \comult, \counit), where \mult and \unit form a monoid, \comult and \counit a comonoid and the morphisms additionally satisfy the following laws:
 	\bialgebralaw
 	\copylaw
 	\cocopylaw
 \end{definition}
-
-We will now describe the monoidal category $Hopf$. This category is of a different nature to the ones we have seen so far. We will define $Hopf$ as is often done to define abstract algebraic structures: using generators and relations. $Hopf$ is a symmetric monoidal category with objects generated under tensoring by a single object $X$. This means that we are only allowed one type of wire when drawing diagrams about $Hopf$ but we can use as many copies as we like and we can make swaps with them. Categories satisfying these properties are called $PROP$s in the category theoretic jargon, they are useful syntactic tools as we will see. Morphisms in $Hopf$ are generated by the following diagrams:
-\begin{center}
-	\mult , \unit , \comult , \counit , \antipode
-\end{center}
-Where (\mult, \unit) is a monoid (we will call those morphisms black spiders) an (\comult, \counit) is a comonoid (white spiders).
-The black and white spiders interact as described by the bialgebra laws and the antipode satisfies the Hopf law:
-\hopflaw
-$Hopf$ is an abstract algebraic structure which carries some axioms, we can instantiate those axioms in some other monoidal category $\mathcal{C}$ by considering monoidal functors $F: Hopf \rightarrow \mathcal{C}$.  The choice of such functor corresponds to the choice of one object from $\mathcal{C}$ and morphisms on that object respecting the defining relations of $Hopf$. On its own $Hopf$ has no clear interpretation, it just defines a syntax, but if $\mathcal{C}$ is a semantic category (i.e one with a clear interpretation) then $F$ is a `filling' of the syntax with meaning. This reasoning was first proposed in Lawvere's Phd thesis in 1963 \cite{Lawvere63}. In the following we will see that $Hopf$ is a good syntax to talk about symmetry. \\
-Let us start by  instantiating $G: Hopf \rightarrow Sets$. This corresponds to choosing a set $G$, with a binary function $G \times G \rightarrow G$ (or multiplication) with a unit. Using the counit rule it is easy to see that the comultiplication in $Sets$ must be the copy map $g \mapsto (g,g)$ so that the antipode is the morphism $g \mapsto g^{-1}$ and $G$ forms a group. Groups have been used by mathematicians and physicists to describe symmetry. \\
-If we instantiate in $Hilb$, $H:Hopf \rightarrow Hilb$ is called a Hopf Algebra.
+We are now ready to introduce one of the main topics of this thesis.
+\begin{definition}[Hopf Algebra]
+	$Hopf$ is a $PROP$ generated by (\mult , \unit , \comult , \counit , \antipode). Where (\mult, \unit, \comult, \counit) is a bialgebra and the antipode $S$ satisfies the Hopf law:
+	\hopflaw
+\end{definition}
+In the following we will argue that $Hopf$ is a good syntax to talk about symmetry. Let us start by  instantiating $G: Hopf \rightarrow Sets$. This corresponds to choosing a set $G$, with a binary function $G \times G \rightarrow G$ (or multiplication) with a unit. Using the counit rule it is easy to see that the comultiplication in $Sets$ must be the copy map $g \mapsto (g,g)$ so that the antipode is the morphism $g \mapsto g^{-1}$ and $G$ forms a group. Groups have been used by mathematicians and physicists to describe symmetry. \\
+If take a model of $H:Hopf \rightarrow Hilb$ we obtain what is known as a Hopf Algebra.
 \begin{center}
 	\begin{tikzpicture}
 	\node (0) at (-1, 0) {$Sets$};
@@ -699,6 +865,109 @@ If we instantiate in $Hilb$, $H:Hopf \rightarrow Hilb$ is called a Hopf Algebra.
 	\end{tikzpicture}
 \end{center}
 Clearly from the diagram we see that group algebras $\mathbb{C}G$ are hopf algebras by post-composing $G$ with $Q$. In this case the comultiplication in $Hilb$ is the linearisation of the copy map (the copy map on some basis extended linearly to the whole Hilbert space) which is co-commutative. For a general $H:Hopf \rightarrow Hilb$ this doesn't have to be the case. Hopf algebras provide a broader framework to talk about symmetry, as we can have non co-commutative Hopf algebras. Quantization of the notion of symmetry, symmetries of quantum systems. Physically we will see that Hopf algebras allow to talk about local symmetries and exchange statistics on the same footing. In particular if the Hopf algebra is not cocommutative the exchange statistics can be highly non-trivial, in which case they will describe the symmetries of anyons.
+We are mainly interested in the study of Hopf Algebras (i.e models of $Hopf$ in $Vect$). The first simple but important result is the following.
+\begin{proposition}
+	The antipode of a Hopf algebra is unique. It follows that being a Hopf algebra is a property of bialgebras. 
+\end{proposition}
+\begin{proof}
+	Suppose $S$ and $S'$ are two antipodes for some Hopf algebra, then:
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[squr,scale=0.5] (0) at (0,0.5) {$S$};
+	\draw (0,-0.5) to (0);
+	\draw (0,1.5) to (0);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[squr/.style={scale=0.5,draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5,draw,circle,fill=white] (0) at (0,0) {};
+	\node[scale=0.5,draw,circle,fill=black] (1) at (0,1) {};
+	\node[squr] (2) at (0.5,0.5) {$S$};
+	\node[scale=0.5,draw,circle,fill=white] (3) at (-0.3,0.3) {};
+	\node[scale=0.5,draw,circle,fill=black] (4) at (-0.3,0.7) {};
+	\draw[bend left] (0) to (3);
+	\draw[bend left] (4) to (1);
+	\draw[bend right] (0) to (2);
+	\draw[bend right] (2) to (1);
+	\draw (0,-0.5) to (0);
+	\draw (0,1.5) to (1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[squr/.style={scale=0.5,draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5,draw,circle,fill=white] (0) at (0,0) {};
+	\node[scale=0.5,draw,circle,fill=black] (1) at (0,1) {};
+	\node[squr] (2) at (0.5,0.5) {$S$};
+	\node[scale=0.5,draw,circle,fill=white] (3) at (-0.3,0.2) {};
+	\node[scale=0.5,draw,circle,fill=black] (4) at (-0.3,0.8) {};
+	\node[squr, scale=0.5] (5) at (-0.5,0.5) {$S'$};
+	\draw[bend left] (0) to (3);
+	\draw[bend left] (4) to (1);
+	\draw[bend right] (0) to (2);
+	\draw[bend right] (2) to (1);
+	\draw[bend left] (3) to (5);
+	\draw[bend left] (5) to (4);
+	\draw[bend right=70] (3) to (4);
+	\draw (0,-0.5) to (0);
+	\draw (0,1.5) to (1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[squr/.style={scale=0.5,draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5,draw,circle,fill=white] (0) at (0,0) {};
+	\node[scale=0.5,draw,circle,fill=black] (1) at (0,1) {};
+	\node[squr,scale=0.8] (2) at (-0.5,0.5) {$S'$};
+	\node[scale=0.5,draw,circle,fill=white] (3) at (0.3,0.2) {};
+	\node[scale=0.5,draw,circle,fill=black] (4) at (0.3,0.8) {};
+	\node[squr, scale=0.5] (5) at (0.5,0.5) {$S$};
+	\draw[bend right] (0) to (3);
+	\draw[bend right] (4) to (1);
+	\draw[bend left] (0) to (2);
+	\draw[bend left] (2) to (1);
+	\draw[bend right] (3) to (5);
+	\draw[bend right] (5) to (4);
+	\draw[bend left=70] (3) to (4);
+	\draw (0,-0.5) to (0);
+	\draw (0,1.5) to (1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[squr/.style={scale=0.5,draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5,draw,circle,fill=white] (0) at (0,0) {};
+	\node[scale=0.5,draw,circle,fill=black] (1) at (0,1) {};
+	\node[squr,scale=0.8] (2) at (-0.5,0.5) {$S'$};
+	\node[scale=0.5,draw,circle,fill=white] (3) at (0.3,0.3) {};
+	\node[scale=0.5,draw,circle,fill=black] (4) at (0.3,0.7) {};
+	\draw[bend right] (0) to (3);
+	\draw[bend right] (4) to (1);
+	\draw[bend left] (0) to (2);
+	\draw[bend left] (2) to (1);
+	\draw (0,-0.5) to (0);
+	\draw (0,1.5) to (1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[squr,scale=0.4] (0) at (0,0.5) {$S'$};
+	\draw (0,-0.5) to (0);
+	\draw (0,1.5) to (0);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+	
+\end{proof}
 \begin{definition}[Quasitriangularity]
 	A Hopf algebra $H$ is quasitriangular if there is an invertible element $R \in H \otimes H$ satisfying the following equations:
 	\begin{equation}
@@ -708,8 +977,8 @@ Clearly from the diagram we see that group algebras $\mathbb{C}G$ are hopf algeb
 		\node[scale=0.5, buffer] (1) at (-0.7,-0.4) {$R$};
 		\node[scale=0.5, draw, circle, fill=black] (2) at (-0.3,0.3) {};
 		\node[scale=0.5, draw, circle, fill=black] (3) at (0.3,0.3) {};
-		\draw[bend left] (0) to (2);
-		\draw[bend right] (0) to (3);
+		\draw (0) to (2);
+		\draw (0) to (3);
 		\draw[bend left] (1) to (2);
 		\draw[bend left=10] (1) to (3);
 		\draw (0, -0.8) to (0);
@@ -787,6 +1056,174 @@ Clearly from the diagram we see that group algebras $\mathbb{C}G$ are hopf algeb
 	\end{gathered}
 	\end{equation}
 \end{definition}
+$R$ is called the `universal $R$-matrix', and it can be thought as controlling the non-cocommutativity of the Hopf algebra. Quasitriangular hopf-algebras are sometimes called Quantum groups. We will see that they exhibit topological behaviour, as the following proposition hints to.
+\begin{proposition}
+	The universal $R$-matrix satisfies the Quantum Yang-Baxter equation:
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}
+	\node[scale=0.3, buffer] (0) at (-0.5,0) {$R$};
+	\node[scale=0.3, buffer] (1) at (0.5,0) {$R$};
+	\node[scale=0.3, buffer] (2) at (0,0) {$R$};
+	\node[scale=0.5, draw, circle, fill=black] (3) at (-0.5,0.6) {};
+	\node[scale=0.5, draw, circle, fill=black] (4) at (0,0.6) {};
+	\node[scale=0.5, draw, circle, fill=black] (5) at (0.5,0.6) {};
+	\draw[bend left] (0) to (3);
+	\draw (0) to (4);
+	\draw (1) to (4);
+	\draw[bend right] (1) to (5);
+	\draw (2) to (3);
+	\draw (2) to (5);
+	\draw (3) to (-0.5,1);
+	\draw (4) to (0,1);
+	\draw (5) to (0.5,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \, 
+	\begin{gathered}
+	\begin{tikzpicture}
+	\node[scale=0.3, buffer] (0) at (-0.5,0) {$R$};
+	\node[scale=0.3, buffer] (1) at (0.5,0) {$R$};
+	\node[scale=0.3, buffer] (2) at (0,0) {$R$};
+	\node[scale=0.5, draw, circle, fill=black] (3) at (-0.5,0.6) {};
+	\node[scale=0.5, draw, circle, fill=black] (4) at (0,0.6) {};
+	\node[scale=0.5, draw, circle, fill=black] (5) at (0.5,0.6) {};
+	\draw (1) to (3);
+	\draw[bend left] (0) to (4);
+	\draw[bend right] (1) to (4);
+	\draw (0) to (5);
+	\draw (2) to (3);
+	\draw (2) to (5);
+	\draw (3) to (-0.5,1);
+	\draw (4) to (0,1);
+	\draw (5) to (0.5,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	First using isotopy invariance and the second rule of quaitriangularity we get:
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}
+	\node[scale=0.3, buffer] (0) at (-0.5,0) {$R$};
+	\node[scale=0.3, buffer] (1) at (0.5,0) {$R$};
+	\node[scale=0.3, buffer] (2) at (0,0) {$R$};
+	\node[scale=0.5, draw, circle, fill=black] (3) at (-0.5,0.6) {};
+	\node[scale=0.5, draw, circle, fill=black] (4) at (0,0.6) {};
+	\node[scale=0.5, draw, circle, fill=black] (5) at (0.5,0.6) {};
+	\draw[bend left] (0) to (3);
+	\draw (0) to (4);
+	\draw (1) to (4);
+	\draw[bend right] (1) to (5);
+	\draw (2) to (3);
+	\draw (2) to (5);
+	\draw (3) to (-0.5,1);
+	\draw (4) to (0,1);
+	\draw (5) to (0.5,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}
+	\node[scale=0.3, buffer] (0) at (-0.5,0) {$R$};
+	\node[scale=0.3, buffer] (1) at (0.4,-0.5) {$R$};
+	\node[scale=0.3, buffer] (2) at (0.4,0) {$R$};
+	\node[scale=0.5, draw, circle, fill=black] (3) at (-0.5,0.6) {};
+	\node[scale=0.5, draw, circle, fill=black] (4) at (0,0.6) {};
+	\node[scale=0.5, draw, circle, fill=black] (5) at (0.5,0.6) {};
+	\draw[bend left] (0) to (3);
+	\draw (0) to (4);
+	\draw[bend left] (1) to (4);
+	\draw[bend right] (1) to (5);
+	\draw (2) to (3);
+	\draw (2) to (5);
+	\draw (3) to (-0.5,1);
+	\draw (4) to (0,1);
+	\draw (5) to (0.5,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}
+	\node[scale=0.3, buffer] (0) at (-0.5,0) {$R$};
+	\node[scale=0.4, buffer] (1) at (0.4,-0.5) {$R$};
+	\node[scale=0.5, draw, circle, fill=black] (3) at (-0.5,0.6) {};
+	\node[scale=0.5, draw, circle, fill=black] (4) at (0,0.6) {};
+	\node[scale=0.5, draw, circle, fill=white] (5) at (0.2,-0.2) {};
+	\draw[bend left] (0) to (3);
+	\draw (0) to (4);
+	\draw (1) to (5);
+	\draw[bend right] (5) to (3);
+	\draw[bend left] (5) to (4);
+	\draw (3) to (-0.5,1);
+	\draw (4) to (0,1);
+	\draw (1) to (0.5,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+	Then using the first rule:
+	\begin{equation}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}
+	\node[scale=0.3, buffer] (0) at (0.1,0) {$R$};
+	\node[scale=0.5, buffer] (1) at (0,-0.5) {$R$};
+	\node[scale=0.5, draw, circle, fill=black] (3) at (-0.5,0.6) {};
+	\node[scale=0.5, draw, circle, fill=black] (4) at (0,0.6) {};
+	\node[scale=0.5, draw, circle, fill=white] (5) at (-0.4,0) {};
+	\draw[bend right] (0) to (3);
+	\draw[bend right] (0) to (4);
+	\draw (1) to (5);
+	\draw[bend left] (5) to (3);
+	\draw[bend right] (5) to (4);
+	\draw (3) to (-0.5,1);
+	\draw (4) to (0,1);
+	\draw[bend right] (1) to (0.5,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}
+	\node[scale=0.3, buffer] (0) at (0.6,-0.2) {$R$};
+	\node[scale=0.5, buffer] (1) at (-0.2,-0.5) {$R$};
+	\node[scale=0.3, buffer] (2) at (-0.3,0) {$R$};
+	\node[scale=0.5, draw, circle, fill=black] (3) at (-0.5,0.6) {};
+	\node[scale=0.5, draw, circle, fill=black] (4) at (0,0.7) {};
+	\node[scale=0.5, draw, circle, fill=black] (5) at (0,0.3) {};
+	\draw[bend right] (0) to (3);
+	\draw[bend right=60] (0) to (4);
+	\draw[bend right] (1) to (5);
+	\draw[bend left] (1) to (3);
+	\draw[bend left] (2) to (4);
+	\draw (2) to (5);
+	\draw (3) to (-0.5,1);
+	\draw (4) to (0,1);
+	\draw (5) to (0.5,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \, 
+	\begin{gathered}
+	\begin{tikzpicture}
+	\node[scale=0.3, buffer] (0) at (-0.5,0) {$R$};
+	\node[scale=0.3, buffer] (1) at (0.5,0) {$R$};
+	\node[scale=0.3, buffer] (2) at (0,0) {$R$};
+	\node[scale=0.5, draw, circle, fill=black] (3) at (-0.5,0.6) {};
+	\node[scale=0.5, draw, circle, fill=black] (4) at (0,0.6) {};
+	\node[scale=0.5, draw, circle, fill=black] (5) at (0.5,0.6) {};
+	\draw (1) to (3);
+	\draw[bend left] (0) to (4);
+	\draw[bend right] (1) to (4);
+	\draw (0) to (5);
+	\draw (2) to (3);
+	\draw (2) to (5);
+	\draw (3) to (-0.5,1);
+	\draw (4) to (0,1);
+	\draw (5) to (0.5,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+\end{proof}
 \begin{example}
 	The most trivial example of quasitriangular hopf algebras are the cocommutative ones. It is easy to check that if $H$ is cocommutative, it is quasitriangular with
 	\begin{tikzpicture}[scale=0.3]
@@ -843,7 +1280,7 @@ Suppose $V$ and $W$ are representations of $H$, then we say $f:V \rightarrow W$ 
 Where the black square denotes the action of $H$ on $W$. 
 Now consider the category $Rep(H)$ where objects are representations of $H$ and morphisms intertwiners. It is easy to see that the axioms of a category are satisfied, composition is just lifted from vector spaces. This category has really nice structure induced from the defining axioms of hopf algebras.
 \begin{proposition}
-	$Rep(H)$ is a monoidal category for any bialgebra $H$.
+	$Rep(H)$ is a monoidal category for any bialgebra $H$ with tensor unit the trivial one-dimensional representation $(\mathbb{C}, \counit)$.
 \end{proposition}
 \begin{proof}
 	Given $H$-modules $V$ and $W$ (with white and black actions respectively), $V\otimes W$ has natural $H$-module structure induced by the comultiplication:
@@ -940,7 +1377,56 @@ Now consider the category $Rep(H)$ where objects are representations of $H$ and 
 		\end{tikzpicture}
 		\end{gathered}
 	\end{equation}
-	Using the bialgebra law and the fact that $V$ and $W$ are $H$-modules.	
+	Also:
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node (0) at (0, -0.4) {};
+	\node[whit] (1) at (0, 1.3) {};
+	\node[black] (2) at (1, 1.3) {};
+	\node[scale=0.8,draw,circle, fill=white] (3) at (-0.7, 0.5) {};
+	\node (5) at (1, -0.4) {};
+	\node[scale=0.8,draw,circle, fill=black] (6) at (-0.7, 0) {};
+	\draw (0) to (1);
+	\draw (5) to (2);
+	\draw (1) to (0,2);
+	\draw (2) to (1,2);
+	\draw[bend left] (3) to (1);
+	\draw[bend right] (3) to (2);
+	\draw (6) to (3);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node (0) at (0, -0.4) {};
+	\node[whit] (1) at (0, 1.3) {};
+	\node[black] (2) at (1, 1.3) {};
+	\node[scale=0.8,draw,circle, fill=black] (3) at (-0.9, 0.2) {};
+	\node (5) at (1, -0.4) {};
+	\node[scale=0.8,draw,circle, fill=black] (6) at (-0.3, 0.2) {};
+	\draw (0) to (1);
+	\draw (5) to (2);
+	\draw (1) to (0,2);
+	\draw (2) to (1,2);
+	\draw[bend left] (3) to (1);
+	\draw[bend left=20] (6) to (2);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node (0) at (0, -0.4) {};
+	\node (1) at (1, -0.4) {};
+	\draw (0) to (0,2);
+	\draw (1) to (1,2);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}	
+	Using the bialgebra law and the fact that $V$ and $W$ are $H$-modules. Showing that $(\mathbb{C}, \counit)$ is the tensor unit is a trivial application of the counit law.
 \end{proof}
 \begin{proposition}
 	If $H$ is cocommutative, then $Rep(H)$ is symmetric.
@@ -949,7 +1435,7 @@ Now consider the category $Rep(H)$ where objects are representations of $H$ and 
 	Cocommutativity means:
 	\begin{equation}
 		\begin{gathered}
-		\begin{tikzpicture}[scale=0.7, black/.style={scale=0.5,draw,shape=circle,fill=white}]
+		\begin{tikzpicture}[scale=0.5, black/.style={scale=0.5,draw,shape=circle,fill=white}]
 		\node[black] (0) at (0, 0) {};
 		\draw[bend left] (1,1) to (0);
 		\draw[bend right]  (-1,1) to (0);
@@ -958,7 +1444,7 @@ Now consider the category $Rep(H)$ where objects are representations of $H$ and 
 		\end{gathered}
 		\, = \, 
 		\begin{gathered}
-		\begin{tikzpicture}[scale=0.7, black/.style={scale=0.5,draw,shape=circle,fill=white}]
+		\begin{tikzpicture}[scale=0.5, black/.style={scale=0.5,draw,shape=circle,fill=white}]
 		\node[black] (0) at (0, 0) {};
 		\draw[bend left=90] (0) to (0,0.5);
 		\draw (0,0.5) to (0.7,1);
@@ -1094,7 +1580,7 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 		\end{tikzpicture}
 		\end{gathered}
 	\end{equation}
-	It is easy easy to see these are inverses of each other, we just need to check they are intertwiners.
+	It is easy to see these are inverses of each other, we just need to check they are intertwiners.
 	\begin{equation}
 	\begin{gathered}
 	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
@@ -1232,14 +1718,14 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 	If $H$ is a Hopf algebra, then $Rep(H)$ is left-rigid.
 \end{proposition}
 \begin{proof}
-	For any $H$-module $V$, as $V$ is finite dimensional, it is its own left dual in $Vect$, we can define a dual $H$-action on $V$ using the antipode:
+	For any $H$-module $V$ let $V^\star$ be its dual in $Vect$, we can define a dual $H$-action on $V^\star$ using the antipode:
 	\begin{equation}
 		\begin{gathered}
 		\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
-			regular polygon sides=4,fill=white},]
+			regular polygon sides=4,fill=white}]
 			\node[scale=0.5, whit] (0) at (0,0) {L};
 			\node (1) at (-0.5, -0.9) {$H$};
-			\node (2) at (0, -0.9) {$V$};
+			\node (2) at (0, -0.9) {$V^\star$};
 			\draw (2) to (0);
 			\draw (0) to (0, 0.9);
 			\draw[bend left] (1) to (0);
@@ -1248,10 +1734,10 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 		\, := \,
 		\begin{gathered}
 		\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
-			regular polygon sides=4,fill=white},]
+			regular polygon sides=4,fill=white}]
 		\node[scale=0.5, whit] (0) at (0,0.4) {};
 		\node (1) at (-0.5, -0.9) {$H$};
-		\node (2) at (0, -0.9) {$V$};
+		\node (2) at (0, -0.9) {$V^\star$};
 		\node[scale=0.3, whit, rotate=20] (3) at (-0.3,-0.2) {$S$};
 		\draw (2) to (0);
 		\draw (0) to (0, 0.9);
@@ -1262,6 +1748,70 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 		\end{tikzpicture}
 		\end{gathered}
 	\end{equation}
+	Then the usual cups and caps from $Vect$ are intertwiners.
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, whit] (0) at (0,0.4) {};
+	\node[scale=0.5, draw, circle, fill=white] (1) at (-1.1, -0.8) {};
+	\node[scale=0.3, whit, rotate=25] (3) at (-0.8,-0.4) {$S$};
+	\node[scale=0.5, whit] (5) at (-0.5,0.4) {};
+	\draw (0, -0.9)--(0)--(0, 0.9);
+	\draw (-1.1,-1)--(1)--(3);
+	\draw[bend left] (1) to (5);
+	\draw (-0.5, -0.9)--(5)--(-0.5,0.9);
+	\draw[bend left=10] (3) to (0.4, 0.2);
+	\draw[bend right=80] (0.4, 0.2) to (0.5, 0.7);
+	\draw[bend right=20] (0.5, 0.7) to (0);
+	\draw[bend right=90] (-0.5, -0.9) to (0, -0.9);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, whit] (0) at (-0.5,0.4) {};
+	\node[scale=0.5, draw, circle, fill=white] (1) at (-1.1, -0.8) {};
+	\node[scale=0.3, whit] (2) at (-0.8,-0.4) {$S$};
+	\node[scale=0.5, draw, circle, fill=black] (3) at (-1, 0) {};
+	\draw (-1.1,-1)--(1);
+	\draw [bend left=60] (1) to (3);
+	\draw [bend left] (3) to (0);
+	\draw [bend right] (1) to (2);
+	\draw [bend right] (2) to (3);
+	\draw (0, -0.9)--(0, 0.9);
+	\draw[bend right=90] (-0.5, -0.9) to (0, -0.9);
+	\draw (-0.5, -0.9)--(0)--(-0.5,0.9);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, whit] (0) at (-0.5,0.4) {};
+	\node[scale=0.5, draw, circle, fill=white] (1) at (-1.1, -0.5) {};
+	\node[scale=0.5, draw, circle, fill=black] (3) at (-1, 0) {};
+	\draw (-1.1,-1)--(1);
+	\draw [bend left] (3) to (0);
+	\draw (0, -0.9)--(0, 0.9);
+	\draw[bend right=90] (-0.5, -0.9) to (0, -0.9);
+	\draw (-0.5, -0.9)--(0)--(-0.5,0.9);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (1) at (0, -0.5) {};
+	\draw (0,-1)--(1);
+	\draw (-0.2, 0)--(-0.2, 0.9);
+	\draw[bend right=90] (-0.2, 0) to (0.2, 0);
+	\draw (0.2, 0)--(0.2, 0.9);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+	Using the module laws and the antipode law. A similar derivation holds for the cap.
 \end{proof}
 We can see that the proof relies on the existence of the antipode. If a skew-antipode $\bar{S}$ exists, $Rep(H)$ is right-rigid, where the right dual is defined:
 \begin{equation}
@@ -1269,10 +1819,10 @@ We can see that the proof relies on the existence of the antipode. If a skew-ant
 \begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
 	regular polygon sides=4,fill=white},]
 \node[scale=0.5, whit] (0) at (0,0) {R};
-\node (1) at (-0.5, -0.7) {$H$};
-\node (2) at (0, -0.7) {$V$};
-\draw (0, -0.5) to (0);
-\draw (0) to (0, 0.5);
+\node (1) at (-0.5, -0.9) {$H$};
+\node (2) at (0, -0.9) {$V^\star$};
+\draw (2) to (0);
+\draw (0) to (0, 0.7);
 \draw[bend left] (1) to (0);
 \end{tikzpicture}
 \end{gathered}
@@ -1282,7 +1832,7 @@ We can see that the proof relies on the existence of the antipode. If a skew-ant
 	regular polygon sides=4,fill=white},]
 \node[scale=0.4, whit] (0) at (0,0) {};
 \node (1) at (-0.5, -0.9) {$H$};
-\node (2) at (0, -0.9) {$V$};
+\node (2) at (0, -0.9) {$V^\star$};
 \node[scale=0.5, whit] (3) at (-0.5,0) {$\bar{S}$};
 \draw (2) to (0);
 \draw (0) to (0, 0.7);
@@ -1292,7 +1842,7 @@ We can see that the proof relies on the existence of the antipode. If a skew-ant
 \end{tikzpicture}
 \end{gathered}
 \end{equation}
-In particular, $\bar{S}$ exists when the antipode is an invertible morphism as we can define $\bar{S}=$... If the antipode coincides with the skew antipode then $Rep(H)$ then left and right duals in $Rep(H)$ coincide, we say it is rigid.
+The proof that this choice works is very similar to the one above. In particular, $\bar{S}$ exists when the antipode is an invertible morphism as we can define $\bar{S}=$... If the antipode coincides with the skew antipode then $Rep(H)$ then left and right duals in $Rep(H)$ coincide, we say it is rigid.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%?%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1499,6 +2049,36 @@ Where $\Delta$ is the space of coincidences where at least two of the $N$ partic
 If we fix the starting and endpoint in the configuration space, we can describe the evolution of the wave function for the system  via unitary transformations induced from the element of the fundamental group corresponding to particles word-lines. In mathematical terms this corresponds to a representation of the group of homotopy classes of paths from starting to endpoint on the configuration space. \\
 If space-time has $D=3+1$ dimensions,  the topological class of paths is completely determined by the corresponding permutation of the particles, because there are no knots in $4$ dimensions. Therefore the evolution of the system will be described by a representation of the symmetric group $S_N$. \\
 In $2+1$ dimensions we have more exotic behaviour, as the paths in configuration space can braid. The time evolution of the wave function is then described by a representation of the braid group on $N$ strands, denoted $B_N$.
+It is defined as braids on n-strands satisfying the Yang-Baxter equation.
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6]
+\node (0) at (0.5,0.5) {};
+\node (1) at (-0.1,-0.4) {$A$};
+\node (2) at (1.1,-0.4) {$B$};
+\node (3) at (2.1,-0.4) {$C$};
+\node (4) at (1.5,1.5) {};
+\node (5) at (0.5,2.5) {};
+\draw (0,0)--(0)--(1,1)--(4)--(2,2)--(2,3);
+\draw (1,0)--(0,1)--(0,2)--(5)--(1,3);
+\draw (2,0)--(2,1)--(0,3);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6]
+\node (0) at (1.5,0.5) {};
+\node (1) at (-0.1,-0.4) {$A$};
+\node (2) at (1.1,-0.4) {$B$};
+\node (3) at (2.1,-0.4) {$C$};
+\node (4) at (0.5,1.5) {};
+\node (5) at (1.5,2.5) {};
+\draw (2,0)--(1,1)--(0,2)--(0,3);
+\draw (1,0)--(0)--(2,1)--(2,2)--(1,3);
+\draw (0,0)--(0,1)--(4)--(5)--(2,3);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
 
 \begin{itemize}
     \item Abelian case
@@ -1526,13 +2106,17 @@ We still have one question to ask to the theory, what happens when a particle is
 The braid structure determines the long-distance, topological interactions between particles. We can place braided fusion categories in a spectrum by asking what their symmetric center $Z_2$ is. The two antipodal points of this spectrum are symmetric fusion categories on one side (such that $Z_2(\mathcal{C})=\mathcal{C}$) and modular tensor categories (such that the symmetric centre is trivial, i.e its objects are direct products of the tensor unit $\mathbf{1}$). In the first case, we have only symmetric exchange symmetries so that all particles in the theory are either bosons or fermions. Such categories are degenerate anyon theories with no topological dependencies between particles. Modular tensor categories are really the opposite situation, the theory doesn't contain any bosons or fermions but only non-degenerate anyons, i.e anyons with non-trivial twist factor.
 
 \begin{example}
-Suppose we start from a set of labels and define the fusions to form a group. In fact $1$ is the identity particle type, for any particle type $a$, $a^*$ will be its inverse. We have defined the skeleton of a spherical fusion category, which we obtain by linearising, i.e taking a functor to $Hilb$. We obtain the category $RepG$, in which the allowed linear processes (intertwiners) preserve the fusion rules. Doing the process and then fusing the system with a particle (action of the group) is the same as doing the fusion and then the process. 
-The category $Rep(G)$ for $G$ a group is a spherical fusion category. Linearity and tensor are given by the underlying $Vect$ structure, simple objects are the irreducible representations of $G$, duality is proved by using the group inverse (hopf algebra antipode). For $G=\mathbb{Z}_2$ we have two irreducible representations $\tau_+$ and $\tau_-$, both one dimensional with the obvious fusion rules given by the cyclic group of order $2$.\\
-Let us consider the object $V=\mathbb{C}G$ of $RepG$. (Note $V \simeq \oplus_i V_i$ where $V_i$'s are the simple objects.) Simple objects correspond to particle types so the states of $V$ are superpositions of particle types. In the case where $G$ is abelian there is only one way two particles can fuse to a third, so the fusions are deterministic and the irreducible representations will be one dimensional, each corresponding to an element of the group. If $G$ is not abelian, say $a\otimes b \simeq c_1$ and $b \otimes a \simeq c_2$ then taking the representations category defines a 2-dimensional object $c$ spanned by $\{c_1,c_2\}$ which is an irreducible representation of $G$. So from now on we will call particle types the irreducible representations and particles subtypes the elements of the group $G$.  The action of $G$ permutes the basis vectors, multiplying by an element of $G$, but an element of $G$ is precisely a particle subtype and multiplication is fusion. So acting with $g \in G$ on a state $v \in V$ corresponds to fusing a particle of type $g$ with one that is in a superposition $v$ of particle types. The allowed processes are intertwiners which commute with the action and therefore preserve fusions. If the group $G$ is abelian, then the particles are abelian anyons.
+Suppose we start from a set of labels and define the fusions to form a group. In fact $1$ is the identity particle type, for any particle type $a$, $a^*$ will be its inverse. We have defined the skeleton of a spherical fusion category, which we obtain by linearising, i.e taking a functor to $Hilb$. We obtain the category $Vec_G$, of $G$ graded vector spaces over $\mathbb{C}$.
+The category $Vec_G$ for $G$ a group is a symmetric spherical fusion category. Linearity and tensor are given by the underlying $Vect$ structure, simple objects are indexed by the elements of $G$, duality is proved by using the group inverse. It is easy to chow that $Vec_G \simeq Rep(Func(G))$ where $Func(G)$ is the function algebra on $G$.
+For $G=\mathbb{Z}_2$ we have two irreducible representations $\tau_+$ and $\tau_-$, both one dimensional with the obvious fusion rules given by the cyclic group of order $2$.\\
 \end{example}
+\begin{remark}
+In the case where the theory is described by the category $RepG$.
+Let us consider the object $V=\mathbb{C}G$ of $RepG$. (Note $V \simeq \oplus_i V_i$ where $V_i$'s are the simple objects.) Simple objects correspond to particle types so the states of $V$ are superpositions of particle types. In the case where $G$ is abelian there is only one way two particles can fuse to a third, so the fusions are deterministic and the irreducible representations will be one dimensional, each corresponding to an element of the group. If $G$ is not abelian, say $a\otimes b \simeq c_1$ and $b \otimes a \simeq c_2$ then taking the representations category defines a 2-dimensional object $c$ spanned by $\{c_1,c_2\}$ which is an irreducible representation of $G$. So from now on we will call particle types the irreducible representations and particles subtypes the elements of the group $G$.  The action of $G$ permutes the basis vectors, multiplying by an element of $G$, but an element of $G$ is precisely a particle subtype and multiplication is fusion. So acting with $g \in G$ on a state $v \in V$ corresponds to fusing a particle of type $g$ with one that is in a superposition $v$ of particle types. The allowed processes are intertwiners which commute with the action and therefore preserve fusions. If the group $G$ is abelian, then the particles are abelian anyons.
+\end{remark}
 
-\begin{theorem}
-RepG is a braided fusion category
+\begin{theorem} 
+$Rep(G)$ is a braided fusion category
 \end{theorem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

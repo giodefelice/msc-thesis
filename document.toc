@@ -1,35 +1,35 @@
 \contentsline {section}{\numberline {1}Introduction}{3}
 \contentsline {section}{\numberline {2}Representation Theory}{3}
 \contentsline {subsection}{\numberline {2.1}Monoidal categories}{3}
-\contentsline {subsection}{\numberline {2.2}Hopf symmetry}{7}
-\contentsline {subsubsection}{\numberline {2.2.1}From groups to Hopf algebras}{7}
-\contentsline {subsubsection}{\numberline {2.2.2}Representations of Hopf algberas}{10}
-\contentsline {subsection}{\numberline {2.3}Fusion categories}{13}
-\contentsline {subsubsection}{\numberline {2.3.1}Fusion categories via string diagrams}{13}
-\contentsline {subsubsection}{\numberline {2.3.2}Graph invariants from spherical fusion categories}{14}
-\contentsline {subsection}{\numberline {2.4}Braided Fusion categories}{14}
-\contentsline {subsubsection}{\numberline {2.4.1}Braiding and twisting}{15}
-\contentsline {subsubsection}{\numberline {2.4.2}Modular categories}{15}
-\contentsline {subsubsection}{\numberline {2.4.3}Knot invariants}{16}
-\contentsline {section}{\numberline {3}The Physics of Anyons}{16}
-\contentsline {subsection}{\numberline {3.1}Phases of Matter}{16}
-\contentsline {subsubsection}{\numberline {3.1.1}Many-body Quantum Systems}{16}
-\contentsline {subsubsection}{\numberline {3.1.2}Topological phases of matter}{18}
-\contentsline {subsection}{\numberline {3.2}Algebraic theory of Anyons}{19}
-\contentsline {subsection}{\numberline {3.3}Quantum Symmetry}{20}
-\contentsline {subsubsection}{\numberline {3.3.1}The Quantum Double}{21}
-\contentsline {subsubsection}{\numberline {3.3.2}Drinfeld center}{22}
-\contentsline {subsubsection}{\numberline {3.3.3}Kitaev's lattice construction}{22}
-\contentsline {section}{\numberline {4}Quantum Computation}{23}
-\contentsline {subsection}{\numberline {4.1}Permutational Quantum Computing}{23}
-\contentsline {subsubsection}{\numberline {4.1.1}Jordan's model}{23}
-\contentsline {subsubsection}{\numberline {4.1.2}Categorical PQC}{23}
-\contentsline {subsubsection}{\numberline {4.1.3}Spin Network Quantum systems}{24}
-\contentsline {subsection}{\numberline {4.2}Topological Quantum Computation}{24}
-\contentsline {subsubsection}{\numberline {4.2.1}The Toplogical Model}{24}
-\contentsline {subsubsection}{\numberline {4.2.2}Anyon Vacuum on a Torus and Quantum Memory}{24}
-\contentsline {subsubsection}{\numberline {4.2.3}Approximation of Dijkgraaf-Witten link invariants}{24}
-\contentsline {section}{\numberline {5}A braided programming language}{24}
-\contentsline {subsection}{\numberline {5.1}Non-commutative linear logic}{24}
-\contentsline {subsection}{\numberline {5.2}Adjunction}{24}
-\contentsline {subsection}{\numberline {5.3}Quantum Semantics}{26}
+\contentsline {subsection}{\numberline {2.2}Hopf symmetry}{9}
+\contentsline {subsubsection}{\numberline {2.2.1}From groups to Hopf algebras}{9}
+\contentsline {subsubsection}{\numberline {2.2.2}Representations of Hopf algberas}{12}
+\contentsline {subsection}{\numberline {2.3}Fusion categories}{16}
+\contentsline {subsubsection}{\numberline {2.3.1}Fusion categories via string diagrams}{16}
+\contentsline {subsubsection}{\numberline {2.3.2}Graph invariants from spherical fusion categories}{17}
+\contentsline {subsection}{\numberline {2.4}Braided Fusion categories}{17}
+\contentsline {subsubsection}{\numberline {2.4.1}Braiding and twisting}{17}
+\contentsline {subsubsection}{\numberline {2.4.2}Modular categories}{18}
+\contentsline {subsubsection}{\numberline {2.4.3}Knot invariants}{19}
+\contentsline {section}{\numberline {3}The Physics of Anyons}{19}
+\contentsline {subsection}{\numberline {3.1}Phases of Matter}{19}
+\contentsline {subsubsection}{\numberline {3.1.1}Many-body Quantum Systems}{19}
+\contentsline {subsubsection}{\numberline {3.1.2}Topological phases of matter}{20}
+\contentsline {subsection}{\numberline {3.2}Algebraic theory of Anyons}{22}
+\contentsline {subsection}{\numberline {3.3}Quantum Symmetry}{23}
+\contentsline {subsubsection}{\numberline {3.3.1}The Quantum Double}{24}
+\contentsline {subsubsection}{\numberline {3.3.2}Drinfeld center}{25}
+\contentsline {subsubsection}{\numberline {3.3.3}Kitaev's lattice construction}{25}
+\contentsline {section}{\numberline {4}Quantum Computation}{26}
+\contentsline {subsection}{\numberline {4.1}Permutational Quantum Computing}{26}
+\contentsline {subsubsection}{\numberline {4.1.1}Jordan's model}{26}
+\contentsline {subsubsection}{\numberline {4.1.2}Categorical PQC}{26}
+\contentsline {subsubsection}{\numberline {4.1.3}Spin Network Quantum systems}{27}
+\contentsline {subsection}{\numberline {4.2}Topological Quantum Computation}{27}
+\contentsline {subsubsection}{\numberline {4.2.1}The Toplogical Model}{27}
+\contentsline {subsubsection}{\numberline {4.2.2}Anyon Vacuum on a Torus and Quantum Memory}{27}
+\contentsline {subsubsection}{\numberline {4.2.3}Approximation of Dijkgraaf-Witten link invariants}{27}
+\contentsline {section}{\numberline {5}A braided programming language}{27}
+\contentsline {subsection}{\numberline {5.1}Non-commutative linear logic}{27}
+\contentsline {subsection}{\numberline {5.2}Adjunction}{27}
+\contentsline {subsection}{\numberline {5.3}Quantum Semantics}{29}
