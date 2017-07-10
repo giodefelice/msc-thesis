@@ -1,34 +1,25 @@
-\contentsline {section}{\numberline {1}Introduction}{3}
-\contentsline {section}{\numberline {2}Representation Theory}{3}
-\contentsline {subsection}{\numberline {2.1}Monoidal categories}{3}
-\contentsline {subsection}{\numberline {2.2}Hopf symmetry}{9}
-\contentsline {subsubsection}{\numberline {2.2.1}From groups to Hopf algebras}{9}
-\contentsline {subsubsection}{\numberline {2.2.2}Representations of Hopf algberas}{12}
-\contentsline {subsection}{\numberline {2.3}Fusion categories}{16}
-\contentsline {subsubsection}{\numberline {2.3.1}Fusion categories via string diagrams}{16}
-\contentsline {subsubsection}{\numberline {2.3.2}Graph invariants from spherical fusion categories}{17}
-\contentsline {subsection}{\numberline {2.4}Braided Fusion categories}{17}
-\contentsline {subsubsection}{\numberline {2.4.1}Braiding and twisting}{17}
-\contentsline {subsubsection}{\numberline {2.4.2}Modular categories}{18}
-\contentsline {subsubsection}{\numberline {2.4.3}Knot invariants}{19}
-\contentsline {section}{\numberline {3}The Physics of Anyons}{19}
-\contentsline {subsection}{\numberline {3.1}Phases of Matter}{19}
-\contentsline {subsubsection}{\numberline {3.1.1}Many-body Quantum Systems}{19}
-\contentsline {subsubsection}{\numberline {3.1.2}Topological phases of matter}{20}
-\contentsline {subsection}{\numberline {3.2}Algebraic theory of Anyons}{22}
-\contentsline {subsection}{\numberline {3.3}Quantum Symmetry}{23}
-\contentsline {subsubsection}{\numberline {3.3.1}The Quantum Double}{24}
-\contentsline {subsubsection}{\numberline {3.3.2}Drinfeld center}{25}
-\contentsline {subsubsection}{\numberline {3.3.3}Kitaev's lattice construction}{25}
-\contentsline {section}{\numberline {4}Quantum Computation}{26}
-\contentsline {subsection}{\numberline {4.1}Permutational Quantum Computing}{26}
-\contentsline {subsubsection}{\numberline {4.1.1}Jordan's model}{26}
-\contentsline {subsubsection}{\numberline {4.1.2}Categorical PQC}{26}
-\contentsline {subsubsection}{\numberline {4.1.3}Spin Network Quantum systems}{27}
-\contentsline {subsection}{\numberline {4.2}Topological Quantum Computation}{27}
-\contentsline {subsubsection}{\numberline {4.2.1}The Toplogical Model}{27}
-\contentsline {subsubsection}{\numberline {4.2.2}Anyon Vacuum on a Torus and Quantum Memory}{27}
-\contentsline {subsubsection}{\numberline {4.2.3}Approximation of Dijkgraaf-Witten link invariants}{27}
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}Diagrams and Hof Algebras}{2}
+\contentsline {subsection}{\numberline {2.1}Monoidal categories}{2}
+\contentsline {subsection}{\numberline {2.2}Hopf Algebras}{8}
+\contentsline {subsection}{\numberline {2.3}Representations of Hopf algberas}{13}
+\contentsline {section}{\numberline {3}The Algebra of Anyons}{16}
+\contentsline {subsection}{\numberline {3.1}Braided Fusion Categories}{16}
+\contentsline {subsubsection}{\numberline {3.1.1}Fusion Categories}{16}
+\contentsline {subsubsection}{\numberline {3.1.2}Braiding and twisting}{17}
+\contentsline {subsubsection}{\numberline {3.1.3}Modular categories}{18}
+\contentsline {subsection}{\numberline {3.2}Algebraic theory of Anyons}{19}
+\contentsline {subsection}{\numberline {3.3}Quantum Symmetry}{20}
+\contentsline {subsubsection}{\numberline {3.3.1}The Quantum Double}{20}
+\contentsline {subsubsection}{\numberline {3.3.2}Drinfeld center}{22}
+\contentsline {subsubsection}{\numberline {3.3.3}Kitaev's lattice construction}{22}
+\contentsline {section}{\numberline {4}Quantum Computation}{23}
+\contentsline {subsection}{\numberline {4.1}Phases of Matter}{23}
+\contentsline {subsubsection}{\numberline {4.1.1}Many-body Quantum Systems}{23}
+\contentsline {subsubsection}{\numberline {4.1.2}Topological phases of matter}{24}
+\contentsline {subsection}{\numberline {4.2}Permutational Quantum Computing}{26}
+\contentsline {subsection}{\numberline {4.3}Topological Quantum Computation}{27}
+\contentsline {subsection}{\numberline {4.4}Anyon Vacuum on a Torus and Quantum Memory}{27}
 \contentsline {section}{\numberline {5}A braided programming language}{27}
 \contentsline {subsection}{\numberline {5.1}Non-commutative linear logic}{27}
 \contentsline {subsection}{\numberline {5.2}Adjunction}{27}

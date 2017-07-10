@@ -27,6 +27,7 @@
 \newenvironment{remark}[1][Remark]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
 
+\newcommand{\cat}{\mathcal{C}}
 \newcommand{\Tau}{\mathrm{T}}
 \newcommand{\ham}{\mathcal{H}}
 
@@ -312,6 +313,20 @@
 	\draw (0,1.5) to (1);
 	\end{tikzpicture}
 	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, squr/.style={scale=0.5,draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5,draw,circle,fill=white] (0) at (0,0) {};
+	\node[scale=0.5,draw,circle,fill=black] (1) at (0,1) {};
+	\node[squr] (2) at (-0.5,0.5) {$S$};
+	\draw[bend right=80] (0) to (1);
+	\draw[bend left] (0) to (2);
+	\draw[bend left] (2) to (1);
+	\draw (0,-0.5) to (0);
+	\draw (0,1.5) to (1);
+	\end{tikzpicture}
+	\end{gathered}
 	\end{equation}
 }
 \newcommand{\modulelaw}{
@@ -500,16 +515,15 @@ Categorically: from symmetric fusion categories to modular categories\\
 Physically: fermions/bosons to anyons, local symmetries to topological symmetries, 3D to 2D\\
 Computation: from PQC to TQC, complexity theory\\
 Logic: mirror the relationship, all statements about RepDG are statements in RepG, a modality, programming language
-\begin{definition}
-categories, functors, natural transformations
-\end{definition}
-\section{Representation Theory}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Diagrams and Hof Algebras}
 \subsection{Monoidal categories}
 In this section, we set in place the basic definitions and diagrammatic  intuitions which we will use throughout the thesis. The standard reference about basic category theory results is \cite{MacLane71}. A more detailed and up to date survey on monoidal categories can be found in \cite{Etingof15}. For an introduction to diagrammatic reasoning in monoidal categories consider the first two chapters of \cite{Coecke17}. Many of the results in this section and their relationship to quantum mechanics can be found in \cite{Vicary12}. \\
 %%CATEGORIES:
-Recall that a category is a collection of objects and arrows such that arrows compose in the sense if $f$ and $g$ are arrows as below then there is an arrow $g \circ f$ as follows: 	
+Recall that a category $\cat$ is a collection of objects $obj(\cat)$ and morphisms (or arrows) $arr(\cat)$ such that arrows compose in the sense that if $f$ and $g$ are arrows as below then there is an arrow $g \circ f$ such that the following diagram commutes: 	
 \begin{center}
 	\begin{tikzpicture}
 	\node (0) at (-1, 0) {$A$};
@@ -523,7 +537,7 @@ Recall that a category is a collection of objects and arrows such that arrows co
 	\draw [->] (0) to (2);
 	\end{tikzpicture}
 \end{center}
-The above diagram is a statement about categories, and it has exactly the same information to its dual diagram. Where objects are one-dimensional wires and morphisms are one dimensional cells:
+The rigorous definition can be found anywhere. The commutativity of the above diagram is a statement about $\cat$, and it has exactly the same information to its dual diagram. Where objects are one-dimensional wires and morphisms are one dimensional cells:
 \begin{center}
 	\begin{tikzpicture}[scale=0.7]
 	\node (0) at (-1, -1.4) {$A$};
@@ -542,24 +556,57 @@ The above diagram is a statement about categories, and it has exactly the same i
 	\draw [->] (7) to (4);
 	\end{tikzpicture}
 \end{center}
-Category theory is a really good language for talking about equivalences and relationships between structures.
-Given two categories $\mathcal{C}$ and $\mathcal{D}$ a functor $F: \mathcal{C} \rightarrow \mathcal{D}$ is a transformation taking objects of $\mathcal{C}$ to objects of $\mathcal{D}$ and arrows to arrows preserving the inner structure of the category (i.e identity arrows and composition).
+We will mainly use this second diagrammatic language in this work. When $\cat$ is just a category we only have one way of composing morphisms and the language is one dimensional.
+\begin{example}
+	Examples of categories are: $Sets$ of sets and functions, $Rel$ of sets and relations, $Vect$ of vector spaces and linear maps, any poset etc...
+\end{example}
+Category theory is a really good language for talking about equivalences and relationships between structures. This is achieved with the following tools.
 \begin{definition}[Functor]
 	A functor $F:\mathcal{C} \rightarrow \mathcal{D}$ is a mapping that
 	\begin{itemize}
 		\item associates an object $F(X)$ of $\mathcal{D}$ to each object $X$ of $\mathcal{C}$.
 		\item associates to each morphism $f:X \rightarrow Y$ a morphism $F(f): F(X) \rightarrow F(Y)$ such that $F(id_X)=id_Y$ and $F(g\circ f)= F(g)\circ F(f)$ for all morphisms $f:X \rightarrow Y$ and $g:Y \rightarrow Z$.
 	\end{itemize}
-\end{definition}For instance there is a functor $Q: Sets \rightarrow Hilb$ called `1st quantization' and taking a set to the free hilbert space generated by that set. It is easy to see that $Q$ also preserves the monoidal structure as well as the symmetry morphisms, we say $Q$ is a symmetric monoidal functor.
+\end{definition}
+For instance there is a functor $Q: Sets \rightarrow Hilb$ called `1st quantization' and taking a set to the free hilbert space generated by that set.
+\begin{definition}[Natural Transformation]
+
+\end{definition}
 %%%MONOIDAL CATEGORIES:
-Recall that a monoid is a triple $(X, \times, 1)$ where $X$ is a set, $1 \in X$ and $\times$ is an associative and unital multiplication on $X$. The notion of a monoidal category is the categorification of a monoid. Elements of the set are replaced by objects in a category $\mathcal{C}$, multiplication by a bifunctor $\otimes: \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$ and the equalities in the unit and association axioms are replaced by natural isomorphisms. In order for this new structure to be well-behaved we will also need to impose compatibility conditions.
-We obtain the following definition:
+Recall that a monoid is a triple $(X, \times, 1)$ where $X$ is a set, $1 \in X$ and $\times$ is an associative and unital multiplication on $X$. The notion of a monoidal category is the categorification of a monoid. Elements of the set are replaced by objects in a category $\mathcal{C}$, multiplication by a bifunctor $\otimes: \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$ and the equalities in the unit and association axioms are replaced by natural isomorphisms. In order for this new structure to be well-behaved we will also need to impose compatibility conditions. We obtain the following definition:
 \begin{definition}[Monoidal category]
-A monoidal category is a quintuple $(\mathcal{C}, \otimes, 1, a, i)$ where $\mathcal{C}$ is a category, $\otimes: \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$ is a bifunctor called tensor product.
-$$ a : -\otimes(- \otimes -) \xrightarrow{\sim} (-\otimes -) \otimes -$$ is a natural isomorphism. $1$ is an object of $\mathcal{C}$ subject to the following axioms:
+A monoidal category is a category $\mathcal{C}$ equipped with a bifunctor $\otimes: \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$ called tensor product, an object $1$ called unit object, a natural isomorphism
+$$ a : -\otimes(- \otimes -) \xrightarrow{\sim} (-\otimes -) \otimes -$$ called associator, a natural isomorphism 
+$$\lambda: 1 \otimes (-) \rightarrow (-)$$ called left unitor and a natural isomorphism
+$$ \rho: (-) \otimes 1 \rightarrow (-)$$
+called right unitor. Subject to the following coherence conditions holding for all objects $a,b,c,d$ in $\mathcal{C}$:
 \begin{enumerate}
-    \item Pentagon axiom: the following diagram commutes for all objects $W,X,Y,Z$ in $\mathcal{C}$.
-    \item Unit axiom: the left and right unitors are equivalences $\mathcal{C} \rightarrow \mathcal{C}$.
+    \item Pentagon axiom: the following diagram commutes
+    \begin{center}
+    	\begin{tikzpicture}[scale=2]
+    	\node (0) at (0,0) {$(a\otimes (b \otimes c)) \otimes d$};
+    	\node (1) at (0,1) {$((a\otimes b) \otimes c) \otimes d$};
+    	\node (2) at (1,1.5) {$(a\otimes b) \otimes (c \otimes d)$};
+    	\node (3) at (2,1) {$a\otimes (b \otimes (c \otimes d))$};
+    	\node (4) at (2,0) {$a\otimes ((b \otimes c) \otimes d)$};
+    	\draw [->] (1)--(2) node[midway,left] {$\alpha_{a \otimes b,c,d}$};
+    	\draw [->] (2)--(3) node[midway,right] {$\alpha_{a, b,c \otimes d}$};
+    	\draw [->] (1)--(0) node[midway,left] {$\alpha_{a, b,c} \otimes id_d$};
+    	\draw [->] (0)--(4) node[midway,below] {$\alpha_{a,b \otimes c,d}$};
+    	\draw [->] (4)--(3) node[midway,right] {$id_a \otimes \alpha_{b,c,d}$};
+    	\end{tikzpicture}
+    \end{center}
+    \item Triangle identity: the following diagram commutes
+    \begin{center}
+    	\begin{tikzpicture}[scale=2]
+    	\node (0) at (0,0) {$(a\otimes 1) \otimes b$};
+    	\node (1) at (2,0) {$(a\otimes 1) \otimes b$};
+    	\node (2) at (1,-1) {$a\otimes b$};
+    	\draw [->] (0)--(1) node[midway,above] {$\alpha_{a ,1,b}$};
+    	\draw [->] (1)--(2) node[midway,right] {$id_a \otimes \lambda_b$};
+    	\draw [->] (0)--(2) node[midway,left] {$\rho_a \otimes id_b$};
+    	\end{tikzpicture}
+    \end{center}
 \end{enumerate}
 \end{definition}
 Let us give three important examples of monoidal categories.
@@ -568,8 +615,7 @@ The category $Sets$ of sets and functions is monoidal with the cartesian product
 The category $Vect_k$ of vector spaces over a field $k$ is monoidal with the usual tensor product $\otimes$ and the one dimensional vector space $k$ as unit object.\\
 The category $Rel$ of sets and relations is monoidal with the cartesian product $\times$ and the singleton as unit object.
 \end{example}
-
-The more structure comes with a category the more complicated diagrams we can draw. For the moment our diagrams can only be one dimensional because we have only one notion of composition. Monoidal categories are categories $\mathcal{C}$ equipped with a bifunctor $\otimes : \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$, a unit object $I$ and natural unitors and associators satisfying certain coherence conditions. The rigorous definition can be found in [maclane]. Monoidal categories have a two-dimensional diagrammatic language. The presence of unitors and associators and the conditions they satisfy make sure that this graphical language is well behaved. We write the tensor of two morphisms $f \otimes g : A \otimes B \rightarrow C \otimes D$ simply putting them side by side:
+The more structure comes with a category the more complicated diagrams we can draw. Monoidal categories have a two-dimensional diagrammatic language. The presence of unitors and associators and the conditions they satisfy make sure that this graphical language is well behaved. We write the tensor of two morphisms $f \otimes g : A \otimes B \rightarrow C \otimes D$ simply putting them side by side:
 \begin{center}
 	\begin{tikzpicture}[scale=0.7]
 	\node (0) at (0, -1.2) {$A$};
@@ -623,12 +669,12 @@ The above is the classical introduction to monoidal categories as a category wit
 		\end{tikzpicture}
 	\end{center}
 \end{itemize}
-Taking the Poincaré dual of the above diagrams we obtain the diagrammatic language. Monoidal categories are 2-categories with only one 0-object called $1$. We can think of it as the underlying plane or the empty diagram, wires carry systems (1-arrows), boxes are morphisms (2-arrows). We recover the given definition of monoidal category by calling 1-arrow objects, and 2-arrows morphisms. The unit object $1$ is then the identity 1-arrow $1 \rightarrow 1$ which is simply denoted $1$. 
+Taking the dual of the above diagrams we obtain the diagrammatic language. Monoidal categories are 2-categories with only one 0-object called $1$. We can think of it as the underlying plane or the empty diagram, wires carry systems (1-arrows), boxes are morphisms (2-arrows). We recover the given definition of monoidal category by calling 1-arrow objects, and 2-arrows morphisms. The unit object $1$ is then the identity 1-arrow $1 \rightarrow 1$ which is simply denoted $1$. 
 \begin{definition}[States and costates]
 Given a system $A$, a state of is a morphism $1 \rightarrow A$. A costate (or effect) of $A$ is a morphism $A \rightarrow 1$. We denote them as folows in the diagrammatic language.
 \end{definition}
 \begin{example}
-The category $Sets$ of sets and functions has monoidal structure given by the Cartesian product of sets. The product $A \times B$ of sets $A$ and $B$, satisfies the universal properties of a categorical product, in the sense that we have projections $p_1$ and $p_2$ such that if $f$ and $g$ are maps from some set $C$ there is a unique function $h$ making the following diagram commute:
+The cartesian product in $Sets$ $A \times B$ of sets $A$ and $B$, satisfies the universal properties of a categorical product, in the sense that we have projections $p_1$ and $p_2$ such that if $f$ and $g$ are maps from some set $C$ there is a unique function $h$ making the following diagram commute:
 \begin{center}
 	\begin{tikzpicture}
 	\node (0) at (-1, 0) {$A$};
@@ -822,11 +868,10 @@ The semantic categories we will consider the most are $Sets$ and $Hilb$. One imp
 \begin{definition}
 	Pivotal, spherical...
 \end{definition}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Hopf symmetry}
-
-\subsubsection{From groups to Hopf algebras}
+\subsection{Hopf Algebras}
 Now that we have set in place a diagrammatic machinery based on monoidal categories, let us make use of it. In this section we will meet some mathematical structures which have been used by mathematicians to describe symmetry. The notion of Hopf algebras is a powerful generalization of that of a group. Since their discovery in the 1940s, Hopf algebras have been used in various fields of pure mathematics (such as number theory, algebraic geometry, and representation theory) and have found applications in Quantum mechanics. We will talk about some of these applications in this thesis.
 \begin{definition}[Monoid]
 	$\Delta$ is a $PRO$ generated by morphisms (\mult, \unit) satisfying associativity: \associativity
@@ -838,34 +883,48 @@ Models of $\Delta$ in monoidal categories are called monoids and they are very w
 \end{definition}
 Models of these are comonoids, the most common example is the copy map on any set with `delete' as counit.
 Monoids and comonoids are simple structures that we can stick together to form more complicated ones. Bialgebras arise from one type of interaction of a monoid and comonoid.
-\begin{definition}[Bialgebra]
+\begin{definition}
 	$Bialg$ is a $PROP$ generated by (\mult, \unit, \comult, \counit), where \mult and \unit form a monoid, \comult and \counit a comonoid and the morphisms additionally satisfy the following laws:
 	\bialgebralaw
 	\copylaw
 	\cocopylaw
 \end{definition}
-We are now ready to introduce one of the main topics of this thesis.
+Models of $Bialg$ in $Vect$ are bialgebras. We leave examples for later as we are now ready to introduce one of the main topics of this thesis.
 \begin{definition}[Hopf Algebra]
 	$Hopf$ is a $PROP$ generated by (\mult , \unit , \comult , \counit , \antipode). Where (\mult, \unit, \comult, \counit) is a bialgebra and the antipode $S$ satisfies the Hopf law:
 	\hopflaw
 \end{definition}
-In the following we will argue that $Hopf$ is a good syntax to talk about symmetry. Let us start by  instantiating $G: Hopf \rightarrow Sets$. This corresponds to choosing a set $G$, with a binary function $G \times G \rightarrow G$ (or multiplication) with a unit. Using the counit rule it is easy to see that the comultiplication in $Sets$ must be the copy map $g \mapsto (g,g)$ so that the antipode is the morphism $g \mapsto g^{-1}$ and $G$ forms a group. Groups have been used by mathematicians and physicists to describe symmetry. \\
+In the following we will argue that $Hopf$ is a good syntax to talk about symmetry. Let us start by  instantiating $G: Hopf \rightarrow Sets$. This corresponds to choosing a set $G$, with a binary function $G \times G \rightarrow G$ (or multiplication) with a unit. Using the counit rule it is easy to see that the comultiplication in $Sets$ must be the copy map $g \mapsto (g,g)$ so that the antipode is the morphism $g \mapsto g^{-1}$ and $G$ forms a group. Groups have been used by mathematicians and physicists to describe symmetry.
+\begin{example}[Finite groups]
+	Here are some of the finite groups we will meet during this thesis:
+	\begin{itemize}
+		\item $\mathbb{Z}_n$ the cyclic group with $n$ elements.
+		\item $S_n$ the symmetric group, can be seen as the group of permutations of a set with $n$ elements, has order $n!$. $S_3$ is the smallest non-abelian group up to isomorphism.  
+	\end{itemize}
+\end{example}
+\begin{example}[Groups of matrices]
+	Here we will fix some notation on the infinite groups of matrices we will meet. All matrices we will consider are over the complex numbers. $GL(n)$ is the group of invertible $n$ by $n$ complex matrices. $U(n)$ is the group of unitary $n \times n$ matrices (i.e such that $U^{\dagger}U = UU^\dagger = I$).  
+\end{example}
 If take a model of $H:Hopf \rightarrow Hilb$ we obtain what is known as a Hopf Algebra.
+\begin{example}[Group algebras]
+	If $G$ is a group with unit $e$, the group algebra $\mathbb{C}G$ (of dimension $|G|$) is a hopf algebra with multiplication linearly generated by $\ket{g}\otimes \ket{h} \rightarrow \ket{gh}$, unit $\ket{e}$, comultplication generated by $\ket{g} \rightarrow \ket{g} \otimes \ket{g}$ and counit $\sum_g \bra{g}$.
+\end{example}
+The previous example gives the usual definition of a group algebra which is really just the composition $Q \circ G$ (as shown in the diagram) where $Q$ is the 1st quantization functor. It is easy to see that $Q$ preserves the monoidal structure as well as the symmetry morphisms (we say $Q$ is a symmetric monoidal functor) so that the composition is also symmetric monoidal and $Q \circ G$ is a model of $Hopf$.
 \begin{center}
 	\begin{tikzpicture}
 	\node (0) at (-1, 0) {$Sets$};
 	\node (1) at (1, 0) {$Hilb$};
 	\node (2) at (0, 1) {$Hopf$};
 	\node (5) at (-0.8, 0.6) {$G$};
-	\node (6) at (0.8, 0.6) {$H$};
+	\node (6) at (0.8, 0.6) {$\mathbb{C}G$};
 	\node (7) at (0, -0.3) {$Q$};
 	\draw [->] (2) to (0);
 	\draw [->] (2) to (1);
 	\draw [->] (0) to (1);
 	\end{tikzpicture}
 \end{center}
-Clearly from the diagram we see that group algebras $\mathbb{C}G$ are hopf algebras by post-composing $G$ with $Q$. In this case the comultiplication in $Hilb$ is the linearisation of the copy map (the copy map on some basis extended linearly to the whole Hilbert space) which is co-commutative. For a general $H:Hopf \rightarrow Hilb$ this doesn't have to be the case. Hopf algebras provide a broader framework to talk about symmetry, as we can have non co-commutative Hopf algebras. Quantization of the notion of symmetry, symmetries of quantum systems. Physically we will see that Hopf algebras allow to talk about local symmetries and exchange statistics on the same footing. In particular if the Hopf algebra is not cocommutative the exchange statistics can be highly non-trivial, in which case they will describe the symmetries of anyons.
-We are mainly interested in the study of Hopf Algebras (i.e models of $Hopf$ in $Vect$). The first simple but important result is the following.
+In this case the comultiplication in $Hilb$ is the linearisation of the copy map (the copy map on some basis extended linearly to the whole Hilbert space) which is co-commutative. For a general $H:Hopf \rightarrow Hilb$ this doesn't have to be the case. Hopf algebras provide a broader framework to talk about symmetry, as we can have non co-commutative Hopf algebras. Quantization of the notion of symmetry, symmetries of quantum systems. Physically we will see that Hopf algebras allow to talk about local symmetries and exchange statistics on the same footing. In particular if the Hopf algebra is not cocommutative the exchange statistics can be highly non-trivial, in which case they will describe the symmetries of anyons.
+We are mainly interested in the study of Hopf Algebras (i.e models of $Hopf$ in $Vect$). The following two propositions are simple but important results about the antipode of a hopf algebra.
 \begin{proposition}
 	The antipode of a Hopf algebra is unique. It follows that being a Hopf algebra is a property of bialgebras. 
 \end{proposition}
@@ -966,8 +1025,266 @@ We are mainly interested in the study of Hopf Algebras (i.e models of $Hopf$ in 
 	\end{tikzpicture}
 	\end{gathered}
 	\end{equation}
-	
 \end{proof}
+
+\begin{proposition}
+	The antipode is an anti-(co)algebra homomorphism.
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.7, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+		\node[scale=0.5, draw, circle, fill=white] (0) at (0,0) {};
+		\node[scale=0.5, squr] (1) at (0, -0.6) {$S$};
+		\draw (1) to (0);
+		\draw (0,-1) to (1);
+		\draw[bend left] (0) to (-0.5,1);
+		\draw[bend right] (0) to (0.5,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.7, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,-0.3) {};
+	\node[scale=0.5, squr] (1) at (-0.5, 0.6) {$S$};
+	\node[scale=0.5, squr] (2) at (0.5, 0.6) {$S$};
+	\draw[bend left=70] (0) to (0,0.1);
+	\draw[bend right=70] (0) to (0,0.1);
+	\draw (0,-1) to (0);
+	\draw (1) to (-0.5,1);
+	\draw (2) to (0.5,1);
+	\draw[bend left] (0,0.1) to (1);
+	\draw[bend right] (0,0.1) to (2);
+	\end{tikzpicture}
+	\end{gathered}
+	\quad ; \quad
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.7, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=black] (0) at (0,0) {};
+	\node[scale=0.5, squr] (1) at (0, 0.6) {$S$};
+	\draw (1) to (0);
+	\draw (0,1) to (1);
+	\draw[bend right] (0) to (-0.5,-1);
+	\draw[bend left] (0) to (0.5,-1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.7, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=black] (0) at (0,0.3) {};
+	\node[scale=0.5, squr] (1) at (-0.5, -0.6) {$S$};
+	\node[scale=0.5, squr] (2) at (0.5, -0.6) {$S$};
+	\draw[bend left=70] (0) to (0,-0.1);
+	\draw[bend right=70] (0) to (0,-0.1);
+	\draw (0,1) to (0);
+	\draw (1) to (-0.5,-1);
+	\draw (2) to (0.5,-1);
+	\draw[bend right] (0,-0.1) to (1);
+	\draw[bend left] (0,-0.1) to (2);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	First note that:
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,-1) {};
+	\node[scale=0.5, draw, circle, fill=white] (1) at (-1,0) {};
+	\node[scale=0.5, draw, circle, fill=white] (2) at (1,0) {};
+	\node[scale=0.5, draw, circle, fill=black] (3) at (-1,0.5) {};
+	\node[scale=0.5, draw, circle, fill=black] (4) at (1,0.5) {};
+	\node[scale=0.5, squr] (5) at (-0.7, -0.6) {$S$};
+	\draw (0,-1.3) to (0);
+	\draw[bend left] (0) to (5);
+	\draw[bend right] (0) to (2);
+	\draw (5)--(1)--(3)--(-1,1);
+	\draw (2)--(4)--(1,1);
+	\draw (1) to (4);
+	\draw (2) to (3);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,-1) {};
+	\node[scale=0.5, draw, circle, fill=white] (1) at (0,0.5) {};
+	\node[scale=0.5, draw, circle, fill=black] (2) at (0,0) {};
+	\node[scale=0.5, squr] (S) at (-0.5, -0.5) {$S$};
+	\draw (0,-1.3) to (0);
+	\draw[bend left] (0) to (S);
+	\draw[bend left] (S) to (2);
+	\draw[bend right=70] (0) to (2);
+	\draw (2) to (1);
+	\draw[bend left] (1) to (-0.5,1);
+	\draw[bend right] (1) to (0.5,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,-0.6) {};
+	\node[scale=0.5, draw, circle, fill=white] (1) at (0,0.5) {};
+	\node[scale=0.5, draw, circle, fill=black] (2) at (0,0) {};
+	\draw (0,-1.3) to (0);
+	\draw (2) to (1);
+	\draw[bend right] (1) to (0.5,1);
+	\draw[bend left] (1) to (-0.5,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,-0.6) {};
+	\node[scale=0.5, draw, circle, fill=black] (1) at (-0.5,0.3) {};
+	\node[scale=0.5, draw, circle, fill=black] (2) at (0.5,0.3) {};
+	\draw (0,-1.3) to (0);
+	\draw (2) to (0.5,1);
+	\draw (1) to (-0.5,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+	So that 
+	\begin{tikzpicture}[scale=0.4, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,0) {};
+	\node[scale=0.2, squr] (1) at (0, -0.6) {$S$};
+	\draw (1) to (0);
+	\draw (0,-1) to (1);
+	\draw[bend left] (0) to (-0.5,0.5);
+	\draw[bend right] (0) to (0.5,0.5);
+	\end{tikzpicture}
+	is a left convolution inverse to 
+	\begin{tikzpicture}[scale=0.4, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,0) {};
+	\draw (0,-1) to (0);
+	\draw[bend left] (0) to (-0.5,0.5);
+	\draw[bend right] (0) to (0.5,0.5);
+	\end{tikzpicture}.\\
+	Also:
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,-1) {};
+	\node[scale=0.5, draw, circle, fill=white] (1) at (0.6,-0.8) {};
+	\node[scale=0.5, draw, circle, fill=white] (2) at (-0.6,-0.4) {};
+	\node[scale=0.5, draw, circle, fill=black] (3) at (0.6,0.7) {};
+	\node[scale=0.5, draw, circle, fill=black] (4) at (-0.6,0.7) {};
+	\node[scale=0.4, squr] (5) at (0.2, 0) {$S$};
+	\node[scale=0.4, squr] (6) at (0.7, 0) {$S$};
+	\draw (0,-1.3)--(0)--(1);
+	\draw (0)--(2)--(4);
+	\draw[bend right, looseness=1.3] (1) to (5);
+	\draw[bend left, looseness=1.3] (1) to (6);
+	\draw[bend left] (2) to (3);
+	\draw (5)--(4)--(-0.6,1);
+	\draw (6)--(3)--(0.6,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,-1) {};
+	\node[scale=0.5, draw, circle, fill=white] (1) at (0,-0.5) {};
+	\node[scale=0.5, draw, circle, fill=white] (2) at (-0.6,-0.8) {};
+	\node[scale=0.5, draw, circle, fill=black] (3) at (0.6,0.7) {};
+	\node[scale=0.5, draw, circle, fill=black] (4) at (-0.6,0.7) {};
+	\node[scale=0.4, squr] (5) at (0.2, 0) {$S$};
+	\node[scale=0.4, squr] (6) at (0.7, 0) {$S$};
+	\draw (0,-1.3)--(0)--(2)--(1);
+	\draw (2)--(4);
+	\draw[bend right=60, looseness=1.3] (1) to (6);
+	\draw[bend right=60, looseness=1.3] (0) to (5);
+	\draw[bend left=50] (1) to (3);
+	\draw (5)--(4)--(-0.6,1);
+	\draw (6)--(3)--(0.6,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,-1) {};
+	\node[scale=0.5, draw, circle, fill=white] (1) at (0.4,-0.2) {};
+	\node[scale=0.5, draw, circle, fill=white] (2) at (-0.4,-0.6) {};
+	\node[scale=0.5, draw, circle, fill=black] (3) at (0.6,0.7) {};
+	\node[scale=0.5, draw, circle, fill=black] (4) at (-0.6,0.7) {};
+	\node[scale=0.4, squr] (5) at (-0.1, -0.1) {$S$};
+	\node[scale=0.4, squr] (6) at (0.7, 0.3) {$S$};
+	\draw (0,-1.3)--(0)--(2);
+	\draw[bend right] (2) to (1);
+	\draw (2)--(4);
+	\draw[bend right] (1) to (6);
+	\draw[bend right] (0) to (5);
+	\draw[bend left=50] (1) to (3);
+	\draw (5)--(4)--(-0.6,1);
+	\draw (6)--(3)--(0.6,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,-1) {};
+	\node[scale=0.5, draw, circle, fill=black] (3) at (0.6,0.7) {};
+	\node[scale=0.5, draw, circle, fill=black] (4) at (-0.6,0.7) {};
+	\node[scale=0.4, squr] (5) at (-0.1, -0.1) {$S$};
+	\draw (0,-1.3)--(0);
+	\draw [bend left] (0) to (4);
+	\draw[bend right] (0) to (5);
+	\draw (5)--(4)--(-0.6,1);
+	\draw (3)--(0.6,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,-0.6) {};
+	\node[scale=0.5, draw, circle, fill=black] (1) at (-0.5,0.3) {};
+	\node[scale=0.5, draw, circle, fill=black] (2) at (0.5,0.3) {};
+	\draw (0,-1.3) to (0);
+	\draw (2) to (0.5,1);
+	\draw (1) to (-0.5,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+	So that 
+	\begin{tikzpicture}[scale=0.4, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,-0.3) {};
+	\node[scale=0.3, squr] (1) at (-0.5, 0.6) {$S$};
+	\node[scale=0.3, squr] (2) at (0.5, 0.6) {$S$};
+	\draw[bend left=70] (0) to (0,0.1);
+	\draw[bend right=70] (0) to (0,0.1);
+	\draw (0,-1) to (0);
+	\draw (1) to (-0.5,1);
+	\draw (2) to (0.5,1);
+	\draw[bend left] (0,0.1) to (1);
+	\draw[bend right] (0,0.1) to (2);
+	\end{tikzpicture}
+	is a right convolution inverse to 
+	\begin{tikzpicture}[scale=0.4, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,0) {};
+	\draw (0,-1) to (0);
+	\draw[bend left] (0) to (-0.5,0.5);
+	\draw[bend right] (0) to (0.5,0.5);
+	\end{tikzpicture}.
+	And it is easy to see using associativity and co-associativity that right and left convolution inverses must coincide. We deduce that the antipode is an anti-coalgebra homomorphism. For a proof that the antipode is an anti-algebra morphism simply flip all the diagrams and interchange white with black. 
+\end{proof}
+
+
 \begin{definition}[Quasitriangularity]
 	A Hopf algebra $H$ is quasitriangular if there is an invertible element $R \in H \otimes H$ satisfying the following equations:
 	\begin{equation}
@@ -1238,7 +1555,7 @@ $R$ is called the `universal $R$-matrix', and it can be thought as controlling t
 	Quantum double construction.
 \end{definition}
 
-\subsubsection{Representations of Hopf algberas}
+\subsection{Representations of Hopf algberas}
 Recall that a group describes the symmetries of some space $X$ when it acts on it (e.g crystals, classical symmetries= symmetries of sets). If we apply the same reasoning to Hopf Algebras we have to make $H$ act on some quantum state space (i.e Hilbert space). So our object of study is not $H$ on its own but rather a module (or representation) of $H$. In the diagrammatic language we depict it as follows:
 \begin{center}
 	\begin{tikzpicture}[scale=0.9, black/.style={draw,regular polygon,
@@ -1305,12 +1622,12 @@ Now consider the category $Rep(H)$ where objects are representations of $H$ and 
 	And $V\otimes W$ with this action is indeed a module as:
 	\begin{equation}
 		\begin{gathered}
-		\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 			regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 		\node (0) at (0, -1.2) {};
-		\node[whit] (1) at (0, 1.3) {};
-		\node[black] (2) at (1, 1.3) {};
-		\node[scale=0.8,draw,circle, fill=white] (3) at (-0.7, 0.5) {};
+		\node[whit, scale=0.7] (1) at (0, 1.3) {};
+		\node[black, scale=0.7] (2) at (1, 1.3) {};
+		\node[scale=0.5,draw,circle, fill=white] (3) at (-0.7, 0.5) {};
 		\node (5) at (1, -1.2) {};
 		\node[scale=0.8,draw,circle, fill=black] (6) at (-0.7, -0.2) {};
 		\draw (0) to (1);
@@ -1326,16 +1643,16 @@ Now consider the category $Rep(H)$ where objects are representations of $H$ and 
 		\end{gathered}
 		\, = \,	
 		\begin{gathered}
-		\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 			regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 		\node (0) at (0, -1.2) {};
-		\node[whit] (1) at (0, 1.3) {};
-		\node[black] (2) at (1, 1.3) {};
-		\node[scale=0.8,draw,circle, fill=black] (3) at (-1.2, 0.5) {};
-		\node[scale=0.8,draw,circle, fill=black] (7) at (-0.3, 0.5) {};
+		\node[whit, scale=0.7] (1) at (0, 1.3) {};
+		\node[black, scale=0.7] (2) at (1, 1.3) {};
+		\node[scale=0.5,draw,circle, fill=black] (3) at (-1.2, 0.5) {};
+		\node[scale=0.5,draw,circle, fill=black] (7) at (-0.3, 0.5) {};
 		\node (5) at (1, -1.2) {};
-		\node[scale=0.8,draw,circle, fill=white] (6) at (-1.2, -0.2) {};
-		\node[scale=0.8,draw,circle, fill=white] (8) at (-0.3, -0.2) {};
+		\node[scale=0.5,draw,circle, fill=white] (6) at (-1.2, -0.2) {};
+		\node[scale=0.5,draw,circle, fill=white] (8) at (-0.3, -0.2) {};
 		\draw (0) to (1);
 		\draw (5) to (2);
 		\draw (1) to (0,2);
@@ -1352,16 +1669,16 @@ Now consider the category $Rep(H)$ where objects are representations of $H$ and 
 		\end{gathered}
 		\, =\,
 		\begin{gathered}
-		\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 			regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 		\node (0) at (0, -1.2) {};
-		\node[whit] (1) at (0, 0.1) {};
-		\node[black] (2) at (1, 0.1) {};
-		\node[whit] (3) at (0, 1.3) {};
-		\node[black] (4) at (1, 1.3) {};
+		\node[whit, scale=0.7] (1) at (0, 0.1) {};
+		\node[black, scale=0.7] (2) at (1, 0.1) {};
+		\node[whit, scale=0.7] (3) at (0, 1.3) {};
+		\node[black, scale=0.7] (4) at (1, 1.3) {};
 		\node (5) at (1, -1.2) {};
-		\node[scale=0.8,draw,circle, fill=white] (6) at (-1.2, -0.4) {};
-		\node[scale=0.8,draw,circle, fill=white] (8) at (-0.3, -0.4) {};
+		\node[scale=0.5,draw,circle, fill=white] (6) at (-1.2, -0.4) {};
+		\node[scale=0.5,draw,circle, fill=white] (8) at (-0.3, -0.4) {};
 		\draw (0) to (1);
 		\draw (1) to (3);
 		\draw (5) to (2);
@@ -1380,14 +1697,14 @@ Now consider the category $Rep(H)$ where objects are representations of $H$ and 
 	Also:
 	\begin{equation}
 	\begin{gathered}
-	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 	\node (0) at (0, -0.4) {};
-	\node[whit] (1) at (0, 1.3) {};
-	\node[black] (2) at (1, 1.3) {};
-	\node[scale=0.8,draw,circle, fill=white] (3) at (-0.7, 0.5) {};
+	\node[whit, scale=0.7] (1) at (0, 1.3) {};
+	\node[black, scale=0.7] (2) at (1, 1.3) {};
+	\node[scale=0.5,draw,circle, fill=white] (3) at (-0.7, 0.5) {};
 	\node (5) at (1, -0.4) {};
-	\node[scale=0.8,draw,circle, fill=black] (6) at (-0.7, 0) {};
+	\node[scale=0.5,draw,circle, fill=black] (6) at (-0.7, 0) {};
 	\draw (0) to (1);
 	\draw (5) to (2);
 	\draw (1) to (0,2);
@@ -1399,14 +1716,14 @@ Now consider the category $Rep(H)$ where objects are representations of $H$ and 
 	\end{gathered}
 	\, = \,
 	\begin{gathered}
-	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 	\node (0) at (0, -0.4) {};
-	\node[whit] (1) at (0, 1.3) {};
-	\node[black] (2) at (1, 1.3) {};
-	\node[scale=0.8,draw,circle, fill=black] (3) at (-0.9, 0.2) {};
+	\node[whit, scale=0.7] (1) at (0, 1.3) {};
+	\node[black, scale=0.7] (2) at (1, 1.3) {};
+	\node[scale=0.5,draw,circle, fill=black] (3) at (-0.9, 0.2) {};
 	\node (5) at (1, -0.4) {};
-	\node[scale=0.8,draw,circle, fill=black] (6) at (-0.3, 0.2) {};
+	\node[scale=0.5,draw,circle, fill=black] (6) at (-0.3, 0.2) {};
 	\draw (0) to (1);
 	\draw (5) to (2);
 	\draw (1) to (0,2);
@@ -1417,7 +1734,7 @@ Now consider the category $Rep(H)$ where objects are representations of $H$ and 
 	\end{gathered}
 	\, = \,
 	\begin{gathered}
-	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 	\node (0) at (0, -0.4) {};
 	\node (1) at (1, -0.4) {};
@@ -1446,10 +1763,10 @@ Now consider the category $Rep(H)$ where objects are representations of $H$ and 
 		\begin{gathered}
 		\begin{tikzpicture}[scale=0.5, black/.style={scale=0.5,draw,shape=circle,fill=white}]
 		\node[black] (0) at (0, 0) {};
-		\draw[bend left=90] (0) to (0,0.5);
-		\draw (0,0.5) to (0.7,1);
-		\draw (0,0.5) to (-0.7,1);
-		\draw[bend right=90] (0) to (0,0.5);
+		\draw[bend left=70] (0) to (0,0.5);
+		\draw[bend right=20] (0,0.5) to (0.7,1);
+		\draw[bend left=20] (0,0.5) to (-0.7,1);
+		\draw[bend right=70] (0) to (0,0.5);
 		\draw (0) to (0,-1);
 		\end{tikzpicture} 
 		\end{gathered}
@@ -1457,11 +1774,11 @@ Now consider the category $Rep(H)$ where objects are representations of $H$ and 
 	So the symmetry morphism on $V\otimes W$ from $Vect$ is an intertwiner:
 	\begin{equation}
 		\begin{gathered}
-		\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 			regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-		\node[whit] (1) at (0, 1.3) {};
-		\node[black] (2) at (1, 1.3) {};
-		\node[scale=0.8,draw,circle, fill=white] (3) at (-0.7, 0.5) {};
+		\node[whit, scale=0.7] (1) at (0, 1.3) {};
+		\node[black, scale=0.7] (2) at (1, 1.3) {};
+		\node[scale=0.5,draw,circle, fill=white] (3) at (-0.7, 0.5) {};
 		\draw (-0.7, -0.2) to (3);
 		\draw (0,0.5) to (1);
 		\draw (0, -0.2) to (1,0.5);
@@ -1475,11 +1792,11 @@ Now consider the category $Rep(H)$ where objects are representations of $H$ and 
 		\end{gathered}
 		\, = \,
 		\begin{gathered}
-		\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 			regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-		\node[black] (1) at (0, 0.9) {};
-		\node[whit] (2) at (1, 0.9) {};
-		\node[scale=0.8,draw,circle, fill=white] (3) at (-0.7, 0) {};
+		\node[black, scale=0.7] (1) at (0, 0.9) {};
+		\node[whit, scale=0.7] (2) at (1, 0.9) {};
+		\node[scale=0.5,draw,circle, fill=white] (3) at (-0.7, 0) {};
 		\draw (-0.7, -0.5) to (3);
 		\draw [bend left=70] (3) to (-0.4,0.4);
 		\draw [bend right=30] (3) to (-0.4,0.4);
@@ -1495,11 +1812,11 @@ Now consider the category $Rep(H)$ where objects are representations of $H$ and 
 		\end{gathered}
 		\, = \,
 		\begin{gathered}
-		\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 			regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-		\node[black] (1) at (0, 0.9) {};
-		\node[whit] (2) at (1, 0.9) {};
-		\node[scale=0.8,draw,circle, fill=white] (3) at (-0.7, 0) {};
+		\node[black, scale=0.7] (1) at (0, 0.9) {};
+		\node[whit, scale=0.7] (2) at (1, 0.9) {};
+		\node[scale=0.5,draw,circle, fill=white] (3) at (-0.7, 0) {};
 		\draw (-0.7, -0.5) to (3);
 		\draw [bend left] (3) to (1);
 		\draw (3) to (2);
@@ -1521,7 +1838,7 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 	For any $H$-modules $V$ and $W$, using the symmetry morphism from $Vect$ define:
 	\begin{equation}
 	\begin{gathered}
-	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 	\node (0) at (0.5,0.5) {};
 	\node (1) at (-0.1,-0.4) {$W$};
@@ -1533,11 +1850,11 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 	\end{gathered}
 	\, := \,
 	\begin{gathered}
-	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-	\node[whit] (1) at (0, 1.3) {};
-	\node[black] (2) at (1, 1.3) {};
-	\node[scale=0.5, buffer] (3) at (-0.7, 0) {$R$};
+	\node[whit, scale=0.7] (1) at (0, 1.3) {};
+	\node[black, scale=0.7] (2) at (1, 1.3) {};
+	\node[scale=0.4, buffer] (3) at (-0.7, 0) {$R$};
 	\draw (0,0.5) to (1);
 	\draw (0, -0.2) to (1,0.5);
 	\draw (1,0.5) to (2);
@@ -1551,7 +1868,7 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 	\end{equation}
 	\begin{equation}
 		\begin{gathered}
-		\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 			regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 		\node (0) at (0.5,0.5) {};
 		\node (1) at (-0.1,-0.4) {$V$};
@@ -1563,14 +1880,13 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 		\end{gathered}
 		\, = \,
 		\begin{gathered}
-		\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 			regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-		\node[whit] (1) at (0, 0.9) {};
-		\node[black] (2) at (1, 0.9) {};
-		\node[scale=0.3, buffer] (3) at (-0.7, 0) {$R^{-1}$};
-		\draw (-0.7, -0.5) to (3);
+		\node[whit, scale=0.7] (1) at (0, 0.9) {};
+		\node[black, scale=0.7] (2) at (1, 0.9) {};
+		\node[scale=0.2, buffer] (3) at (-0.7, 0) {$R^{-1}$};
 		\draw [bend left] (3) to (1);
-		\draw [bend left=10](3) to (2);
+		\draw [bend left=10] (3) to (2);
 		\draw (1) to (0,1.2);
 		\draw (2) to (1,1.2);
 		\draw (1,1.7) to (0,1.2);
@@ -1583,13 +1899,13 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 	It is easy to see these are inverses of each other, we just need to check they are intertwiners.
 	\begin{equation}
 	\begin{gathered}
-	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-	\node[whit] (1) at (0, 1.3) {};
-	\node[black] (2) at (1, 1.3) {};
-	\node[scale=0.5, buffer] (3) at (-0.7, 0) {$R$};
-	\node[whit] (4) at (0, 2) {};
-	\node[black] (5) at (1, 2) {};
+	\node[whit, scale=0.7] (1) at (0, 1.3) {};
+	\node[black, scale=0.7] (2) at (1, 1.3) {};
+	\node[scale=0.4, buffer] (3) at (-0.7, 0) {$R$};
+	\node[whit, scale=0.7] (4) at (0, 2) {};
+	\node[black, scale=0.7] (5) at (1, 2) {};
 	\node[scale=0.5, draw, circle, fill=white] (6) at (-1.3,0.8) {};
 	\draw (0,0.5) to (1);
 	\draw (0, -0.2) to (1,0.5);
@@ -1608,13 +1924,13 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 	\end{gathered}
 	\, = \,
 	\begin{gathered}
-	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 	\node[scale=0.5, draw, circle, fill=black] (1) at (-1, 1.3) {};
 	\node[scale=0.5, draw, circle, fill=black] (2) at (-0.4, 1.3) {};
 	\node[scale=0.5, buffer] (3) at (-0.7, 0) {$R$};
-	\node[whit] (4) at (0, 2) {};
-	\node[black] (5) at (1, 2) {};
+	\node[whit, scale=0.7] (4) at (0, 2) {};
+	\node[black, scale=0.7] (5) at (1, 2) {};
 	\node[scale=0.5, draw, circle, fill=white] (6) at (-1.3,0.4) {};
 	\draw (0,0.5) to (4);
 	\draw (0, -0.2) to (1,0.5);
@@ -1633,13 +1949,13 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 	\end{gathered}
 	\, = \,
 	\begin{gathered}
-	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 	\node[scale=0.5, draw, circle, fill=black] (1) at (-1, 1.3) {};
 	\node[scale=0.5, draw, circle, fill=black] (2) at (-0.4, 1.3) {};
 	\node[scale=0.5, buffer] (3) at (-1.3, 0) {$R$};
-	\node[whit] (4) at (0, 2) {};
-	\node[black] (5) at (1, 2) {};
+	\node[whit, scale=0.7] (4) at (0, 2) {};
+	\node[black, scale=0.7] (5) at (1, 2) {};
 	\node[scale=0.5, draw, circle, fill=white] (6) at (-0.5, 0.3) {};
 	\draw (0,0.5) to (4);
 	\draw (0, -0.2) to (1,0.5);
@@ -1661,14 +1977,14 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 	\begin{equation}
 	\, = \,
 	\begin{gathered}
-	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-	\node[whit] (1) at (0, 1.3) {};
-	\node[black] (2) at (1, 1.3) {};
+	\node[whit, scale=0.7] (1) at (0, 1.3) {};
+	\node[black, scale=0.7] (2) at (1, 1.3) {};
 	\node[scale=0.5, draw, circle, fill=white] (3) at (-0.9, 0.2) {};
-	\node[whit] (4) at (0, 2) {};
-	\node[black] (5) at (1, 2) {};
-	\node[scale=0.5, buffer] (6) at (-1.3,0.8) {$R$};
+	\node[whit, scale=0.7] (4) at (0, 2) {};
+	\node[black, scale=0.7] (5) at (1, 2) {};
+	\node[scale=0.4, buffer] (6) at (-1.3,0.8) {$R$};
 	\draw (0,0.5) to (1);
 	\draw (0, -0.2) to (1,0.5);
 	\draw (1,0.5) to (2);
@@ -1686,13 +2002,13 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 	\end{gathered}
 	\, = \,
 	\begin{gathered}
-	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-	\node[black] (1) at (0, 0.5) {};
-	\node[whit] (2) at (1, 0.5) {};
+	\node[black, scale=0.7] (1) at (0, 0.5) {};
+	\node[whit, scale=0.7] (2) at (1, 0.5) {};
 	\node[scale=0.5, draw, circle, fill=white] (3) at (-0.5, 0.1) {};
-	\node[whit] (4) at (0, 2) {};
-	\node[black] (5) at (1, 2) {};
+	\node[whit, scale=0.7] (4) at (0, 2) {};
+	\node[black, scale=0.7] (5) at (1, 2) {};
 	\node[scale=0.5, buffer] (6) at (-1.3,0.8) {$R$};
 	\draw (0,0.8) to (1);
 	\draw (0, -0.2) to (1);
@@ -1721,7 +2037,7 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 	For any $H$-module $V$ let $V^\star$ be its dual in $Vect$, we can define a dual $H$-action on $V^\star$ using the antipode:
 	\begin{equation}
 		\begin{gathered}
-		\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		\begin{tikzpicture}[whit/.style={draw,regular polygon,
 			regular polygon sides=4,fill=white}]
 			\node[scale=0.5, whit] (0) at (0,0) {L};
 			\node (1) at (-0.5, -0.9) {$H$};
@@ -1847,8 +2163,9 @@ The proof that this choice works is very similar to the one above. In particular
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Fusion categories}
-\subsubsection{Fusion categories via string diagrams}
+\section{The Algebra of Anyons}
+\subsection{Braided Fusion Categories}
+\subsubsection{Fusion Categories}
 Many of the results we will see in this section can be found in \cite{Mueger08}, \cite{Bartlett15} and \cite{Freyd66}.
 \begin{definition}
 The category $\mathcal{C}$ is Ab if it is enriched over abelian groups. That is all hom-sets have abelian group structures and composition of morphisms is a group homomorphism. 
@@ -1900,13 +2217,11 @@ These satisfy the following fusion rules $\forall X$ simple object:
 
 \end{example}
 
-\subsubsection{Graph invariants from spherical fusion categories}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{example}[Graph invariants from spherical fusion categories]
+\end{example}
 
-\subsection{Braided Fusion categories}
-In this section we explore an important class of categories. Braided fusion categories (BFCs) are very closely related to categories of representations via the Tannaka reconstruction theorem and its variations. BFCs have found numerous applications to Quantum computer science as we will see in the remaining sections.
 \subsubsection{Braiding and twisting}
+In this section we explore an important class of categories. Braided fusion categories (BFCs) are very closely related to categories of representations via the Tannaka reconstruction theorem and its variations. BFCs have found numerous applications to Quantum computer science as we will see in the remaining sections.
 Braid group, Yang-Baxter, Quasitriangular Hopf algebras.
 \begin{definition}
 Braided monoidal categories (with braid $c$)
@@ -1980,17 +2295,89 @@ The modular $S$-matrix diagonalises the $N$-matrix.
 \end{theorem}
 splitting, fusion rules, braided, R,T matrices, modular S matrix.
 
-\subsubsection{Knot invariants}
+\begin{example}[Knot invariants]
+\end{example}
+
+\subsection{Algebraic theory of Anyons}
+In this section we describe the algebraic framework of modular categories, as theories of anyons. \\
+Let us first set some labels $a,b,c...$ for our particle types. Let us label by $\mathbf{1}$ the vacuum particle type "no-particle". It has the property that it leaves other particle types unchanged under fusion: $1 \otimes a \simeq a \simeq a \otimes 1$. So for the moment our theory is a monoidal category $\mathcal{C}$ and we can already use the diagrammatic language, the wires carry particle types (image). Now note that fusion $a \otimes b \xrightarrow{\sim} c$ and splitting $c \xrightarrow{\sim} a \otimes b$ are really dual concepts. This duality is witnessed by the existence of antiparticles. Each particle $a$ comes with its antiparticle $a^*$ such that $a\otimes a^* \simeq 1 \simeq a^* \otimes a$. So the category must be rigid, we will assume it is a well behaved category i.e it is spherical and $1^*=1$. So we can define the quantum numbers for each particle type (image). At this point we need to linearise the theory to take superpositions into account. We enrich the category over commutative monoids and introduce a biproduct $\oplus$ and zero object $\mathbf{0}$ as additional structure on $\mathcal{C}$. In order for the fusion to behave well with superpositions we must require that our particle types be simple objects in the category. At this point, our category $\mathcal{C}$ is a spherical fusion category and the fusion rules look like this:
+\begin{equation}
+a\otimes b \simeq \oplus_c N_{ab}^c c
+\end{equation}
+Where $N_{ab}^c \in \mathbb{N}$. \\
+We still have one question to ask to the theory, what happens when a particle is passed around another one? To answer this question the theory must have a braid structure and we obtain a braided fusion category (see section 1).
+The braid structure determines the long-distance, topological interactions between particles. We can place braided fusion categories in a spectrum by asking what their symmetric center $Z_2$ is. The two antipodal points of this spectrum are symmetric fusion categories on one side (such that $Z_2(\mathcal{C})=\mathcal{C}$) and modular tensor categories (such that the symmetric centre is trivial, i.e its objects are direct products of the tensor unit $\mathbf{1}$). In the first case, we have only symmetric exchange symmetries so that all particles in the theory are either bosons or fermions. Such categories are degenerate anyon theories with no topological dependencies between particles. Modular tensor categories are really the opposite situation, the theory doesn't contain any bosons or fermions but only non-degenerate anyons, i.e anyons with non-trivial twist factor.
+
+\begin{example}
+	Suppose we start from a set of labels and define the fusions to form a group. In fact $1$ is the identity particle type, for any particle type $a$, $a^*$ will be its inverse. We have defined the skeleton of a spherical fusion category, which we obtain by linearising, i.e taking a functor to $Hilb$. We obtain the category $Vec_G$, of $G$ graded vector spaces over $\mathbb{C}$.
+	The category $Vec_G$ for $G$ a group is a symmetric spherical fusion category. Linearity and tensor are given by the underlying $Vect$ structure, simple objects are indexed by the elements of $G$, duality is proved by using the group inverse. It is easy to chow that $Vec_G \simeq Rep(Func(G))$ where $Func(G)$ is the function algebra on $G$.
+	For $G=\mathbb{Z}_2$ we have two irreducible representations $\tau_+$ and $\tau_-$, both one dimensional with the obvious fusion rules given by the cyclic group of order $2$.\\
+\end{example}
+\begin{remark}
+	In the case where the theory is described by the category $RepG$.
+	Let us consider the object $V=\mathbb{C}G$ of $RepG$. (Note $V \simeq \oplus_i V_i$ where $V_i$'s are the simple objects.) Simple objects correspond to particle types so the states of $V$ are superpositions of particle types. In the case where $G$ is abelian there is only one way two particles can fuse to a third, so the fusions are deterministic and the irreducible representations will be one dimensional, each corresponding to an element of the group. If $G$ is not abelian, say $a\otimes b \simeq c_1$ and $b \otimes a \simeq c_2$ then taking the representations category defines a 2-dimensional object $c$ spanned by $\{c_1,c_2\}$ which is an irreducible representation of $G$. So from now on we will call particle types the irreducible representations and particles subtypes the elements of the group $G$.  The action of $G$ permutes the basis vectors, multiplying by an element of $G$, but an element of $G$ is precisely a particle subtype and multiplication is fusion. So acting with $g \in G$ on a state $v \in V$ corresponds to fusing a particle of type $g$ with one that is in a superposition $v$ of particle types. The allowed processes are intertwiners which commute with the action and therefore preserve fusions. If the group $G$ is abelian, then the particles are abelian anyons.
+\end{remark}
+
+\begin{theorem} 
+	$Rep(G)$ is a braided fusion category
+\end{theorem}
+
+\subsection{Quantum Symmetry}
+Recall our discussion from the subsection Algebraic theory of anyons. We distinguished degenerate anyons theories (symmetric fusion categories) to modular tensor categories. In this section we will look at physically implementable examples of those two cases, and discuss a general construction for taking a degenerate anyon theory and making it modular.\\
+Local symmetries are very well described by the theory of groups. In order to describe symmetries of Hamiltonians exhibiting topological phases of matter we need to use the more general notion of Hopf Symmetry.
+
+\subsubsection{The Quantum Double}
+Let us consider a two dimensional lattice of particles (situated on the edges of the lattice) under the influence of a magnetic field and an electric field. Anyonic behaviour is exhibited by excitations of the particles on the lattice. In our process theory the allowed processes are charge-flux composites, the states are lattice configurations (determined by the states of the particles, which are generally given by an element $g \in G$)  . By mearuring the flux in certain regions of the lattice and acting on the charge of the corresponding flux sector we can create and control the behaviour of excitations on the material.
+\begin{example}
+	Let us consider the case where $G \simeq \mathbb{Z}_2$. We obtain a lattice of spins. Those particles we wont use as our qubits, indeed we will impose that their state is in a basis state $\{\ket{0},\ket{1}\}$. One way to picture the states of the system is to draw the lattice and colour the edges red when the corresponding particle is in state $\ket{0}$. Note that the lattice can be embedded in any manifold (e.g. subsection quantum memory is a lattice on a torus, if we used a more layered lattice we could implement error correction). What we obtain is a picture of paths on the lattice which we call excitations.
+\end{example}
+The magnetic flux of a particle is given by an element $h \in G$, this indexes the superselection sectors so that the charge lives in a unitary irreducible representation of the centralizer $N(h)$ of the flux $h$ carried by the particle. We have two possible operations on our states: flux measurement and symmetry transformations on the charge. Flux measurements correspond to a projection $P_h \in \mathbb{C}G^*$ onto flux sector $h$. The residual global symmetry transformations are then implemented via some $g \in N(h)$. \\
+Naturally the projectors form a Von Neumann family and satisfy 
+$$P_hP_{h'}= \delta_{h,h'} P_h.$$ 
+A general element $g \in G$ is a global symmetry transformation and affects the fluxes via conjugation:
+\begin{equation}
+gP_h = P_{ghg^{-1}}g
+\end{equation}
+The quantum double construction allows to capture both global symmetry transformations and projective measurements in one algebraic structure.
+\begin{definition}
+	Lagrangian, Noether's theorem
+\end{definition}
+\begin{definition}
+	For any finite group $G$, its quantum double $D(G)$ is the algebra generated by $\{P_hg\}_{h,g\in G}$ with multiplication induced by (1). $D(G) \simeq \mathbb{C}G^* \otimes \mathbb{C}G$ and inherits their hopf algebra structure (comultiplication and antipode are given by tensoring). 
+\end{definition}
+$D(G)$ has a natural quasi-triangular structure witnessed by the universal R-matrix $R=\sum_{g,h \in G}P_he \otimes P_hg$, making $RepDG$ braided. Particle states then live in irreducible representations of $D(G)$. Let $\{C_i\}_{i=1}^n$ be the distinct conjugacy classes in $G$. To each of those conjugacy classes corresponds a centralizer subgroup $N_i$ (two choices of representatives for $C_i$ yield isomorphic centralizer subgroups). Then for any irreducible representation $(\alpha,V^i_\alpha)$ of $N_i$ with basis elements $v^\alpha_j$, let $V_{i,\alpha} = \mathbb{C}C_i \otimes V^i_\alpha$, this has basis $\{ \ket{k,v^\alpha_j} \}_{j=1,...,dim\alpha}^{k\in C_i}$ and forms an irreducible representation of $D(G)$ under the action 
+\begin{equation}
+P_hg\ket{k,v^\alpha_j} = \delta_{h,gkg^{-1}} \ket{h,\alpha(h^{-1}gk)v^\alpha_j}
+\end{equation}
+and the $\{V_{i,\alpha}\}$ is the complete set of irreducible representations.
+
+
+\subsubsection{Drinfeld center}
+\begin{definition}
+	The braided (Drinfeld) centre of $\mathcal{C}$ is the category $Z_1(\mathcal{C})$ with objects pairs $(X,e_X)$ where $X \in \mathcal{C}$ and $e_X$ is a half-braiding, and with morphisms given by the morphisms of $\mathcal{C}$ which commute with the half-braiding.
+\end{definition}
+\begin{theorem}
+	$Z(RepG) \simeq RepDG$
+\end{theorem}
+\subsubsection{Kitaev's lattice construction}
+The following argument seems to work for abelian groups.
+Being a spherical fusion category, $RepG$ is well suited to be a process theory of particles. As we pointed out earlier what is missing is the braided structure, but let us ignore this for the moment. We have simple objects corresponding to particle types and fusion rules determined by the group structure.\\
+Now suppose we have particles whose fusion is described by a $RepG$ and let us consider a lattice with those particles located at the edges. This lattice could be embedded in any space but let us assume it is a lattice on a torus. The states of our system are then configurations of particle types on the edges. So edges are coloured by simple representations from $RepG$. Now we can act on the lattice with vertex and plaquette operators which basically implement measurements at vertices and flips (fusion with other simple reps) of the particles on a plaquette. By now we have produced a theory where states are lattice configurations and processes are generated by vertex $V_\alpha$ and plaquette $P_\beta$ operators. We want to extract the topological degrees of freedom of this theory. First we note that using vertex operators we can make sure that the product of all particles incident at all vertices is 1, i.e $V_\alpha=1$ $\forall \alpha$. We restrict our states to satisfy this local property and we drop vertex operators (in the sense that they are not allowed processes anymore), indeed we fixed their value at all points of the lattice. By also setting $P_\beta =1$ at all plaquettes we quotient further the theory. So we obtain a theory where all vertex and plaquette measurements have value $1$. We finally declare two configurations to be equal if there is a sequence of plaquette operations taking us from one to the other. Noting that plaquette operators are local isometries we see this corresponds to quotienting out the category by an equivalence relation. This doesn't exaust the degrees of freedom of the theory because of the topology of the torus. Those topological degrees of freedom will be the simple objects our newly created category, their fusion rules are completely determined by the structure of $Rep(G)$. Indeed the category we obtained is $Z(Rep(G)) \simeq Rep(DG)$.
+
+\begin{theorem}
+	The lattice construction and the Drinfeld construction coincide
+\end{theorem}
+
+\begin{example}
+	In the case $G=\mathbb{Z}_2$, recall $Rep\mathbb{Z}_2$ has two simple object of dimension one $\tau_+$ and $\tau_-$ with fusions given by group structure. Let us draw the states of our system as colourings of the edges of the lattice. The condition on the vertex operators results in no endlines and no triple intersections on the lattice. The condition on plaquette operators only allows loop configurations. Quotienting out by plaquette operators relation we obtain 4 distinct classes, namely the vacuum $1$, the first cycle of the torus $X$, the second cycle $Z$, and both cycles $X \otimes Z \simeq Y$ and we have the fusion rules. The theory we have obtained is $RepD\mathbb{Z}_2$ which has in fact 4 simple objects with same fusions. We are therefore treating the topological defects of a theory in $Rep\mathbb{Z}_2$ as particles particles in their own right, with their own theory. All those representations are one-dimensional and in fact we just formulated a theory of abelian anyons.
+\end{example}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The Physics of Anyons}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Quantum Computation}
 
 \subsection{Phases of Matter}
 Classical phases of matter: solid, liquid and gas.\\
@@ -2095,103 +2482,13 @@ In the previous section, we only considered groups of symmetries of a Hamiltonia
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Algebraic theory of Anyons}
-In this section we describe the algebraic framework of modular categories, as theories of anyons. \\
-Let us first set some labels $a,b,c...$ for our particle types. Let us label by $\mathbf{1}$ the vacuum particle type "no-particle". It has the property that it leaves other particle types unchanged under fusion: $1 \otimes a \simeq a \simeq a \otimes 1$. So for the moment our theory is a monoidal category $\mathcal{C}$ and we can already use the diagrammatic language, the wires carry particle types (image). Now note that fusion $a \otimes b \xrightarrow{\sim} c$ and splitting $c \xrightarrow{\sim} a \otimes b$ are really dual concepts. This duality is witnessed by the existence of antiparticles. Each particle $a$ comes with its antiparticle $a^*$ such that $a\otimes a^* \simeq 1 \simeq a^* \otimes a$. So the category must be rigid, we will assume it is a well behaved category i.e it is spherical and $1^*=1$. So we can define the quantum numbers for each particle type (image). At this point we need to linearise the theory to take superpositions into account. We enrich the category over commutative monoids and introduce a biproduct $\oplus$ and zero object $\mathbf{0}$ as additional structure on $\mathcal{C}$. In order for the fusion to behave well with superpositions we must require that our particle types be simple objects in the category. At this point, our category $\mathcal{C}$ is a spherical fusion category and the fusion rules look like this:
-\begin{equation}
-a\otimes b \simeq \oplus_c N_{ab}^c c
-\end{equation}
-Where $N_{ab}^c \in \mathbb{N}$. \\
-We still have one question to ask to the theory, what happens when a particle is passed around another one? To answer this question the theory must have a braid structure and we obtain a braided fusion category (see section 1).
-The braid structure determines the long-distance, topological interactions between particles. We can place braided fusion categories in a spectrum by asking what their symmetric center $Z_2$ is. The two antipodal points of this spectrum are symmetric fusion categories on one side (such that $Z_2(\mathcal{C})=\mathcal{C}$) and modular tensor categories (such that the symmetric centre is trivial, i.e its objects are direct products of the tensor unit $\mathbf{1}$). In the first case, we have only symmetric exchange symmetries so that all particles in the theory are either bosons or fermions. Such categories are degenerate anyon theories with no topological dependencies between particles. Modular tensor categories are really the opposite situation, the theory doesn't contain any bosons or fermions but only non-degenerate anyons, i.e anyons with non-trivial twist factor.
-
-\begin{example}
-Suppose we start from a set of labels and define the fusions to form a group. In fact $1$ is the identity particle type, for any particle type $a$, $a^*$ will be its inverse. We have defined the skeleton of a spherical fusion category, which we obtain by linearising, i.e taking a functor to $Hilb$. We obtain the category $Vec_G$, of $G$ graded vector spaces over $\mathbb{C}$.
-The category $Vec_G$ for $G$ a group is a symmetric spherical fusion category. Linearity and tensor are given by the underlying $Vect$ structure, simple objects are indexed by the elements of $G$, duality is proved by using the group inverse. It is easy to chow that $Vec_G \simeq Rep(Func(G))$ where $Func(G)$ is the function algebra on $G$.
-For $G=\mathbb{Z}_2$ we have two irreducible representations $\tau_+$ and $\tau_-$, both one dimensional with the obvious fusion rules given by the cyclic group of order $2$.\\
-\end{example}
-\begin{remark}
-In the case where the theory is described by the category $RepG$.
-Let us consider the object $V=\mathbb{C}G$ of $RepG$. (Note $V \simeq \oplus_i V_i$ where $V_i$'s are the simple objects.) Simple objects correspond to particle types so the states of $V$ are superpositions of particle types. In the case where $G$ is abelian there is only one way two particles can fuse to a third, so the fusions are deterministic and the irreducible representations will be one dimensional, each corresponding to an element of the group. If $G$ is not abelian, say $a\otimes b \simeq c_1$ and $b \otimes a \simeq c_2$ then taking the representations category defines a 2-dimensional object $c$ spanned by $\{c_1,c_2\}$ which is an irreducible representation of $G$. So from now on we will call particle types the irreducible representations and particles subtypes the elements of the group $G$.  The action of $G$ permutes the basis vectors, multiplying by an element of $G$, but an element of $G$ is precisely a particle subtype and multiplication is fusion. So acting with $g \in G$ on a state $v \in V$ corresponds to fusing a particle of type $g$ with one that is in a superposition $v$ of particle types. The allowed processes are intertwiners which commute with the action and therefore preserve fusions. If the group $G$ is abelian, then the particles are abelian anyons.
-\end{remark}
-
-\begin{theorem} 
-$Rep(G)$ is a braided fusion category
-\end{theorem}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Quantum Symmetry}
-Recall our discussion from the subsection Algebraic theory of anyons. We distinguished degenerate anyons theories (symmetric fusion categories) to modular tensor categories. In this section we will look at physically implementable examples of those two cases, and discuss a general construction for taking a degenerate anyon theory and making it modular.\\
-Local symmetries are very well described by the theory of groups. In order to describe symmetries of Hamiltonians exhibiting topological phases of matter we need to use the more general notion of Hopf Symmetry.
-
-\subsubsection{The Quantum Double}
-Let us consider a two dimensional lattice of particles (situated on the edges of the lattice) under the influence of a magnetic field and an electric field. Anyonic behaviour is exhibited by excitations of the particles on the lattice. In our process theory the allowed processes are charge-flux composites, the states are lattice configurations (determined by the states of the particles, which are generally given by an element $g \in G$)  . By mearuring the flux in certain regions of the lattice and acting on the charge of the corresponding flux sector we can create and control the behaviour of excitations on the material.
-\begin{example}
-Let us consider the case where $G \simeq \mathbb{Z}_2$. We obtain a lattice of spins. Those particles we wont use as our qubits, indeed we will impose that their state is in a basis state $\{\ket{0},\ket{1}\}$. One way to picture the states of the system is to draw the lattice and colour the edges red when the corresponding particle is in state $\ket{0}$. Note that the lattice can be embedded in any manifold (e.g. subsection quantum memory is a lattice on a torus, if we used a more layered lattice we could implement error correction). What we obtain is a picture of paths on the lattice which we call excitations.
-\end{example}
-The magnetic flux of a particle is given by an element $h \in G$, this indexes the superselection sectors so that the charge lives in a unitary irreducible representation of the centralizer $N(h)$ of the flux $h$ carried by the particle. We have two possible operations on our states: flux measurement and symmetry transformations on the charge. Flux measurements correspond to a projection $P_h \in \mathbb{C}G^*$ onto flux sector $h$. The residual global symmetry transformations are then implemented via some $g \in N(h)$. \\
-Naturally the projectors form a Von Neumann family and satisfy 
-$$P_hP_{h'}= \delta_{h,h'} P_h.$$ 
-A general element $g \in G$ is a global symmetry transformation and affects the fluxes via conjugation:
-\begin{equation}
-gP_h = P_{ghg^{-1}}g
-\end{equation}
-The quantum double construction allows to capture both global symmetry transformations and projective measurements in one algebraic structure.
-\begin{definition}
-Lagrangian, Noether's theorem
-\end{definition}
-\begin{definition}
-For any finite group $G$, its quantum double $D(G)$ is the algebra generated by $\{P_hg\}_{h,g\in G}$ with multiplication induced by (1). $D(G) \simeq \mathbb{C}G^* \otimes \mathbb{C}G$ and inherits their hopf algebra structure (comultiplication and antipode are given by tensoring). 
-\end{definition}
-$D(G)$ has a natural quasi-triangular structure witnessed by the universal R-matrix $R=\sum_{g,h \in G}P_he \otimes P_hg$, making $RepDG$ braided. Particle states then live in irreducible representations of $D(G)$. Let $\{C_i\}_{i=1}^n$ be the distinct conjugacy classes in $G$. To each of those conjugacy classes corresponds a centralizer subgroup $N_i$ (two choices of representatives for $C_i$ yield isomorphic centralizer subgroups). Then for any irreducible representation $(\alpha,V^i_\alpha)$ of $N_i$ with basis elements $v^\alpha_j$, let $V_{i,\alpha} = \mathbb{C}C_i \otimes V^i_\alpha$, this has basis $\{ \ket{k,v^\alpha_j} \}_{j=1,...,dim\alpha}^{k\in C_i}$ and forms an irreducible representation of $D(G)$ under the action 
-\begin{equation}
-P_hg\ket{k,v^\alpha_j} = \delta_{h,gkg^{-1}} \ket{h,\alpha(h^{-1}gk)v^\alpha_j}
-\end{equation}
-and the $\{V_{i,\alpha}\}$ is the complete set of irreducible representations.
-
-
-\subsubsection{Drinfeld center}
-\begin{definition}
-The braided (Drinfeld) centre of $\mathcal{C}$ is the category $Z_1(\mathcal{C})$ with objects pairs $(X,e_X)$ where $X \in \mathcal{C}$ and $e_X$ is a half-braiding, and with morphisms given by the morphisms of $\mathcal{C}$ which commute with the half-braiding.
-\end{definition}
-\begin{theorem}
-$Z(RepG) \simeq RepDG$
-\end{theorem}
-\subsubsection{Kitaev's lattice construction}
-The following argument seems to work for abelian groups.
-Being a spherical fusion category, $RepG$ is well suited to be a process theory of particles. As we pointed out earlier what is missing is the braided structure, but let us ignore this for the moment. We have simple objects corresponding to particle types and fusion rules determined by the group structure.\\
-Now suppose we have particles whose fusion is described by a $RepG$ and let us consider a lattice with those particles located at the edges. This lattice could be embedded in any space but let us assume it is a lattice on a torus. The states of our system are then configurations of particle types on the edges. So edges are coloured by simple representations from $RepG$. Now we can act on the lattice with vertex and plaquette operators which basically implement measurements at vertices and flips (fusion with other simple reps) of the particles on a plaquette. By now we have produced a theory where states are lattice configurations and processes are generated by vertex $V_\alpha$ and plaquette $P_\beta$ operators. We want to extract the topological degrees of freedom of this theory. First we note that using vertex operators we can make sure that the product of all particles incident at all vertices is 1, i.e $V_\alpha=1$ $\forall \alpha$. We restrict our states to satisfy this local property and we drop vertex operators (in the sense that they are not allowed processes anymore), indeed we fixed their value at all points of the lattice. By also setting $P_\beta =1$ at all plaquettes we quotient further the theory. So we obtain a theory where all vertex and plaquette measurements have value $1$. We finally declare two configurations to be equal if there is a sequence of plaquette operations taking us from one to the other. Noting that plaquette operators are local isometries we see this corresponds to quotienting out the category by an equivalence relation. This doesn't exaust the degrees of freedom of the theory because of the topology of the torus. Those topological degrees of freedom will be the simple objects our newly created category, their fusion rules are completely determined by the structure of $Rep(G)$. Indeed the category we obtained is $Z(Rep(G)) \simeq Rep(DG)$.
-
-\begin{theorem}
-The lattice construction and the Drinfeld construction coincide
-\end{theorem}
-
-\begin{example}
-In the case $G=\mathbb{Z}_2$, recall $Rep\mathbb{Z}_2$ has two simple object of dimension one $\tau_+$ and $\tau_-$ with fusions given by group structure. Let us draw the states of our system as colourings of the edges of the lattice. The condition on the vertex operators results in no endlines and no triple intersections on the lattice. The condition on plaquette operators only allows loop configurations. Quotienting out by plaquette operators relation we obtain 4 distinct classes, namely the vacuum $1$, the first cycle of the torus $X$, the second cycle $Z$, and both cycles $X \otimes Z \simeq Y$ and we have the fusion rules. The theory we have obtained is $RepD\mathbb{Z}_2$ which has in fact 4 simple objects with same fusions. We are therefore treating the topological defects of a theory in $Rep\mathbb{Z}_2$ as particles particles in their own right, with their own theory. All those representations are one-dimensional and in fact we just formulated a theory of abelian anyons.
-\end{example}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\section{Quantum Computation}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \subsection{Permutational Quantum Computing}
-\subsubsection{Jordan's model}
-Here we give a categorical description of Jordan's model for Permutational Quantum computation [REFERENCE].
+This section is about a model of quantum computation introduced by Jordan \cite{Jordan09}. We will give a categorical presentation of the model which is not present in the literature and will allow us to compare the model to other computational models.
 
 \begin{definition}
 Let $\mathcal{J}$ be the symmetric fusion category with positive half integers as simple objects, fusions etc.
 \end{definition}
 
-\subsubsection{Categorical PQC}
 The construction given by Jordan can be generalised. In this section we argue that Symmetric Fusion categories are models fo permutational quantum computation.
 
 \begin{theorem}
@@ -2212,28 +2509,29 @@ Jordan's model $\mathcal{J}$
 Permutational quantum computation in $Rep(S_3)$.
 \end{example}
 
-\subsubsection{Spin Network Quantum systems}
-The model described by Jordan is implementable by defining a hamiltonian on a network of spins.\\
-Generalised spin network systems for arbitrairy group $G$
+\begin{remark}
+	The model described by Jordan is implementable by defining a hamiltonian on a network of spins.\\
+	Generalised spin network systems for arbitrairy group $G$
+\end{remark}
+
+\begin{example}[Approximation of Dijkgraaf-Witten link invariants]
+	The link invariant essentially counts homomorphisms from the fundamental group
+	of the link complement to the group G. (cite Zhenghan?)
+\end{example}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Topological Quantum Computation}
-\subsubsection{The Toplogical Model}
-Hard to actually get qubits\\
+
 Take the fusion space to be our topological hilbert space.\\
 Topological qudits are usually encoded as fusion tree basis elements\\
 Topologial gates: braids (can express as action of the braid group) + measurements (=fusions and associators).
 
 
-\subsubsection{Anyon Vacuum on a Torus and Quantum Memory}
+\subsection{Anyon Vacuum on a Torus and Quantum Memory}
 If we consider the torus as our configuration space. Let $C_1$, $C_2$ be the two cycles. Consider the process $T_i$ for $i=1,2$ which creates a particle-antiparticle pair, moves them in opposite directions around cycle $C_i$ so that they meet on the other side of the torus and annihilate. Then we can show $T_i$ do not commute with each other if the particles are abelian anyons with $\theta \neq 0, \pi$. We know $\theta$ must be a fraction $p/q$ with $p$ and $q$ coprime. Then we can show that the system has degenerate ground states. We have $q$ different ground state, so the vacuum state lives in a $q$ dimensional space. If we initialise it in some superposition it will remain in that state unless a $T_1$ or $T_2$ operation is implemented. Because of their topological nature it is very unlikely that such processes occur spontaneously, and therefore the quantum information stored in the superposition is protected.
-
-\subsubsection{Approximation of Dijkgraaf-Witten link invariants}
-The link invariant essentially counts homomorphisms from the fundamental group
-of the link complement to the group G. (cite Zhenghan?)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
