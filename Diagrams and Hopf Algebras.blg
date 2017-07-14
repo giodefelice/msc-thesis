@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Diagrams and Hopf Algebras.aux
+The style file: unsrt.bst
+Database file #1: refs.bib
+Warning--entry type for "Vicary12" isn't style-file defined
+--line 48 of file refs.bib
+You've used 9 entries,
+            1791 wiz_defined-function locations,
+            502 strings with 4643 characters,
+and the built_in function-call counts, 1401 in all, are:
+= -- 112
+> -- 58
+< -- 2
++ -- 24
+- -- 15
+* -- 56
+:= -- 236
+add.period$ -- 27
+call.type$ -- 9
+change.case$ -- 1
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 81
+empty$ -- 157
+format.name$ -- 15
+if$ -- 317
+int.to.chr$ -- 0
+int.to.str$ -- 9
+missing$ -- 12
+newline$ -- 48
+num.names$ -- 9
+pop$ -- 51
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 22
+stack$ -- 0
+substring$ -- 0
+swap$ -- 13
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 9
+width$ -- 10
+write$ -- 96
+(There was 1 warning)

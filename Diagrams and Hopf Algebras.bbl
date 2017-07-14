@@ -1,0 +1,51 @@
+\begin{thebibliography}{1}
+
+\bibitem{MacLane71}
+S.~{Mac Lane}.
+\newblock {\em Categories for the working mathematician}.
+\newblock Springer Verlag, 1971.
+
+\bibitem{Abramsky11}
+S.~Abramsky and N.~Tzevelekos.
+\newblock {\em Introduction to Categories and Categorical Logic}, volume 813 of
+  {\em New Structures for Physics, Lecture Notes in Physics}.
+\newblock Springer-Verlag Berlin Heidelberg, 2011.
+
+\bibitem{Etingof15}
+P.~Etingof, S.~Gelaki, D.~Nikshych, and V.~Ostrik.
+\newblock {\em Tensor Categories}, volume 205 of {\em Mathematical Surveys and
+  Monographs}.
+\newblock American Mathematical Society, 2015.
+
+\bibitem{Coecke17}
+B.~Coecke and A.~Kissinger.
+\newblock {\em Picturing Quantum Processes}.
+\newblock Cambridge University Press, 2017.
+
+\bibitem{Vicary12}
+J.~Vicary and C.~Heunen.
+\newblock Lectures on categorical quantum mechanics, 2012.
+\newblock https://www.cs.ox.ac.uk/files/4551/cqm-notes.pdf.
+
+\bibitem{Lawvere63}
+F:~W. Lawvere.
+\newblock {\em Functorial semantics of algebraic theories}.
+\newblock PhD thesis, Columbia University, 1963.
+
+\bibitem{Majid95}
+Sh. Majid.
+\newblock {\em Foundations of Quantum Group Theory}.
+\newblock Cambridge University Press, 1995.
+
+\bibitem{Slingerland02}
+J.~K. Slingerland.
+\newblock {\em Hopf symmetry and its breaking: braid statistics and confinement
+  in planar physics}.
+\newblock PhD thesis, Universiteit van Amsterdam, 2002.
+
+\bibitem{Drinfeld87}
+V.~Drinfeld.
+\newblock {\em Quantum groups}.
+\newblock American Mathematical Society, 1987.
+
+\end{thebibliography}
