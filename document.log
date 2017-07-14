@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  14 JUL 2017 13:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  14 JUL 2017 18:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1703,57 +1703,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 2492--2495
 
  []
 
-[22] [23] [24]
-Overfull \hbox (11.95245pt too wide) in paragraph at lines 3006--3007
+[22] [23] [24] [25]
+Overfull \hbox (11.95245pt too wide) in paragraph at lines 3291--3292
 []\OT1/cmr/m/it/10 A Many-body Quan-tum sys-
  []
 
-[25] [26] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 3088--3090
+[26] [27]
+Underfull \hbox (badness 10000) in paragraph at lines 3373--3375
+
+ []
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 3378--3381
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3093--3096
+Underfull \hbox (badness 10000) in paragraph at lines 3378--3381
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 3093--3096
-
- []
-
-[28] [29]
-Overfull \hbox (6.7772pt too wide) in paragraph at lines 3139--3140
+[29] [30]
+Overfull \hbox (6.7772pt too wide) in paragraph at lines 3424--3425
 []\OT1/cmr/m/it/10 If we
  []
 
-[30]
 
-LaTeX Warning: Citation `Jordan09' on page 31 undefined on input line 3145.
+LaTeX Warning: Citation `Jordan09' on page 31 undefined on input line 3430.
 
-
-Overfull \hbox (3.13693pt too wide) in paragraph at lines 3176--3178
+[31]
+Overfull \hbox (3.13693pt too wide) in paragraph at lines 3461--3463
 []\OT1/cmr/m/it/10 The
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3208--3209
-
- []
-
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 3211--3212
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3221--3223
+Underfull \hbox (badness 10000) in paragraph at lines 3493--3494
 
  []
 
 [32]
-Overfull \hbox (56.501pt too wide) detected at line 3253
+Underfull \hbox (badness 10000) in paragraph at lines 3496--3497
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3506--3508
+
+ []
+
+[33]
+Overfull \hbox (56.501pt too wide) detected at line 3538
 \OML/cmm/m/it/10 P[]e\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 + \
 OML/cmm/m/it/10 yw[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 xw[][] P[]e\OT1/cmr/m/
 n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 yw[]\OT1/cmr/m/n
@@ -1764,7 +1763,7 @@ n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 yw[]\OT1/cmr/m/n
  yw[]
  []
 
-(./document.bbl [33]
+(./document.bbl
 Underfull \hbox (badness 1902) in paragraph at lines 25--28
 []\OT1/cmr/m/n/10 M. Mueger.  Ten-sor cat-e-gories: A se-lec-tive guided tour. 
  \OT1/cmr/m/it/10 eprint
@@ -1780,16 +1779,16 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-) [34] (./document.aux)
+[34]) [35] (./document.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 37820 strings out of 493014
- 900442 string characters out of 6133351
+ 37897 strings out of 493014
+ 901925 string characters out of 6133351
  1100721 words of memory out of 5000000
- 40708 multiletter control sequences out of 15000+600000
+ 40785 multiletter control sequences out of 15000+600000
  12468 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,23n,103p,10453b,1038s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1811,10 +1810,10 @@ e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/
 2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texl
 ive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on document.pdf (34 pages, 335804 bytes).
+Output written on document.pdf (35 pages, 341052 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
+ 192 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

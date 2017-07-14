@@ -2513,7 +2513,13 @@ Local symmetries are very well described by the theory of groups. In order to de
 \begin{theorem}
 	If $H$ is a finite dimensional Hopf algebra with invertible antipode $Z(RepH) \simeq RepDH$
 \end{theorem}
-Let us fix a bialgebra $H$ and suppose $V \in obj(Rep(H))$ and $(V, e_V)$ is in $Z(RepG)$.
+Let us fix a bialgebra $H$ and suppose $ \left( V, \begin{tikzpicture}[scale=0.5, squr/.style={draw,regular polygon,
+	regular polygon sides=4,fill=black}]
+\node [scale=0.3, squr] (0) at (0,0.4) {};
+\draw (0,0)--(0)--(0,0.7);
+\draw[bend left] (-0.4,0) to (0);
+\end{tikzpicture} \, \right) \,
+\in obj(Rep(H))$ and $(V, e_V)$ is in $Z(RepG)$.
 Note that $H$ has a natural $H$-module structure given by right multiplication. Consider the component of the half-braiding of $V$ at $H$.
 \begin{center}	
 	\begin{tikzpicture}
@@ -2690,6 +2696,26 @@ So that the coaction indeed defines a left $H$-comodule. Left $H$-modules which 
 	\node (0) at (0,0) {};
 	\node [scale=0.5, squr] (3) at (0.3,-0.3) {};
 	\node [scale=0.5, draw, circle, fill=black] (1) at (-0.2,-0.2) {};
+	\node [scale=0.5, draw, circle, fill=white] (2) at (-0.5,-0.5) {};
+	\node [scale=0.5, draw, circle, fill=black] (4) at (-0.2,-0.6) {};
+	\draw (-0.5,-0.7)--(2);
+	\draw [bend left] (2) to (1);
+	\draw (1)--(0.3,0.7);
+	\draw (2) to (3);
+	\draw (4) to (1);
+	\draw[bend left] (0) to (-0.3,0.7);
+	\draw[bend left] (0) to (3);
+	\draw (3)--(0.3,-0.7);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node (0) at (0,0) {};
+	\node [scale=0.5, squr] (3) at (0.3,-0.3) {};
+	\node [scale=0.5, draw, circle, fill=black] (1) at (-0.2,-0.2) {};
 	\node [scale=0.5, draw, circle, fill=white] (2) at (-0.3,-0.5) {};
 	\node [scale=0.5, draw, circle, fill=black] (4) at (-0.6,-0.3) {};
 	\draw (-0.3,-0.7)--(2);
@@ -2737,7 +2763,22 @@ So that the coaction indeed defines a left $H$-comodule. Left $H$-modules which 
 	\end{tikzpicture}
 	\end{gathered} \,\right)
 	\end{equation*} 
-	is an intertwiner by associativity. Therefore by naturality of the braid.
+	is an intertwiner by associativity. Also it is easy to check that the symmetry morphism lifted from $Vect$ 
+	$$
+	\left( H, \, \begin{gathered}
+	\begin{tikzpicture}[scale=0.5]
+	\draw (0,-0.5)--(0,0.5);
+	\end{tikzpicture}
+	\end{gathered} \,\right)
+	\otimes V 
+	\rightarrow 
+	V \otimes \left( H, \, \begin{gathered}
+	\begin{tikzpicture}[scale=0.5]
+	\draw (0,-0.5)--(0,0.5);
+	\end{tikzpicture}
+	\end{gathered} \,\right) $$ 
+	is an intertwiner.
+	Therefore by naturality of the braid:
 	\begin{equation}
 	\begin{gathered}
 	\begin{tikzpicture}[whit/.style={draw,regular polygon,
@@ -2857,17 +2898,17 @@ And the compatibility condition looks like this.
 	\end{equation}
 \end{claim}
 \begin{proof}
-	The proof is very similar to that of the previous claim.
+	The proof is very similar to that of the previous claim. Using the fact that the braid is an intertwiner we obtain
 	\begin{equation}
 	\begin{gathered}
 	\begin{tikzpicture}[whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
 		regular polygon sides=4,fill=black}]
-	\node (0) at (0,-0.3) {};
+	\node [scale=0.5] (0) at (0,-0.3) {};
 	\node [scale=0.5, squr] (3) at (0,0.3) {};
 	\node [scale=0.5, draw, circle, fill=black] (1) at (-0.5,0.3) {};
 	\node [scale=0.5, draw, circle, fill=white] (2) at (-0.5,-0.3) {};
-	\node [scale=0.5, draw, circle, fill=black] (4) at (0.3,-0.4) {};
+	\node [scale=0.5, draw, circle, fill=black] (4) at (0.3,-0.5) {};
 	\draw (-0.5,-0.7)--(2)--(1)--(-0.5,0.7);
 	\draw (2) to (3);
 	\draw (0,-0.7)--(3)--(0,0.7);
@@ -2895,7 +2936,7 @@ And the compatibility condition looks like this.
 	\end{tikzpicture}
 	\end{gathered}
 	\end{equation}
-	Using the unit law and the same trick as before we see that
+	Then using the unit law and the same trick as before we see that
 	\begin{equation}
 	\, = \,
 	\begin{gathered}
@@ -2989,6 +3030,250 @@ The previous claims only assumed the bialgebra laws. Making use of the antipode 
 	\end{tikzpicture}
 	\end{gathered}
 \end{equation}
+When $H$ is finite dimensional, we can define the action of $DH$ on $V$ as follows (where thick wires carry $DH$ and thin wires carry $H$)
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node[scale=0.7, draw, circle] (0) at (0,0) {};
+\node (1) at (-0.7, -0.7) {$DH$};
+\node (2) at (0, -0.7) {$V$};
+\draw[bend right, thick=2] (0) to (-0.5,-0.5);
+\draw (2)--(0)--(0,0.5);
+\end{tikzpicture}
+\end{gathered}
+\, := \,
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+	regular polygon sides=4,fill=black}]
+\node [scale=0.5, squr] (0) at (0,0.5) {};
+\node [scale=0.5, whit] (1) at (0,0) {};
+\draw (0,-0.5)--(1)--(0)--(0,0.9);
+\draw [bend left] (-0.5, -0.5) to (0);
+\draw [bend left] (-0.3,-0.5) to (1);
+\end{tikzpicture}
+\end{gathered}			
+\end{equation}
+This action gives $V$ an $H$-module structure as:
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+	regular polygon sides=4,fill=black}]
+\node [scale=0.5, whit] (0) at (0.5,-0.3) {};
+\node [scale=0.5, squr] (1) at (0.2,-0.1) {};
+\node [scale=0.5, whit] (2) at (-0.2,0.1) {};
+\node [scale=0.5, squr] (3) at (-0.5,0.3) {};
+\draw [bend right] (0.7,-0.7) to (0);
+\draw (0)--(1)--(2)--(3);
+\draw [bend left] (3) to (-0.7,0.7);
+\draw [bend left] (0.2,-0.7) to (0);
+\draw [bend left] (-0.1,-0.7) to (1);
+\draw [bend left] (-0.5,-0.7) to (2);
+\draw [bend left] (-0.8,-0.7) to (3);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+	regular polygon sides=4,fill=black}]
+\node [scale=0.5, whit] (0) at (0.5,-0.3) {};
+\node [scale=0.5, whit] (1) at (0.2,-0.1) {};
+\node [scale=0.5, squr] (2) at (-0.2,0.1) {};
+\node [scale=0.5, squr] (3) at (-0.5,0.3) {};
+\node [scale=0.5, draw, circle, fill=white] (w) at (-0.1,-0.4) {};
+\node [scale=0.5, draw, circle, fill=black] (b) at (-0.5,-0.4) {};
+\node [scale=0.3,whit] (s) at (-0.5, -0.1) {$S$};
+\draw [bend right] (0.7,-0.7) to (0);
+\draw (0)--(1)--(2)--(3);
+\draw [bend left] (3) to (-0.7,0.7);
+\draw [bend left] (0.2,-0.7) to (0);
+\draw (-0.1,-0.7) to (w);
+\draw (-0.5,-0.7) to (b);
+\draw [bend left] (-0.8,-0.7) to (3);
+\draw[bend right=80] (w) to (s);
+\draw[bend right, looseness=2] (s) to (b);
+\draw[bend left] (b) to (1);
+\draw (w) to (2);
+\draw (w) to (b);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+	regular polygon sides=4,fill=black}]
+\node [scale=0.5, whit] (0) at (0.4,0.3) {};
+\node [scale=0.5, draw, circle, fill=white] (1) at (0.2,-0.1) {};
+\node [scale=0.5, draw, circle, fill=black] (2) at (-0.2,0.2) {};
+\node [scale=0.5, squr] (3) at (-0.1,0.5) {};
+\node [scale=0.5, draw, circle, fill=white] (w) at (-0.1,-0.4) {};
+\node [scale=0.5, draw, circle, fill=black] (b) at (-0.5,-0.4) {};
+\node [scale=0.3,whit] (s) at (-0.5, -0.1) {$S$};
+\draw [bend right] (0.7,-0.7) to (0);
+\draw (0)--(3);
+\draw (1) to (0);
+\draw (2) to (3);
+\draw [bend left] (3) to (-0.7,0.7);
+\draw [bend right] (0.2,-0.7) to (1);
+\draw (-0.1,-0.7) to (w);
+\draw (-0.5,-0.7) to (b);
+\draw [bend left=60] (-0.8,-0.7) to (2);
+\draw[bend right=80] (w) to (s);
+\draw[bend right, looseness=2] (s) to (b);
+\draw[bend left] (b) to (1);
+\draw (w) to (2);
+\draw (w) to (b);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+For any 
+$\left( W, \begin{tikzpicture}[scale=0.3, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node [scale=0.3,whit] (0) at (0, 0.5) {x};
+\draw[bend left] (-0.5,0) to (0);
+\draw (0,0)--(0)--(0,1);
+\end{tikzpicture} \, \right) $
+define
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+\node (0) at (0.5,0.5) {};
+\node (v) at (0,-0.3) {$W$};
+\node (w) at (1,-0.3) {$V$};
+\draw (0,0)--(1,1);
+\draw (1,0)--(0)--(0,1);
+\end{tikzpicture}
+\end{gathered}
+\, := \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+\node[scale=0.5, whit] (0) at (0,0.8) {};
+\node[scale=0.3, whit] (1) at (1,1) {$x$};
+\draw [bend left] (0,0) to (0.5,0.5);
+\draw [bend right] (0.5,0.5) to (1);
+\draw (1) to (1,1.3);
+\draw [bend right] (1,0) to (0.5,0.5);
+\draw [bend left=20] (0.5,0.5) to (0);
+\draw (0) to (0,1.3);
+\draw (0) to (1);
+\end{tikzpicture}
+\end{gathered}
+\quad;\quad
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+\node (0) at (0.5,0.5) {};
+\node (v) at (0,-0.3) {$V$};
+\node (w) at (1,-0.3) {$W$};
+\draw (1,0)--(0,1);
+\draw (0,0)--(0)--(1,1);
+\end{tikzpicture}
+\end{gathered}
+\, := \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+\node[scale=0.5, whit] (0) at (0,0.3) {};
+\node[scale=0.3, whit] (1) at (0,0.9) {$x$};
+\draw [bend left=70, looseness=1.5] (0) to (1);
+\draw (0,0)--(0)--(0.8,1.2);
+\draw (0.8,0)--(1)--(0,1.2);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+\begin{claim}
+	The following equations hold
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node (0) at (0.5,0.5) {};
+	\node (3) at (0.5,1.5) {};
+	\draw (1,0)--(0,1)--(1,2);
+	\draw (0,0)--(0)--(1,1)--(3)--(0,2);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\draw (0.8,0)--(0.8,2);
+	\draw (0.1,0)--(0.1,2);
+	\end{tikzpicture}
+	\end{gathered}
+	\quad;\quad
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node (0) at (0.5,0.5) {};
+	\node (3) at (0.5,1.5) {};
+	\draw (1,0)--(0)--(0,1)-- (3)--(1,2);
+	\draw (0,0)--(1,1)--(0,2);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\draw (0.8,0)--(0.8,2);
+	\draw (0.1,0)--(0.1,2);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+	if an only if
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node[scale=0.5, whit] (0) at (0.5,0.5) {};
+	\node[scale=0.5, whit] (1) at (0.5,1) {};
+	\node[scale=0.5, draw, circle, fill=black] (b) at (0,1.3) {};
+	\draw (b) to (0,1.5);
+	\draw [bend right=70, looseness=1.5] (0) to (b);
+	\draw [bend left] (1) to (b);
+	\draw (0.5,0)--(0)--(1)--(0.5,1.5);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node[scale=0.5, draw, circle, fill=black] (b) at (0,1.3) {};
+	\draw (b) to (0,1.5);
+	\draw (0.5,0)--(0.5,1.5);
+	\end{tikzpicture}
+	\end{gathered}
+	\quad;\quad
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node[scale=0.5, whit] (0) at (0.5,0.3) {};
+	\node[scale=0.5, whit] (1) at (0.5,1) {};
+	\node[scale=0.5, draw, circle, fill=black] (b) at (1,1.3) {};
+	\draw (b) to (1,1.5);
+	\draw [bend left=80, looseness=1.8] (0) to (0.6,0.6);
+	\draw [bend right=50] (0.6,0.6) to (b);
+	\draw (1) to (b);
+	\draw (0.5,0)--(0)--(1)--(0.5,1.5);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node[scale=0.5, draw, circle, fill=black] (b) at (1,1.3) {};
+	\draw (b) to (1,1.5);
+	\draw (0.5,0)--(0.5,1.5);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+\end{claim}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
