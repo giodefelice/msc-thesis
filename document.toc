@@ -3,17 +3,18 @@
 \contentsline {subsection}{\numberline {2.1}Monoidal categories}{2}
 \contentsline {subsection}{\numberline {2.2}Hopf Algebras}{10}
 \contentsline {subsection}{\numberline {2.3}Representations of Hopf algebras}{15}
-\contentsline {section}{\numberline {3}The Algebra of Anyons}{19}
-\contentsline {subsection}{\numberline {3.1}Braided Fusion Categories}{19}
-\contentsline {subsection}{\numberline {3.2}Modular Categories and Anyons}{21}
-\contentsline {subsection}{\numberline {3.3}The Drinfeld center}{23}
-\contentsline {section}{\numberline {4}Quantum Computation}{26}
-\contentsline {subsection}{\numberline {4.1}Phases of Matter}{26}
-\contentsline {subsection}{\numberline {4.2}Kitaev's model}{29}
-\contentsline {subsection}{\numberline {4.3}Permutational Quantum Computing}{31}
-\contentsline {subsection}{\numberline {4.4}Topological Quantum Computation}{32}
-\contentsline {section}{\numberline {5}A braided programming language}{32}
-\contentsline {subsection}{\numberline {5.1}Non-commutative linear logic}{32}
-\contentsline {subsection}{\numberline {5.2}An adjunction between fPQC and TQC}{32}
-\contentsline {subsection}{\numberline {5.3}Quantum Semantics}{34}
-\contentsline {section}{\numberline {6}Conclusion}{34}
+\contentsline {section}{\numberline {3}The Algebra of Anyons}{20}
+\contentsline {subsection}{\numberline {3.1}Models of anyons}{21}
+\contentsline {subsection}{\numberline {3.2}Braided Fusion Categories}{24}
+\contentsline {subsection}{\numberline {3.3}The Drinfeld center}{25}
+\contentsline {section}{\numberline {4}Quantum Computation}{29}
+\contentsline {subsection}{\numberline {4.1}Phases of Matter}{29}
+\contentsline {subsection}{\numberline {4.2}Kitaev's model}{30}
+\contentsline {subsection}{\numberline {4.3}Permutational Quantum Computing}{33}
+\contentsline {subsection}{\numberline {4.4}Topological Quantum Computation}{34}
+\contentsline {section}{\numberline {5}A braided programming language}{34}
+\contentsline {subsection}{\numberline {5.1}Non-commutative linear logic}{34}
+\contentsline {subsection}{\numberline {5.2}An adjunction between fPQC and TQC}{34}
+\contentsline {subsection}{\numberline {5.3}Quantum Semantics}{36}
+\contentsline {section}{\numberline {6}Conclusion}{36}
+\contentsline {section}{\numberline {A}Fusion categories}{36}

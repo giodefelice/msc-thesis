@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {1}The Algebra of Anyons}{2}
+\contentsline {subsection}{\numberline {1.1}Braided Fusion Categories}{2}
+\contentsline {subsection}{\numberline {1.2}Modular Categories and Anyons}{3}
+\contentsline {subsection}{\numberline {1.3}The Drinfeld center}{6}

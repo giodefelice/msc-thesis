@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  16 JUL 2017 18:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  17 JUL 2017 22:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**document.tex
-(./document.tex
+**"The Algebra of Anyons.tex"
+(./The Algebra of Anyons.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
@@ -1550,21 +1550,21 @@ Package braids Warning: This package was designed using PGF2.10; you are using
 \braid@eh=\dimen326
 \c@braid@level=\count282
 \c@braid@strands=\count283
-) (./document.aux)
-\openout1 = `document.aux'.
+) (./The Algebra of Anyons.aux)
+\openout1 = `"The Algebra of Anyons.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 538.
-LaTeX Font Info:    ... okay on input line 538.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 538.
-LaTeX Font Info:    ... okay on input line 538.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 538.
-LaTeX Font Info:    ... okay on input line 538.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 538.
-LaTeX Font Info:    ... okay on input line 538.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 538.
-LaTeX Font Info:    ... okay on input line 538.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 538.
-LaTeX Font Info:    ... okay on input line 538.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 537.
+LaTeX Font Info:    ... okay on input line 537.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 537.
+LaTeX Font Info:    ... okay on input line 537.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 537.
+LaTeX Font Info:    ... okay on input line 537.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 537.
+LaTeX Font Info:    ... okay on input line 537.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 537.
+LaTeX Font Info:    ... okay on input line 537.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 537.
+LaTeX Font Info:    ... okay on input line 537.
 \c@lstlisting=\count284
  ABD: EveryShipout initializing macros
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -1631,121 +1631,101 @@ e
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
- on input line 538.
+ on input line 537.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 539.
+
+LaTeX Warning: Citation `Kitaev06' on page 1 undefined on input line 540.
+
+
+LaTeX Warning: Citation `Simon16' on page 1 undefined on input line 540.
+
+
+LaTeX Warning: Citation `Panangaden11' on page 1 undefined on input line 540.
+
+
+LaTeX Warning: Citation `Rowell17' on page 1 undefined on input line 540.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 542.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 539.
+LaTeX Font Info:    Try loading font information for U+msb on input line 542.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./document.toc)
-\tf@toc=\write4
-\openout4 = `document.toc'.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 540--544
 
- [1
+ []
 
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Citation `Abramsky11' on page 2 undefined on input line 563.
-
-
-LaTeX Warning: Citation `Coecke17' on page 2 undefined on input line 563.
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 569.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 553.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 569.
- [2]
-Overfull \hbox (3.32031pt too wide) in paragraph at lines 644--645
-[]\OT1/cmr/m/it/10 Given cat-e-gories $\OMS/cmsy/m/n/10 C$ \OT1/cmr/m/it/10 and
- $\OMS/cmsy/m/n/10 D$ \OT1/cmr/m/it/10 and func-
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 553.
+ [1
+
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 589.
+
+Underfull \hbox (badness 10000) in paragraph at lines 591--593
+
  []
 
-[3]
-Overfull \hbox (16.1093pt too wide) in paragraph at lines 662--663
-[]\OT1/cmr/m/it/10 A monoidal cat-e-gory is a cat-e-gory $\OMS/cmsy/m/n/10 C$ \
-OT1/cmr/m/it/10 equipped
+
+Underfull \hbox (badness 10000) in paragraph at lines 596--599
+
+ []
+
+
+LaTeX Warning: Citation `Coecke17' on page 2 undefined on input line 602.
+
+[2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 662--665
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--677
+
  []
 
 [4] [5]
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 743.
- [6] [7]
 
-LaTeX Warning: Citation `Lawvere63' on page 8 undefined on input line 949.
-
-[8] [9]
-
-LaTeX Warning: Citation `Majid95' on page 10 undefined on input line 1008.
-
-[10] [11]
-
-LaTeX Warning: Citation `Slingerland02' on page 12 undefined on input line 1070
-.
-
-[12] [13]
-Overfull \hbox (6.59302pt too wide) in paragraph at lines 1522--1523
-[]\OT1/cmr/m/it/10 The uni-ver-sal $\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -matrix
- sat-is-fies the Quan-tum Yang-Baxter equa-
- []
-
-[14]
-
-LaTeX Warning: Citation `Drinfeld87' on page 15 undefined on input line 1702.
+LaTeX Warning: Citation `Vercruysse12' on page 6 undefined on input line 732.
 
 
-Overfull \hbox (0.57443pt too wide) in paragraph at lines 1704--1705
-[]\OT1/cmr/m/it/10 The quan-tum dou-ble
- []
-
-[15] [16] [17] [18]
-
-LaTeX Warning: Citation `Kitaev06' on page 19 undefined on input line 2432.
+LaTeX Warning: Citation `Joyal91' on page 6 undefined on input line 732.
 
 
-LaTeX Warning: Citation `Simon16' on page 19 undefined on input line 2432.
-
-
-LaTeX Warning: Citation `Panangaden11' on page 19 undefined on input line 2432.
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2432--2436
-
- []
-
-[19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 2483--2485
+Underfull \hbox (badness 10000) in paragraph at lines 732--733
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2488--2491
-
+Overfull \hbox (15.54112pt too wide) in paragraph at lines 737--738
+[]\OT1/cmr/m/it/10 Any monoidal cat-e-gory $\OMS/cmsy/m/n/10 C$ \OT1/cmr/m/it/1
+0 equipped
  []
 
 
-LaTeX Warning: Citation `Coecke17' on page 21 undefined on input line 2494.
-
-[21] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 2559--2562
-
+Overfull \hbox (8.25624pt too wide) in paragraph at lines 743--744
+[]\OT1/cmr/m/it/10 If $\OML/cmm/m/it/10 H$ \OT1/cmr/m/it/10 is a fi-nite di-men
+-sional, semisim-ple Hopf al-ge-bra the $\OML/cmm/m/it/10 Rep\OT1/cmr/m/n/10 (\
+OML/cmm/m/it/10 D\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 H\OT1/cmr/m/n/10 ))$
  []
 
-[23] [24]
-Overfull \hbox (7.15947pt too wide) in paragraph at lines 2614--2615
+
+Overfull \hbox (1.4095pt too wide) in paragraph at lines 751--752
 []\OT1/cmr/m/it/10 A half-braiding on some ob-ject $\OML/cmm/m/it/10 X$ \OT1/cm
 r/m/it/10 in a monoidal
  []
 
-
-Overfull \hbox (4.97093pt too wide) in paragraph at lines 2693--2701
+[6]
+Overfull \hbox (4.97093pt too wide) in paragraph at lines 849--857
 \OT1/cmr/m/n/10 Fix a bial-ge-bra $\OML/cmm/m/it/10 H$ \OT1/cmr/m/n/10 and sup-
 pose $[]  \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 obj\OT1/cmr/m/n/10 (\OML/cmm/m/it
 /10 Rep\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 H\OT1/cmr/m/n/10 ))$ and $(\OML/cmm/m/
@@ -1753,60 +1733,14 @@ it/10 V; e[]\OT1/cmr/m/n/10 )$ is in $\OML/cmm/m/it/10 Z\OT1/cmr/m/n/10 (\OML/c
 mm/m/it/10 RepG\OT1/cmr/m/n/10 )$.
  []
 
-[25] [26] [27] [28]
-Overfull \hbox (11.95245pt too wide) in paragraph at lines 3531--3532
-[]\OT1/cmr/m/it/10 A Many-body Quan-tum sys-
- []
-
-[29] [30] [31]
-Overfull \hbox (6.7772pt too wide) in paragraph at lines 3613--3614
-[]\OT1/cmr/m/it/10 If we
- []
-
-[32]
-
-LaTeX Warning: Citation `Jordan09' on page 33 undefined on input line 3619.
-
-
-Overfull \hbox (3.13693pt too wide) in paragraph at lines 3650--3652
-[]\OT1/cmr/m/it/10 The
- []
-
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 3682--3683
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3685--3686
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3695--3697
-
- []
-
-[34]
-Overfull \hbox (56.501pt too wide) detected at line 3727
-\OML/cmm/m/it/10 P[]e\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 + \
-OML/cmm/m/it/10 yw[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 xw[][] P[]e\OT1/cmr/m/
-n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 yw[]\OT1/cmr/m/n
-/10 ) = \OML/cmm/m/it/10 yw[][] P[]a\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 xw[] \OT1
-/cmr/m/n/10 + \OML/cmm/m/it/10 yw[]\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 ^^@\OML
-/cmm/m/it/10 xw[][] P[]a\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 
-+ \OML/cmm/m/it/10 yw[]\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10
- yw[]
- []
-
-(./document.bbl [35]
-Underfull \hbox (badness 1902) in paragraph at lines 25--28
+[7] [8] [9] [10] [11] (./The Algebra of Anyons.bbl
+Underfull \hbox (badness 1902) in paragraph at lines 4--7
 []\OT1/cmr/m/n/10 M. Mueger.  Ten-sor cat-e-gories: A se-lec-tive guided tour. 
  \OT1/cmr/m/it/10 eprint
  []
 
 ! Misplaced alignment tab character &.
-l.37 \newblock Harper &
+l.16 \newblock Harper &
                         Row, 1966.
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1815,19 +1749,19 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-) [36] [37] [38] (./document.aux)
+) [12] [13] [14] (./The Algebra of Anyons.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 38043 strings out of 493014
- 904231 string characters out of 6133351
- 1102824 words of memory out of 5000000
- 40928 multiletter control sequences out of 15000+600000
- 12468 words of font info for 48 fonts, out of 8000000 for 9000
+ 37713 strings out of 493014
+ 897840 string characters out of 6133351
+ 1082226 words of memory out of 5000000
+ 40609 multiletter control sequences out of 15000+600000
+ 7822 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,23n,103p,10453b,1042s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,23n,103p,10468b,939s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -1835,21 +1769,16 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
 local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016
-/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/
-2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on document.pdf (38 pages, 353172 bytes).
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on "The Algebra of Anyons.pdf" (14 pages, 207310 bytes).
 PDF statistics:
- 204 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
+ 105 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

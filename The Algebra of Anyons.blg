@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: The Algebra of Anyons.aux
+The style file: unsrt.bst
+Database file #1: refs.bib
+You've used 3 entries,
+            1791 wiz_defined-function locations,
+            463 strings with 3788 characters,
+and the built_in function-call counts, 424 in all, are:
+= -- 34
+> -- 12
+< -- 0
++ -- 6
+- -- 3
+* -- 11
+:= -- 80
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 2
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 26
+empty$ -- 48
+format.name$ -- 3
+if$ -- 92
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 4
+newline$ -- 18
+num.names$ -- 3
+pop$ -- 13
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 8
+stack$ -- 0
+substring$ -- 0
+swap$ -- 3
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 3
+width$ -- 4
+write$ -- 32

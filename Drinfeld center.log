@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  16 JUL 2017 18:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  16 JUL 2017 12:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**document.tex
-(./document.tex
+**"Drinfeld center.tex"
+(./Drinfeld center.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
@@ -468,19 +468,13 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/braket/braket.sty)
-(/usr/local/texlive/2016/texmf-dist/tex/latex/appendix/appendix.sty
-Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count111
-\c@@ppsavesec=\count112
-\c@@ppsaveapp=\count113
-)
-\c@definition=\count114
-\c@claim=\count115
-\c@conjecture=\count116
-\c@corollary=\count117
-\c@example=\count118
-\c@problem=\count119
-\c@idea=\count120
+\c@definition=\count111
+\c@claim=\count112
+\c@conjecture=\count113
+\c@corollary=\count114
+\c@example=\count115
+\c@problem=\count116
+\c@idea=\count117
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lkproof/proof.sty
 \inferLineSkip=\dimen125
@@ -507,7 +501,7 @@ Package: appendix 2009/09/02 v1.2b extra appendix facilities
 \@LabelPart=\box32
 \ResultBox=\box33
 )
-\c@theorem=\count121
+\c@theorem=\count118
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/local/texlive/2016/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
@@ -553,7 +547,7 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count122
+\Gread@gobject=\count119
 ))
 \Gin@req@height=\dimen146
 \Gin@req@width=\dimen147
@@ -579,10 +573,10 @@ ode.tex
 \pgf@yc=\dimen155
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count123
-\c@pgf@countb=\count124
-\c@pgf@countc=\count125
-\c@pgf@countd=\count126
+\c@pgf@counta=\count120
+\c@pgf@countb=\count121
+\c@pgf@countc=\count122
+\c@pgf@countd=\count123
 \t@pgf@toka=\toks27
 \t@pgf@tokb=\toks28
 \t@pgf@tokc=\toks29
@@ -603,8 +597,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
 code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count127
-\pgfsyssoftpath@bigbuffer@items=\count128
+\pgfsyssoftpath@smallbuffer@items=\count124
+\pgfsyssoftpath@bigbuffer@items=\count125
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
 code.tex
@@ -633,7 +627,7 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen156
-\pgfmath@count=\count129
+\pgfmath@count=\count126
 \pgfmath@box=\box35
 \pgfmath@toks=\toks30
 \pgfmath@stack@operand=\toks31
@@ -658,7 +652,7 @@ code.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
 erarithmetics.code.tex)))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count130
+\c@pgfmathroundto@lastzeros=\count127
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
 de.tex
@@ -696,7 +690,7 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box36
 \pgf@hbox=\box37
 \pgf@layerbox@main=\box38
-\pgf@picture@serial@count=\count131
+\pgf@picture@serial@count=\count128
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
 ate.code.tex
@@ -731,7 +725,7 @@ File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 e.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen180
-\pgf@sys@shading@range@num=\count132
+\pgf@sys@shading@range@num=\count129
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
 e.tex
@@ -794,7 +788,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 dlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count133
+\pgf@plot@mark@count=\count130
 \pgfplotmarksize=\dimen185
 )
 \tikz@lastx=\dimen186
@@ -807,19 +801,19 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@figbox@bg=\box42
 \tikz@tempbox=\box43
 \tikz@tempbox@bg=\box44
-\tikztreelevel=\count134
-\tikznumberofchildren=\count135
-\tikznumberofcurrentchild=\count136
-\tikz@fig@count=\count137
+\tikztreelevel=\count131
+\tikznumberofchildren=\count132
+\tikznumberofcurrentchild=\count133
+\tikz@fig@count=\count134
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
 e.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count138
-\pgfmatrixcurrentcolumn=\count139
-\pgf@matrix@numberofcolumns=\count140
+\pgfmatrixcurrentrow=\count135
+\pgfmatrixcurrentcolumn=\count136
+\pgf@matrix@numberofcolumns=\count137
 )
-\tikz@expandcount=\count141
+\tikz@expandcount=\count138
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
@@ -834,8 +828,8 @@ Package: pgfplots 2016/01/06 v1.13 Data Visualization (1.13)
 \t@pgfplots@tokb=\toks36
 \t@pgfplots@tokc=\toks37
 \pgfplots@tmpa=\dimen192
-\c@pgfplots@coordindex=\count142
-\c@pgfplots@scanlineindex=\count143
+\c@pgfplots@coordindex=\count139
+\c@pgfplots@scanlineindex=\count140
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric
 .code.tex))
@@ -851,7 +845,7 @@ Package pgfplots: loading complementary arithmetics for your pgf version...
 soldpgfsupp_pgflibraryfpu.code.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
 soldpgfsupp_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count144
+\c@pgfmathroundto@lastzeros=\count141
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code
 .tex
@@ -861,13 +855,13 @@ liststructure.code.tex)
 liststructureext.code.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 array.code.tex
-\c@pgfplotsarray@tmp=\count145
+\c@pgfplotsarray@tmp=\count142
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
 matrix.code.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable
 shared.code.tex
-\c@pgfplotstable@counta=\count146
+\c@pgfplotstable@counta=\count143
 \t@pgfplotstable@a=\toks38
 )
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
@@ -880,7 +874,7 @@ ta.code.tex))
 .code.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplot
 s.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count147
+\c@pgfplotslibrarysurf@no=\count144
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots
 .surfshading.pgfsys-pdftex.def)))
@@ -917,7 +911,7 @@ s.code.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen195
 \pgfdecoratedinputsegmentremainingdistance=\dimen196
 \pgf@decorate@distancetomove=\dimen197
-\pgf@decorate@repeatstate=\count148
+\pgf@decorate@repeatstate=\count145
 \pgfdecorationsegmentamplitude=\dimen198
 \pgfdecorationsegmentlength=\dimen199
 )
@@ -931,7 +925,7 @@ brarydecorations.pathmorphing.code.tex))
 s/tikzlibrarydecorations.pathreplacing.code.tex
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count149
+\pgfplots@numplots=\count146
 \pgfplots@xmin@reg=\dimen256
 \pgfplots@xmax@reg=\dimen257
 \pgfplots@ymin@reg=\dimen258
@@ -1029,10 +1023,10 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip50
 \backup@length=\skip51
 )
-\c@nprt@mantissa@digitsbefore=\count150
-\c@nprt@mantissa@digitsafter=\count151
-\c@nprt@exponent@digitsbefore=\count152
-\c@nprt@exponent@digitsafter=\count153
+\c@nprt@mantissa@digitsbefore=\count147
+\c@nprt@mantissa@digitsafter=\count148
+\c@nprt@exponent@digitsbefore=\count149
+\c@nprt@exponent@digitsafter=\count150
 \nprt@digitwidth=\skip52
 \nprt@sepwidth=\skip53
 \nprt@decimalwidth=\skip54
@@ -1040,12 +1034,12 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \nprt@digittoks=\toks40
 \nprt@pretoks=\toks41
 \nprt@posttoks=\toks42
-\nprt@thisdigit=\count154
-\nprt@curpos=\count155
-\nprt@rndpos=\count156
-\c@nprt@digitsfirstblock=\count157
-\c@nprt@blockcnt=\count158
-\c@nprt@cntprint=\count159
+\nprt@thisdigit=\count151
+\nprt@curpos=\count152
+\nprt@rndpos=\count153
+\c@nprt@digitsfirstblock=\count154
+\c@nprt@blockcnt=\count155
+\c@nprt@cntprint=\count156
 
 No configuration file `numprint.cfg' found.)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/fp/fp.sty
@@ -1054,19 +1048,19 @@ Package: fp 1995/04/02
 `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
 (/usr/local/texlive/2016/texmf-dist/tex/latex/fp/defpattern.sty
 Package: defpattern 1994/10/12
-\actioncount=\count160
+\actioncount=\count157
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/fp/fp-basic.sty
 Package: fp-basic 1996/05/13
-\FP@xs=\count161
-\FP@xia=\count162
-\FP@xib=\count163
-\FP@xfa=\count164
-\FP@xfb=\count165
-\FP@rega=\count166
-\FP@regb=\count167
-\FP@regs=\count168
-\FP@times=\count169
+\FP@xs=\count158
+\FP@xia=\count159
+\FP@xib=\count160
+\FP@xfa=\count161
+\FP@xfb=\count162
+\FP@rega=\count163
+\FP@regb=\count164
+\FP@regs=\count165
+\FP@times=\count166
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/fp/fp-addons.sty
 Package: fp-addons 1995/03/15
@@ -1085,7 +1079,7 @@ Package: fp-pas 1994/08/29
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/fp/fp-random.sty
 Package: fp-random 1995/02/23
-\FPseed=\count170
+\FPseed=\count167
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/fp/fp-eqn.sty
 Package: fp-eqn 1995/04/03
@@ -1118,7 +1112,7 @@ File: tkz-tool-arith.tex tkz-tool-arith 1.161 c
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tkz-base/tkz-obj-points.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tkz-base/tkz-obj-segments.tex)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tkz-base/tkz-obj-marks.tex
-\tkz@cntmk=\count171
+\tkz@cntmk=\count168
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/latex/tkz-euclide/tkz-tools-intersectio
 ns.tex)
@@ -1200,7 +1194,7 @@ brarydecorations.shapes.code.tex)))
 s/tikzlibraryintersections.code.tex
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/libraries/pgflibraryinterse
 ctions.code.tex
-\pgf@intersect@solutions=\count172
+\pgf@intersect@solutions=\count169
 ))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibraryfit.code.tex
@@ -1221,24 +1215,24 @@ L3 Module: l3tl 2016/03/26 v6465 L3 Token lists
 L3 Module: l3str 2016/03/24 v6441 L3 Strings
 L3 Module: l3seq 2015/08/05 v5777 L3 Sequences and stacks
 L3 Module: l3int 2016/03/24 v6441 L3 Integers
-\c_max_int=\count173
-\l_tmpa_int=\count174
-\l_tmpb_int=\count175
-\g_tmpa_int=\count176
-\g_tmpb_int=\count177
+\c_max_int=\count170
+\l_tmpa_int=\count171
+\l_tmpb_int=\count172
+\g_tmpa_int=\count173
+\g_tmpb_int=\count174
 L3 Module: l3quark 2015/08/17 v5855 L3 Quarks
 L3 Module: l3prg 2015/11/01 v6216 L3 Control structures
-\g__prg_map_int=\count178
+\g__prg_map_int=\count175
 L3 Module: l3clist 2015/09/02 v5901 L3 Comma separated lists
 L3 Module: l3token 2016/04/03 v6470 L3 Experimental token manipulation
 L3 Module: l3prop 2016/01/05 v6366 L3 Property lists
 L3 Module: l3msg 2016/03/26 v6464 L3 Messages
 L3 Module: l3file 2016/03/25 v6458 L3 File and I/O operations
-\l_iow_line_count_int=\count179
-\l__iow_target_count_int=\count180
-\l__iow_current_line_int=\count181
-\l__iow_current_word_int=\count182
-\l__iow_current_indentation_int=\count183
+\l_iow_line_count_int=\count176
+\l__iow_target_count_int=\count177
+\l__iow_current_line_int=\count178
+\l__iow_current_word_int=\count179
+\l__iow_current_indentation_int=\count180
 L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
 \c_zero_dim=\dimen276
 \c_max_dim=\dimen277
@@ -1259,18 +1253,18 @@ L3 Module: l3skip 2016/01/05 v6366 L3 Dimensions and skips
 \g_tmpa_muskip=\muskip15
 \g_tmpb_muskip=\muskip16
 L3 Module: l3keys 2015/11/17 v6284 L3 Key-value interfaces
-\g__keyval_level_int=\count184
-\l_keys_choice_int=\count185
+\g__keyval_level_int=\count181
+\l_keys_choice_int=\count182
 L3 Module: l3fp 2016/03/26 v6465 L3 Floating points
-\c__fp_leading_shift_int=\count186
-\c__fp_middle_shift_int=\count187
-\c__fp_trailing_shift_int=\count188
-\c__fp_big_leading_shift_int=\count189
-\c__fp_big_middle_shift_int=\count190
-\c__fp_big_trailing_shift_int=\count191
-\c__fp_Bigg_leading_shift_int=\count192
-\c__fp_Bigg_middle_shift_int=\count193
-\c__fp_Bigg_trailing_shift_int=\count194
+\c__fp_leading_shift_int=\count183
+\c__fp_middle_shift_int=\count184
+\c__fp_trailing_shift_int=\count185
+\c__fp_big_leading_shift_int=\count186
+\c__fp_big_middle_shift_int=\count187
+\c__fp_big_trailing_shift_int=\count188
+\c__fp_Bigg_leading_shift_int=\count189
+\c__fp_Bigg_middle_shift_int=\count190
+\c__fp_Bigg_trailing_shift_int=\count191
 L3 Module: l3box 2015/08/09 v5822 L3 Experimental boxes
 \c_empty_box=\box66
 \l_tmpa_box=\box67
@@ -1320,25 +1314,25 @@ L3 Module: l3luatex 2016/03/26 v6465 L3 Experimental LuaTeX-specific functions
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2016/03/26 v6465 L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count195
+\l__driver_color_stack_int=\count192
 \l__driver_tmp_box=\box81
 ))
 Package: spath3 2016/02/19 v1.1 Functions for manipulating PGF soft paths
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2016/05/18 v6512 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count196
-\l__xparse_m_args_int=\count197
-\l__xparse_mandatory_args_int=\count198
-\l__xparse_processor_int=\count199
-\l__xparse_v_nesting_int=\count266
+\l__xparse_current_arg_int=\count193
+\l__xparse_m_args_int=\count194
+\l__xparse_mandatory_args_int=\count195
+\l__xparse_processor_int=\count196
+\l__xparse_v_nesting_int=\count197
 )
 \l__spath_tmpa_dim=\dimen307
 \l__spath_tmpb_dim=\dimen308
-\l__spath_tmpa_int=\count267
-\l__spath_l_int=\count268
-\l__spath_rl_int=\count269
-\l__spath_nc_int=\count270
+\l__spath_tmpa_int=\count198
+\l__spath_l_int=\count199
+\l__spath_rl_int=\count266
+\l__spath_nc_int=\count267
 \l__spath_minx_dim=\dimen309
 \l__spath_miny_dim=\dimen310
 \l__spath_maxx_dim=\dimen311
@@ -1414,11 +1408,11 @@ Package: xparse 2016/05/18 v6512 L3 Experimental document command parser
 . Defining command \SPathWeldInto with sig. 'mmm' on line 1358.
 .................................................
 )
-\l__knot_tmpa_int=\count271
-\l__knot_strands_int=\count272
-\l__knot_intersections_int=\count273
-\l__knot_filaments_int=\count274
-\l__knot_component_start_int=\count275
+\l__knot_tmpa_int=\count268
+\l__knot_strands_int=\count269
+\l__knot_intersections_int=\count270
+\l__knot_filaments_int=\count271
+\l__knot_component_start_int=\count272
 \l__knot_tmpa_dim=\dimen313
 \l__knot_tmpb_dim=\dimen314
 \l__knot_tmpc_dim=\dimen315
@@ -1449,10 +1443,10 @@ Package: xparse 2016/05/18 v6512 L3 Experimental document command parser
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hobby/pgflibraryhobby.code.tex
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hobby/hobby.code.tex
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hobby/pml3array.sty
-\l_array_base_int=\count276
-\l_array_top_int=\count277
-\l_array_tmp_int=\count278
-\g_array_base_int=\count279
+\l_array_base_int=\count273
+\l_array_top_int=\count274
+\l_array_tmp_int=\count275
+\g_array_base_int=\count276
 )
 .................................................
 . LaTeX info: "xparse/define-command"
@@ -1469,8 +1463,8 @@ Package: xparse 2016/05/18 v6512 L3 Experimental document command parser
 . 
 . Defining command \HobbyDisableAux with sig. '' on line 59.
 .................................................
-\l_hobby_npoints_int=\count280
-\l_hobby_draw_int=\count281
+\l_hobby_npoints_int=\count277
+\l_hobby_draw_int=\count278
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -1548,37 +1542,37 @@ Package braids Warning: This package was designed using PGF2.10; you are using
 \braid@cy=\dimen324
 \braid@dy=\dimen325
 \braid@eh=\dimen326
-\c@braid@level=\count282
-\c@braid@strands=\count283
-) (./document.aux)
-\openout1 = `document.aux'.
+\c@braid@level=\count279
+\c@braid@strands=\count280
+) (./Drinfeld center.aux)
+\openout1 = `"Drinfeld center.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 538.
-LaTeX Font Info:    ... okay on input line 538.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 538.
-LaTeX Font Info:    ... okay on input line 538.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 538.
-LaTeX Font Info:    ... okay on input line 538.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 538.
-LaTeX Font Info:    ... okay on input line 538.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 538.
-LaTeX Font Info:    ... okay on input line 538.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 538.
-LaTeX Font Info:    ... okay on input line 538.
-\c@lstlisting=\count284
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 506.
+LaTeX Font Info:    ... okay on input line 506.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 506.
+LaTeX Font Info:    ... okay on input line 506.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 506.
+LaTeX Font Info:    ... okay on input line 506.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 506.
+LaTeX Font Info:    ... okay on input line 506.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 506.
+LaTeX Font Info:    ... okay on input line 506.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 506.
+LaTeX Font Info:    ... okay on input line 506.
+\c@lstlisting=\count281
  ABD: EveryShipout initializing macros
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count285
+\scratchcounter=\count282
 \scratchdimen=\dimen327
 \scratchbox=\box82
-\nofMPsegments=\count286
-\nofMParguments=\count287
+\nofMPsegments=\count283
+\nofMParguments=\count284
 \everyMPshowfont=\toks43
-\MPscratchCnt=\count288
+\MPscratchCnt=\count285
 \MPscratchDim=\dimen328
-\MPnumerator=\count289
-\makeMPintoPDFobject=\count290
+\MPnumerator=\count286
+\makeMPintoPDFobject=\count287
 \everyMPtoPDFconversion=\toks44
 ) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
@@ -1631,121 +1625,24 @@ e
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
- on input line 538.
+ on input line 506.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 539.
+LaTeX Font Info:    Try loading font information for U+msa on input line 512.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 539.
+LaTeX Font Info:    Try loading font information for U+msb on input line 512.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./document.toc)
-\tf@toc=\write4
-\openout4 = `document.toc'.
-
- [1
-
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Citation `Abramsky11' on page 2 undefined on input line 563.
-
-
-LaTeX Warning: Citation `Coecke17' on page 2 undefined on input line 563.
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 569.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 569.
- [2]
-Overfull \hbox (3.32031pt too wide) in paragraph at lines 644--645
-[]\OT1/cmr/m/it/10 Given cat-e-gories $\OMS/cmsy/m/n/10 C$ \OT1/cmr/m/it/10 and
- $\OMS/cmsy/m/n/10 D$ \OT1/cmr/m/it/10 and func-
- []
-
-[3]
-Overfull \hbox (16.1093pt too wide) in paragraph at lines 662--663
-[]\OT1/cmr/m/it/10 A monoidal cat-e-gory is a cat-e-gory $\OMS/cmsy/m/n/10 C$ \
-OT1/cmr/m/it/10 equipped
- []
-
-[4] [5]
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 743.
- [6] [7]
-
-LaTeX Warning: Citation `Lawvere63' on page 8 undefined on input line 949.
-
-[8] [9]
-
-LaTeX Warning: Citation `Majid95' on page 10 undefined on input line 1008.
-
-[10] [11]
-
-LaTeX Warning: Citation `Slingerland02' on page 12 undefined on input line 1070
-.
-
-[12] [13]
-Overfull \hbox (6.59302pt too wide) in paragraph at lines 1522--1523
-[]\OT1/cmr/m/it/10 The uni-ver-sal $\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -matrix
- sat-is-fies the Quan-tum Yang-Baxter equa-
- []
-
-[14]
-
-LaTeX Warning: Citation `Drinfeld87' on page 15 undefined on input line 1702.
-
-
-Overfull \hbox (0.57443pt too wide) in paragraph at lines 1704--1705
-[]\OT1/cmr/m/it/10 The quan-tum dou-ble
- []
-
-[15] [16] [17] [18]
-
-LaTeX Warning: Citation `Kitaev06' on page 19 undefined on input line 2432.
-
-
-LaTeX Warning: Citation `Simon16' on page 19 undefined on input line 2432.
-
-
-LaTeX Warning: Citation `Panangaden11' on page 19 undefined on input line 2432.
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2432--2436
-
- []
-
-[19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 2483--2485
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2488--2491
-
- []
-
-
-LaTeX Warning: Citation `Coecke17' on page 21 undefined on input line 2494.
-
-[21] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 2559--2562
-
- []
-
-[23] [24]
-Overfull \hbox (7.15947pt too wide) in paragraph at lines 2614--2615
+Overfull \hbox (1.4095pt too wide) in paragraph at lines 512--513
 []\OT1/cmr/m/it/10 A half-braiding on some ob-ject $\OML/cmm/m/it/10 X$ \OT1/cm
 r/m/it/10 in a monoidal
  []
 
 
-Overfull \hbox (4.97093pt too wide) in paragraph at lines 2693--2701
+Overfull \hbox (4.97093pt too wide) in paragraph at lines 591--599
 \OT1/cmr/m/n/10 Fix a bial-ge-bra $\OML/cmm/m/it/10 H$ \OT1/cmr/m/n/10 and sup-
 pose $[]  \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 obj\OT1/cmr/m/n/10 (\OML/cmm/m/it
 /10 Rep\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 H\OT1/cmr/m/n/10 ))$ and $(\OML/cmm/m/
@@ -1753,103 +1650,44 @@ it/10 V; e[]\OT1/cmr/m/n/10 )$ is in $\OML/cmm/m/it/10 Z\OT1/cmr/m/n/10 (\OML/c
 mm/m/it/10 RepG\OT1/cmr/m/n/10 )$.
  []
 
-[25] [26] [27] [28]
-Overfull \hbox (11.95245pt too wide) in paragraph at lines 3531--3532
-[]\OT1/cmr/m/it/10 A Many-body Quan-tum sys-
- []
+[1
 
-[29] [30] [31]
-Overfull \hbox (6.7772pt too wide) in paragraph at lines 3613--3614
-[]\OT1/cmr/m/it/10 If we
- []
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1062
+.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1062.
 
-[32]
-
-LaTeX Warning: Citation `Jordan09' on page 33 undefined on input line 3619.
-
-
-Overfull \hbox (3.13693pt too wide) in paragraph at lines 3650--3652
-[]\OT1/cmr/m/it/10 The
- []
-
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 3682--3683
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3685--3686
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3695--3697
-
- []
-
-[34]
-Overfull \hbox (56.501pt too wide) detected at line 3727
-\OML/cmm/m/it/10 P[]e\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 + \
-OML/cmm/m/it/10 yw[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 xw[][] P[]e\OT1/cmr/m/
-n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 yw[]\OT1/cmr/m/n
-/10 ) = \OML/cmm/m/it/10 yw[][] P[]a\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 xw[] \OT1
-/cmr/m/n/10 + \OML/cmm/m/it/10 yw[]\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 ^^@\OML
-/cmm/m/it/10 xw[][] P[]a\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 
-+ \OML/cmm/m/it/10 yw[]\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10
- yw[]
- []
-
-(./document.bbl [35]
-Underfull \hbox (badness 1902) in paragraph at lines 25--28
-[]\OT1/cmr/m/n/10 M. Mueger.  Ten-sor cat-e-gories: A se-lec-tive guided tour. 
- \OT1/cmr/m/it/10 eprint
- []
-
-! Misplaced alignment tab character &.
-l.37 \newblock Harper &
-                        Row, 1966.
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-) [36] [37] [38] (./document.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+ [3] [4]
+[5] (./Drinfeld center.aux) ) 
 Here is how much of TeX's memory you used:
- 38043 strings out of 493014
- 904231 string characters out of 6133351
- 1102824 words of memory out of 5000000
- 40928 multiletter control sequences out of 15000+600000
- 12468 words of font info for 48 fonts, out of 8000000 for 9000
+ 37486 strings out of 493014
+ 893526 string characters out of 6133351
+ 1078836 words of memory out of 5000000
+ 40390 multiletter control sequences out of 15000+600000
+ 6598 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,23n,103p,10453b,1042s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016
-/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/
-2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on document.pdf (38 pages, 353172 bytes).
+ 55i,13n,103p,10462b,732s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/s
+ymbols/msam10.pfb>
+Output written on "Drinfeld center.pdf" (5 pages, 145431 bytes).
 PDF statistics:
- 204 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
+ 67 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
