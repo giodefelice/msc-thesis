@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  17 JUL 2017 22:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  21 JUL 2017 12:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1683,49 +1683,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 596--599
 
 LaTeX Warning: Citation `Coecke17' on page 2 undefined on input line 602.
 
-[2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 662--665
+[2] [3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 755--759
 
  []
 
+[5] [6]
 
-Underfull \hbox (badness 10000) in paragraph at lines 674--677
+LaTeX Warning: Citation `Mueger02' on page 7 undefined on input line 839.
 
- []
+[7]
 
-[4] [5]
-
-LaTeX Warning: Citation `Vercruysse12' on page 6 undefined on input line 732.
-
-
-LaTeX Warning: Citation `Joyal91' on page 6 undefined on input line 732.
+LaTeX Warning: Citation `Mueger02' on page 8 undefined on input line 846.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 732--733
-
- []
+LaTeX Warning: Citation `Bakalov00' on page 8 undefined on input line 853.
 
 
-Overfull \hbox (15.54112pt too wide) in paragraph at lines 737--738
-[]\OT1/cmr/m/it/10 Any monoidal cat-e-gory $\OMS/cmsy/m/n/10 C$ \OT1/cmr/m/it/1
-0 equipped
- []
+LaTeX Warning: Citation `Mueger02' on page 8 undefined on input line 853.
 
 
-Overfull \hbox (8.25624pt too wide) in paragraph at lines 743--744
-[]\OT1/cmr/m/it/10 If $\OML/cmm/m/it/10 H$ \OT1/cmr/m/it/10 is a fi-nite di-men
--sional, semisim-ple Hopf al-ge-bra the $\OML/cmm/m/it/10 Rep\OT1/cmr/m/n/10 (\
-OML/cmm/m/it/10 D\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 H\OT1/cmr/m/n/10 ))$
- []
+LaTeX Warning: Citation `Bakalov00' on page 8 undefined on input line 855.
 
 
-Overfull \hbox (1.4095pt too wide) in paragraph at lines 751--752
+LaTeX Warning: Citation `Bakalov00' on page 8 undefined on input line 859.
+
+
+LaTeX Warning: Citation `Balsam12' on page 8 undefined on input line 864.
+
+
+LaTeX Warning: Citation `Abramsky04' on page 8 undefined on input line 864.
+
+
+LaTeX Warning: Citation `Panangaden11' on page 8 undefined on input line 867.
+
+
+LaTeX Warning: Citation `Simon16' on page 8 undefined on input line 871.
+
+[8]
+Overfull \hbox (7.15947pt too wide) in paragraph at lines 879--880
 []\OT1/cmr/m/it/10 A half-braiding on some ob-ject $\OML/cmm/m/it/10 X$ \OT1/cm
 r/m/it/10 in a monoidal
  []
 
-[6]
-Overfull \hbox (4.97093pt too wide) in paragraph at lines 849--857
+
+Overfull \hbox (0.81467pt too wide) in paragraph at lines 885--886
+[]\OT1/cmr/m/it/10 The braided (Drin-feld) cen-ter of a monoidal
+ []
+
+[9]
+
+LaTeX Warning: Citation `Mueger02' on page 10 undefined on input line 971.
+
+
+Overfull \hbox (4.97093pt too wide) in paragraph at lines 982--990
 \OT1/cmr/m/n/10 Fix a bial-ge-bra $\OML/cmm/m/it/10 H$ \OT1/cmr/m/n/10 and sup-
 pose $[]  \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 obj\OT1/cmr/m/n/10 (\OML/cmm/m/it
 /10 Rep\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 H\OT1/cmr/m/n/10 ))$ and $(\OML/cmm/m/
@@ -1733,7 +1744,11 @@ it/10 V; e[]\OT1/cmr/m/n/10 )$ is in $\OML/cmm/m/it/10 Z\OT1/cmr/m/n/10 (\OML/c
 mm/m/it/10 RepG\OT1/cmr/m/n/10 )$.
  []
 
-[7] [8] [9] [10] [11] (./The Algebra of Anyons.bbl
+[10] [11] [12] [13] [14]
+
+LaTeX Warning: Citation `Bakalov00' on page 15 undefined on input line 2209.
+
+[15] (./The Algebra of Anyons.bbl
 Underfull \hbox (badness 1902) in paragraph at lines 4--7
 []\OT1/cmr/m/n/10 M. Mueger.  Ten-sor cat-e-gories: A se-lec-tive guided tour. 
  \OT1/cmr/m/it/10 eprint
@@ -1749,19 +1764,19 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-) [12] [13] [14] (./The Algebra of Anyons.aux)
+) [16] (./The Algebra of Anyons.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 37713 strings out of 493014
- 897840 string characters out of 6133351
- 1082226 words of memory out of 5000000
- 40609 multiletter control sequences out of 15000+600000
+ 37780 strings out of 493014
+ 899133 string characters out of 6133351
+ 1083200 words of memory out of 5000000
+ 40676 multiletter control sequences out of 15000+600000
  7822 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,23n,103p,10468b,939s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,13n,103p,10468b,1046s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -1775,10 +1790,10 @@ texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
 live/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local
 /texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "The Algebra of Anyons.pdf" (14 pages, 207310 bytes).
+Output written on "The Algebra of Anyons.pdf" (16 pages, 220428 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
+ 111 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

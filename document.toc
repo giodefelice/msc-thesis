@@ -1,20 +1,19 @@
 \contentsline {section}{\numberline {1}Introduction}{2}
 \contentsline {section}{\numberline {2}Diagrams and Hopf Algebras}{2}
 \contentsline {subsection}{\numberline {2.1}Monoidal categories}{2}
-\contentsline {subsection}{\numberline {2.2}Hopf Algebras}{10}
-\contentsline {subsection}{\numberline {2.3}Representations of Hopf algebras}{15}
-\contentsline {section}{\numberline {3}The Algebra of Anyons}{20}
-\contentsline {subsection}{\numberline {3.1}Models of anyons}{21}
-\contentsline {subsection}{\numberline {3.2}Braided Fusion Categories}{24}
-\contentsline {subsection}{\numberline {3.3}The Drinfeld center}{25}
-\contentsline {section}{\numberline {4}Quantum Computation}{29}
-\contentsline {subsection}{\numberline {4.1}Phases of Matter}{29}
-\contentsline {subsection}{\numberline {4.2}Kitaev's model}{30}
-\contentsline {subsection}{\numberline {4.3}Permutational Quantum Computing}{33}
-\contentsline {subsection}{\numberline {4.4}Topological Quantum Computation}{34}
-\contentsline {section}{\numberline {5}A braided programming language}{34}
-\contentsline {subsection}{\numberline {5.1}Non-commutative linear logic}{34}
-\contentsline {subsection}{\numberline {5.2}An adjunction between fPQC and TQC}{34}
-\contentsline {subsection}{\numberline {5.3}Quantum Semantics}{36}
-\contentsline {section}{\numberline {6}Conclusion}{36}
-\contentsline {section}{\numberline {A}Fusion categories}{36}
+\contentsline {subsection}{\numberline {2.2}Hopf Algebras}{11}
+\contentsline {subsection}{\numberline {2.3}Representations of Hopf algebras}{16}
+\contentsline {subsection}{\numberline {2.4}Tannaka duality}{21}
+\contentsline {section}{\numberline {3}The Algebra of Anyons}{21}
+\contentsline {subsection}{\numberline {3.1}Models of anyons}{23}
+\contentsline {subsection}{\numberline {3.2}Modular categories}{27}
+\contentsline {subsection}{\numberline {3.3}The Drinfeld center}{29}
+\contentsline {section}{\numberline {4}Quantum Computation}{36}
+\contentsline {subsection}{\numberline {4.1}Phases of Matter}{36}
+\contentsline {subsection}{\numberline {4.2}Kitaev's model}{38}
+\contentsline {subsection}{\numberline {4.3}Permutational Quantum Computing}{40}
+\contentsline {subsection}{\numberline {4.4}Topological Quantum Computation}{41}
+\contentsline {subsection}{\numberline {4.5}A braided representation of Quantum computation}{41}
+\contentsline {subsection}{\numberline {4.6}An adjunction between fPQC and TQC}{41}
+\contentsline {section}{\numberline {5}Conclusion}{43}
+\contentsline {section}{\numberline {A}Fusion categories}{44}

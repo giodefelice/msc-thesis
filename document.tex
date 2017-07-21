@@ -1001,6 +1001,52 @@ Given a (left/right) rigid structure we can define (left/right)transpose as foll
 	\end{tikzpicture}	
 	\end{center}
 \end{definition}
+A pivotal structure on a rigid monoidal category $\cat$ is a natural isomorphism $id_\cat \Rightarrow (-)^{\star \star}$. It allows to define traces without using the symmetry. Most categories we will consider have both sided duals, and therefore a trivial (identity) pivotal structure. Given a pivotal structure we can define left pivotal traces as:
+\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+	\node[scale=0.7, draw, trapezium, trapezium angle=70,] (0) at (0,0) {$f$};
+	\draw[->] (0,-0.7)--(0)--(0,0.7);
+	\draw[bend right=90] (0,0.7) to (-0.7,0.7);
+	\draw[->] (-0.7,0.7) to (-0.7,-0.7);
+	\draw[bend left=90] (0,-0.7) to (-0.7,-0.7);
+	\end{tikzpicture}	
+\end{center}
+Where we have hidden the pivotal natural isomorphism. Similarly we can define right pivotal traces on endomorphisms in the obvious way.
+\begin{definition}
+	A rigid monoidal category with a pivotal strucutre is spherical if left and right traces coincide. In a spherical category, if $a$ is an object, the trace $tr: End(a) \rightarrow End(1)$ is well defined and $tr(id_a)$ is called the categorical (or quantum) dimension of $a$. 
+\end{definition}
+For a braided monoidal category, giving a spherical structure is equivalent to giving a ribbon structure \cite{Mueger12} where:
+\begin{definition}
+	A ribbon (or twist) structure on a braided monoidal category with left duality $\star$ is a natural isomorphism $\theta: id_\cat \Rightarrow id_\cat$ satisfying:
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}
+	\node[scale=0.7, draw, trapezium, trapezium angle=90] (0) at (0,0) {$\theta_{a \otimes b}$};
+	\draw (0) to (-0.2,-1.5);
+	\draw (-0.2,1) to (0);
+	\draw (0) to (0.2,-1.5);
+	\draw (0.2,1) to (0);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}
+	\node[scale=0.7, draw, trapezium, trapezium angle=90] (0) at (-0.3,0.5) {$\theta_{a}$};
+	\node[scale=0.7, draw, trapezium, trapezium angle=90] (1) at (0.3,0.5) {$\theta_{b}$};
+	\node (2) at (0,0) {};
+	\node (3) at (0,-1) {};
+	\draw (0) to (-0.3,1);
+	\draw (1) to (0.3,1);
+	\draw (0)--(0.3,-0.5)--(3)--(-0.3,-1.5);
+	\draw (1)--(2)--(-0.3,-0.5)--(0.3,-1.5);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+	and compatible with the rigid structure $(\theta_a)^\star = \theta_{a^\star}$ 
+\end{definition}
+\begin{remark}
+	It can be shown that in the diagrammatic language, having a ribbon structure really corresponds to replacing wires by ribbons which we can twist. We won't use such diagrammatic language, but in the section on modular categories the twist will be an important process.
+\end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1701,11 +1747,11 @@ We will only be considering finite dimensional Hopf Algebras, as for finite dime
 \end{definition}
 Given any finite dimensional hopf algebra $H$ with invertible antipode there is a standard way of constructing a Quasitriangular Hopf Algebra first introduced by Drinfeld \cite{Drinfeld87}. It will be implicit from now on that all Hopf algebras (and vector spaces) are finite-dimensional unless stated otherwise.
 \begin{definition}[Quantum double of a Hopf algebra]
-	The quantum double of a Hopf algebra $(H,\mu, 1, \Delta, \epsilon, S)$ with invertible antipode is the vector space $H \otimes H^\star, $ with the following structure:
+	The quantum double of a finite dimensional Hopf algebra $(H,\mu, 1, \Delta, \epsilon, S)$ with invertible antipode is the vector space $H \otimes H^\star$, with the following structure:
 	\begin{itemize}
 		\item multiplication and unit:
 		\begin{center}
-			\begin{tikzpicture}[scale=0.7, squr/.style={draw,regular polygon,
+			\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{<}}},scale=0.7, squr/.style={draw,regular polygon,
 				regular polygon sides=4,fill=white}]
 			\node [scale=0.5, draw, circle, fill=black] (0) at (-0.5,0.6) {};
 			\node [scale=0.5,draw, circle, fill=white] (1) at (0.5,0.6) {};
@@ -1751,11 +1797,13 @@ Given any finite dimensional hopf algebra $H$ with invertible antipode there is 
 		\item antipode:
 		\begin{center}
 			\begin{tikzpicture}[scale=0.7, squr/.style={draw,regular polygon,
-				regular polygon sides=4,fill=white}]
+				regular polygon sides=4,fill=white},decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
 			\node [scale=0.4, draw, trapezium, trapezium angle=70] (0) at (0,0) {$S$};
-			\node [scale=0.4, draw, trapezium, trapezium angle=70 , shape border rotate=180] (1) at (0.5,0) {$S$};
-			\draw (0,-0.5)--(0)--(0,0.5);
-			\draw (0.5,-0.5)--(1)--(0.5,0.5);
+			\node [scale=0.4, draw, trapezium, trapezium angle=70 , shape border rotate=180] (1) at (0.7,0) {$S^{-1}$};
+			\draw[postaction=decorate] (0)--(0,-0.5);
+			\draw[postaction=decorate] (0,0.5)--(0);
+			\draw[postaction=decorate] (0.7,-0.5)--(1);
+			\draw[postaction=decorate] (1)--(0.7,0.5);
 			\end{tikzpicture}
 		\end{center}
 	\end{itemize}
@@ -2424,6 +2472,17 @@ We can see that the proof relies on the existence of the antipode. If a skew-ant
 \end{gathered}
 \end{equation}
 The proof that this choice works is very similar to the one above. In particular, $\bar{S}$ exists when the antipode is an invertible morphism as we can define $\bar{S}=S - S^{-1}$ If the antipode coincides with the skew antipode then $Rep(H)$ then left and right duals in $Rep(H)$ coincide, we say it is rigid.
+
+\subsection{Tannaka duality}
+This section is only meant as a motivation for the study of Hopf Algebras and we wont prove the reconstruction theorems, surveys on Tannaka reconstruction are given by \cite{Vercruysse12} and \cite{Joyal91}.\\
+Reconstruction results are recipes which produce all the examples of a class of categories (i.e categories with some fixed structure) from simpler mathematical objects. As we have seen in the previous sections, the structure of categories of $H$-modules is induced from the axioms of the Hopf Algebra $H$. It is surprising that Hopf algebras underly most of the categories with this structure.
+\begin{theorem}[Tannaka reconstruction]
+	\begin{itemize}
+		\item Any monoidal category $\cat$ equipped with a fiber functor (i.e a strict monoidal functor) $U: \cat \rightarrow Vect$ is equivalent to $Rep(B)$ where $B$ is a bialgebra.
+		\item Any (braided) rigid monoidal category equipped with a fiber functor (here this means strict (braided) rigid monoidal functor) to $Vect$ is equivalent to $Rep(H)$ for some (quasitriangular) hopf algebra $H$.
+	\end{itemize}
+\end{theorem}
+Note that any category can be seen as a process theory in the sense of \cite{Abramsky04} and \cite{Coecke17}. Objects are systems and morphisms are their possible physical evolutions. The tensor product of a monoidal category can then be regarded as a way of forming composed systems. Quantum systems usually exhibit duality (particle, antiparticle pairs) and entanglement which are captured by the rigid structure of the category. From this perspective, this reconstruction result has an interesting physical interpretation. It says that any physical theory (monoidal category) is completely determined by the symmetries of the systems under consideration (the algebra structure). In the next section we will take this reasoning further to study physical theories of certain topological quantum systems.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%?%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2491,7 +2550,7 @@ In the previous section, we only considered groups of symmetries of a Hamiltonia
 
 \subsection{Models of anyons}
 We want to construct a category $\cat$ that models the behaviour of anyons. Ojects of $\cat$ will correspond to quantum systems and morphisms to their possible evolutions, or to the processes we can perform on them.\\
-Let us first set a finite set of labels $\{a,b,c...\}$ of distinct particle types, these will be objects of $\cat$. In our theory we must be able to consider many particles at the same time, so $\cat$ must be monoidal \cite{Coecke17}. The unit of the tensor $\mathbf{1}$ corresponds to the vacuum particle type (or "no-particle") and must be within our labels. So for the moment our theory is a monoidal category $\mathcal{C}$ and we can already use the diagrammatic language. A particle of type $a$ evolving trivially in time is denoted:
+Let us first set a finite set of labels $I = \{a,b,c...\}$ of distinct particle types, these will be objects of $\cat$. In our theory we must be able to consider many particles at the same time, so $\cat$ must be monoidal \cite{Coecke17}. The unit of the tensor $\mathbf{1}$ corresponds to the vacuum particle type (or "no-particle") and must be within our labels. So for the moment our theory is a monoidal category $\mathcal{C}$ and we can already use the diagrammatic language. A particle of type $a$ evolving trivially in time is denoted:
 \begin{center}
 	\begin{tikzpicture}[scale=0.7, decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
 	\node (a) at (0.3,0) {$a$};
@@ -2505,10 +2564,9 @@ Two particles of types $a$ and $b$ can fuse to a third particle of type $c$. So 
 	\node (a) at (-0.5,-0.5) {$a$};
 	\node (b) at (0.5,-0.5) {$b$};
 	\node (c) at (0.3,0.5) {$c$};
-	\node[scale=0.5, draw, circle] (0) at (0,0) {$\phi$};
-	\draw [postaction = decorate] (-0.5,-1) to (0);
-	\draw [postaction = decorate] (0.5,-1) to (0);
-	\draw [postaction = decorate] (0) to (0,1);
+	\draw [postaction = decorate] (-0.5,-1) to (0,0);
+	\draw [postaction = decorate] (0.5,-1) to (0,0);
+	\draw [postaction = decorate] (0,0) to (0,1);
 	\end{tikzpicture}
 \end{center}
 Similarly a particle $c$ can split to give two particles $a$ and $b$. And $\cat$ contains splitting morphism:
@@ -2517,10 +2575,9 @@ Similarly a particle $c$ can split to give two particles $a$ and $b$. And $\cat$
 	\node (a) at (-0.5,0.5) {$a$};
 	\node (b) at (0.5,0.5) {$b$};
 	\node (c) at (0.3,-0.5) {$c$};
-	\node[scale=0.5, draw, circle] (0) at (0,0) {$\psi$};
-	\draw [postaction = decorate] (-0.5,1) to (0);
-	\draw [postaction = decorate] (0.5,1) to (0);
-	\draw [postaction = decorate] (0) to (0,-1);
+	\draw [postaction = decorate] (-0.5,1) to (0,0);
+	\draw [postaction = decorate] (0.5,1) to (0,0);
+	\draw [postaction = decorate] (0,0) to (0,-1);
 	\end{tikzpicture}
 \end{center}
 Any particle $a$ in quantum physics comes with its antiparticle $a^*$ which we can picture as a particle of type $a$ travelling backwards in time.
@@ -2539,85 +2596,244 @@ It has the property of fusing to the vacuum when it encounters $a$. Dually the v
 	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
 	\draw [bend left=90, looseness=1.6, postaction = decorate] (-0.5,0) to (0.5,0);
 	\end{tikzpicture}
-\end{center}
-Categorically this corresponds to a rigid structure on $\cat$, we will assume it is a well behaved category i.e it is spherical and $1^*=1$. So we can define the quantum numbers for each particle type $a$ to be the following scalar:
-\begin{center}
-	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
-	\node (a) at (0.7,0) {$a$};
-	\draw [bend left=90, looseness=1.6, postaction = decorate] (0.5,0) to (-0.5,0);
+	\quad
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+	\draw [bend right=90, looseness=1.6, postaction = decorate] (-0.5,0) to (0.5,0);
+	\end{tikzpicture}
+	\quad
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
 	\draw [bend left=90, looseness=1.6, postaction = decorate] (-0.5,0) to (0.5,0);
 	\end{tikzpicture}
 \end{center}
-At this point we need to linearise the theory to take superpositions into account. We enrich the category over commutative monoids and introduce a biproduct $\oplus$ and zero object $\mathbf{0}$ as additional structure on $\mathcal{C}$. In order for the fusion to behave well with superpositions we must require that our particle types be simple objects in the category. At this point, our category $\mathcal{C}$ is a spherical fusion category (see appendix) and the fusion rules look like this:
+Categorically this corresponds to a rigid structure on $\cat$, where we have assumed that every object has two-sided duals. We will also assume the category is well behaved: it is spherical and $1^*=1$. This allows us to define the quantum numbers for each particle type $a$ to be the following scalar:
 \begin{equation}
-a\otimes b \simeq \oplus_c N_{ab}^c c
+d_a := tr(id_a) =
+\begin{gathered}
+\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
+\node (a) at (0.7,0) {$a$};
+\draw [bend left=90, looseness=1.6, postaction = decorate] (0.5,0) to (-0.5,0);
+\draw [bend left=90, looseness=1.6, postaction = decorate] (-0.5,0) to (0.5,0);
+\end{tikzpicture}
+\end{gathered}
 \end{equation}
-Where $N_{ab}^c \in \mathbb{N}$. \\
-We still have one question to ask to the theory, what happens when the position of two particles is exchanged? To answer this question the theory must have a braid structure and we obtain a braided fusion category (see section 1). The braid structure determines the long-distance, topological interactions between particles.
-
-\begin{example}
-	Suppose we start from a set of labels and define the fusions to form a group. In fact $1$ is the identity particle type, for any particle type $a$, $a^*$ will be its inverse. We have defined the skeleton of a spherical fusion category, which we obtain by linearising, i.e taking a functor to $Hilb$. We obtain the category $Vec_G$, of $G$ graded vector spaces over $\mathbb{C}$.
-	The category $Vec_G$ for $G$ a group is a symmetric spherical fusion category. Linearity and tensor are given by the underlying $Vect$ structure, simple objects are indexed by the elements of $G$, duality is proved by using the group inverse. It is easy to chow that $Vec_G \simeq Rep(Func(G))$ where $Func(G)$ is the function algebra on $G$.
+At this point we need to linearise the theory to take superpositions into account. This means we make $\cat$ into a rigid tensor category (see appendix). We have biproducts $\oplus$ to account for superpositions. In order for the fusions to behave well with superpositions we must require that our labels for particle types be simple objects in the category and all objects to decompose as direct sums of simple ones, we say $\cat$ is semisimple. 
+\begin{definition}[Fusion category]
+	A fusion category is a finite semisimple k-linear tensor category with two sided duals
+\end{definition}
+At this point, our category $\mathcal{C}$ is a spherical fusion category  and the fusion rules look like this:
+\begin{equation}
+a \otimes b \simeq \oplus_c N_{ab}^c c
+\end{equation}
+Where $N_{ab}^c \in \mathbb{N}$. This defines a matrix for any $a$ simple indexed by simple objects $i,j \in I$:
+$$(N_a)_{i,j} = N^a_{ij}$$
+We can also define the dimension of the theory $\cat$ as the following scalar:
+$$dim(\cat) = \sum_{i\in I} d_i^2$$
+Given the fusion structure we can define the $F$-matrix which contains the information of the fusions interacting with the  quasi-associativity of the tensor product.
+\begin{definition}[F-matrix]
+	Given particles types $a$,$b$,$c$ we have two ways of fusing them to obtain particle type $e$, the matrix $F_{abc}^e$ is the change of basis matrix:
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[ decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+	\node (a) at (-0.5,-0.3) {$a$};
+	\node (b) at (0.5,-0.3) {$b$};
+	\node (c) at (1.6,-0.3) {$c$};
+	\node (d) at (0,0.3) {$d$};
+	\node (e) at (0.3,0.7) {$e$};
+	\draw [postaction = decorate] (-0.5,-0.5) to (0,0);
+	\draw [postaction = decorate] (0.5,-0.5) to (0,0);
+	\draw [postaction = decorate] (0,0) to (0.5,0.5);
+	\draw [postaction = decorate] (1.5,-0.5) to (0.5,0.5);
+	\draw [postaction = decorate] (0.5,0.5) to (0.5,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\sum_{f\in I} (F_{abc}^e)_{df}
+	\begin{gathered}
+	\begin{tikzpicture}[ decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+	\node (a) at (-0.5,-0.3) {$a$};
+	\node (b) at (0.5,-0.3) {$b$};
+	\node (c) at (1.6,-0.3) {$c$};
+	\node (d) at (0.9,0.4) {$f$};
+	\node (e) at (0.3,0.7) {$e$};
+	\draw [postaction = decorate] (1.5,-0.5) to (1,0);
+	\draw [postaction = decorate] (0.5,-0.5) to (1,0);
+	\draw [postaction = decorate] (1,0) to (0.5,0.5);
+	\draw [postaction = decorate] (-0.5,-0.5) to (0.5,0.5);
+	\draw [postaction = decorate] (0.5,0.5) to (0.5,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+\end{definition}
+The possibilities for the $F$-matrices are constrained by the pentagon axiom of a monoidal category, it corresponds to a matrix representation of the associators.
+We still have one important question to ask to the theory, what happens when the position of two particles is exchanged? To answer this question the theory must have a braided structure and we obtain a braided fusion category. The braided structure determines the long-distance, topological interactions between particles. Braided fusion categories induce representations of the braid group $B_n$, given our discussion at the beginning of this chapter, we see that they are very good candidates for describing theories of anyons. 
+The braided structure is captured by the following piece of data:
+\begin{definition}[$R$-matrix]
+	Given particle types $a$, $b$ and $c$ the matrix $R_{ab}^c$ is defined by:
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+	\node (a) at (-0.5,-0.6) {$a$};
+	\node (b) at (0.5,-0.6) {$b$};
+	\node (c) at (0.3,0.5) {$c$};
+	\node (0) at (0,-0.5) {};
+	\draw [ bend left=50, looseness=1.8] (0) to (0,0);
+	\draw [ bend right=50, looseness=1.8] (0,-0.5) to (0,0);
+	\draw [postaction = decorate] (-0.5,-1) to (0,-0.5);
+	\draw [postaction = decorate] (0.5,-1) to (0);
+	\draw [postaction = decorate] (0,0) to (0,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = R_{ab}^c \, 
+	\begin{gathered}
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+	\node (a) at (-0.5,-0.5) {$a$};
+	\node (b) at (0.5,-0.5) {$b$};
+	\node (c) at (0.3,0.5) {$c$};
+	\draw [postaction = decorate] (-0.5,-1) to (0,0);
+	\draw [postaction = decorate] (0.5,-1) to (0,0);
+	\draw [postaction = decorate] (0,0) to (0,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+\end{definition}
+From the first section we know that sphericality of the theory, interacting with the braided structure yields a ribbon structure. The twist $\theta$ has physical significance, it can be seen as a rotation of the particle and in most interesting cases it will be non-trivial.\\
+In the case of abelian anyons, the twist is just a global phase, if we denote by $h_a$ the topological spin of the particle then $\theta_a = e^{2\pi i h_a}$ is the twist factor of $a$. In this scenario, the $R$-matrices are scalars and it is easy to see, using the definition of the twist, that the $R$ coefficients and the twist factors are related by:
+$$R_{ab}^c R_{ba}^c = \frac{\theta_c}{\theta_a \theta_b}$$
+These coefficients are also constrained by the hexagon axiom of braided monoidal categories. One way to build theories of abelian anyons, is to construct $R$ matrices, twist factors and $F$ matrices which satisfy both hexagon and pentagon axioms. However, these constraints do not fix $R$ and $F$ uniquely. 
+\begin{example}[G-graded vector spaces]
+	Suppose we start from a set of labels and define the fusions to form a group. $1$ is the identity particle type, for any particle type $a$, $a^*$ will be its inverse. We have defined the skeleton of a spherical fusion category, which we obtain by linearising, i.e taking a fiber functor to $Vect$. We obtain the category $Vec_G$, of $G$ graded vector spaces over $\mathbb{C}$.
+	The category $Vec_G$ for $G$ a group is a symmetric spherical fusion category. Linearity and tensor are given by the underlying $Vect$ structure, simple objects $V_g$ are one-dimensional and indexed by elements $g \in G$, duality is proved by using the group inverse and fusions are given by the group multiplication.
+	$$V_g \otimes V_h \simeq V_{gh}$$
+	In this case both the $F$ and $R$ matrices are trivial.\\
+	Tannaka duality hints that this should be a category of representations and indeed it is easy to show that $Vec_G \simeq Rep(Func(G))$ where $Func(G)$ is the function algebra on $G$.\\
 	For $G=\mathbb{Z}_2$ we have two irreducible representations $\tau_+$ and $\tau_-$, both one dimensional with the obvious fusion rules given by the cyclic group of order $2$.\\
 \end{example}
 
-\begin{remark}
-	In the case where the theory is described by the category $RepG$.
-	Let us consider the object $V=\mathbb{C}G$ of $RepG$. (Note $V \simeq \oplus_i V_i$ where $V_i$'s are the simple objects.) Simple objects correspond to particle types so the states of $V$ are superpositions of particle types. In the case where $G$ is abelian there is only one way two particles can fuse to a third, so the fusions are deterministic and the irreducible representations will be one dimensional, each corresponding to an element of the group. If $G$ is not abelian, say $a\otimes b \simeq c_1$ and $b \otimes a \simeq c_2$ then taking the representations category defines a 2-dimensional object $c$ spanned by $\{c_1,c_2\}$ which is an irreducible representation of $G$. So from now on we will call particle types the irreducible representations and particles subtypes the elements of the group $G$.  The action of $G$ permutes the basis vectors, multiplying by an element of $G$, but an element of $G$ is precisely a particle subtype and multiplication is fusion. So acting with $g \in G$ on a state $v \in V$ corresponds to fusing a particle of type $g$ with one that is in a superposition $v$ of particle types. The allowed processes are intertwiners which commute with the action and therefore preserve fusions. If the group $G$ is abelian, then the particles are abelian anyons.
-\end{remark}
+\begin{proposition}
+	If $H$ is a finite dimensional, semisimple, quasitriangular Hopf algebra, then $Rep(H)$ is a braided fusion category and $dim(Rep(H))=dim(H)$.
+\end{proposition}
+\begin{proof}
+	The proof is given by [find citation]
+\end{proof}
+This proposition gives us a way of building theories of anyons from hopf algebras.\\
+The first example that comes to mind is that of a group algebra $\mathbb{C}G$. So let us suppose the theory is described by the category $RepG$. 
+First consider the object $V= \mathbb{C}G$. It is known that $\mathbb{C}G \simeq \oplus_{i \in I} X_i \otimes X_i^*$. Simple objects $X_i$ correspond to particle types so $V$ can be seen as the completely mixed state. This object (i.e the vector space with it's $G$-action) carries all the information of the theory (remember tannaka duality) and indeed we could study the theory by just considering this algebra. We can think of elements of $G$ as particle subtypes, particle types correspond to conjugacy classes, a state $v \in V$ is a superposition of particle subtypes. The action of $G$ permutes the basis vectors, and precisely corresponds to fusion. So acting with $g \in G$ on a state $v \in V$ corresponds to fusing a particle of type $g$ with one that is in a superposition $v$ of particle types.\\
+In the case where $G$ is abelian all irreducible representations are one dimensional, each corresponding to an element of the group. So really $Rep(G) \simeq Vec_G$ and behaves exactly like $\mathbb{C}G$ (without distinction between particle types and subtypes). This case is perhaps interesting philosophically as the representations of our symmetries have the same structure as the symmetries themselves [cite majid self-duality]. From a computational perspective it is a trivial situation, as only classical processes can be performed (no entanglement is possible).\\
+If $G$ is not abelian we must have a higher dimensional irreducible representation of $G$. So we could obtain more interesting processes but from a topological quantum perspective it remains a trivial case as no computational power can be obtained from the braided structure. This is because $RepG$ is symmetric as we have seen in the first section. Physically, we have seen that symmetric exchange of particles applies to fermions and bosons, from a topological perspective those types of particles can be seen as degenerate cases of anyons.
+Groups are therefore not enough to describe interesting anyon theories. In the next section we pin down a smaller class of categories which correspond to non-degenerate theories of anyons.
 
-\subsection{Braided Fusion Categories}
 
-We can place braided fusion categories in a spectrum by asking what their symmetric center $Z_2$ is. The two antipodal points of this spectrum are symmetric fusion categories on one side (such that $Z_2(\mathcal{C})=\mathcal{C}$) and modular tensor categories (such that the symmetric centre is trivial, i.e its objects are direct products of the tensor unit $\mathbf{1}$). In the first case, we have only symmetric exchange symmetries so that all particles in the theory are either bosons or fermions. Such categories are degenerate anyon theories with no topological dependencies between particles. Modular tensor categories are really the opposite situation, the theory doesn't contain any bosons or fermions but only non-degenerate anyons, i.e anyons with non-trivial twist factor.
+\subsection{Modular categories}
+In this section we  define modular categories and state a few results that we will use in the next section. As we have seen, braided fusion categories are well suited to describe theories of anyons. These form a big class of categories, some of which are uninteresting from the physical point of view. To distinguish between them we can place braided fusion categories in a spectrum by asking what their symmetric center $Z_2$ is. 
 
-\begin{definition}
-	The symmetric center $Z_2(\mathcal{C})$ is the full subcategory of $\mathcal{C}$ defined by:
+\begin{definition}[Symmetric center]
+	If $\cat$ is a monoidal category, the symmetric center $Z_2(\mathcal{C})$ is the full subcategory of $\mathcal{C}$ defined by:
 	$$ obj \, Z_2(\mathcal{C}) = \{ X\in \mathcal{C} : c_{X,Y} \circ c_{Y,X} = id_{Y\otimes X} \quad \forall Y \in \mathcal{C} \} $$
 \end{definition}
-\begin{definition}
+It is easy to see that $\cat$ is symmetric iff $Z_2(\cat)=\cat$.
+\begin{definition}[Modular categories]
 	A braided fusion category is:
 	\begin{itemize}
 		\item pre-modular if it is spherical,
-		\item non-degenerate if $Z_2(\mathcal{C})$ is trivial
+		\item non-degenerate if $Z_2(\mathcal{C})$ is trivial (i.e it only contains direct sums of the tensor unit as objects, i.e every simple object is isomorphic to the tensor unit)
 		\item modular if it is pre-modular and non-degenerate.
 	\end{itemize}
 \end{definition}
+The two opposite ends of this spectrum are symmetric fusion categories on one side (such that $Z_2(\mathcal{C})=\mathcal{C}$) and modular tensor categories (as defined). 
+In the first case, we have only symmetric exchange of quantum systems which means all particles in the theory are either bosons or fermions. Such categories exhibit no topological behaviour. Modular categories are the opposite situation, the theory doesn't contain any bosons or fermions but only non-degenerate anyons (i.e anyons with non-trivial twist). Modular categories are very well-behaved theories as we can assign to them the so called modular $S$-matrix which will contain all the information on fusion rules as well as the braided structure.
 
-\begin{theorem}
-	Let $\mathcal{C}$ be a spherical symmetric fusion category with trivial twists. Then $\mathcal{C} \simeq Rep(G)$ for some group $G$ (unique up to iso).
-\end{theorem}
-
-\begin{theorem}
-	If $\mathcal{C}$ is a spherical fusion category then $Z_1(\mathcal{C})$ is modular.
-\end{theorem}
-Modular tensor categories are particularly well behaved types of braided fusion categories. To any modular category $\mathcal{C}$ we can assign the so called modular $S$-matrix which will contain all the information of the fusion rules as well as the braided structure.
-\begin{definition}
-	Let $\mathcal{C}$ be a spherical braided fusion category and let $I$ be the set of isomorphism classes of simple objects in $\mathcal{C}$. We define $S_{i,j}$ for $i,j \in I$ to be the following: (diagram)
+\begin{definition}[$S$-matrix]
+	Let $\mathcal{C}$ be a spherical braided fusion category and let $I$ be the set of isomorphism classes of simple objects in $\mathcal{C}$. We define $S_{i,j}$ for $i,j \in I$ to be the following:
+	\begin{equation}
+	S_{i,j} := tr(B_{X_j,X_i} \circ B_{X_i, X_j}) =
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+	\node (0) at (0,0) {};
+	\node (1) at (0, 1) {};
+	\node (2) at (0.6,-0.9) {$X_j$};
+	\node (3) at (-0.6,-0.9) {$X_i$};
+	\draw (-0.5,-0.5)--(0.5, 0.5)--(1)--(-0.5,1.5);
+	\draw (0.5,-0.5)--(0)--(-0.5,0.5)--(0.5,1.5);
+	\draw [bend right=90, looseness=1.5, postaction=decorate] (-0.5,1.5) to (-0.5,-0.5);
+	\draw [bend left=90, looseness=1.5, postaction=decorate] (0.5,1.5) to (0.5,-0.5);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
 \end{definition}
+\begin{remark}
+	Note that it doesn't matter on which side we take the trace by sphericality.
+\end{remark} 
+\begin{definition}[$T$-matrix]
+	Let $\mathcal{C}$ be a spherical braided fusion category, we define the $T$ matrix (indexed by $I$) given by 
+	\begin{equation}
+	T_{i,j} := \delta_{i,j} tr(B_{X_i,X_j}) = \delta_{i,j}
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+	\node (0) at (0,0) {};
+	\node (2) at (0.6,-0.9) {$X_j$};
+	\node (3) at (-0.6,-0.9) {$X_i$};
+	\draw (-0.5,-0.5)--(0.5, 0.5);
+	\draw (0.5,-0.5)--(0)--(-0.5,0.5);
+	\draw [bend right=90, looseness=1.5, postaction=decorate] (-0.5,0.5) to (-0.5,-0.5);
+	\draw [bend left=90, looseness=1.5, postaction=decorate] (0.5,0.5) to (0.5,-0.5);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}	
+\end{definition}
+\begin{remark}
+	Categories of this type are called modular as it can be shown that $S$ and $T$ satisfy the same relations as the generators of the modular group $SL(2,\mathbb{Z})$, so that any modular category induces a representation of $SL(2,\mathbb{Z})$. It is a conjecture that the $S$ ant $T$ matrices determine modular categories up to ribbon equivalence.
+\end{remark} 
+\begin{definition}[Mueger centralizer]
+	If $\mathcal{D}$ is a full (tensor) subcategory of $\mathcal{C}$ can define $C_\cat(D)$ to be the full subcategory such that 
+	$$obj(C_\cat(D))=\{X \in obj(\mathcal{C}): B_{X,Y} \circ B_{Y,X} = id_{X \otimes Y}\}$$
+\end{definition}
+It is easy to check this is indeed a monoidal subcategory and it is replete (i.e closed under isomorphisms) \cite{Mueger02}. Also note that $Z_2(\cat) = C_\cat(\cat)$.
+The following result is one of the most important pure category theoretic results on modular categories. We will need it for the discussion on the Drinfeld center.
+\begin{theorem}[Mueger decomposition] \label{muegerdec}
+	Let $\cat$ be a modular category and $\mathcal{K}$ a semisimple full tensor subcategory, then there is an equivalence of braided fusion categories:
+	$$ \cat \simeq \mathcal{K} \boxtimes C_\cat(\mathcal{K}) $$
+\end{theorem}
+\begin{proof}
+	This theorem was proved by Mueger in 2002 \cite{Mueger02}.
+\end{proof}
 \begin{theorem}
 	$\mathcal{C}$ is modular iff the $S$-matrix is invertible.
 \end{theorem}
-\begin{theorem}
+\begin{proof}
+	Suppose $\cat$ is not modular, then $Z_2(\cat)$ is non-trivial $\implies$ there is a non-trivial simple object $a$ such that its braiding is the symmetry. Therefore $S_{a,i}=d_a d_i$ for all $i \in I$, but also $S_{1,i}= d_i$ and so the first and $a$th rows of $S$ are proportional $\implies$ $S$ is not invertible.\\
+	The other direction is less easy and can be found in \cite{Bakalov00} and \cite{Mueger02}.
+\end{proof}
+We also state the following result which is proved in \cite{Bakalov00}.
+\begin{proposition}
 	The modular $S$-matrix diagonalises the $N$-matrix.
-\end{theorem}
-splitting, fusion rules, braided, R,T matrices, modular S matrix.
-
-\begin{example}[Knot invariants]
+\end{proposition}
+Therefore the $S$-matrix contain all the information of the fusion rules, and with some algebraic manipulation (which can be found in \cite{Bakalov00}) we obtain the well-known Verlinde formula for the fusion coefficients:
+\begin{equation}
+N_{ij}^k = \sum_{r\in I} \frac{S_{ir}S_{jr}S_{kr}}{S_{1r}}
+\end{equation}
+\begin{remark}
+	Given any modular category we can use the Turaev-Viro construction \cite{Balsam12}, which yields a $2+1$ topological quantum field theory. For our purposes we only need to view the modular category as a process theory of anyons in the sense of \cite{Abramsky04} and we won't introduce the $TQFT$ formalism.
+\end{remark}
+\begin{example}[Fibonacci anyons]
+	The category $Fib$ of Fibonacci anyons is one of the most popular examples of modular categories as it have a purely algebraic formulation. Anyons of this type are non-abelian and complete for topological quantum computation \cite{Panangaden11}. We will meet them again in the next chapter.\\
+	$Fib$ has only two simple objects: $\tau$ and the vacuum type $1$. The fusion rules are given by:
+	$$ 1 \otimes \tau = \tau = \tau \otimes 1$$
+	$$ \tau \otimes \tau = 1 \oplus \tau $$ 
+	It turns out that those equations together with the hexagon and pentagon constraints completely determine a modular category \cite{Simon16}.
 \end{example}
 
 
-
 \subsection{The Drinfeld center}
-In the previous section we saw that BFCs can be put on a spectrum ranging from symmetric fusion categories to modular categories. Physically, symmetric fusion categories are degenerate theories of anyons as they exhibit no topological behaviour. Conversely modular categories are very well behaved anyons theories.  In this section we introduce a general construction that turns braided fusion categories into modular categories, and we show its relationship with the Quantum double construction on a Hopf Algebra introduced in the first chapter.\\
-Topological dependencies between objects in fusion categories are captured by the braided structure.
+In this section we introduce a general construction that turns braided fusion categories into modular categories, and we show its relationship with the Quantum double construction on a Hopf Algebra introduced in the first chapter.\\
+Topological dependencies between objects in fusion categories are captured by the braided structure. Let us fix some definitions before discussing the Drinfeld construction.
 \begin{definition}[Half-braiding]
 	A half-braiding on some object $X$ in a monoidal category $\cat$ is a natural isomorphism 
 	$$ e^X : X \otimes (-) \Rightarrow (-) \otimes X$$
-	satisfying: 
-	$$e^X_{Y \otimes Z} =(id_Y \otimes e^X_Z) \circ (e^X_Y \otimes id_Z)$$ 
+	satisfying the compatibility condition:
+	$$e^X_{Y \otimes Z} = (id_Y \otimes e^X_Z) \circ ( e^X_Y \otimes id_Z) $$ 
 \end{definition}
 \begin{definition}[Drinfeld center]
-	The braided (Drinfeld) center of a category $\mathcal{C}$ is the category $Z(\mathcal{C})$ with objects pairs $(X,e^X)$ where $X \in \mathcal{C}$ and $e_X$ is a half-braiding, and with morphisms given by the morphisms of $\mathcal{C}$ which commute with the half-braiding.
+	The braided (Drinfeld) center of a monoidal category $\mathcal{C}$ is the category $Z(\mathcal{C})$ with objects pairs $(X,e^X)$ where $X \in \mathcal{C}$ and $e^X$ is a half-braiding, and with morphisms given by the morphisms of $\mathcal{C}$ which commute with the half-braiding.
 \end{definition}
 \begin{definition}[Yetter-Drinfeld modules]
 	Let $H$ be a bialgebra, the category $\mathcal{D}_{H}^{lr}$ is the category of left-right Yetter-Drinfeld modules where objects are left $H$-modules which are simultaneously right $H$-comodules satisfying the following compatibility condition:
@@ -2690,6 +2906,30 @@ Topological dependencies between objects in fusion categories are captured by th
 	\end{gathered}
 	\end{equation}
 \end{definition}
+\begin{proposition}
+	Let $\cat$ be a monoidal category, then $Z(\cat)$ is braided monoidal.
+\end{proposition}
+\begin{proof}	
+	It is easy to check that defining the tensor as $(X \otimes Y, e^{X \otimes Y}_Z= (e^X_Z \otimes id_Y) \circ (id_X \otimes e^Y(Z))$
+	and the braiding as $e^X_Y$ yields a braided monoidal structure on $Z(\cat)$.
+\end{proof}
+The following proposition hints to the relationship between the Drinfeld center and the quantum double.
+\begin{proposition}
+	The Drinfeld center of a spherical fusion category is modular.
+	And $dim(Z(\cat)) = dim(\cat)^2$
+\end{proposition}
+\begin{proof}
+	Proof is given by \cite{Mueger02}.
+\end{proof}
+In general $Z(\cat)$ is not symmetric as we will see, but in the case of $Vect$ the Drinfeld construction is trivial.
+\begin{proposition}
+	$Z(Vect) \simeq Vect$
+\end{proposition}
+\begin{proof}
+	Using the Mueger decomposition \ref{muegerdec}, note that $Z(Vect)$ is modular and $Vect$ is a full fusion subcategory of $Z(Vect)$, therefore 
+	$$Z(Vect) \simeq Vect \boxtimes C_{Z(Vect)}(Vect)$$
+	But if $(A, e^A)$ is an object of $C_{Z(Vect)}(Vect)$ then any component $e^A_B$ must be the inverse of the symmetry morphism on $A\otimes B$ $\implies$ it must be the symmetry morphism $\implies$  $C_{Z(Vect)}(Vect)	\simeq Vect$ and so $Z(Vect) \simeq Vect$
+\end{proof} 
 Fix a bialgebra $H$ and suppose $ \left( V, \begin{tikzpicture}[scale=0.5, squr/.style={draw,regular polygon,
 	regular polygon sides=4,fill=black}]
 \node [scale=0.3, squr] (0) at (0,0.4) {};
@@ -2697,7 +2937,7 @@ Fix a bialgebra $H$ and suppose $ \left( V, \begin{tikzpicture}[scale=0.5, squr/
 \draw[bend left] (-0.4,0) to (0);
 \end{tikzpicture} \, \right) \,
 \in obj(Rep(H))$ and $(V, e_V)$ is in $Z(RepG)$.
-Note that $H$ has a natural $H$-module structure given by right multiplication. Consider the component of the half-braiding of $V$ at $H$.
+Note that $H$ has a natural $H$-module structure given by right multiplication. Consider the component of the half-braiding of $H$ at $V$.
 \begin{center}	
 	\begin{tikzpicture}
 	\node (0) at (0,0) {};
@@ -2707,8 +2947,102 @@ Note that $H$ has a natural $H$-module structure given by right multiplication. 
 	\draw (2)--(0)--(-0.5,0.5);
 	\end{tikzpicture}
 \end{center}
+In the arguments that follow we will use repeatedly the following trick which we state as a Lemma, it exploits the copy of $Vect$ which lives inside any category of representations.
+\begin{lemma}\label{lemma}
+	For any $W$ object of $Rep(H)$ with white action and $V$ with half braiding.
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node (0) at (0,0) {};
+	\node [scale=0.5,whit] (1) at (-0.2,-0.3) {};
+	\node (4) at (-0.7,-0.9) {$H$};
+	\node (5) at (-0.2,-0.9) {$W$};
+	\node (5) at (0.3,-0.9) {$V$};
+	\draw (-0.2,-0.7)--(1)--(0.4,0.7);
+	\draw[bend left] (4) to (1);
+	\draw (0) to (-0.3,0.7);
+	\draw (0) to (0.3,-0.7);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node (0) at (-0.1,0.3) {};
+	\node [scale=0.5,whit] (1) at (0.3,0.5) {};
+	\node (4) at (-0.7,-0.9) {$H$};
+	\node (5) at (-0.2,-0.9) {$W$};
+	\node (5) at (0.3,-0.9) {$V$};
+	\draw (-0.2,-0.7)--(1)--(0.4,0.9);
+	\draw[bend left] (4) to (1);
+	\draw (-0.3,0.9)--(0);
+	\draw (0) to (0,0);
+	\draw (0,0) to (0.3,-0.7);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Note that 
+	$\left( H\otimes W, \,
+	\begin{tikzpicture}[scale=0.5, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=black] (0) at (0,0) {};
+	\draw (0,-0.5)--(0)--(0,0.5);
+	\draw [bend left] (-0.5,-0.5) to (0);
+	\draw (0.5,-0.5)--(0.5,0.5);
+	\end{tikzpicture} \, \right)$
+	is in $Rep(H)$ and
+	\begin{equation*}
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.5, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, whit] (0) at (0,0) {};
+	\draw (0,-0.5)--(0)--(0,0.5);
+	\draw [bend left] (-0.5,-0.5) to (0);
+	\end{tikzpicture}
+	\end{gathered} : 
+	\left( H\otimes W, \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.5]
+	\node[scale=0.5, draw, circle, fill=black] (0) at (0,0) {};
+	\draw (0,-0.5)--(0)--(0,0.5);
+	\draw [bend left] (-0.5,-0.5) to (0);
+	\draw (0.5,-0.5)--(0.5,0.5);
+	\end{tikzpicture}
+	\end{gathered} \, \right)
+	\rightarrow 
+	\left( W, \, \begin{gathered}
+	\begin{tikzpicture}[scale=0.5, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, whit] (0) at (0,0) {};
+	\draw (0,-0.5)--(0)--(0,0.5);
+	\draw [bend left] (-0.5,-0.5) to (0);
+	\end{tikzpicture}
+	\end{gathered} \,\right)
+	\end{equation*} 
+	is an intertwiner by the module law.
+	Also it is easy to check that the symmetry morphism lifted from $Vect$ 
+	$$
+	\left( W, \, \begin{gathered}
+	\begin{tikzpicture}[scale=0.5]
+	\draw (0,-0.5)--(0,0.5);
+	\end{tikzpicture}
+	\end{gathered} \,\right)
+	\otimes V 
+	\rightarrow 
+	V \otimes \left( W, \, \begin{gathered}
+	\begin{tikzpicture}[scale=0.5]
+	\draw (0,-0.5)--(0,0.5);
+	\end{tikzpicture}
+	\end{gathered} \,\right) $$ 
+	is an intertwiner. And it follows from $Z(Vect)=Vect$ that it must be the $W$-component (where $W$ has the trivial action) of the half braiding on $V$ as $W$ lives in the copy of $Vect$ in $Rep(H)$.
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Define a right coaction of $H$ on $V$ by:
+Define a right coaction of $H$ on $V$:
 \begin{equation}
 \begin{gathered}
 \begin{tikzpicture}[whit/.style={draw,regular polygon,
@@ -2732,7 +3066,7 @@ Define a right coaction of $H$ on $V$ by:
 \end{tikzpicture}
 \end{gathered}			
 \end{equation}
-Note that from the bialgebra laws \counit and \comult, seen as morphisms on the $H$-module $H$ are intertwiners in $Rep(H)$. Therefore by naturality of the half braiding we get:
+Note that, from the bialgebra laws, \counit and \comult (seen as morphisms on the $H$-module $H$) are intertwiners in $Rep(H)$. Therefore by naturality of the half braiding we get:
 \begin{equation}
 \begin{gathered}
 \begin{tikzpicture}[whit/.style={draw,regular polygon,
@@ -2906,58 +3240,7 @@ So that the coaction indeed defines a left $H$-comodule.
 	\end{tikzpicture}
 	\end{gathered}	
 	\end{equation}
-	Now note that 
-	$\left( H\otimes H, \,
-	\begin{tikzpicture}[scale=0.5]
-	\node[scale=0.5, draw, circle, fill=black] (0) at (0,0) {};
-	\draw (0,-0.5)--(0)--(0,0.5);
-	\draw [bend left] (-0.5,-0.5) to (0);
-	\draw (0.5,-0.5)--(0.5,0.5);
-	\end{tikzpicture} \, \right)$
-	is in $Rep(H)$ and
-	\begin{equation*}
-	\begin{gathered}
-	\begin{tikzpicture}[scale=0.5]
-	\node[scale=0.5, draw, circle, fill=black] (0) at (0,0) {};
-	\draw (0,-0.5)--(0)--(0,0.5);
-	\draw [bend left] (-0.5,-0.5) to (0);
-	\end{tikzpicture}
-	\end{gathered} : 
-	\left( H\otimes H, \,
-	\begin{gathered}
-	\begin{tikzpicture}[scale=0.5]
-	\node[scale=0.5, draw, circle, fill=black] (0) at (0,0) {};
-	\draw (0,-0.5)--(0)--(0,0.5);
-	\draw [bend left] (-0.5,-0.5) to (0);
-	\draw (0.5,-0.5)--(0.5,0.5);
-	\end{tikzpicture}
-	\end{gathered} \, \right)
-	\rightarrow 
-	\left( H, \, \begin{gathered}
-	\begin{tikzpicture}[scale=0.5]
-	\node[scale=0.5, draw, circle, fill=black] (0) at (0,0) {};
-	\draw (0,-0.5)--(0)--(0,0.5);
-	\draw [bend left] (-0.5,-0.5) to (0);
-	\end{tikzpicture}
-	\end{gathered} \,\right)
-	\end{equation*} 
-	is an intertwiner by associativity.
-	Also it is easy to check that the symmetry morphism lifted from $Vect$ 
-	$$
-	\left( H, \, \begin{gathered}
-	\begin{tikzpicture}[scale=0.5]
-	\draw (0,-0.5)--(0,0.5);
-	\end{tikzpicture}
-	\end{gathered} \,\right)
-	\otimes V 
-	\rightarrow 
-	V \otimes \left( H, \, \begin{gathered}
-	\begin{tikzpicture}[scale=0.5]
-	\draw (0,-0.5)--(0,0.5);
-	\end{tikzpicture}
-	\end{gathered} \,\right) $$ 
-	is an intertwiner.
-	Therefore by naturality of the braid:
+	Therefore by Lemma \ref{lemma} and naturality of the braid:
 	\begin{equation}
 	\begin{gathered}
 	\begin{tikzpicture}[whit/.style={draw,regular polygon,
@@ -3018,7 +3301,7 @@ So that the coaction indeed defines a left $H$-comodule.
 \end{proof}
 We have defined a functor $F_1: Z(Rep(H)) \rightarrow \mathcal{D}_H^{lr}$ which is identity on arrows and sends $(V,e_V)$ to the left-right Yetter-Drinfeld module with black $H$ action and white $H$ coaction. To see that it is well defined to say it is identity on arrows (and so faithful) note that if an $H$-module morphism $f$ is in $Z(Rep(H))$ then it commutes with the half-brading, in particular it commutes with the $H$-component of the half-braiding and therefore it commutes with the $H$-coaction as defined.\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Similarly we can define a functor $F_2: Z(Rep(H)) \rightarrow \mathcal{D}_H^{ll}$ by considering the $V$ component of the half braiding on the $H$-module $H$ and defining the following left-coaction:
+Similarly we can define a functor $F_2: Z(Rep(H)) \rightarrow \mathcal{D}_H^{ll}$ by considering the $H$ component of the half braiding on $V$ and defining the following left-coaction:
 \begin{equation}
 \begin{gathered}
 \begin{tikzpicture}[whit/.style={draw,regular polygon,
@@ -3159,19 +3442,246 @@ Similarly we can define a functor $F_2: Z(Rep(H)) \rightarrow \mathcal{D}_H^{ll}
 	\end{equation}
 \end{proof}
 For the same reasons as for $F_1$, $F_2$ is faithful. To show $F_1$ and $F_2$ are equivalences of categories we still need to show they are full and essentially surjective.
-\begin{itemize}
-	\item $F_1$ is full:\\
-	Suppose $f$ is a morphism $V \rightarrow W$ in $\mathcal{D}_H^{lr}$, 
-\end{itemize}
+\begin{proposition}
+	$F_1$ and $F_2$ are full.
+\end{proposition}
+\begin{proof}
+	Suppose $f$ is a morphism $V \rightarrow W$ in $\mathcal{D}_H^{lr}$, then using the Lemma we see that for any $Z$ in $Rep(H)$ with gray $H$-action:
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node (0) at (0,0) {};
+	\node [scale=0.5, draw, circle, fill=gray] (f) at (0.4, -0.4) {};
+	\node (1) at (0.6, -0.3) {$f$};
+	\node (4) at (-0.6,-0.8) {$Z$};
+	\node (4) at (0.6,-0.8) {$V$};
+	\node (5) at (0,0) {};
+	\draw (-0.6, -0.6)--(0.6, 0.6);
+	\draw (0.6, -0.6)--(f)--(0)--(-0.6, 0.6);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node (0) at (0,0) {};
+	\node [scale=0.5, draw, circle, fill=gray] (f) at (0.4, -0.4) {};
+	\node [scale=0.5,whit, fill=gray] (2) at (-0.3,-0.3) {};
+	\node [scale=0.5, draw, circle, fill=black] (3) at (-0.9,-0.5) {};
+	\node (1) at (0.6, -0.3) {$f$};
+	\draw (-0.6, -0.6)--(2)--(0.6, 0.6);
+	\draw (0.6, -0.6)--(f)--(0)--(-0.6, 0.6);
+	\draw (3) to (2);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node (0) at (-0.3,0.3) {};
+	\node [scale=0.5, draw, circle, fill=gray] (f) at (0.4, -0.4) {};
+	\node [scale=0.5,whit, fill=gray] (2) at (0.3,0.3) {};
+	\node [scale=0.5, draw, circle, fill=black] (3) at (-0.6,0.1) {};
+	\node (1) at (0.6, -0.3) {$f$};
+	\draw (-0.6, -0.6)--(2)--(0.6, 0.6);
+	\draw (0.6, -0.6)--(f)--(0)--(-0.6, 0.6);
+	\draw[bend left] (3) to (2);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation} 
+	And by definition of $f$, it commutes with the coaction so that:
+	\begin{equation}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node (0) at (-0.3,0.3) {};
+	\node [scale=0.5, draw, circle, fill=gray] (f) at (-0.6, 0.6) {};
+	\node [scale=0.5,whit, fill=gray] (2) at (0.3,0.3) {};
+	\node [scale=0.5, draw, circle, fill=black] (3) at (-0.6,0.1) {};
+	\node (1) at (-0.8, 0.45) {$f$};
+	\draw (-0.4, -0.4)--(2)--(0.8, 0.8);
+	\draw (0.4, -0.4)--(0)--(f)--(-0.8, 0.8);
+	\draw[bend left] (3) to (2);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node (0) at (-0.3,0.3) {};
+	\node [scale=0.5, draw, circle, fill=gray] (f) at (-0.6, 0.6) {};
+	\node [scale=0.5,whit, fill=gray] (2) at (0.3,0.3) {};
+	\node [scale=0.5, draw, circle, fill=black] (3) at (-0.6,0.1) {};
+	\node (1) at (-0.8, 0.45) {$f$};
+	\draw (-0.4, -0.4)--(2)--(0.8, 0.8);
+	\draw (0.4, -0.4)--(0)--(f)--(-0.8, 0.8);
+	\draw[bend left] (3) to (2);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node (0) at (0,0) {};
+	\node [scale=0.5, draw, circle, fill=gray] (f) at (-0.4, 0.4) {};
+	\node (1) at (-0.6, 0.3) {$f$};
+	\draw (-0.6, -0.6)--(0.6, 0.6);
+	\draw (0.6, -0.6)--(0)--(f)--(-0.6, 0.6);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation} 
+	So $f$ commutes with the half braiding $\implies$ it is a morphism in $Z(Rep(H))$. Therefore $F_1$ is full. And a similar proof applies to $F_2$.	 
+\end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-We now show that or any 
+\begin{proposition}
+	If $H$ is a Hopf algebra, $F_1$ is essentially surjective.
+\end{proposition}
+\begin{proof}
+	To prove this we construct a half braiding for any object $V$ of $\mathcal{D}_H^{lr}$ which yields the coaction of the form [cite equations].\\
+	Fix any object $V$ with white right $H$-coaction and for any 
+	$\left( W, \begin{tikzpicture}[scale=0.3, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node [scale=0.4,whit, fill=gray] (0) at (0, 0.5) {};
+	\draw[bend left] (-0.5,0) to (0);
+	\draw (0,0)--(0)--(0,1);
+	\end{tikzpicture} \, \right) $
+	define
+	\begin{equation} \label{defbraid}
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node (0) at (0.5,0.5) {};
+	\node (v) at (0,-0.3) {$V$};
+	\node (w) at (1,-0.3) {$W$};
+	\draw (0,0)--(1,1);
+	\draw (1,0)--(0)--(0,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, := \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node[scale=0.4, whit] (0) at (0,-1) {};
+	\node[scale=0.4, whit, fill=gray] (1) at (1,-0.8) {};
+	\node [scale=0.3,whit] (S) at (0.5,-0.9) {$S$};
+	\draw [bend right] (0,0) to (0.5,-0.5);
+	\draw [bend left] (0.5,-0.5) to (1);
+	\draw (1) to (1,-1.3);
+	\draw [bend left] (1,0) to (0.5,-0.5);
+	\draw [bend right=20] (0.5,-0.5) to (0);
+	\draw (0) to (0,-1.3);
+	\draw (0)--(S)--(1);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+	(\ref{defbraid}) is an isomorphism as 
+	\begin{equation} \label{rightbraid}
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node (0) at (0.5,0.5) {};
+	\node (v) at (0,-0.3) {$W$};
+	\node (w) at (1,-0.3) {$V$};
+	\draw (0,0)--(1,1);
+	\draw (1,0)--(0)--(0,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, := \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node[scale=0.5, whit] (0) at (0,0.8) {};
+	\node[scale=0.4, whit, fill=gray] (1) at (1,1) {};
+	\node (v) at (0,-0.3) {$W$};
+	\node (w) at (1,-0.3) {$V$};
+	\draw [bend left] (0,0) to (0.5,0.5);
+	\draw [bend right] (0.5,0.5) to (1);
+	\draw (1) to (1,1.3);
+	\draw [bend right] (1,0) to (0.5,0.5);
+	\draw [bend left=20] (0.5,0.5) to (0);
+	\draw (0) to (0,1.3);
+	\draw (0) to (1);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+	is an inverse by the hopf law. It is natural in $W$ as all morphisms are intertwiners (so they commute with the $H$-action on $W$). And it satisfies the compatibility condition by definition of $H$-comodule.
+	Clearly setting $W=H$ in (\ref{rightbraid}) with the natural left-multiplication action, and inserting \unit on the left of the tensor yields the $H$-coaction.
+\end{proof}
+\begin{proposition}
+	If $H$ has a skew antipode, $F_2$ is essentially surjective.
+\end{proposition}
+\begin{proof}
+	Define
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node (0) at (0.5,0.5) {};
+	\node (v) at (0,-0.3) {$V$};
+	\node (w) at (1,-0.3) {$W$};
+	\draw (0,0)--(1,1);
+	\draw (1,0)--(0)--(0,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, := \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node[scale=0.4, whit] (0) at (0,0.3) {};
+	\node [scale=0.4,whit, fill=gray] (1) at (0,0.9) {};
+	\draw [bend left=70, looseness=1.5] (0) to (1);
+	\draw (-0.2,0)--(0)--(0.8,1.2);
+	\draw (0.8,0)--(1)--(-0.2,1.2);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+	The same argument as the previous proposition applies defining the inverse using the skew antipode $\bar{S}$: 
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node (0) at (0.5,0.5) {};
+	\node (v) at (0,-0.3) {$W$};
+	\node (w) at (1,-0.3) {$V$};
+	\draw (0,0)--(0)--(1,1);
+	\draw (1,0)--(0,1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, := \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node[scale=0.4, whit] (0) at (1,0.3) {};
+	\node [scale=0.4,whit, fill=gray] (1) at (1,0.9) {};
+	\node [scale=0.3,whit] (S) at (0,0.6) {$\bar{S}$};
+	\draw [bend left] (0) to (S);
+	\draw [bend left] (S) to (1);
+	\draw (1.2,0)--(0)--(0,1.2);
+	\draw (0,0)--(1)--(1.2,1.2);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+\end{proof}
+\begin{corollary}
+	If $H$ is a Hopf algebra then $Z(RepH) \simeq \mathcal{D}_H^{lr}$. If $H$ has a skew antipode then $Z(RepH) \simeq \mathcal{D}_H^{ll}$.
+\end{corollary}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let us see how the two kinds of Yetter Drinfeld modules interact with one another. For any 
 $\left( W, \begin{tikzpicture}[scale=0.3, whit/.style={draw,regular polygon,
 	regular polygon sides=4,fill=white}]
-\node [scale=0.3,whit] (0) at (0, 0.5) {x};
+\node [scale=0.4,whit, fill=gray] (0) at (0, 0.5) {};
 \draw[bend left] (-0.5,0) to (0);
 \draw (0,0)--(0)--(0,1);
 \end{tikzpicture} \, \right) $
-define
+we have
 \begin{equation}
 \begin{gathered}
 \begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
@@ -3188,7 +3698,7 @@ define
 \begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
 	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 \node[scale=0.5, whit] (0) at (0,0.8) {};
-\node[scale=0.3, whit] (1) at (1,1) {$x$};
+\node [scale=0.4,whit, fill=gray] (1) at (1,1) {};
 \draw [bend left] (0,0) to (0.5,0.5);
 \draw [bend right] (0.5,0.5) to (1);
 \draw (1) to (1,1.3);
@@ -3214,7 +3724,7 @@ define
 \begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
 	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 \node[scale=0.5, whit] (0) at (0,0.3) {};
-\node[scale=0.3, whit] (1) at (0,0.9) {$x$};
+\node [scale=0.4,whit, fill=gray] (1) at (0,0.9) {};
 \draw [bend left=70, looseness=1.5] (0) to (1);
 \draw (0,0)--(0)--(0.8,1.2);
 \draw (0.8,0)--(1)--(0,1.2);
@@ -3308,7 +3818,7 @@ define
 	\end{equation}
 \end{claim}
 \begin{proof}
-	We will only proove the first statement, the second proof is very similar. First note that from the definition and as W is a $H$-module: 
+	We will only prove the first statement, the second proof is very similar. First note that from the definition and as W is a $H$-module: 
 	\begin{equation}
 	\begin{gathered}
 	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
@@ -3325,8 +3835,8 @@ define
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 	\node[scale=0.5, whit] (0) at (0,0.3) {};
 	\node[scale=0.5, whit] (1) at (0,0.8) {};
-	\node[scale=0.5, whit] (2) at (0.7,0.5) {$x$};
-	\node[scale=0.5, whit] (3) at (0,1.5) {$x$};
+	\node[scale=0.4,whit, fill=gray] (2) at (0.7,0.5) {};
+	\node[scale=0.4,whit, fill=gray] (3) at (0,1.5) {};
 	\draw (0.7,-0.3)--(0)--(1)--(0.7,1.8);
 	\draw (0,-0.3)--(2)--(3)--(0,1.8);
 	\draw[bend left=70] (1) to (3);
@@ -3339,7 +3849,7 @@ define
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 	\node[scale=0.5, whit] (0) at (0.7,0.3) {};
 	\node[scale=0.5, whit] (1) at (0.7,0.8) {};
-	\node[scale=0.5,whit] (2) at (0,1.5) {$x$};
+	\node [scale=0.4,whit, fill=gray] (2) at (0,1.5) {};
 	\node[scale=0.5, draw, circle, fill=black] (3) at (0.3,1) {};
 	\draw (0.7,-0.3)--(0)--(1)--(0.7,1.8);
 	\draw (0,-0.3)--(2)--(0,1.8);
@@ -3352,12 +3862,34 @@ define
 	$(\Longleftarrow)$ is straightforward.
 	To show $(\implies)$ set $W=H$ with the natural left module structure given by left multiplication, then inserting the unit state \unit on the left of the tensor we obtain the required identity.
 \end{proof}
+And we say that if $H$ is a hopf algebra with a skew antipode we can make the right hand sides hold imposing:
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node [whit,scale=0.5] (0) at (0,0) {};
+\draw (0,-1)--(0)--(0,1);
+\draw [bend right] (0) to (0.5,1);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node [scale=0.5,whit] (0) at (0,0) {};
+\node [scale=0.3, whit] (S) at (-0.5,0.2) {$\bar{S}$};
+\draw (0,-1)--(0)--(0,1);
+\draw [bend left] (0) to (S);
+\draw (S) to (0.5,1);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{proposition}
-	If $H$ is a finite-dimensional Hopf Algebra then right-right Yetter Drinfeld modules are $DH$-modules.
+	If $H$ is a finite-dimensional Hopf Algebra with invertible antipode then left-left Yetter Drinfeld modules are $DH$-modules.
 \end{proposition}
 \begin{proof}
-	The previous claims only assumed the bialgebra laws. Making use of the antipode and the compatibility condition we obtain:
+	Note that defining $DH$ requires the antipode to be invertible (it is used in the definition of the antipode for $DH$). Making use of the antipode and the compatibility condition we obtain:
 	\begin{equation}
 	\begin{gathered}
 	\begin{tikzpicture}[whit/.style={draw,regular polygon,
@@ -3508,10 +4040,125 @@ define
 	\end{tikzpicture}
 	\end{gathered}
 	\end{equation}
+	Now it is easy to see that morphisms commute with the $DH$-action iff they commute with the $H$-action and $H$-coaction. So we have defined a fully faithful embedding of $\mathcal{D}_H^{ll}$ into $Rep(DH)$. To see it is essentially surjective note that, given a $DH$-action on $V$, we can recover the $H$-action by plugging the counit in the $H^\star$ component of the $DH$-action and the $H$-coaction by plugging the unit in the $H$-component and bending the $H^\star$ wire up. It remains to check that those indeed define a left-left Yetter-Drinfeld module in all cases, i.e that the compatibility condition is satisfied. And it is indeed the case:
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node [scale=0.7, draw, circle] (0) at (0,-0.3) {};
+	\node [scale=0.7, draw, circle] (3) at (0,0.3) {};
+	\node [scale=0.5, draw, circle, fill=black] (1) at (-0.7,0.5) {};
+	\node [scale=0.5, draw, circle, fill=white] (2) at (-0.7,-0.3) {};
+	\node [scale=0.5, draw, circle, fill=black] (b) at (-0.2,-0.1) {};
+	\node [scale=0.5, draw, circle, fill=white] (w) at (-0.2,0.1) {};
+	\draw (-0.7,-0.7)--(2);
+	\draw [bend left] (2) to (1);
+	\draw (1)--(-0.7,0.7);
+	\draw [bend left] (2) to (3);
+	\draw [bend left](0) to (1);
+	\draw (0,-0.7)--(0)--(3)--(0,0.7);
+	\draw (b)--(0);
+	\draw (w)--(3);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node [scale=0.7, draw, circle] (0) at (0,0) {};
+	\node [scale=0.5, draw, circle, fill=black] (1) at (-0.7,0.5) {};
+	\node [scale=0.5, draw, circle, fill=white] (2) at (-0.7,-0.3) {};
+	\draw (-0.7,-0.7)--(2);
+	\draw [bend left] (2) to (1);
+	\draw (1)--(-0.7,0.7);
+	\draw [bend left=50] (2) to (0);
+	\draw [bend left=50](0) to (1);
+	\draw (0,-0.7)--(0)--(0,0.7);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node [scale=0.7, draw, circle] (0) at (0,0) {};
+	\node [scale=0.5, draw, circle, fill=black] (1) at (-0.7,0.5) {};
+	\node [scale=0.5, draw, circle, fill=white] (2) at (-0.7,-0.3) {};
+	\node [scale=0.5, draw, circle, fill=black] (b) at (0.4,0.3) {};
+	\node [scale=0.5, draw, circle, fill=white] (w) at (0.4,-0.2) {};
+	\node [scale=0.3,whit] (s) at (0.3, 0.05) {$S$};
+	\draw (-0.7,-0.7)--(2);
+	\draw [bend left] (2) to (1);
+	\draw (1)--(-0.7,0.7);
+	\draw [bend left=50] (2) to (0);
+	\draw [bend left=50](0) to (1);
+	\draw (0,-0.7)--(0)--(0,0.7);
+	\draw [bend right] (w) to (b);
+	\draw [bend left] (w) to (s);
+	\draw [bend left] (s) to (b);
+	\draw (w) to (2);
+	\draw (b) to (1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node [scale=0.7, draw, circle] (0) at (0,0) {};
+	\node [scale=0.5, draw, circle, fill=black] (1) at (-0.7,0.5) {};
+	\node [scale=0.5, draw, circle, fill=white] (2) at (-0.7,-0.4) {};
+	\node [scale=0.5, draw, circle, fill=black] (b) at (-0.4,0.3) {};
+	\node [scale=0.5, draw, circle, fill=white] (w) at (-0.4,-0.2) {};
+	\node [scale=0.3,whit] (s) at (0.3, 0.05) {$S$};
+	\draw (-0.7,-0.7)--(2);
+	\draw [bend left] (w) to (b);
+	\draw (1)--(-0.7,0.7);
+	\draw [bend right=90, looseness=5] (2) to (1);
+	\draw [bend left=50] (w) to (0);
+	\draw [bend left=50](0) to (b);
+	\draw (0,-0.7)--(0)--(0,0.7);
+	\draw [bend right] (w) to (s);
+	\draw [bend right] (s) to (b);
+	\draw (w) to (2);
+	\draw (b) to (1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node [scale=0.7, draw, circle] (0) at (0,-0.15) {};
+	\node [scale=0.7, draw, circle] (3) at (0,0.15) {};
+	\node [scale=0.5, draw, circle, fill=black] (1) at (-0.7,0.5) {};
+	\node [scale=0.5, draw, circle, fill=white] (2) at (-0.7,-0.5) {};
+	\node [scale=0.5, draw, circle, fill=black] (b) at (-0.2,0.3) {};
+	\node [scale=0.5, draw, circle, fill=white] (w) at (-0.2,-0.3) {};
+	\draw (-0.7,-0.7)--(2);
+	\draw [bend right=90, looseness=4] (2) to (1);
+	\draw (1)--(-0.7,0.7);
+	\draw [bend left] (2) to (0);
+	\draw [bend left] (3) to (1);
+	\draw (0,-0.7)--(0)--(3)--(0,0.7);
+	\draw (b)--(3);
+	\draw (w)--(0);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
 \end{proof}
 \begin{corollary}
 	If $H$ is a finite dimensional Hopf algebra with invertible antipode $Z(RepH) \simeq RepDH$
 \end{corollary}
+We have found many equivalent ways of constructing non-degenerate theories of anyons. In the next section we will use the simplest examples induced by groups, justified by the following proposition
+\begin{proposition}
+	If $G$ is a finite non-abelian group then $Rep(D(G))$ is modular.
+\end{proposition}
+\begin{proof}
+	A direct proof is given in the third chapter of \cite{Bakalov00}. But this also follows from the fact that $Z(Rep(G))$ is modular.
+\end{proof}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3667,16 +4314,11 @@ Topologial gates: braids (can express as action of the braid group) + measuremen
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section{A braided programming language}
+\subsection{A braided representation of Quantum computation}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Non-commutative linear logic}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{An adjunction between fPQC and TQC}
 This section is dedicated to the relationship between a category $\mathcal{C}$ and its braided centre $Z(\mathcal{C})$. In the first part we will talk about non-commutative logic and modalities. In the second part we will see \\
@@ -3737,8 +4379,6 @@ If $G=S_3=\braket{\sigma,\rho}$ where $\sigma$ is a reflection and $\rho$ a rota
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Quantum Semantics}
 
 \section{Conclusion}
 

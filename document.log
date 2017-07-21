@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  16 JUL 2017 18:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  21 JUL 2017 14:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1682,70 +1682,133 @@ LaTeX Warning: Citation `Lawvere63' on page 8 undefined on input line 949.
 
 [8] [9]
 
-LaTeX Warning: Citation `Majid95' on page 10 undefined on input line 1008.
+LaTeX Warning: Citation `Mueger12' on page 10 undefined on input line 1018.
 
-[10] [11]
+[10]
 
-LaTeX Warning: Citation `Slingerland02' on page 12 undefined on input line 1070
+LaTeX Warning: Citation `Majid95' on page 11 undefined on input line 1054.
+
+[11] [12]
+
+LaTeX Warning: Citation `Slingerland02' on page 13 undefined on input line 1116
 .
 
-[12] [13]
-Overfull \hbox (6.59302pt too wide) in paragraph at lines 1522--1523
+[13] [14]
+Overfull \hbox (6.59302pt too wide) in paragraph at lines 1568--1569
 []\OT1/cmr/m/it/10 The uni-ver-sal $\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -matrix
  sat-is-fies the Quan-tum Yang-Baxter equa-
  []
 
-[14]
 
-LaTeX Warning: Citation `Drinfeld87' on page 15 undefined on input line 1702.
+LaTeX Warning: Citation `Drinfeld87' on page 15 undefined on input line 1748.
 
-
-Overfull \hbox (0.57443pt too wide) in paragraph at lines 1704--1705
+[15]
+Overfull \hbox (0.57443pt too wide) in paragraph at lines 1750--1751
 []\OT1/cmr/m/it/10 The quan-tum dou-ble
  []
 
-[15] [16] [17] [18]
+[16] [17] [18] [19]
 
-LaTeX Warning: Citation `Kitaev06' on page 19 undefined on input line 2432.
-
-
-LaTeX Warning: Citation `Simon16' on page 19 undefined on input line 2432.
-
-
-LaTeX Warning: Citation `Panangaden11' on page 19 undefined on input line 2432.
+LaTeX Warning: Citation `Vercruysse12' on page 20 undefined on input line 2477.
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2432--2436
+LaTeX Warning: Citation `Joyal91' on page 20 undefined on input line 2477.
 
- []
-
-[19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 2483--2485
-
+[20]
+Overfull \hbox (15.54112pt too wide) in paragraph at lines 2481--2482
+[]\OT1/cmr/m/it/10 Any monoidal cat-e-gory $\OMS/cmsy/m/n/10 C$ \OT1/cmr/m/it/1
+0 equipped
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2488--2491
+LaTeX Warning: Citation `Abramsky04' on page 21 undefined on input line 2485.
+
+
+LaTeX Warning: Citation `Coecke17' on page 21 undefined on input line 2485.
+
+
+LaTeX Warning: Citation `Kitaev06' on page 21 undefined on input line 2491.
+
+
+LaTeX Warning: Citation `Simon16' on page 21 undefined on input line 2491.
+
+
+LaTeX Warning: Citation `Panangaden11' on page 21 undefined on input line 2491.
+
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2491--2495
+
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 2542--2544
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 2547--2550
 
  []
 
 
-LaTeX Warning: Citation `Coecke17' on page 21 undefined on input line 2494.
+LaTeX Warning: Citation `Coecke17' on page 23 undefined on input line 2553.
 
-[21] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 2559--2562
+[23] [24] [25]
+Underfull \hbox (badness 10000) in paragraph at lines 2706--2710
 
  []
 
-[23] [24]
-Overfull \hbox (7.15947pt too wide) in paragraph at lines 2614--2615
+[26] [27]
+
+LaTeX Warning: Citation `Mueger02' on page 28 undefined on input line 2790.
+
+
+LaTeX Warning: Citation `Mueger02' on page 28 undefined on input line 2797.
+
+
+LaTeX Warning: Citation `Bakalov00' on page 28 undefined on input line 2804.
+
+
+LaTeX Warning: Citation `Mueger02' on page 28 undefined on input line 2804.
+
+[28]
+
+LaTeX Warning: Citation `Bakalov00' on page 29 undefined on input line 2806.
+
+
+LaTeX Warning: Citation `Bakalov00' on page 29 undefined on input line 2810.
+
+
+LaTeX Warning: Citation `Balsam12' on page 29 undefined on input line 2815.
+
+
+LaTeX Warning: Citation `Abramsky04' on page 29 undefined on input line 2815.
+
+
+LaTeX Warning: Citation `Panangaden11' on page 29 undefined on input line 2818.
+
+
+
+LaTeX Warning: Citation `Simon16' on page 29 undefined on input line 2822.
+
+
+Overfull \hbox (7.15947pt too wide) in paragraph at lines 2830--2831
 []\OT1/cmr/m/it/10 A half-braiding on some ob-ject $\OML/cmm/m/it/10 X$ \OT1/cm
 r/m/it/10 in a monoidal
  []
 
+[29]
+Overfull \hbox (0.81467pt too wide) in paragraph at lines 2836--2837
+[]\OT1/cmr/m/it/10 The braided (Drin-feld) cen-ter of a monoidal
+ []
 
-Overfull \hbox (4.97093pt too wide) in paragraph at lines 2693--2701
+
+LaTeX Warning: Citation `Mueger02' on page 30 undefined on input line 2922.
+
+[30]
+Overfull \hbox (4.97093pt too wide) in paragraph at lines 2933--2941
 \OT1/cmr/m/n/10 Fix a bial-ge-bra $\OML/cmm/m/it/10 H$ \OT1/cmr/m/n/10 and sup-
 pose $[]  \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 obj\OT1/cmr/m/n/10 (\OML/cmm/m/it
 /10 Rep\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 H\OT1/cmr/m/n/10 ))$ and $(\OML/cmm/m/
@@ -1753,42 +1816,45 @@ it/10 V; e[]\OT1/cmr/m/n/10 )$ is in $\OML/cmm/m/it/10 Z\OT1/cmr/m/n/10 (\OML/c
 mm/m/it/10 RepG\OT1/cmr/m/n/10 )$.
  []
 
-[25] [26] [27] [28]
-Overfull \hbox (11.95245pt too wide) in paragraph at lines 3531--3532
+[31] [32] [33] [34] [35]
+
+LaTeX Warning: Citation `Bakalov00' on page 36 undefined on input line 4160.
+
+
+Overfull \hbox (11.95245pt too wide) in paragraph at lines 4178--4179
 []\OT1/cmr/m/it/10 A Many-body Quan-tum sys-
  []
 
-[29] [30] [31]
-Overfull \hbox (6.7772pt too wide) in paragraph at lines 3613--3614
+[36] [37] [38] [39]
+Overfull \hbox (6.7772pt too wide) in paragraph at lines 4260--4261
 []\OT1/cmr/m/it/10 If we
  []
 
-[32]
 
-LaTeX Warning: Citation `Jordan09' on page 33 undefined on input line 3619.
+LaTeX Warning: Citation `Jordan09' on page 40 undefined on input line 4266.
 
-
-Overfull \hbox (3.13693pt too wide) in paragraph at lines 3650--3652
+[40]
+Overfull \hbox (3.13693pt too wide) in paragraph at lines 4297--4299
 []\OT1/cmr/m/it/10 The
  []
 
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 3682--3683
+
+Underfull \hbox (badness 10000) in paragraph at lines 4324--4325
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3685--3686
+Underfull \hbox (badness 10000) in paragraph at lines 4327--4328
+
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 4337--4339
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3695--3697
-
- []
-
-[34]
-Overfull \hbox (56.501pt too wide) detected at line 3727
+Overfull \hbox (56.501pt too wide) detected at line 4369
 \OML/cmm/m/it/10 P[]e\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 + \
 OML/cmm/m/it/10 yw[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 xw[][] P[]e\OT1/cmr/m/
 n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 yw[]\OT1/cmr/m/n
@@ -1799,7 +1865,7 @@ n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 yw[]\OT1/cmr/m/n
  yw[]
  []
 
-(./document.bbl [35]
+[42] (./document.bbl
 Underfull \hbox (badness 1902) in paragraph at lines 25--28
 []\OT1/cmr/m/n/10 M. Mueger.  Ten-sor cat-e-gories: A se-lec-tive guided tour. 
  \OT1/cmr/m/it/10 eprint
@@ -1815,19 +1881,19 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-) [36] [37] [38] (./document.aux)
+) [43] [44] [45] (./document.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 38043 strings out of 493014
- 904231 string characters out of 6133351
- 1102824 words of memory out of 5000000
- 40928 multiletter control sequences out of 15000+600000
+ 38161 strings out of 493014
+ 906514 string characters out of 6133351
+ 1106710 words of memory out of 5000000
+ 41046 multiletter control sequences out of 15000+600000
  12468 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,23n,103p,10453b,1042s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,23n,103p,10453b,1046s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -1846,10 +1912,10 @@ e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/
 2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texl
 ive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on document.pdf (38 pages, 353172 bytes).
+Output written on document.pdf (45 pages, 382174 bytes).
 PDF statistics:
- 204 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
+ 226 PDF objects out of 1000 (max. 8388607)
+ 159 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
