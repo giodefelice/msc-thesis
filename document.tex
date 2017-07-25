@@ -557,8 +557,6 @@ Logic: mirror the relationship, all statements about RepDG are statements in Rep
 
 \section{Diagrams and Hopf Algebras}
 
-
-
 \subsection{Monoidal categories}
 In this section, we set in place the basic definitions and diagrammatic  intuitions which we will use throughout the thesis. The standard reference about basic category theory results is \cite{MacLane71}. Many of the definitions are taken from \cite{Abramsky11}. A more detailed and up to date survey on monoidal categories can be found in \cite{Etingof15}. For an introduction to diagrammatic reasoning in monoidal categories consider the first two chapters of \cite{Coecke17}. Many of the results in this section and their relationship to quantum mechanics can be found in \cite{Vicary12}. \\
 %%CATEGORIES:
@@ -1471,7 +1469,67 @@ The following two propositions are simple but important results about the antipo
 	\draw[bend left] (0) to (-0.5,0.5);
 	\draw[bend right] (0) to (0.5,0.5);
 	\end{tikzpicture}.
-	And it is easy to see using associativity and co-associativity that right and left convolution inverses must coincide. We deduce that the antipode is an anti-coalgebra homomorphism. For a proof that the antipode is an anti-algebra morphism simply flip all the diagrams and interchange white with black. 
+	And it is easy to see using associativity and co-associativity that right and left convolution inverses must coincide. Also note that:
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,0.6) {};
+	\draw (0) to (0,0);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,0.3) {};
+	\node[scale=0.5, draw, circle, fill=black] (1) at (0,0.9) {};
+	\node[scale=0.5, draw, circle, fill=white] (2) at (0,1.2) {};
+	\draw (0) to (0,0);
+	\draw (1) to (2);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,0.3) {};
+	\node[scale=0.5, draw, circle, fill=black] (1) at (0,0.9) {};
+	\node[scale=0.5, draw, circle, fill=white] (2) at (0,1.2) {};
+	\node[scale=0.3, squr] (s) at (0.2,0.6) {$S$};
+	\draw (0) to (0,0);
+	\draw (1) to (2);
+	\draw [bend right] (0) to (s);
+	\draw [bend right] (s) to (1);
+	\draw [bend left=60] (0) to (1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,0.3) {};
+	\node[scale=0.5, draw, circle, fill=white] (1) at (0.2,0.9) {};
+	\node[scale=0.5, draw, circle, fill=white] (2) at (-0.2,0.9) {};
+	\node[scale=0.3, squr] (s) at (0.2,0.6) {$S$};
+	\draw (0) to (0,0);
+	\draw [bend right] (0) to (s);
+	\draw (s) to (1);
+	\draw [bend left] (0) to (2);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[ squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5, draw, circle, fill=white] (0) at (0,1) {};
+	\node[scale=0.3, squr] (s) at (0,0.5) {$S$};
+	\draw (0)--(s)--(0,0);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+	We deduce that the antipode is an anti-coalgebra homomorphism.  
+	For a proof that the antipode is an anti-algebra morphism simply flip all the diagrams and interchange white with black. 
 \end{proof}
 
 
@@ -2209,7 +2267,7 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 		\end{tikzpicture}
 		\end{gathered}
 	\end{equation}
-	It is easy to see these are inverses of each other, we just need to check they are intertwiners.
+	It is easy to see these are inverses of each other, we first need to check they are intertwiners.
 	\begin{equation}
 	\begin{gathered}
 	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
@@ -2341,7 +2399,85 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 	\end{tikzpicture}
 	\end{gathered}
 	\end{equation}
-	And a similar proof works for the inverse.
+	And a similar proof works for the inverse. Now we need to show that the coherence conditions (i.e the hexagon axioms) are satisfied. The first hexagon equation follows from [CITE rule]:
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.6]
+	\node (0) at (1.3,2.2) {};
+	\node (4) at (1.5,2.5) {};
+	\draw (0.5,0)--(0.5,1.5)--(1,2)--(2,3);
+	\draw (1.7,0)--(1.7,1.7)--(0)--(0.5,3);
+	\draw (2,0)--(2,2)--(4)--(1,3);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node[black, scale=0.7] (1) at (0, 1) {};
+	\node[whit, fill=gray, scale=0.7] (2) at (0.5, 1) {};
+	\node[whit, scale=0.7] (3) at (1.5, 1) {};
+	\node[scale=0.5, draw, circle, fill=white] (w) at (-1, 0.1) {};
+	\node[scale=0.5, buffer] (r) at (-1,-0.8) {$R$};
+	\draw (r) to (w);
+	\draw[bend left] (w) to (1);
+	\draw (w) to (2);
+	\draw[bend left=10] (r) to (3);
+	\draw (1.5, -1)--(1.5,0)--(2)--(0.5,1.5);
+	\draw (1, -1)--(1,0)--(1)--(0,1.5);
+	\draw (0,-1)--(0,-0.5)--(3)--(1.5,1.5);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node[black, scale=0.7] (1) at (0, 1) {};
+	\node[whit, fill=gray, scale=0.7] (2) at (0.5, 1) {};
+	\node[whit, scale=0.7] (3) at (1.5, 1) {};
+	\node[scale=0.5, draw, circle, fill=black] (b) at (0, 0.1) {};
+	\node[scale=0.3, buffer] (r1) at (-1,-0.4) {$R$};
+	\node[scale=0.5, buffer] (r2) at (-1,-1) {$R$};
+	\draw (r1) to (b);
+	\draw (r2) to (b);
+	\draw (b) to (3);
+	\draw (r1) to (2);
+	\draw[bend left=60] (r2) to (1);
+	\draw (1.5, -1)--(1.5,0)--(2)--(0.5,1.5);
+	\draw (1, -1)--(1,0)--(1)--(0,1.5);
+	\draw (0,-1)--(0,-0.5)--(3)--(1.5,1.5);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\node[black, scale=0.7] (1) at (0, 1) {};
+	\node[whit, fill=gray, scale=0.7] (2) at (0.5, 1) {};
+	\node[whit, scale=0.7] (3) at (1.5, 1) {};
+	\node[scale=0.5, whit] (4) at (0, -0.4) {};
+	\node[scale=0.3, buffer] (r1) at (-0.5,0) {$R$};
+	\node[scale=0.5, buffer] (r2) at (-1,-1) {$R$};
+	\draw (r1) to (3);
+	\draw[bend left] (r2) to (4);
+	\draw (r1) to (2);
+	\draw[bend left=60] (r2) to (1);
+	\draw (1.5, -1)--(1.5,0)--(2)--(0.5,1.5);
+	\draw (1, -1)--(1,0)--(1)--(0,1.5);
+	\draw (0,-1)--(4)--(3)--(1.5,1.5);
+	\end{tikzpicture}
+	\end{gathered}
+	\,=\,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.6]
+	\node (0) at (0.5,0.5) {};
+	\node (4) at (1.5,2.5) {};
+	\draw (0,0)--(1,1)--(1,2)--(2,3);
+	\draw (1,0)--(0)--(0,1)--(0,3);
+	\draw (2,0)--(2,2)--(4)--(1,3);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
 \end{proof}
 \begin{proposition}
 	If $H$ is a Hopf algebra, then $Rep(H)$ is left-rigid.
@@ -4168,213 +4304,263 @@ We have found many equivalent ways of constructing non-degenerate theories of an
 
 \section{Quantum Computation}
 
-\subsection{Phases of Matter}
-Classical phases of matter: solid, liquid and gas.\\
-Temperature is proportional to energy \\
-Close to zero temperature, phases of matter are quantized. We obtain exotic behaviours of matter.\\
-In order to talk about quantum phases of matter we need to consider many-body quantum systems. We will use the definitions of Zhenghan
+\subsection{Topological Quantum Computation}
 
-\begin{definition}[Many Body Quantum Systems]
-A Many-body Quantum system (MQS), is a triple $(\mathcal{L}, b, \mathcal{H})$, where $\mathcal{L}$ is a Hilbert space with a distinguished ONB $b$ and a hermitian operator $\mathcal{H}: \mathcal{L} \rightarrow \mathcal{L}$, called Hamiltonian.
+\subsubsection{From categories to computation}
+In the previous section we saw that categories can be interpreted as physical process theories. In a very similar way, we can interpret objets as data types and morphisms as computational processes, so that any category corresponds to a theory of computation. Monoidal categories are ones where parallel computation is possible. Quantum computation is a model in which data is encoded in the state of quantum systems (particles) and processes are quantum transformations of the system. A computation consists of the preparation of some quantum states, their manipulation and measurement. This procedure is repeated in order to collect statistics and approximate density distributions. The unit of information in quantum computation is called qubit by analogy with the classical bit. A qubit is a two-level quantum system, that is a Hilbert space of dimension $2$ which is denote by $\mathbb{C}^2$\\
+Modular categories are models for topological quantum computation (TQC) in the sense of \cite{Kitaev03} or \cite{Rowell17}. TQC has been studied extensively in recent years as it allows for fault-tolerant quantum computation. In this model data is encoded in non-abelian anyons and quantum gates are obtained by braiding those particles. Topologically equivalent braids implement the same quantum process so that small perturbations of particle world-lines do not affect the computation and gates are topologically protected from decoherence.
+Another reason for studying topological quantum computation is that some TQC models allow to approximate the Jones polynomial in polynomial time, a problem that is believed to be untractable classically (it is in the complexity class $\# P$) .\\
+The problem of building a topological quantum computer has been addressed by various authors \cite{Kitaev03} [cite freedman]. The difficulty arises in the two-dimensional nature of anyons. Indeed those are only known to arise as quasi-particle excitations on two-dimensional fluids at low temperature, an experimentally difficult setup which was never achieved for non-abelian excitations.\\
+A topological quantum computer runs as follows \cite{Rowell17}:
+\begin{definition}[TQC]
+	\begin{enumerate}
+		\item Creation of anyon pairs from the vacuum to encode the information as a quantum state.
+		\item Braiding those anyons performs a quantum gate on the state.
+		\item fusing neighbouring anyons and observing the resulting anyon type corresponds to a projective measurement on the system.
+	\end{enumerate}
 \end{definition}
-The eigenvalues of the Hamiltonian correspond to the energy levels of the system. The elements of the basis $b$ are the initial classical states of the system. Many-body quantum systems will usually be obtained from spatial configurations of particles, which we will descibe by graphs.
-\begin{definition}
-A Hamiltonian is k-local if...
-\end{definition}
+The computation result is the approximation to a probability distribution (over measurement outcomes) obtained by repeating the procedure polynomially many times and recording the output anyon types. Note that if we postselct on the vacuum sector to be the output anyon type we are effetively approximating an invariant of links. Indeed any process in TQC starting and ending in the vacuum sector is a link, formed by the particle trajectories in space-time (i.e the briading process). The time evolution of the system $V$ must be a unitary operator, so that any braiding process on $n$ particles induces the evaluation of some representation $\beta \rightarrow U_\beta$ of the braid group $B_n$.\\
+In order to make sure the braiding process is a unitary transformation of the state space we will impose one further constraint on our categorical model of computation: unitarity of the braids in the modular category in question.\\
+Take the fusion space to be our computational hilbert space.\\
+Topological qudits are usually encoded as fusion tree basis elements\\
+Topologial gates: braids (can express as action of the braid group) + measurements (=fusions and associators).
 
-\begin{definition}
-An MQS on a graph $\Tau = (V,E)$ with $\mathbb{C}^d$ degrees of freedom (qudit space) is an MQS $(\mathcal{L},b, \mathcal{H})$ where
-$$ \mathcal{L} = \otimes_{e\in E} \mathbb{C}^d$$
-$b$ is obtained from the standard basis of $\mathbb{C}^d$ and $\mathcal{H}$ is a local Hamiltonian.
-\end{definition}
-Many interesting spatial configurations of matter are obtained from triangulations of manifolds by taking their 1-skeleton graph.\\
-Let us consider unitary operators which commute with the Hamiltonian $\mathcal{H}$. These are operators which leave the energy of the system unchanged. These transformations form a group $G$ under composition and a particle subject to the Hamiltonian $\mathcal{H}$ will be described by irreducible representations of $G$. $G$ is the group of symmetries of the system under $\mathcal{H}$.
+\subsubsection{Fibonacci anyons}
+We now look back at example [ref] on Fibonacci anyons and show how to compute in the model.
+Recall we have only two particle types: the vacuum sector $1$ and the non-trivial $\tau$ such that:
+$$\tau \otimes \tau = 1 \oplus \tau$$
+$\tau$ and $1$ are their own anti-particles so we don't need to distinguish particles and antiparticles by wrinting arrows on wires.
+We can write the basis of the two dimensional space $\tau \otimes \tau$ as:
+\begin{center}
+	\begin{tikzpicture}
+	\node (0) at (0.3, 0.3) {$\tau$};
+	\node (0) at (-0.7, -0.3) {$\tau$};
+	\node (0) at (0.7, -0.3) {$\tau$};
+	\draw (-0.5, -0.5)--(0,0)--(0,0.5);
+	\draw (0.5, -0.5)--(0,0);
+	\end{tikzpicture}
+	\quad
+	\begin{tikzpicture}
+	\node (0) at (0.3, 0.3) {$1$};
+	\node (0) at (-0.7, -0.3) {$\tau$};
+	\node (0) at (0.7, -0.3) {$\tau$};
+	\draw (-0.5, -0.5)--(0,0)--(0,0.5);
+	\draw (0.5, -0.5)--(0,0);
+	\end{tikzpicture}
+\end{center}
+The fusion space $V_{\tau^{\otimes 3}}^\tau$ is two dimensional, we will take it as our computational space and write the computational basis as:
+\begin{center}
+	\begin{tikzpicture}
+	\node (0) at (0.1, 0.3) {$\tau$};
+	\node (0) at (-0.7, -0.3) {$\tau$};
+	\node (0) at (0.7, -0.3) {$\tau$};
+	\node (0) at (0.6, 0.8) {$\tau$};
+	\node (0) at (1.6, -0.3) {$\tau$};
+	\draw (-0.5, -0.5)--(0,0)--(0.5,0.5)--(1,1);
+	\draw (0.5, -0.5)--(0,0);
+	\draw (1.5, -0.5)--(0.5,0.5);
+	\end{tikzpicture}
+	\quad
+	\begin{tikzpicture}
+	\node (0) at (0.1, 0.3) {$1$};
+	\node (0) at (-0.7, -0.3) {$\tau$};
+	\node (0) at (0.7, -0.3) {$\tau$};
+	\node (0) at (0.6, 0.8) {$\tau$};
+	\node (0) at (1.6, -0.3) {$\tau$};
+	\draw (-0.5, -0.5)--(0,0)--(0.5,0.5)--(1,1);
+	\draw (0.5, -0.5)--(0,0);
+	\draw (1.5, -0.5)--(0.5,0.5);
+	\end{tikzpicture}
+\end{center}
+Let's denote by $\ket{0}, \ket{1}$ these basis states. Another basis is given by fusing the left-most two anyons first:
+\begin{center}
+	\begin{tikzpicture}
+	\node (0) at (1, 0.3) {$\tau$};
+	\node (0) at (-0.7, -0.3) {$\tau$};
+	\node (0) at (0.5, -0.3) {$\tau$};
+	\node (0) at (0.6, 0.8) {$\tau$};
+	\node (0) at (1.6, -0.3) {$\tau$};
+	\draw (-0.5, -0.5)--(0,0)--(0.5,0.5)--(1,1);
+	\draw (0.5, -0.5)--(1,0);
+	\draw (1.5, -0.5)--(0.5,0.5);
+	\end{tikzpicture}
+	\quad
+	\begin{tikzpicture}
+	\node (0) at (1, 0.3) {$1$};
+	\node (0) at (-0.7, -0.3) {$\tau$};
+	\node (0) at (0.5, -0.3) {$\tau$};
+	\node (0) at (0.6, 0.8) {$\tau$};
+	\node (0) at (1.6, -0.3) {$\tau$};
+	\draw (-0.5, -0.5)--(0,0)--(0.5,0.5)--(1,1);
+	\draw (0.5, -0.5)--(1,0);
+	\draw (1.5, -0.5)--(0.5,0.5);
+	\end{tikzpicture}
+\end{center}
+And we denote them by $\ket{+}, \ket{-}$. These two bases are linked by a unitary $2 \times 2$ transformation $F:= F^\tau_{\tau^{\otimes 3}}$ given by the solution of the following system:
+$$ \ket{0} = F_{0+} \ket{+} + F_{0-} \ket{-}$$
+$$ \ket{1} = F_{1+} \ket{+} + F_{1-} \ket{-}$$
+To derive the form of the $F$-matrix we need to consider the pentagon axiom. It turns out that for the Fibonacci model the pentagon is enough to derive the $F$-matrix but it is not the case in general. The resulting $F$-matrix is \cite{Simon16}:
+\begin{center}
+	$\begin{bmatrix}
+	\phi^{-1} & \phi^{-\frac{1}{2}} \\
+	\phi^{-\frac{1}{2}} & -\phi^{-1}
+	\end{bmatrix}$
+\end{center}
+where $\phi = \frac{\sqrt{5}-1}{2}$.
 
-\begin{proposition}
-Let $\mathcal{H}:V\rightarrow V$ be the Hamiltonian for some physical system described by a hilbert space $V$. Then the unitary operators which commute with $\mathcal{H}$ form a group $G$.
-\end{proposition}
-\begin{proof}
-Suppose $R_1\ham=\ham R_1$ and $R_2\ham=\ham R_2$, then $R_1R_2\ham=R_1\ham R_2 = \ham R_1R_2$. Also $R^{-1}\ham = R^{-1}\ham RR^{-1} = R^{-1}R\ham R^{-1} =\ham R^{-1}$. The unit is the identity operator $id_{V^*\otimes V}$.
-\end{proof}
-
-\begin{proposition}
-If $G$ is the group of symmetries of a Hamiltonian $\mathcal{H}$ then each energy eigenspace carries an irreducible representation of $G$.
-\end{proposition}
-\begin{proof}
-Note that under the obvious $G$-action, $V$ is a representation of $G$. 
-The eigenvalues of the Hamiltonian, correspond to energy levels of the physical system which we previously called 'particle types'. Fix any eigenvalue $E$ of $\ham$, the allowed states of a particle with energy $E$ live in the corresponding eigenspace $V_E$. Indeed these are invariant under the action of $\ham$:
-$$ \ham \ket{\psi}= E\ket{\psi}$$
-Note that if $R\in G$ then
-$$ \ham R \ket{\psi}=R\ham \ket{\psi}=ER\ket{\psi}$$
-So $R\ket{\psi}$ is an eigenvector with eigenvalue $E$. Therefore $G$ acts on $V_E$ for any energy level.
-We prove $V_E$ is irreducible by showing that $End(V_E) \simeq \mathbb{C}$. Indeed suppose $f:V_E \rightarrow V_E$ is an intertwiner, then $fR=Rf \, \forall R \in G$
-TO PROVE
-\end{proof}
-Starting with a hamiltonian $\ham$ we have shown that energy levels (or particle types) correspond to the irreducible representations of the group $G$ of symmetries of $\ham$. The particle theory correponding to the hamiltonian $\ham$ has irreducible representations of $G$ as objects and intertwiners, preserving the energy of the system, as processes. This is the definition of the category $Rep(G)$. Note there are no restrictions yet on the group of symmetries.
-\begin{example}
-Suppose $\ham = \sigma_Z$ be the Hamiltonian of a qubit living in $\mathbb{C}^2$. It has eigenvalues $\pm1$ and corresponding eigenvectors $\ket{0}$ and $\ket{1}$.. The group algebra of symmetries of $\ham$ is generated by $id$ and $\ham$ and it is isomorphic to $\mathbb{C}\mathbb{Z}_2$. $\mathbb{Z}_2$ has two irreducible representations (the trivial and the sign) representations which correspond to the one-dimensional eigenspaces of $\ham$. Note that 
-\end{example}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Kitaev's model}
-Let us consider a two dimensional lattice of particles (situated on the edges of the lattice) under the influence of a magnetic field and an electric field. Anyonic behaviour is exhibited by excitations of the particles on the lattice. In our process theory the allowed processes are charge-flux composites, the states are lattice configurations (determined by the states of the particles, which are generally given by an element $g \in G$)  . By mearuring the flux in certain regions of the lattice and acting on the charge of the corresponding flux sector we can create and control the behaviour of excitations on the material.
-\begin{example}
-	Let us consider the case where $G \simeq \mathbb{Z}_2$. We obtain a lattice of spins. Those particles we wont use as our qubits, indeed we will impose that their state is in a basis state $\{\ket{0},\ket{1}\}$. One way to picture the states of the system is to draw the lattice and colour the edges red when the corresponding particle is in state $\ket{0}$. Note that the lattice can be embedded in any manifold (e.g. subsection quantum memory is a lattice on a torus, if we used a more layered lattice we could implement error correction). What we obtain is a picture of paths on the lattice which we call excitations.
-\end{example}
-The magnetic flux of a particle is given by an element $h \in G$, this indexes the superselection sectors so that the charge lives in a unitary irreducible representation of the centralizer $N(h)$ of the flux $h$ carried by the particle. We have two possible operations on our states: flux measurement and symmetry transformations on the charge. Flux measurements correspond to a projection $P_h \in \mathbb{C}G^*$ onto flux sector $h$. The residual global symmetry transformations are then implemented via some $g \in N(h)$. \\
+\subsubsection{Kitaev's quantum double model}
+Fix a group $G$, and suppose we have particles living in state space $\mathbb{C}G$ (the group agebra). We will build a special case of Kitaev's quantum double model \cite{Kitaev03}, in order to see directly the connection with the category $Rep(DG)$.\\
+First of all let us consider 4 types of linear operators on $\mathbb{C}G$: $L^g_\pm$, $T^h_\pm$ (using the notation from \cite{Kitaev03}). Indexed by elements $g,h \in G$, and defined as follows:
+\begin{equation}
+\begin{aligned}
+L^g_+ \ket{z} = \ket{gz} \quad& L^g_- \ket{z} = \ket{zg^{-1}}\\
+T^h_+ \ket{z} = \delta_{h,z} \ket{z} \quad& T^h_- \ket{z} = \delta_{h^{-1},z} \ket{z}
+\end{aligned}	 
+\end{equation}
+Now, consider the trivial lattice on a torus with particles on the edges, i.e a square with opposite edges identified as follows:
+\begin{center}
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+	\draw (0,0)--(0,1);
+	\draw (1,0)--(1,1);
+	\draw[blue] (0,1)--(1,1);
+	\draw[blue] (0,0)--(1,0);
+	\end{tikzpicture}
+\end{center}
+For the moment take this lattice as our system, note that states are generated by pairs of elements of $G$, each labelling one edge of the lattice. Let's say that $L^g_\pm(0)$, $L^g_\pm(1)$ and $T^h_\pm(0)$ $T^h_\pm(1)$ are $L_\pm$ and $T_\pm$ operators acting on the first and second particle. Note that in this configuration, we have only one plaquette and one vertex, we will only need to define two types of operators on the lattice, indexed by elements of $G$. For $g,h \in G$ define:
+\begin{equation}
+\begin{aligned}
+A_g &= L^g_+(0) L^g_+(1) L^g_-(0) L^g_-(1)\\
+P_h &= \sum_{h_1h_2h_3h_4=h} T^{h_1}_+(0) T^{h_2}_+(1) T^{h_3}_-(0) T^{h_4}_-(1)
+\end{aligned}
+\end{equation}
+From a physical point of view $P_h$ operators can be understood as measuring the magnetic flux of the system and $A_g$ are symmetry transformations on the charge. Flux measurements are projection $P_h \in \mathbb{C}G^*$ onto flux sector $h$. The allowed residual global symmetry transformations are then implemented via $A_g$ for $g \in N(h)$. \\
 Naturally the projectors form a Von Neumann family and satisfy 
 $$P_hP_{h'}= \delta_{h,h'} P_h.$$ 
-A general element $g \in G$ is a global symmetry transformation and affects the fluxes via conjugation:
-\begin{equation}
-gP_h = P_{ghg^{-1}}g
+Operators $A_g$ are global symmetry transformation 
+$$A_gA_h = A_gh$$
+and affect the fluxes via conjugation:
+\begin{equation}\label{doublemult}
+A_gP_h = P_{ghg^{-1}}A_g
 \end{equation}
-The quantum double construction allows to capture both global symmetry transformations and projective measurements in one algebraic structure.
-\begin{definition}
-	Lagrangian, Noether's theorem
-\end{definition}
-\begin{definition}
-	For any finite group $G$, its quantum double $D(G)$ is the algebra generated by $\{P_hg\}_{h,g\in G}$ with multiplication induced by (1). $D(G) \simeq \mathbb{C}G^* \otimes \mathbb{C}G$ and inherits their hopf algebra structure (comultiplication and antipode are given by tensoring). 
-\end{definition}
-$D(G)$ has a natural quasi-triangular structure witnessed by the universal R-matrix $R=\sum_{g,h \in G}P_he \otimes P_hg$, making $RepDG$ braided. Particle states then live in irreducible representations of $D(G)$. Let $\{C_i\}_{i=1}^n$ be the distinct conjugacy classes in $G$. To each of those conjugacy classes corresponds a centralizer subgroup $N_i$ (two choices of representatives for $C_i$ yield isomorphic centralizer subgroups). Then for any irreducible representation $(\alpha,V^i_\alpha)$ of $N_i$ with basis elements $v^\alpha_j$, let $V_{i,\alpha} = \mathbb{C}C_i \otimes V^i_\alpha$, this has basis $\{ \ket{k,v^\alpha_j} \}_{j=1,...,dim\alpha}^{k\in C_i}$ and forms an irreducible representation of $D(G)$ under the action 
+(this was shown was shown by Kitaev \cite{Kitaev03}). Operators $A_g$ and $P_h$ generate the algebra $DG$. So the quantum double construction allows to capture both global symmetry transformations and projective measurements in one algebraic structure. It is easy to check, rewriting the definition, that the following is true. 
+\begin{proposition}
+	For any finite group $G$, its quantum double $D(G)$ is the algebra generated by $\{P_hA_g\}_{h,g\in G}$ with multiplication induced by (\ref{doublemult}) comultiplication and antipode as defined in [first section]. 
+\end{proposition}
+$D(G)$ has a natural quasi-triangular structure witnessed by the universal R-matrix $R=\sum_{g,h \in G}P_he \otimes P_hg$, making $RepDG$ braided.\\
+Kitaev then builds a Hamiltonian for the system and shows that the sectors of this Hamiltonian are precisely the irreducible representations of $DG$. Here we will skip this part of the reasoning and rely on the intuition that the operators $A_g$ and $P_h$ correspond to the symmetries of the system, i.e the dynamics which are `constantly being applied'. So the allowed processes of the systems are processes that commute with all of those operators, i.e the system lives in a representation of $DG$ and the allowed processes are intertwiners. We obtain the process theory $Rep(DG)$. Note that because we chose our lattice to be trivial, in the model as we described it the overall dimension of the system is at most $|G|^2$ and we cannot obtain higher dimensional representations. This issue was directly avoided by Kitaev in his presentation \cite{Kitaev03}, by allowing the lattice to be arbitrairy (embedded in some manifold) and defining $A_g$ and $P_h$ operators on sites (i.e vertices together with a plaquette). For each site $a=(s,p)$ where $s$ is a vertex and $p$ a plaquette, we have operators $A_g(a)$ and $P_h(a)$ which generate the quantum double algebra. An excitation is then a state of some non-trivial irreducible representation of $DG$ being created at some site $a$ on the lattice. Those excitations have anyonic behaviour. In what follows we will assume the lattice was `layered' enough so that we can create more than one excitation and we can move around without fusing them. If the lattice is big enough we have obtained a practical implementation of anyons whose behaviour is described by the modular category $Rep(DG)$. When $G$ is abelian, we only have abelian anyons which are very unlikely to be universal for quantum computation. It was shown by Kitaev that if $G=S_5$ the model is universal for quantum computation. In [cite Lahtinen] the $G=S_3$ model was considered but not shown to be universal.\\  
+In order to understand the possible anyon types in the model induced by finite group $G$, we must study the irreducible representations of the quantum double finite group algebra $DG$. This has been done by Gould \cite{Gould93}, who showed that irreducible representations of $DG$ are obtained in the following way.\\
+Let $\{C_i\}_{i=1}^n$ be the distinct conjugacy classes in $G$. To each of those conjugacy classes corresponds a centralizer subgroup $N_i$ (two choices of representatives for $C_i$ yield isomorphic centralizer subgroups). Then for any irreducible representation $(\alpha,V^i_\alpha)$ of $N_i$ with basis elements $v^\alpha_j$, let $V_{i,\alpha} = \mathbb{C}C_i \otimes V^i_\alpha$, this has basis $\{ \ket{k,v^\alpha_j} \}_{j=1,...,dim\alpha}^{k\in C_i}$ and forms an irreducible representation of $D(G)$ under the action 
 \begin{equation}
 P_hg\ket{k,v^\alpha_j} = \delta_{h,gkg^{-1}} \ket{h,\alpha(h^{-1}gk)v^\alpha_j}
 \end{equation}
 and the $\{V_{i,\alpha}\}$ is the complete set of irreducible representations.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{remark}
-	Can we generalise the lattice construction?
-	The following argument seems to work for abelian groups.
-	Being a spherical fusion category, $RepG$ is well suited to be a process theory of particles. As we pointed out earlier what is missing is the braided structure, but let us ignore this for the moment. We have simple objects corresponding to particle types and fusion rules determined by the group structure.\\
-	Now suppose we have particles whose fusion is described by a $RepG$ and let us consider a lattice with those particles located at the edges. This lattice could be embedded in any space but let us assume it is a lattice on a torus. The states of our system are then configurations of particle types on the edges. So edges are coloured by simple representations from $RepG$. Now we can act on the lattice with vertex and plaquette operators which basically implement measurements at vertices and flips (fusion with other simple reps) of the particles on a plaquette. By now we have produced a theory where states are lattice configurations and processes are generated by vertex $V_\alpha$ and plaquette $P_\beta$ operators. We want to extract the topological degrees of freedom of this theory. First we note that using vertex operators we can make sure that the product of all particles incident at all vertices is 1, i.e $V_\alpha=1$ $\forall \alpha$. We restrict our states to satisfy this local property and we drop vertex operators (in the sense that they are not allowed processes anymore), indeed we fixed their value at all points of the lattice. By also setting $P_\beta =1$ at all plaquettes we quotient further the theory. So we obtain a theory where all vertex and plaquette measurements have value $1$. We finally declare two configurations to be equal if there is a sequence of plaquette operations taking us from one to the other. Noting that plaquette operators are local isometries we see this corresponds to quotienting out the category by an equivalence relation. This doesn't exaust the degrees of freedom of the theory because of the topology of the torus. Those topological degrees of freedom will be the simple objects our newly created category, their fusion rules are completely determined by the structure of $Rep(G)$. Indeed the category we obtained is $Z(Rep(G)) \simeq Rep(DG)$.	
-\end{remark}
-
-\begin{example}
-	In the case $G=\mathbb{Z}_2$, recall $Rep\mathbb{Z}_2$ has two simple object of dimension one $\tau_+$ and $\tau_-$ with fusions given by group structure. Let us draw the states of our system as colourings of the edges of the lattice. The condition on the vertex operators results in no endlines and no triple intersections on the lattice. The condition on plaquette operators only allows loop configurations. Quotienting out by plaquette operators relation we obtain 4 distinct classes, namely the vacuum $1$, the first cycle of the torus $X$, the second cycle $Z$, and both cycles $X \otimes Z \simeq Y$ and we have the fusion rules. The theory we have obtained is $RepD\mathbb{Z}_2$ which has in fact 4 simple objects with same fusions. We are therefore treating the topological defects of a theory in $Rep\mathbb{Z}_2$ as particles particles in their own right, with their own theory. All those representations are one-dimensional and in fact we just formulated a theory of abelian anyons.
+\begin{example}[Kitaev's Toric code]
+	The case where $G \simeq \mathbb{Z}_2$ gives rise to Kitaev's toric code. Note that $D(\mathbb{Z}_2) \simeq \mathbb{C}(\mathbb{Z}_2\times \mathbb{Z}_2^\star)$, so that there are $4$ irreducible representations, all of which are 1-dimensional. Each of those corresponds to a different type of excitation.  Let $x$ and $y$ be the generators of the group. The trivial representation is the trivial excitation (or `no excitation'). The other irreducible representations are obtained by mapping $x$ and $y$ to order $2$  elements of $\mathbb{C}$. We obtain two bosons, when both get sent to $-1$ or $i$ and one fermions when $x \mapsto -1$ and $y \mapsto i$. 
 \end{example}
-
-\begin{example}[Anyon Vacuum on a Torus and Quantum Memory]
-If we consider the torus as our configuration space. Let $C_1$, $C_2$ be the two cycles. Consider the process $T_i$ for $i=1,2$ which creates a particle-antiparticle pair, moves them in opposite directions around cycle $C_i$ so that they meet on the other side of the torus and annihilate. Then we can show $T_i$ do not commute with each other if the particles are abelian anyons with $\theta \neq 0, \pi$. We know $\theta$ must be a fraction $p/q$ with $p$ and $q$ coprime. Then we can show that the system has degenerate ground states. We have $q$ different ground state, so the vacuum state lives in a $q$ dimensional space. If we initialise it in some superposition it will remain in that state unless a $T_1$ or $T_2$ operation is implemented. Because of their topological nature it is very unlikely that such processes occur spontaneously, and therefore the quantum information stored in the superposition is protected.
-\end{example}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Permutational Quantum Computing}
-This section is about a model of quantum computation introduced by Jordan \cite{Jordan09}. We will give a categorical presentation of the model which is not present in the literature and will allow us to compare the model to other computational models.
-\begin{definition}
-Let $\mathcal{J}$ be the symmetric fusion category with positive half integers as simple objects, fusions etc.
+This section is about a model of quantum computation introduced by Jordan \cite{Jordan09}. We will first introduce the model as it appears in \cite{Jordan09} and then give a categorical presentation not present in the literature which will allow us to generalize the model and compare it to other computational models.
+
+\subsubsection{Jordan's model}
+Let $\mathcal{L}$ be an $n$-qubit quantum system. Basis states of an $n$-qubit quantum systems are often specified by listing eigenvalues of Pauli-$Z$ operators applied to each qubit, which is known as computational basis.
+Permutational quantum computing (PQC) works with another choice of basis states: eigenstates of complete set of commuting spin measurements on qubit subsets. Let us fix a finite set $I=\{1,2,3...,n\}$ indexing the qubits. With a convention that $\hbar = 1$, the spin of the $k$-th qubit is defined by a triple:
+\begin{align*}
+\vec{S}_k &= \frac{1}{2} \left( X_k, \, Y_k, \,Z_k \right),
+\end{align*}
+where $X_k$, $Y_k$ and $Z_k$ denote the Pauli $X$,$Y$ and $Z$ operators on the $k$-th qubit. The total spin operator of a qubit subset $A$  is given by:
+\begin{align*}
+S_A^2 &= \left( \sum_{k \in A} \vec{S}_k \right) \cdot  \left( \sum_{k \in A} \vec{S}_k \right)\,,
+\end{align*} 
+and we will use $S^2$ to denote the spin operator on the set of all qubits. 
+Let 
+$$Z_A = \frac{1}{2} \sum_{k \in A} Z_k $$ 
+denote the total $Z$-spin operator on qubit subset $A$ and we label by $Z$ the total $Z$-operator applied to all qubits (i.e $Z=Z_I$). $Z$ and $S^2$ commute and stabilize an eigenspaces labeled by quantum numbers $J$ and $M$: 
+\begin{equation}
+S^2  \ket{J, \, M} = J (J +1 ) \ket{J, \, M},  \\
+Z \ket{J, \, M} = M \ket{J, \, M},
+\end{equation} 
+where $J$ is the total spin of all qubits and $M$ takes values $ -J \leq M \leq J$ in an integer steps. There are therefore $2J + 1$ $Z$-operator eigenstates for each $J$ and we will refer to this degeneracy as $M$-degeneracy. \\
+Now, it is easy to see that the operators $S_A^2$ and $S_B^2$ on sets $A, B$ commute if and only if $A$ and $B$ are disjoint or one is subset of the other. We can therefore give a complete set of commuting operators on $I$:
+\begin{equation} \label{comS}
+S_{\lbrace12\rbrace}^2, \, S_{\lbrace123\rbrace}^2, \, \ldots S^2, \, Z
+\end{equation}
+In practice, this means that if we have $n$ qubits, measuring each of those operators yields a a sequence of outcomes $j_{12}, j_{123}, ... , J, M$ (the eigenvalues of each operator) which tests for some state of $\mathcal{J}$. Dually, allowing superselection on the outcomes of each measurement we have also defined a preparation recipe. This choice of basis states is known as \textit{sequential coupling}.\\
+The $j$-quantum numbers on sets of qubits $A,B$ combine according to the angular addition rules \cite{Woit17}: 
+\begin{align*}
+|j_A - j_B| \leq j_{A \cup B} &\leq j_A + j_B, \\
+j_{A \cup B} + j_A + j_B & \in \mathbb{Z},
+\end{align*}
+For example if $n=3$, there are two ways to obtain $J=\frac{1}{2}$ eigenstate of three spins - either by adding a qubit to a two-qubit singlet $(J=0)$ state, or by adding a qubit to a triplet $(J=1)$ \cite{Pauncz67}.
+We can picture those states as labeled binary trees with $n$ leaves, which we refer to as labeled recoupling diagrams. For instance, for $n=3$ we have:
+
+Note that the shape of those binary trees is induced by the choices (\ref{comS}). Every rooted binary tree shape with $n$ leaves (which we will refer to as recoupling diagram) yields a different choice of complete set of commuting observables, and therefore a different choice of basis for $\mathcal{L}$. And clearly there are $2^n$ of labelled recoupling diagrams for every recoupling diagram, one for each basis state.
+A computation in PQC is given by the following procedure:
+\begin{definition}[PQC]\label{pqcomputation} 
+	Given a permutation $\pi$: %and an error threshold $\epsilon$:
+	\begin{enumerate}
+		\item Prepare a simultaneous eigenstate $\ket{\lambda} = \ket{j_{12}, j_{123}, \ldots, J, M}$ of $ S_{12}^2, \, S_{123}^2, \, \ldots S^2, Z$. Such basis (ie. the sequentially coupled basis) plays the role of computational basis .  %Once the fusion diagram is fixed, this can be a superposition over different tree labelings. 
+		%The state can be in principle preprocessed by polarizing the spins by external magnetic field {\color{blue} [Improve the state preparation argument]}.
+		\item Measure the following  set of observables: $S_{ \pi(1)\pi(2) }^2, \, S_{ \pi(1)\pi(2)\pi(3) }^2, \, \ldots S^2, Z$. This is equivalent to applying a sequence of \textsf{SWAP} gates $U_\pi$ in the quantum circuit model and measuring a $J$-spin eigenstate $\ket{x} = \ket{j_{12}', j_{123}', \ldots, J', M'}$ in the sequentially coupled basis.	
+		\item The computing result is obtained by repeating steps 1 and 2 polynomially many times to yield an approximation of the probability distribution $P_\pi (x|\lambda) = | \bra{x} U_\pi \ket{\lambda}|^2 $.
+	\end{enumerate}
 \end{definition}
-
-The construction given by Jordan can be generalised. In this section we argue that Symmetric Fusion categories are models fo permutational quantum computation.
-
-\begin{theorem}
-Any symmetric fusion category induces representations of the symmetric group $S_n$ for any $n\in \mathbb{N}$.
+In his paper \cite{Jordan09}, Jordan shows that PQC can approximate the irreducible representations of the symmetric group in polynomial tyme. This is a relatively surprising result as this problem no classical polynomial time algorithm is known that solves the same problem. This hints that although the the PQC model seems trivial in comparison with other quantum computation models it is still superior to classical computation. Any PQC computation (\ref{pqcomputation}), corresponds to a sequence of phase and racah moves.
+\begin{definition}[Phase and Racah moves]
+\end{definition}
+\begin{theorem}[Biedenharn-Louck \cite{Aquilanti09}] 
+	Let $A,B,C$ be disjoint sets of qubits and use the shorthand $AB := A \cup B$.
+	Any quantum state corresponding to a labelled recoupling diagram can be transformed to a superposition of sequentially coupled labelled recoupling diagram states using a $poly(n)$ sequence of Racah and Phase moves.
 \end{theorem}
+Those moves have a general categorical description as we will see.
 
-\begin{theorem}
-If $\mathcal{C}$ is a symmetric fusion categories, then $\mathcal{C}$ is symmetrically monoidally equivalent to $Rep(G)$ for $G$ some group (if the twist is trivial) or some supergroup (if the twist is -1).
+\subsubsection{Categorical PQC}
+The theory of permutational quantum computing is based on the following abstract ingredients:
+\begin{enumerate}
+	\item A tensor product to model many-body quantum systems
+	\item A direct product to model superpositions of particle types.
+	\item A set of labels of particle types (with antiparticle for each type) generating all other systems together with fusion rules which account for coupling of those particle types.
+	\item A permutational structure, i.e the possibility to permute particle positions, i.e phase moves
+	\item The Racah or $F$ moves which models changes of basis.
+	\item Underlying Hilbert spaces which account for the quantum mechanical nature of the model.
+\end{enumerate}
+Let us build a class of categories which account for all those ingredients. As already argued in the previous section we need the structure of a tensor category in order to model many-body quantum systems together with superpositions. We then require the category to contain a simple object for each particle type and to be semisimple so that we obtain fusion rules (see appendix). Note that we do not require there to be finitely many simple objects as in the anyonic case. Indeed note that if we want a theory to reproduce Jordan's model for any chosen number of particles ($n$), the theory must contain infinitely many particle types, one for each half-integer value (value of angular momentum). We must also require the category to be rigid so that for we have antiparticles for each particle type. A tensor category is monoidal so it comes with associators which precisely model the equivalent of the Racah moves. For the permutational structure we require the theory to have a symmetric structure. And finally, if we want to recover finite dimensional Hilbert spaces underlying the objects of our theory we can impose the existence of a forgetful functor to $FHilb \simeq FVect$. Putting it all together we have obtained a rigid semisimple symmetric tensor category $\cat$ equipped with a fiber functor $F: \cat \rightarrow FVect$. We will call those categories Tannakian for our purposes.\\
+The following theorem shows that any group and supergroup induces a model for permutational quantum computation.
+\begin{theorem}[Doplicher-Roberts]
+	If $\mathcal{C}$ is a rigid semisimple symmetric tensor category equipped with a fiber functor to $Vect$ then $\mathcal{C}$ is symmetrically monoidally equivalent to $Rep(G)$ for $G$ some group (if the twist is trivial) or some supergroup (if the twist is -1).
 \end{theorem}
+And in fact we recognize Jordan's model as the theory of representations of the special unitary group.
+\begin{proposition}
+	Jordan's qubit model $\mathcal{J}_2$ is the category of representations of $SU(2)$.
+\end{proposition}
 \begin{proof}
-Doplicher-Roberts theorem
+	Irreducible representations of $SU(2)$ are precisely indexed by half-integer values and the fusion rules given by angular addition rules \cite{Woit17}.
+\end{proof}
+We can easily see that defining $\mathcal{J}_d := Rep(SU(d))$ we obtain the corresponding qu$d$it model for permutational quantum computation. The permutational structure of the categories under observation, is tightly linked to the symmetric group $S_n$. In his model, Jordan builds an algorithm to compute representations of $S_n$, this can be done in any PQC category.
+\begin{proposition}
+	Any Tannakian category $\cat$ induces representations of the symmetric group $S_n$ for any $n\in \mathbb{N}$.
+\end{proposition}
+\begin{proof}
+	Fix $n \in \mathbb{N}$ and a simple object $a \in obj(\cat)$ then $S_n$ acts on $a^{\otimes n}$ by permutations, and this clearly defines a module as we can consider $a$ as a vector space using the fiber functor.
 \end{proof}
 
-\begin{proposition}
-Jordan's model $\mathcal{J}$
-\end{proposition}
-\begin{example}
-Permutational quantum computation in $Rep(S_3)$.
-\end{example}
 
-\begin{remark}
-	The model described by Jordan is implementable by defining a hamiltonian on a network of spins.\\
-	Generalised spin network systems for arbitrairy group $G$
-\end{remark}
+\begin{example}[Permutational quantum computation in $Rep(S_3)$]
+\end{example}
 
 \begin{example}[Approximation of Dijkgraaf-Witten link invariants]
 	The link invariant essentially counts homomorphisms from the fundamental group
 	of the link complement to the group G. (cite Zhenghan?)
 \end{example}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{A braided representation of quantum computation}
+For an abelian group $G$, we have seen that $Rep(DG)$ doesn't contain enough states to model preparations and measurements. But we will see that for suitably chosen $G$, $Rep(DG)$ contains a universal set of gates as braids. In this section we use functorial boxes \cite{Mellies06} to map the braided pictures in $Rep(DG)$ down to $Hilb$ and obtain a braided representation of quantum gates. This will allow us to to describe preparations and measurements in $Hilb$ and quantum gates as boxed braids from $Rep(DG)$.\\
+We know from [drinfeld center section] that $Rep(DG) \simeq \mathcal{D}_G^{lr}$, so specifying an object of $Rep(DG)$ just corresponds to choosing a vector space $V$ with a left $G$-module structure  and right $G$-comodule structure.\\
+Let $G:= \mathbb{Z}_2$, the reason why we chose this group will become apparent later on, many other choices are possible. Let us denote the standard basis of $\mathbb{C}G$ by $\{ \ket{0}, \ket{1}\}$. This has natural Hopf algebra structure with multiplication given by $\ket{i}\otimes \ket{j} \mapsto \ket{i+j}$ (where $+$ is addition modulo $2$) and comultiplication given by the copy map $\ket{i} \mapsto \ket{i}\otimes \ket{i} $.\\
+We now choose a two-dimensional object of $Rep(DG)$ to serve as our qubit. Take $V=\mathbb{C}^2$ with the $Z$ $G$-action and $X$ $G$-coaction.
 
-\subsection{Topological Quantum Computation}
-
-Take the fusion space to be our topological hilbert space.\\
-Topological qudits are usually encoded as fusion tree basis elements\\
-Topologial gates: braids (can express as action of the braid group) + measurements (=fusions and associators).
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\subsection{A braided representation of Quantum computation}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\subsection{An adjunction between fPQC and TQC}
-This section is dedicated to the relationship between a category $\mathcal{C}$ and its braided centre $Z(\mathcal{C})$. In the first part we will talk about non-commutative logic and modalities. In the second part we will see \\
-
-Free forgetful adjunction:
-$$\Box: \mathcal{C} \rightleftarrows Z(\mathcal{C}):U$$ \\
-
-
-$$\Box: RepG \rightarrow RepDG\simeq Z(RepG)$$
-\begin{theorem}
-Let $\{X_i\}_{i\in I}$ be the set of representatives of the isomorphism classes of simple objects in $RepG$. Let $\mathbb{C}G$ be the regular representation, then $$\mathbb{C}G \simeq \oplus_{i\in I}X_i\otimes X_i^*$$
-\end{theorem}
-\begin{theorem}
-$\Box V = \oplus_{i\in I}X_i^*\otimes V \otimes X_i$ with action of $DG$ given by ....
-\end{theorem}
-Let $G$ be a group, $DG$ its quantum double, $(\pi,V)$ a representation of $G$. \\
-The induced representation $\Box V$ is the coequalizer of: \\
-$$DG \otimes \mathbb{C}G \otimes V \rightrightarrows DG\otimes V$$ 
-Where the top arrow is given by the right action of $G$ on $DG \simeq \mathbb{C}G^* \otimes \mathbb{C}G$ 
-$$ (P_hg, k) \mapsto P_h (gk^{-1})$$
-(this satisfies the axioms of an action but do we have to make the action conjugate the flux projection component?) and the bottom arrow is given by the $\pi$ action on $V$. \\
-To compute the coequalizer we consider the orbits of the action of $G$ on $DG$, these form a partition of $DG$:
-$$ \{[P_ke] : k \in G\} $$
-So, as a vector space $\Box V \simeq \mathbb{C}G \otimes V$ and the action of $DG$ on $\Box V$ is given by:
-\begin{equation}
-P_hg [P_ke]v = \delta_{h,gkg{-1}} [P_he] \pi(g)v
-\end{equation} 
-So that element $P_hg$ implements residual symmetry $g$ and projects onto flux sector $gkg^{-1}$. \\
-Note that if $C_i$ are the conjugacy classes of $G$ then $\mathbb{C}G \simeq \oplus_i \mathbb{C}C_i$ and we could try to decompose:
-\begin{equation}
-\Box V \simeq \oplus_i \mathbb{C}C_i \otimes V
-\end{equation}
-The action (3) factors through the conjugacy classes, (4) gives us a decomposition of $ \Box V$ into irreducibles if $V$ is simple in $RepG$? (this hold for abelian groups, should be generalised given decomposition of $V$ into $Z_i$ modules). \\
-$\Box$ is clearly not monoidal if we take $\otimes$ as tensor, is it monoidal under $\oplus$? i.e is it additive? (Note that the induced representation functor $Ind_H^G$ for $H$ subgroup of $G$ is additive). If it is additive then it is left and right exact and could use this to find the decomposition of $ \Box V$ \\
-Is the $\Box$ functor representable? In the sense $\Box \simeq Hom(\mathbb{C}G,\_)$?
-
-
-\begin{example}
-If $G=\mathbb{Z}_2= \{e,a\}$, irreducible representations are the trivial $\tau_+$ and the one dimensional sign representation $\tau_-$. $DG \simeq \mathbb{C}\mathbb{Z}_2^* \otimes \mathbb{C}\mathbb{Z}_2$ and the orbits of the right action of $\mathbb{Z}_2$ on $D\mathbb{Z}_2$ are given by
-$$ \{ [P_ee], [P_ae] \}$$
-Recall that $D\mathbb{Z}_2$ has 4 irreducible one dimensional representations which we denoted $1$,$X$,$Z$,$Y$. With fusion rules generated by $A \otimes A \simeq 1$ and $X \otimes Y \simeq Z$. \\
-Now let us calculate $\Box \tau_-$, it has basis $\{[P_ee] =:w_e, [P_ae] =:w_a \}$ and 
-\begin{equation*}
-P_ee(xw_e + yw_a)= xw_e \\
-P_ae(xw_e + yw_a)= yw_a \\
-P_ea(xw_e + yw_a)= -xw_e \\ 
-P_aa(xw_e + yw_a)= -yw_a
-\end{equation*}
-And we see from the table (see Lahtinen "The Toric Code and the Quantum Double" for table of reps) that $\Box \tau_- \simeq X \oplus Y$. Similarly $\Box \tau_+ \simeq 1 \oplus Z$. \\
-Consider the regular representation $V := \mathbb{C}\mathbb{Z}_2 \simeq \tau_+ \oplus \tau_-$, then $\Box V \simeq 1 \oplus X \oplus Z \oplus Y \simeq (1 \oplus X) \otimes (1 \oplus Z) $.\\
-What happens if we braid the two components of $\Box V$? In $RepD\mathbb{Z}_2$ the braid is implemented by acting on the components with $R=\sum_{g,h\in\mathbb{Z}_2} P_ge \otimes P_gh \, \in D\mathbb{Z}_2\otimes D\mathbb{Z}_2$ and swapping coordinates. I claim this implements a CNOT gate followed by a swap.
-\end{example}
-
-\begin{example}
-If $G=S_3=\braket{\sigma,\rho}$ where $\sigma$ is a reflection and $\rho$ a rotation. $S_3$ has three irreducible representations: the trivial $\tau_+$, the sign representation $\tau_-$ and the two dimensional $\tau_2$.
-\end{example}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -4386,20 +4572,36 @@ If $G=S_3=\braket{\sigma,\rho}$ where $\sigma$ is a reflection and $\rho$ a rota
 \bibliography{refs}
 
 \appendix
-	\section{Fusion categories}
-	Many of the results we will see in this section can be found in \cite{Mueger08}, \cite{Bartlett15} and \cite{Freyd66}.
-	\begin{definition}
+	\section{Tensor categories}
+	Categorification is the process of replacing sets by categories, functions by functors and weakening equalities to natural isomorphisms. Tensor categories are the categorification of rings. Multiplication becomes a tensor product $\otimes$ and addition becomes a direct product $\oplus$. Monoidal categories are defined in the first chapter of the thesis. They are obtained by categorifying the notion of a monoid. We also defined rigidity, as the property that any object has a right dual and a left dual. The notion of tensor categories is obtained by considering rigid monoidal structures on abelian categories.\\
+	Let us start with the theory of abelian categories.
+	\begin{definition}[Ab category]
 		The category $\mathcal{C}$ is Ab if it is enriched over abelian groups. That is all hom-sets have abelian group structures and composition of morphisms is a group homomorphism. 
 	\end{definition}
-	\begin{definition}
+	\begin{definition}[Zero object]
+		We say $0$ is a zero object if 
+	\end{definition}
+	\begin{definition}[Direct sums]
+	A category $\mathcal{C}$ has direct sums if it has a monoidal structure with tensor $\oplus$ and such that $\oplus$ is the categorical product ad coproduct. This means for any objects $A,B \in obj(\cat)$ the direct product $A\oplus B$ comes with projections $p_A$, $p_B$ and injections $i_A$, $i_B$ satisfying the universal properties of the categorical product and coproduct.
+	\end{definition}
+	For $\oplus$ to be the categorical product means that for any morphisms $f:C \rightarrow A$ $g: C \rightarrow B$ there is a unique arrow $h: C \rightarrow A \oplus B$ such that $p_A\circ h = f$ and $p_B \circ h =g$. The universal property of the coproduct is the dual notion where all arrows are flipped and projections are replaced by injections.
+	\begin{definition}[Additive category]
 		An Ab-category $\mathcal{C}$ is additive if it has zero object and every pair of objects has a direct sum $\oplus$.
 	\end{definition}
-	\begin{definition}
+	In an additive category, the zero object allows us to define kernels and cokernels.
+	\begin{definition}[Kernel and cokernel]
+		content...
+	\end{definition}
+	\begin{definition}[Abelian category]
 		An abelian category is an additive category where every morphism has a kernel and a cokernel and every monic (epic) is a kernel (cokernel).
+	\end{definition} 
+
+	\begin{definition}[k-linear category]
+	Let k be field, we say $\mathcal{C}$ is $k$-linear if all hom-sets are k-vector spaces and composition is bilinear.
 	\end{definition}
-	\begin{definition}
-		Let k be field, we say $\mathcal{C}$ is $k$-linear if all hom-sets are k-vector spaces and composition is bilinear.
-	\end{definition}
+	
+	\section{Fusion categories}
+	Many of the results and definitions  of this section can be found in \cite{Mueger08}, \cite{Bartlett15} and \cite{Freyd66}.
 	We will assume throughout the thesis that $k=\mathbb{C}$ so in particular the field is algebraically closed. 
 	\begin{definition}
 		An object $X$ in a $\mathbb{C}$-linear category is called simple if End$X=k$id$_X$.
@@ -4434,46 +4636,16 @@ If $G=S_3=\braket{\sigma,\rho}$ where $\sigma$ is a reflection and $\rho$ a rota
 		-1 \otimes -1 \simeq 1\\
 		-1 \otimes \tau \simeq \tau \simeq \tau \otimes -1\\
 		\tau \otimes \tau \simeq 1 \oplus -1 \oplus \tau\\
-		\end{equation}
-		
+		\end{equation}		
 	\end{example}
 	
 	\begin{example}[Graph invariants from spherical fusion categories]
 	\end{example}
-	
-	We now explore an important class of categories. Braided fusion categories (BFCs) are very closely related to categories of representations via the Tannaka reconstruction theorem and its variations. BFCs have found numerous applications to Quantum computer science as we will see in the remaining sections.
-	Braid group, Yang-Baxter, Quasitriangular Hopf algebras.
-	\begin{definition}
-		Braided monoidal categories (with braid $c$)
-	\end{definition}
-	\begin{definition}
-		Ribbon categories (twist $\theta$)
-	\end{definition}
-	\begin{definition}
-		The symmetric centre $Z_2(\mathcal{C})$ of a braided tensor category $\mathcal{C}$ is the full subcategory with the following objects:
-		$$ \{ X \in \mathcal{C} : c_{X,Y} \circ c_{Y,X} = id_{Y\otimes X} \forall Y \in \mathcal{C} \} $$
-	\end{definition}
-	
-	\begin{example}
-		Braid group $B_n$, free braid category, free construction Tensor categories $\rightarrow$ BTCs (2-adjunction)
-	\end{example}
-	\begin{example}
-		categories of tangles = free rigid braided categories.\\
-		Tangle categories are not linear over a field but can be linearised by using the free vector space functor $Set \rightarrow Vect$. This gives still big categories, but can be quotiented out by an ideal defined in terms of link-invariants to give interesting cats.
-	\end{example}
-	\begin{definition}
-		braided fusion category
-	\end{definition}
-	\begin{definition}
-		Let $\mathcal{C}$ be a tensor category, $X \in \mathcal{C}$. A half-braiding $e_X$ is a family $\{ e_X(Y):X\otimes Y \xrightarrow{\sim} Y\otimes X \}$ such that $e_X(\mathbf{1}) = id_X$ and 
-		\begin{equation*}
-		e_X(Y\otimes Z) = id_Y\otimes e_X(Z) \circ e_X(Y) \otimes id_Z \quad \forall Y,Z \in \mathcal{C}
-		\end{equation*}
-	\end{definition}
-	
+
 	\begin{theorem}
 		If $\mathcal{C}$ is $k$-linear, spherical or a *-category (k-linear dagger) then so is $Z_1(\mathcal{C})$ 
 	\end{theorem}
+
 	\begin{theorem}
 		If $H$ is a quasitriangular Hopf Algebra then $Rep(H)$ is a braided fusion category.
 	\end{theorem}

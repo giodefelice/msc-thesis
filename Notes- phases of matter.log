@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 JUL 2017 11:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  22 JUL 2017 12:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**document.tex
-(./document.tex
+**"Notes- phases of matter.tex"
+(./Notes- phases of matter.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
@@ -1550,8 +1550,8 @@ Package braids Warning: This package was designed using PGF2.10; you are using
 \braid@eh=\dimen326
 \c@braid@level=\count282
 \c@braid@strands=\count283
-) (./document.aux)
-\openout1 = `document.aux'.
+) (./Notes- phases of matter.aux)
+\openout1 = `"Notes- phases of matter.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 538.
 LaTeX Font Info:    ... okay on input line 538.
@@ -1633,314 +1633,70 @@ ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into
 your preamble.
  on input line 538.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 539.
+
+LaTeX Warning: Citation `Rowell17' on page 1 undefined on input line 542.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 545.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 539.
+LaTeX Font Info:    Try loading font information for U+msb on input line 545.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./document.toc)
-\tf@toc=\write4
-\openout4 = `document.toc'.
+)
+Overfull \hbox (6.20248pt too wide) in paragraph at lines 545--546
+[]\OT1/cmr/m/it/10 A Many-body Quan-tum sys-
+ []
 
- [1
+[1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Citation `Abramsky11' on page 2 undefined on input line 561.
-
-
-LaTeX Warning: Citation `Coecke17' on page 2 undefined on input line 561.
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 567.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 567.
- [2]
-Overfull \hbox (3.32031pt too wide) in paragraph at lines 642--643
-[]\OT1/cmr/m/it/10 Given cat-e-gories $\OMS/cmsy/m/n/10 C$ \OT1/cmr/m/it/10 and
- $\OMS/cmsy/m/n/10 D$ \OT1/cmr/m/it/10 and func-
+[2] [3]
+Overfull \hbox (1.02724pt too wide) in paragraph at lines 628--629
+[]\OT1/cmr/m/it/10 If we
  []
 
-[3]
-Overfull \hbox (16.1093pt too wide) in paragraph at lines 660--661
-[]\OT1/cmr/m/it/10 A monoidal cat-e-gory is a cat-e-gory $\OMS/cmsy/m/n/10 C$ \
-OT1/cmr/m/it/10 equipped
- []
-
-[4] [5]
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 741.
- [6] [7]
-
-LaTeX Warning: Citation `Lawvere63' on page 8 undefined on input line 947.
-
-[8] [9]
-
-LaTeX Warning: Citation `Mueger12' on page 10 undefined on input line 1016.
-
-[10]
-
-LaTeX Warning: Citation `Majid95' on page 11 undefined on input line 1052.
-
-[11] [12]
-
-LaTeX Warning: Citation `Slingerland02' on page 13 undefined on input line 1114
-.
-
-[13] [14]
-Overfull \hbox (6.59302pt too wide) in paragraph at lines 1626--1627
-[]\OT1/cmr/m/it/10 The uni-ver-sal $\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -matrix
- sat-is-fies the Quan-tum Yang-Baxter equa-
- []
-
-[15]
-
-LaTeX Warning: Citation `Drinfeld87' on page 16 undefined on input line 1806.
-
-
-Overfull \hbox (0.57443pt too wide) in paragraph at lines 1808--1809
-[]\OT1/cmr/m/it/10 The quan-tum dou-ble
- []
-
-[16] [17] [18] [19] [20]
-
-LaTeX Warning: Citation `Vercruysse12' on page 21 undefined on input line 2613.
-
-
-
-LaTeX Warning: Citation `Joyal91' on page 21 undefined on input line 2613.
-
-
-Overfull \hbox (15.54112pt too wide) in paragraph at lines 2617--2618
-[]\OT1/cmr/m/it/10 Any monoidal cat-e-gory $\OMS/cmsy/m/n/10 C$ \OT1/cmr/m/it/1
-0 equipped
- []
-
-
-LaTeX Warning: Citation `Abramsky04' on page 21 undefined on input line 2621.
-
-
-LaTeX Warning: Citation `Coecke17' on page 21 undefined on input line 2621.
-
-
-LaTeX Warning: Citation `Kitaev06' on page 21 undefined on input line 2627.
-
-
-LaTeX Warning: Citation `Simon16' on page 21 undefined on input line 2627.
-
-
-LaTeX Warning: Citation `Panangaden11' on page 21 undefined on input line 2627.
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2627--2631
-
- []
-
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 2678--2680
-
- []
-
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 2683--2686
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 632--633
 
  []
 
 
-LaTeX Warning: Citation `Coecke17' on page 23 undefined on input line 2689.
-
-[23] [24] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 2842--2846
+Underfull \hbox (badness 10000) in paragraph at lines 635--636
 
  []
 
-[26] [27]
 
-LaTeX Warning: Citation `Mueger02' on page 28 undefined on input line 2926.
+Underfull \hbox (badness 10000) in paragraph at lines 645--647
 
-[28]
-
-LaTeX Warning: Citation `Mueger02' on page 29 undefined on input line 2933.
-
-
-LaTeX Warning: Citation `Bakalov00' on page 29 undefined on input line 2940.
-
-
-LaTeX Warning: Citation `Mueger02' on page 29 undefined on input line 2940.
-
-
-LaTeX Warning: Citation `Bakalov00' on page 29 undefined on input line 2942.
-
-
-LaTeX Warning: Citation `Bakalov00' on page 29 undefined on input line 2946.
-
-
-LaTeX Warning: Citation `Balsam12' on page 29 undefined on input line 2951.
-
-
-LaTeX Warning: Citation `Abramsky04' on page 29 undefined on input line 2951.
-
-
-LaTeX Warning: Citation `Panangaden11' on page 29 undefined on input line 2954.
-
-
-
-LaTeX Warning: Citation `Simon16' on page 29 undefined on input line 2958.
-
-[29]
-Overfull \hbox (7.15947pt too wide) in paragraph at lines 2966--2967
-[]\OT1/cmr/m/it/10 A half-braiding on some ob-ject $\OML/cmm/m/it/10 X$ \OT1/cm
-r/m/it/10 in a monoidal
  []
 
-
-Overfull \hbox (0.81467pt too wide) in paragraph at lines 2972--2973
-[]\OT1/cmr/m/it/10 The braided (Drin-feld) cen-ter of a monoidal
+[5]
+Overfull \hbox (56.501pt too wide) detected at line 677
+\OML/cmm/m/it/10 P[]e\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 + \
+OML/cmm/m/it/10 yw[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 xw[][] P[]e\OT1/cmr/m/
+n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 yw[]\OT1/cmr/m/n
+/10 ) = \OML/cmm/m/it/10 yw[][] P[]a\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 xw[] \OT1
+/cmr/m/n/10 + \OML/cmm/m/it/10 yw[]\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 ^^@\OML
+/cmm/m/it/10 xw[][] P[]a\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 xw[] \OT1/cmr/m/n/10 
++ \OML/cmm/m/it/10 yw[]\OT1/cmr/m/n/10 ) = \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10
+ yw[]
  []
 
-[30]
-
-LaTeX Warning: Citation `Mueger02' on page 31 undefined on input line 3058.
-
-
-Overfull \hbox (4.97093pt too wide) in paragraph at lines 3069--3077
-\OT1/cmr/m/n/10 Fix a bial-ge-bra $\OML/cmm/m/it/10 H$ \OT1/cmr/m/n/10 and sup-
-pose $[]  \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 obj\OT1/cmr/m/n/10 (\OML/cmm/m/it
-/10 Rep\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 H\OT1/cmr/m/n/10 ))$ and $(\OML/cmm/m/
-it/10 V; e[]\OT1/cmr/m/n/10 )$ is in $\OML/cmm/m/it/10 Z\OT1/cmr/m/n/10 (\OML/c
-mm/m/it/10 RepG\OT1/cmr/m/n/10 )$.
- []
-
-[31] [32] [33] [34] [35]
-
-LaTeX Warning: Citation `Bakalov00' on page 36 undefined on input line 4296.
-
-[36]
-
-LaTeX Warning: Citation `Kitaev03' on page 37 undefined on input line 4311.
-
-
-LaTeX Warning: Citation `Kitaev03' on page 37 undefined on input line 4313.
-
-
-Overfull \hbox (1.33406pt too wide) in paragraph at lines 4322--4327
-\OT1/cmr/m/n/10 mea-sure-ment out-comes) ob-tained by re-peat-ing the pro-ce-du
-re poly-no-mi-ally many
- []
-
-[37] [38]
-
-LaTeX Warning: Citation `Simon16' on page 39 undefined on input line 4402.
-
-
-LaTeX Warning: Citation `Kitaev03' on page 39 undefined on input line 4412.
-
-
-LaTeX Warning: Citation `Kitaev03' on page 39 undefined on input line 4413.
-
-[39]
-
-LaTeX Warning: Citation `Kitaev03' on page 40 undefined on input line 4445.
-
-
-LaTeX Warning: Citation `Kitaev03' on page 40 undefined on input line 4450.
-
-
-LaTeX Warning: Citation `Gould93' on page 40 undefined on input line 4451.
-
-[40]
-
-LaTeX Warning: Citation `Jordan09' on page 41 undefined on input line 4463.
-
-
-LaTeX Warning: Citation `Jordan09' on page 41 undefined on input line 4463.
-
-[41]
-
-LaTeX Warning: Citation `Woit17' on page 42 undefined on input line 4489.
-
-
-LaTeX Warning: Citation `Pauncz67' on page 42 undefined on input line 4494.
-
-
-Overfull \hbox (34.5888pt too wide) in paragraph at lines 4502--4504
-[]\OT1/cmr/m/it/10 Prepare a si-mul-ta-ne-ous eigen-state $[] \OT1/cmr/m/n/10 =
- []$ \OT1/cmr/m/it/10 of $\OML/cmm/m/it/10 S[];  S[];  [] S[]; Z$\OT1/cmr/m/it/
-10 .
- []
-
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 4504
-.
-
-
-Overfull \hbox (2.43042pt too wide) in paragraph at lines 4504--4505
-\OT1/cmr/m/it/10 cir-cuit model and mea-sur-ing a $\OML/cmm/m/it/10 J$\OT1/cmr/
-m/it/10 -spin eigen-state $[] \OT1/cmr/m/n/10 = []$
- []
-
-[42]
-
-LaTeX Warning: Citation `Jordan09' on page 43 undefined on input line 4508.
-
-
-LaTeX Warning: Citation `Aquilanti09' on page 43 undefined on input line 4511.
-
-[43]
-
-LaTeX Warning: Citation `Woit17' on page 44 undefined on input line 4537.
-
-[44]
-Overfull \hbox (3.13693pt too wide) in paragraph at lines 4552--4554
-[]\OT1/cmr/m/it/10 The
- []
-
-
-LaTeX Warning: Citation `Mellies06' on page 45 undefined on input line 4559.
-
-(./document.bbl
-Underfull \hbox (badness 1902) in paragraph at lines 25--28
-[]\OT1/cmr/m/n/10 M. Mueger.  Ten-sor cat-e-gories: A se-lec-tive guided tour. 
- \OT1/cmr/m/it/10 eprint
- []
-
-! Misplaced alignment tab character &.
-l.37 \newblock Harper &
-                        Row, 1966.
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-[45])
-Overfull \hbox (4.42892pt too wide) in paragraph at lines 4585--4586
-[]\OT1/cmr/m/it/10 A cat-e-gory $\OMS/cmsy/m/n/10 C$ \OT1/cmr/m/it/10 has di-re
-ct sums if it has a monoidal
- []
-
-[46] [47] (./document.aux)
+[6] (./Notes- phases of matter.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 38206 strings out of 493014
- 907188 string characters out of 6133351
- 1111805 words of memory out of 5000000
- 41090 multiletter control sequences out of 15000+600000
- 12824 words of font info for 49 fonts, out of 8000000 for 9000
+ 37263 strings out of 493014
+ 888305 string characters out of 6133351
+ 1050134 words of memory out of 5000000
+ 40167 multiletter control sequences out of 15000+600000
+ 6598 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,23n,103p,10453b,1046s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,6n,103p,10470b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -1948,21 +1704,19 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
 local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
-texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2
-016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016
-/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/
-2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (47 pages, 400151 bytes).
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on "Notes- phases of matter.pdf" (6 pages, 188440 bytes).
 PDF statistics:
- 232 PDF objects out of 1000 (max. 8388607)
- 163 compressed objects within 2 object streams
+ 90 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

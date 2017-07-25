@@ -1,0 +1,34 @@
+\begin{thebibliography}{1}
+
+\bibitem{Kitaev03}
+A.~Kitaev.
+\newblock Fault-tolerant quantum computation by anyons.
+\newblock {\em Annals Phys. 303}, pages 2--30, 2003.
+
+\bibitem{Rowell17}
+E.~Rowell and W.~Zhenghan.
+\newblock Mathematics of topological quantum computing.
+\newblock {\em eprint arXiv:1705.06206}, 2017.
+
+\bibitem{Simon16}
+S.~Simon.
+\newblock Toplogical quantum.
+\newblock http://oxfordtopquantum.tiddlyspot.com/, 2016.
+
+\bibitem{Gould93}
+M.~Gould.
+\newblock Quantum double finite group algebras and their representations.
+\newblock {\em Bulletin of the Australian Mathematical Society}, 1993.
+
+\bibitem{Jordan09}
+S.~P. Jordan.
+\newblock Permutational quantum computing.
+\newblock {\em Arxiv e-prints}, 2009.
+
+\bibitem{Mellies06}
+P.~Mellies.
+\newblock Functorial boxes in string diagrams.
+\newblock In Springer Verlag, editor, {\em Computer Science Logic}, pages
+  1--30, 2006.
+
+\end{thebibliography}

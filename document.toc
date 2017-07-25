@@ -7,13 +7,16 @@
 \contentsline {section}{\numberline {3}The Algebra of Anyons}{21}
 \contentsline {subsection}{\numberline {3.1}Models of anyons}{23}
 \contentsline {subsection}{\numberline {3.2}Modular categories}{27}
-\contentsline {subsection}{\numberline {3.3}The Drinfeld center}{29}
-\contentsline {section}{\numberline {4}Quantum Computation}{36}
-\contentsline {subsection}{\numberline {4.1}Phases of Matter}{36}
-\contentsline {subsection}{\numberline {4.2}Kitaev's model}{38}
-\contentsline {subsection}{\numberline {4.3}Permutational Quantum Computing}{40}
-\contentsline {subsection}{\numberline {4.4}Topological Quantum Computation}{41}
-\contentsline {subsection}{\numberline {4.5}A braided representation of Quantum computation}{41}
-\contentsline {subsection}{\numberline {4.6}An adjunction between fPQC and TQC}{41}
-\contentsline {section}{\numberline {5}Conclusion}{43}
-\contentsline {section}{\numberline {A}Fusion categories}{44}
+\contentsline {subsection}{\numberline {3.3}The Drinfeld center}{30}
+\contentsline {section}{\numberline {4}Quantum Computation}{37}
+\contentsline {subsection}{\numberline {4.1}Topological Quantum Computation}{37}
+\contentsline {subsubsection}{\numberline {4.1.1}From categories to computation}{37}
+\contentsline {subsubsection}{\numberline {4.1.2}Fibonacci anyons}{38}
+\contentsline {subsubsection}{\numberline {4.1.3}Kitaev's quantum double model}{39}
+\contentsline {subsection}{\numberline {4.2}Permutational Quantum Computing}{41}
+\contentsline {subsubsection}{\numberline {4.2.1}Jordan's model}{41}
+\contentsline {subsubsection}{\numberline {4.2.2}Categorical PQC}{43}
+\contentsline {subsection}{\numberline {4.3}A braided representation of quantum computation}{45}
+\contentsline {section}{\numberline {5}Conclusion}{45}
+\contentsline {section}{\numberline {A}Tensor categories}{46}
+\contentsline {section}{\numberline {B}Fusion categories}{47}
