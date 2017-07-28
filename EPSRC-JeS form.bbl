@@ -1,0 +1,44 @@
+\begin{thebibliography}{1}
+
+\bibitem{Majid95}
+Sh. Majid.
+\newblock {\em Foundations of Quantum Group Theory}.
+\newblock Cambridge University Press, 1995.
+
+\bibitem{Kitaev03}
+A.~Kitaev.
+\newblock Fault-tolerant quantum computation by anyons.
+\newblock {\em Annals Phys. 303}, pages 2--30, 2003.
+
+\bibitem{Panangaden11}
+P.~Panangaden and E.~Paquette.
+\newblock {\em A categorical presentation of quantum computation with anyons},
+  volume 813 of {\em Lecture Notes in Physics}.
+\newblock Springer Berlin Heidelberg, 2011.
+
+\bibitem{Lawvere63}
+F:~W. Lawvere.
+\newblock {\em Functorial semantics of algebraic theories}.
+\newblock PhD thesis, Columbia University, 1963.
+
+\bibitem{Coecke17}
+B.~Coecke and A.~Kissinger.
+\newblock {\em Picturing Quantum Processes}.
+\newblock Cambridge University Press, 2017.
+
+\bibitem{Coecke10}
+B.~Coecke, M.~Sadrzadeh, and S.~Clark.
+\newblock Mathematical foundations for a compositional distributional model of
+  meaning.
+\newblock {\em eprint arXiv:1003.4394}, 2010.
+
+\bibitem{Balsam12}
+B.~Balsam and A.~Kirillov.
+\newblock Kitaev's lattice model and turaev-viro tqfts.
+\newblock {\em eprint arXiv:1206.2308}, 2012.
+
+\bibitem{Gibney16}
+Elizabeth Gibney.
+\newblock Inside microsoft's quest for a topological quantum computer.
+
+\end{thebibliography}

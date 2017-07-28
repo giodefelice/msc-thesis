@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{braket}
+\usepackage[toc,page]{appendix}
+
+%%%THEOREM (ETC) ENVIRONMENTS
+\newtheorem{definition}{Definition}
+\newtheorem{claim}{Claim}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{example}{Example}
+\newtheorem{problem}{Problem}
+\newtheorem{idea}{Idea} 
+
+\usepackage{proof}
+\newtheorem{theorem}{Theorem}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\newenvironment{proof}[1][Proof]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\begin{flushright}$\blacksquare$\end{flushright} \end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+\newcommand{\cat}{\mathcal{C}}
+\newcommand{\Tau}{\mathrm{T}}
+\newcommand{\ham}{\mathcal{H}}
+\title{EPSRC-JeS form}
+\author{Giovanni de Felice}
+
+\begin{document}
+\maketitle
+
+This project falls within the EPSRC Mathematical sciences research area\\
+Project title: Hopf algebras, diagrams and quantum computation\\
+
+Brief description of the context:\\
+Mathematicians have used group theory since the 19th century to describe symmetry. For instance certain types of groups capture the symmetries of crystals.  The theory of Hopf algebras is a generalization of Group theory, which allows describing the symmetries of more complicated systems as they treat local and topological symmetries on the same level. Besides being interesting mathematical objects in their own right \cite{Majid95}, Hopf algebras have recently found many applications in quantum physics and quantum computer science \cite{Kitaev03} \cite{Panangaden11}. \\
+Scientists frequently use diagrams to understand or explain the behavior of the systems they study. Very often the same types of diagrams are used in distinct scientific areas. Here the same “type” means that they are drawn using the same syntax, their interpretation then differs between disciplines. Category theory allows formalizing this situation \cite{Lawvere63}: a diagram is drawn in some syntax category and interpretation is a functor to some semantic category.\\
+ 
+Aims and objectives:\\
+During my DPhil, I propose to develop the theory of Hopf algebras using category theory and diagrammatic linear algebra in order to understand new structures underlying quantum physics, linguistics and network theory. My long-term objective is to contribute in making category theory the new language in the scientific community to allow connectedness between scientific areas and creating a unified picture of those disciplines.\\
+
+Novelty of the research methodology:\\
+Quantum physics and the theory of Hopf algebras have until recently been expressed in a non-intuitive mathematical language. The novelty of the research methodology in the Quantum group lies in the use of diagrammatic languages justified (and made rigorous) by the connection between category theory and geometry. This has been fruitful in making Quantum physics a more intuitive subject \cite{Coecke17} and in relating it to other scientific areas such as computer science and linguistics \cite{Coecke10}.\\
+
+EPSRC Research areas:\\
+This project is in alignment with many of EPSRC’s research areas. In first instance the study of Hopf algebras is important for the mathematical physics area as they are known to be revlated to 2-dimensional topological quantum field theories \cite{Balsam12}, 2D gauge theories and quantum gravity \cite{Majid95}. Category theory and diagrammatic linear algebra are growing fields of interest aiming to increase the connectedness within the scientific community. In the Quantum group I will work with computer scientists, physicists and linguists in cross-disciplinary research projects. The study of Hopf algebras is also likely to be fruitful in developing quantum technologies as Microsoft is currently working on topological quantum models of computation \cite{Gibney16}, based on quantum systems that exhibit Hopf symmetries.\\
+
+Collaborators involved: I will work as part of the Quantum group in the computer science department in Oxford under the supervision of Bob Coecke.
+
+\bibliographystyle{unsrt}
+\bibliography{refs}
+
+\end{document}

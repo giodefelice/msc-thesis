@@ -2455,7 +2455,7 @@ Recall that when $H$ is cocommutative, it is trivially quasitriangular. The foll
 	\node[black, scale=0.7] (1) at (0, 1) {};
 	\node[whit, fill=gray, scale=0.7] (2) at (0.5, 1) {};
 	\node[whit, scale=0.7] (3) at (1.5, 1) {};
-	\node[scale=0.5, whit] (4) at (0, -0.4) {};
+	\node[scale=0.7, whit] (4) at (0, -0.4) {};
 	\node[scale=0.3, buffer] (r1) at (-0.5,0) {$R$};
 	\node[scale=0.5, buffer] (r2) at (-1,-1) {$R$};
 	\draw (r1) to (3);
@@ -2582,7 +2582,7 @@ We can see that the proof relies on the existence of the antipode. If a skew-ant
 \begin{equation}
 \begin{gathered}
 \begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
-	regular polygon sides=4,fill=white},]
+	regular polygon sides=4,fill=white}]
 \node[scale=0.5, whit] (0) at (0,0) {R};
 \node (1) at (-0.5, -0.9) {$H$};
 \node (2) at (0, -0.9) {$V^\star$};
@@ -2594,7 +2594,7 @@ We can see that the proof relies on the existence of the antipode. If a skew-ant
 \, := \,
 \begin{gathered}
 \begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
-	regular polygon sides=4,fill=white},]
+	regular polygon sides=4,fill=white}]
 \node[scale=0.4, whit] (0) at (0,0) {};
 \node (1) at (-0.5, -0.9) {$H$};
 \node (2) at (0, -0.9) {$V^\star$};
@@ -2618,7 +2618,23 @@ Reconstruction results are recipes which produce all the examples of a class of 
 		\item Any (braided) rigid monoidal category equipped with a fiber functor (here this means strict (braided) rigid monoidal functor) to $Vect$ is equivalent to $Rep(H)$ for some (quasitriangular) hopf algebra $H$.
 	\end{itemize}
 \end{theorem}
-Note that any category can be seen as a process theory in the sense of \cite{Abramsky04} and \cite{Coecke17}. Objects are systems and morphisms are their possible physical evolutions. The tensor product of a monoidal category can then be regarded as a way of forming composed systems. Quantum systems usually exhibit duality (particle, antiparticle pairs) and entanglement which are captured by the rigid structure of the category. From this perspective, this reconstruction result has an interesting physical interpretation. It says that any physical theory (monoidal category) is completely determined by the symmetries of the systems under consideration (the algebra structure). In the next section we will take this reasoning further to study physical theories of certain topological quantum systems.
+Note that any category can be seen as a process theory in the sense of \cite{Abramsky04} and \cite{Coecke17}. Objects are systems and morphisms are their possible physical evolutions. The tensor product of a monoidal category can then be regarded as a way of forming composed systems. Quantum systems usually exhibit duality (particle, antiparticle pairs) and entanglement which are captured by the rigid structure of the category. From this perspective, this reconstruction result has an interesting physical interpretation. It says that any physical theory (monoidal category) is completely determined by the symmetries of the systems under consideration (the algebra structure). In the next section we will take this reasoning further to study physical theories of certain topological quantum systems.\\
+
+In the following chapters we will frequently use the notion of a comodule. We have only talked about the structure of the category of $H$-modules but all this structure can be shown to apply to $H$-comodules as well. Here we give a brief argument, but all we will need is the tensor product of $H$-comodules which we define below.
+Note that if we flip the axioms of a Hopf algebra upside down we obtain the axioms back. An $H$-comodule is precisely the flipped version of an $H$-module, therefore all the structure of the category of $H$ modules is also the structure of $H$-comodules. The definitions are simply obtained by flipping and interchanging white with black and the proofs too. So in particular the category of $H$-comodules is monoidal with tensor product given by:
+\begin{center}
+	\begin{tikzpicture}[scale=0.9, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+		\node [scale=0.5,whit] (0) at (0,0) {};
+		\node [scale=0.5, whit, fill=gray] (1) at (0.5,0) {};
+		\node [scale=0.5, draw, circle, fill=black] (b) at (-0.5,0.5) {};
+		\draw (0, -0.8)--(0)--(0,0.8);
+		\draw (0.5, -0.8)--(1)--(0.5,0.8);
+		\draw (-0.5,0.8)--(b);
+		\draw[bend left] (0) to (b);
+		\draw (1) to (b);
+	\end{tikzpicture}
+\end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%?%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -4325,115 +4341,350 @@ Take the fusion space to be our computational hilbert space.\\
 Topological qudits are usually encoded as fusion tree basis elements\\
 Topologial gates: braids (can express as action of the braid group) + measurements (=fusions and associators).
 
-\subsubsection{Fibonacci anyons}
-We now look back at example [ref] on Fibonacci anyons and show how to compute in the model.
-Recall we have only two particle types: the vacuum sector $1$ and the non-trivial $\tau$ such that:
-$$\tau \otimes \tau = 1 \oplus \tau$$
-$\tau$ and $1$ are their own anti-particles so we don't need to distinguish particles and antiparticles by wrinting arrows on wires.
-We can write the basis of the two dimensional space $\tau \otimes \tau$ as:
-\begin{center}
-	\begin{tikzpicture}
-	\node (0) at (0.3, 0.3) {$\tau$};
-	\node (0) at (-0.7, -0.3) {$\tau$};
-	\node (0) at (0.7, -0.3) {$\tau$};
-	\draw (-0.5, -0.5)--(0,0)--(0,0.5);
-	\draw (0.5, -0.5)--(0,0);
-	\end{tikzpicture}
-	\quad
-	\begin{tikzpicture}
-	\node (0) at (0.3, 0.3) {$1$};
-	\node (0) at (-0.7, -0.3) {$\tau$};
-	\node (0) at (0.7, -0.3) {$\tau$};
-	\draw (-0.5, -0.5)--(0,0)--(0,0.5);
-	\draw (0.5, -0.5)--(0,0);
-	\end{tikzpicture}
-\end{center}
-The fusion space $V_{\tau^{\otimes 3}}^\tau$ is two dimensional, we will take it as our computational space and write the computational basis as:
-\begin{center}
-	\begin{tikzpicture}
-	\node (0) at (0.1, 0.3) {$\tau$};
-	\node (0) at (-0.7, -0.3) {$\tau$};
-	\node (0) at (0.7, -0.3) {$\tau$};
-	\node (0) at (0.6, 0.8) {$\tau$};
-	\node (0) at (1.6, -0.3) {$\tau$};
-	\draw (-0.5, -0.5)--(0,0)--(0.5,0.5)--(1,1);
-	\draw (0.5, -0.5)--(0,0);
-	\draw (1.5, -0.5)--(0.5,0.5);
-	\end{tikzpicture}
-	\quad
-	\begin{tikzpicture}
-	\node (0) at (0.1, 0.3) {$1$};
-	\node (0) at (-0.7, -0.3) {$\tau$};
-	\node (0) at (0.7, -0.3) {$\tau$};
-	\node (0) at (0.6, 0.8) {$\tau$};
-	\node (0) at (1.6, -0.3) {$\tau$};
-	\draw (-0.5, -0.5)--(0,0)--(0.5,0.5)--(1,1);
-	\draw (0.5, -0.5)--(0,0);
-	\draw (1.5, -0.5)--(0.5,0.5);
-	\end{tikzpicture}
-\end{center}
-Let's denote by $\ket{0}, \ket{1}$ these basis states. Another basis is given by fusing the left-most two anyons first:
-\begin{center}
-	\begin{tikzpicture}
-	\node (0) at (1, 0.3) {$\tau$};
-	\node (0) at (-0.7, -0.3) {$\tau$};
-	\node (0) at (0.5, -0.3) {$\tau$};
-	\node (0) at (0.6, 0.8) {$\tau$};
-	\node (0) at (1.6, -0.3) {$\tau$};
-	\draw (-0.5, -0.5)--(0,0)--(0.5,0.5)--(1,1);
-	\draw (0.5, -0.5)--(1,0);
-	\draw (1.5, -0.5)--(0.5,0.5);
-	\end{tikzpicture}
-	\quad
-	\begin{tikzpicture}
-	\node (0) at (1, 0.3) {$1$};
-	\node (0) at (-0.7, -0.3) {$\tau$};
-	\node (0) at (0.5, -0.3) {$\tau$};
-	\node (0) at (0.6, 0.8) {$\tau$};
-	\node (0) at (1.6, -0.3) {$\tau$};
-	\draw (-0.5, -0.5)--(0,0)--(0.5,0.5)--(1,1);
-	\draw (0.5, -0.5)--(1,0);
-	\draw (1.5, -0.5)--(0.5,0.5);
-	\end{tikzpicture}
-\end{center}
-And we denote them by $\ket{+}, \ket{-}$. These two bases are linked by a unitary $2 \times 2$ transformation $F:= F^\tau_{\tau^{\otimes 3}}$ given by the solution of the following system:
-$$ \ket{0} = F_{0+} \ket{+} + F_{0-} \ket{-}$$
-$$ \ket{1} = F_{1+} \ket{+} + F_{1-} \ket{-}$$
-To derive the form of the $F$-matrix we need to consider the pentagon axiom. It turns out that for the Fibonacci model the pentagon is enough to derive the $F$-matrix but it is not the case in general. The resulting $F$-matrix is \cite{Simon16}:
-\begin{center}
-	$\begin{bmatrix}
-	\phi^{-1} & \phi^{-\frac{1}{2}} \\
-	\phi^{-\frac{1}{2}} & -\phi^{-1}
-	\end{bmatrix}$
-\end{center}
-where $\phi = \frac{\sqrt{5}-1}{2}$.
+\begin{example}[Fibonacci anyons]
+	We now look back at example [ref] on Fibonacci anyons and show how to compute in the model.
+	Recall we have only two particle types: the vacuum sector $1$ and the non-trivial $\tau$ such that:
+	$$\tau \otimes \tau = 1 \oplus \tau$$
+	$\tau$ and $1$ are their own anti-particles so we don't need to distinguish particles and antiparticles by wrinting arrows on wires.
+	We can write the basis of the two dimensional space $\tau \otimes \tau$ as:
+	\begin{center}
+		\begin{tikzpicture}
+		\node (0) at (0.3, 0.3) {$\tau$};
+		\node (0) at (-0.7, -0.3) {$\tau$};
+		\node (0) at (0.7, -0.3) {$\tau$};
+		\draw (-0.5, -0.5)--(0,0)--(0,0.5);
+		\draw (0.5, -0.5)--(0,0);
+		\end{tikzpicture}
+		\quad
+		\begin{tikzpicture}
+		\node (0) at (0.3, 0.3) {$1$};
+		\node (0) at (-0.7, -0.3) {$\tau$};
+		\node (0) at (0.7, -0.3) {$\tau$};
+		\draw (-0.5, -0.5)--(0,0)--(0,0.5);
+		\draw (0.5, -0.5)--(0,0);
+		\end{tikzpicture}
+	\end{center}
+	The fusion space $V_{\tau^{\otimes 3}}^\tau$ is two dimensional, we will take it as our computational space and write the computational basis as:
+	\begin{center}
+		\begin{tikzpicture}
+		\node (0) at (0.1, 0.3) {$\tau$};
+		\node (0) at (-0.7, -0.3) {$\tau$};
+		\node (0) at (0.7, -0.3) {$\tau$};
+		\node (0) at (0.6, 0.8) {$\tau$};
+		\node (0) at (1.6, -0.3) {$\tau$};
+		\draw (-0.5, -0.5)--(0,0)--(0.5,0.5)--(1,1);
+		\draw (0.5, -0.5)--(0,0);
+		\draw (1.5, -0.5)--(0.5,0.5);
+		\end{tikzpicture}
+		\quad
+		\begin{tikzpicture}
+		\node (0) at (0.1, 0.3) {$1$};
+		\node (0) at (-0.7, -0.3) {$\tau$};
+		\node (0) at (0.7, -0.3) {$\tau$};
+		\node (0) at (0.6, 0.8) {$\tau$};
+		\node (0) at (1.6, -0.3) {$\tau$};
+		\draw (-0.5, -0.5)--(0,0)--(0.5,0.5)--(1,1);
+		\draw (0.5, -0.5)--(0,0);
+		\draw (1.5, -0.5)--(0.5,0.5);
+		\end{tikzpicture}
+	\end{center}
+	Let's denote by $\ket{0}, \ket{1}$ these basis states. Another basis is given by fusing the left-most two anyons first:
+	\begin{center}
+		\begin{tikzpicture}
+		\node (0) at (1, 0.3) {$\tau$};
+		\node (0) at (-0.7, -0.3) {$\tau$};
+		\node (0) at (0.5, -0.3) {$\tau$};
+		\node (0) at (0.6, 0.8) {$\tau$};
+		\node (0) at (1.6, -0.3) {$\tau$};
+		\draw (-0.5, -0.5)--(0,0)--(0.5,0.5)--(1,1);
+		\draw (0.5, -0.5)--(1,0);
+		\draw (1.5, -0.5)--(0.5,0.5);
+		\end{tikzpicture}
+		\quad
+		\begin{tikzpicture}
+		\node (0) at (1, 0.3) {$1$};
+		\node (0) at (-0.7, -0.3) {$\tau$};
+		\node (0) at (0.5, -0.3) {$\tau$};
+		\node (0) at (0.6, 0.8) {$\tau$};
+		\node (0) at (1.6, -0.3) {$\tau$};
+		\draw (-0.5, -0.5)--(0,0)--(0.5,0.5)--(1,1);
+		\draw (0.5, -0.5)--(1,0);
+		\draw (1.5, -0.5)--(0.5,0.5);
+		\end{tikzpicture}
+	\end{center}
+	And we denote them by $\ket{+}, \ket{-}$. These two bases are linked by a unitary $2 \times 2$ transformation $F:= F^\tau_{\tau^{\otimes 3}}$ given by the solution of the following system:
+	$$ \ket{0} = F_{0+} \ket{+} + F_{0-} \ket{-}$$
+	$$ \ket{1} = F_{1+} \ket{+} + F_{1-} \ket{-}$$
+	To derive the form of the $F$-matrix we need to consider the pentagon axiom. It turns out that for the Fibonacci model the pentagon is enough to derive the $F$-matrix but it is not the case in general. The resulting $F$-matrix is \cite{Simon16}:
+	\begin{center}
+		$\begin{bmatrix}
+		\phi^{-1} & \phi^{-\frac{1}{2}} \\
+		\phi^{-\frac{1}{2}} & -\phi^{-1}
+		\end{bmatrix}$
+	\end{center}
+	where $\phi = \frac{\sqrt{5}-1}{2}$.
+\end{example}
 
 \subsubsection{Kitaev's quantum double model}
-Fix a group $G$, and suppose we have particles living in state space $\mathbb{C}G$ (the group agebra). We will build a special case of Kitaev's quantum double model \cite{Kitaev03}, in order to see directly the connection with the category $Rep(DG)$.\\
-First of all let us consider 4 types of linear operators on $\mathbb{C}G$: $L^g_\pm$, $T^h_\pm$ (using the notation from \cite{Kitaev03}). Indexed by elements $g,h \in G$, and defined as follows:
+Suppose we have particles living in state space $H$ where $H$ is a Hopf algebra (with black multiplication, white comultiplication and antipode $S$ as usual). We can define two canonical types of left $H$-module structures on $H$ given by the right and left multiplication as follows:
+\begin{equation}\label{Lmoduleaction}
+L_+ =
+\begin{gathered}
+\begin{tikzpicture}
+\node[scale=0.5, draw, circle, fill=black] (0) at (0,0) {};
+\draw (0,-1)--(0)--(0,1);
+\draw [bend left] (-0.5,-1) to (0);
+\end{tikzpicture}
+\end{gathered}
+\quad ; \quad
+L_- =
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node[scale=0.5, draw, circle, fill=black] (0) at (0,0) {};
+\node[scale=0.4, whit] (s) at (-0.4,-0.6) {$s$};
+\draw (0,-1)--(0)--(0,1);
+\draw (-0.5,-1) to (s);
+\draw [bend left] (s) to (0,-0.3);
+\draw [bend right=70, looseness=2.5] (0,-0.3) to (0);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+Right multiplication obviously defines a module by associativity, left multiplication also works because the antipode is an antialgebra morphism:
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node[scale=0.5, draw, circle, fill=black] (0) at (0,0.5) {};
+\node[scale=0.5, draw, circle, fill=black] (1) at (-0.6,-0.5) {};
+\node[scale=0.4, whit] (s) at (-0.3,-0.2) {$s$};
+\draw (0,-1)--(0)--(0,1);
+\draw[bend right] (s) to (0.3,0.2);
+\draw [bend right=50] (0.3,0.2) to (0);
+\draw (-0.5,-1)--(1)--(s);
+\draw (-1,-1)--(1);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node[scale=0.5, draw, circle, fill=black] (0) at (0,0.5) {};
+\node[scale=0.5, draw, circle, fill=black] (1) at (-0.5,-0.2) {};
+\node[scale=0.4, whit] (s1) at (-0.6,-0.7) {$s$};
+\node[scale=0.4, whit] (s2) at (-1,-0.7) {$s$};
+\draw (0,-1)--(0)--(0,1);
+\draw[bend right] (1) to (0.3,0.2);
+\draw [bend right=50] (0.3,0.2) to (0);
+\draw (-0.5,-1)--(s1);
+\draw (-1,-1)--(s2);
+\draw [bend left=60,looseness=2] (s1) to (1); 
+\draw[bend right=10] (s2) to (1);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node[scale=0.5, draw, circle, fill=black] (0) at (0,0.5) {};
+\node[scale=0.5, draw, circle, fill=black] (1) at (0,-0.2) {};
+\node[scale=0.4, whit] (s1) at (-0.4,-0.7) {$s$};
+\node[scale=0.4, whit] (s2) at (-1,-0.7) {$s$};
+\draw (0,-1)--(1)--(0)--(0,1);
+\draw [bend left] (s2) to (0,0.2);
+\draw [bend right=70, looseness=2] (0,0.2) to (0);
+\draw (-0.5,-1)--(s1);
+\draw (-1,-1)--(s2);
+\draw [bend left] (s1) to (0,-0.5);
+\draw [bend right=70, looseness=2] (0,-0.5) to (1); 
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+Similarly there are two canonical left $H$-comodule structures on $H$ given by left and right comultiplication.
+\begin{equation}\label{Tmodulecoaction}
+T_+ =
+\begin{gathered}
+\begin{tikzpicture}
+\node[scale=0.5, draw, circle, fill=white] (0) at (0,0) {};
+\draw (0,-1)--(0)--(0,1);
+\draw [bend right] (-0.5,1) to (0);
+\end{tikzpicture}
+\end{gathered}
+\quad ; \quad
+T_- =
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node[scale=0.5, draw, circle, fill=white] (0) at (0,0) {};
+\node[scale=0.4, whit] (s) at (-0.4,0.6) {$s$};
+\draw (0,-1)--(0)--(0,1);
+\draw (-0.5,1) to (s);
+\draw [bend right] (s) to (0,0.3);
+\draw [bend left=70, looseness=2.5] (0,0.3) to (0);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+And the proofs that these are $H$-comodules are dual to the previous ones.
+Kitaev considers the case where $H=\mathbb{C}G$ for some group $G$. The above module and comdule structures then yield 4 types of linear operators on $\mathbb{C}G$: $L^g_\pm$, $T^h_\pm$ (using the notation from \cite{Kitaev03}), indexed by elements $g,h \in G$, and defined as follows:
 \begin{equation}
 \begin{aligned}
 L^g_+ \ket{z} = \ket{gz} \quad& L^g_- \ket{z} = \ket{zg^{-1}}\\
 T^h_+ \ket{z} = \delta_{h,z} \ket{z} \quad& T^h_- \ket{z} = \delta_{h^{-1},z} \ket{z}
 \end{aligned}	 
 \end{equation}
-Now, consider the trivial lattice on a torus with particles on the edges, i.e a square with opposite edges identified as follows:
-\begin{center}
-	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
-	\draw (0,0)--(0,1);
-	\draw (1,0)--(1,1);
-	\draw[blue] (0,1)--(1,1);
-	\draw[blue] (0,0)--(1,0);
-	\end{tikzpicture}
-\end{center}
-For the moment take this lattice as our system, note that states are generated by pairs of elements of $G$, each labelling one edge of the lattice. Let's say that $L^g_\pm(0)$, $L^g_\pm(1)$ and $T^h_\pm(0)$ $T^h_\pm(1)$ are $L_\pm$ and $T_\pm$ operators acting on the first and second particle. Note that in this configuration, we have only one plaquette and one vertex, we will only need to define two types of operators on the lattice, indexed by elements of $G$. For $g,h \in G$ define:
+Note that $L$ operators commute with each other and $T$ operators too. The non-trivial commutation relations are the following:
 \begin{equation}
 \begin{aligned}
-A_g &= L^g_+(0) L^g_+(1) L^g_-(0) L^g_-(1)\\
-P_h &= \sum_{h_1h_2h_3h_4=h} T^{h_1}_+(0) T^{h_2}_+(1) T^{h_3}_-(0) T^{h_4}_-(1)
+L^g_+ T^h_+ = T^{gh}_+ L^g_+ &\quad L^g_+ T^h_- = T^{hg^{-1}}_- L^g_+ \\
+L^g_- T^h_+ = T^{hg^{-1}}_+ L^g_- &\quad L^g_- T^h_- = T^{gh}_- L^g_-
+\end{aligned} 
+\end{equation}
+In the general Hopf algebra case those commutation relations correspond to the following equalities of diagrams, which are easily obtained using the bialgebra rule and the fact that the antipode is an anti-algebra and an anti-coalgebra morphism.
+\begin{equation}\label{l+t+}
+\begin{gathered}
+\begin{tikzpicture}
+\node[scale=0.5, draw, circle, fill=white] (w) at (0,0.5) {};
+\node[scale=0.5, draw, circle, fill=black] (b) at (0,-0.5) {};
+\draw (0,-1)--(b)--(w)--(0,1);
+\draw [bend right] (-0.5,1) to (w);
+\draw [bend left] (-0.5,-1) to (b);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}
+\node[scale=0.5, draw, circle, fill=black] (w1) at (0,0.5) {};
+\node[scale=0.5, draw, circle, fill=white] (b1) at (0,-0.5) {};
+\node[scale=0.5, draw, circle, fill=black] (w2) at (-0.5,0.5) {};
+\node[scale=0.5, draw, circle, fill=white] (b2) at (-0.5,-0.5) {};
+\draw (0,-1)--(b1)--(w1)--(0,1);
+\draw (-0.5,1)--(w2)--(b1);
+\draw (-0.5,-1)--(b2)--(w1);
+\draw (b2)--(w2);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+\begin{equation}\label{l+t-}
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node[scale=0.5, draw, circle, fill=white] (w) at (0,0) {};
+\node[scale=0.5, draw, circle, fill=black] (b) at (0,-0.5) {};
+\node[scale=0.4, whit] (s) at (-0.4,0.6) {$s$};
+\draw (0,-1)--(b)--(w)--(0,1);
+\draw (-0.5,1) to (s);
+\draw [bend right] (s) to (0,0.3);
+\draw [bend left=70, looseness=2.5] (0,0.3) to (w);
+\draw [bend left] (-0.5,-1) to (b);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node[scale=0.5, draw, circle, fill=white] (w) at (0,-0.5) {};
+\node[scale=0.5, draw, circle, fill=black] (b) at (0,0.5) {};
+\node[scale=0.5, draw, circle, fill=white] (w2) at (-0.5,-0.8) {};
+\node[scale=0.5, draw, circle, fill=black] (b2) at (-0.5,0.8) {};
+\node[scale=0.4, whit] (s) at (-0.5,0.4) {$s$};
+\node[scale=0.4, whit] (s2) at (0.5,0) {$s$};
+\draw (0,-1)--(w)--(b)--(0,1);
+\draw (-0.5,1)--(b2)--(s);
+\draw [bend right] (s) to (0,-0.2);
+\draw [bend left=70, looseness=2.5] (0,-0.2) to (w);
+\draw (-0.5,-1)--(w2);
+\draw [bend left] (w2) to (b);
+\draw [bend right=50] (w2) to (s2);
+\draw [bend right=50] (s2) to (b2);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+\begin{equation}\label{l-t+}
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node[scale=0.5, draw, circle, fill=black] (w) at (0,0) {};
+\node[scale=0.5, draw, circle, fill=white] (b) at (0,0.5) {};
+\node[scale=0.4, whit] (s) at (-0.4,-0.6) {$s$};
+\draw (0,1)--(b)--(w)--(0,-1);
+\draw (-0.5,-1) to (s);
+\draw [bend left] (s) to (0,-0.3);
+\draw [bend right=70, looseness=2.5] (0,-0.3) to (w);
+\draw [bend right] (-0.5,1) to (b);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node[scale=0.5, draw, circle, fill=black] (w) at (0,0.5) {};
+\node[scale=0.5, draw, circle, fill=white] (b) at (0,-0.5) {};
+\node[scale=0.5, draw, circle, fill=black] (w2) at (-0.5,0.8) {};
+\node[scale=0.5, draw, circle, fill=white] (b2) at (-0.5,-0.8) {};
+\node[scale=0.4, whit] (s) at (-0.5,-0.4) {$s$};
+\node[scale=0.4, whit] (s2) at (0.5,0) {$s$};
+\draw (0,1)--(w)--(b)--(0,-1);
+\draw (-0.5,-1)--(b2)--(s);
+\draw [bend left] (s) to (0,0.2);
+\draw [bend right=70, looseness=2.5] (0,0.2) to (w);
+\draw (-0.5,1)--(w2);
+\draw [bend right] (w2) to (b);
+\draw [bend left=50] (w2) to (s2);
+\draw [bend left=50] (s2) to (b2);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+\begin{equation}\label{l-t-}
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node[scale=0.5, draw, circle, fill=black] (w) at (0,-0.2) {};
+\node[scale=0.5, draw, circle, fill=white] (b) at (0,0.2) {};
+\node[scale=0.4, whit] (s) at (-0.4,-0.7) {$s$};
+\node[scale=0.4, whit] (s2) at (-0.4,0.7) {$s$};
+\draw (0,1)--(b)--(w)--(0,-1);
+\draw (-0.5,-1) to (s);
+\draw [bend left] (s) to (0,-0.4);
+\draw [bend right=70, looseness=2.5] (0,-0.4) to (w);
+\draw (-0.5,1) to (s2);
+\draw [bend right] (s2) to (0,0.4);
+\draw [bend left=70, looseness=2.5] (0,0.4) to (b);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node[scale=0.5, draw, circle, fill=black] (w) at (0,0.5) {};
+\node[scale=0.5, draw, circle, fill=white] (b) at (0,-0.5) {};
+\node[scale=0.5, draw, circle, fill=black] (b2) at (-0.5,0.8) {};
+\node[scale=0.5, draw, circle, fill=white] (w2) at (-0.5,-0.8) {};
+\node[scale=0.4, whit] (s) at (-0.3,-0.4) {$s$};
+\node[scale=0.4, whit] (s2) at (-0.3,0.4) {$s$};
+\node[scale=0.4, whit] (s3) at (-0.8,-0.2) {$s$};
+\node[scale=0.4, whit] (s4) at (-0.8,0.2) {$s$};
+\draw (0,1)--(w)--(b)--(0,-1);
+\draw (-0.5,-1)--(w2)--(s);
+\draw [bend left] (s) to (0,0.2);
+\draw [bend right=70, looseness=2.5] (0,0.2) to (w);
+\draw (-0.5,1)--(b2)--(s2);
+\draw [bend right] (s2) to (0,-0.2);
+\draw [bend left=70, looseness=2.5] (0,-0.2) to (b);
+\draw [bend left] (w2) to (s3);
+\draw (s3)--(s4);
+\draw [bend left] (s4) to (b2);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+We then consider a lattice with oriented edges embedded in some $2D$ orineted manifold (e.g a sphere or a torus) with particles on the edges. For any vertex $s$ and adjacent plaquette $p$, a site is defined as the pair $a=(s,p)$. Let $star(a)$ be the set of edges adjacent to $s$ and $bound(p)=\{j_1, .. j_k\}$ the ordered set of edges adjacent to plaquette $p$ starting and ending at vertex $s$. Every edge $j \in star(s)$ on the lattice has an orientation and in \cite{Kitaev03} is defined $L^g(j,s)$ to be $L^g_-$ applied to vertex $j$ when $s$ is the origin of $j$ and $L^g_+$ otherwise. Similarly $T^h(j,p)$ is defined to be $T^h_+$ (repectively $T^h_-$) if $j$ is on the right (resp. on the left) of $j$. The following operators are then defined at each site $a$ of the lattice:
+\begin{equation}\label{doubleonsite}
+\begin{aligned}
+A_g(a) &= \prod_{j \in star(s)} L^g(j,s) \\
+P_h(a) &= \sum_{h_1...h_k=h} \prod_{m=1}^{k} T^{h_m}(j_m,p)
 \end{aligned}
 \end{equation}
-From a physical point of view $P_h$ operators can be understood as measuring the magnetic flux of the system and $A_g$ are symmetry transformations on the charge. Flux measurements are projection $P_h \in \mathbb{C}G^*$ onto flux sector $h$. The allowed residual global symmetry transformations are then implemented via $A_g$ for $g \in N(h)$. \\
+We will write the general diagrammatic form of these operators in the next section. For the moment let us go through Kitev's reasoning.\\
+From a physical point of view $P_h$ operators can be understood as measuring the magnetic flux of the system at some site and $A_g$ are local symmetry transformations on the charge. Flux measurements are projection $P_h \in \mathbb{C}G^*$ onto flux sector $h$. The allowed residual global symmetry transformations are then implemented via $A_g$ for $g \in N(h)$. \\
 Naturally the projectors form a Von Neumann family and satisfy 
 $$P_hP_{h'}= \delta_{h,h'} P_h.$$ 
 Operators $A_g$ are global symmetry transformation 
@@ -4447,17 +4698,90 @@ A_gP_h = P_{ghg^{-1}}A_g
 	For any finite group $G$, its quantum double $D(G)$ is the algebra generated by $\{P_hA_g\}_{h,g\in G}$ with multiplication induced by (\ref{doublemult}) comultiplication and antipode as defined in [first section]. 
 \end{proposition}
 $D(G)$ has a natural quasi-triangular structure witnessed by the universal R-matrix $R=\sum_{g,h \in G}P_he \otimes P_hg$, making $RepDG$ braided.\\
-Kitaev then builds a Hamiltonian for the system and shows that the sectors of this Hamiltonian are precisely the irreducible representations of $DG$. Here we will skip this part of the reasoning and rely on the intuition that the operators $A_g$ and $P_h$ correspond to the symmetries of the system, i.e the dynamics which are `constantly being applied'. So the allowed processes of the systems are processes that commute with all of those operators, i.e the system lives in a representation of $DG$ and the allowed processes are intertwiners. We obtain the process theory $Rep(DG)$. Note that because we chose our lattice to be trivial, in the model as we described it the overall dimension of the system is at most $|G|^2$ and we cannot obtain higher dimensional representations. This issue was directly avoided by Kitaev in his presentation \cite{Kitaev03}, by allowing the lattice to be arbitrairy (embedded in some manifold) and defining $A_g$ and $P_h$ operators on sites (i.e vertices together with a plaquette). For each site $a=(s,p)$ where $s$ is a vertex and $p$ a plaquette, we have operators $A_g(a)$ and $P_h(a)$ which generate the quantum double algebra. An excitation is then a state of some non-trivial irreducible representation of $DG$ being created at some site $a$ on the lattice. Those excitations have anyonic behaviour. In what follows we will assume the lattice was `layered' enough so that we can create more than one excitation and we can move around without fusing them. If the lattice is big enough we have obtained a practical implementation of anyons whose behaviour is described by the modular category $Rep(DG)$. When $G$ is abelian, we only have abelian anyons which are very unlikely to be universal for quantum computation. It was shown by Kitaev that if $G=S_5$ the model is universal for quantum computation. In [cite Lahtinen] the $G=S_3$ model was considered but not shown to be universal.\\  
+Kitaev then builds a Hamiltonian for the system and shows that the sectors of this Hamiltonian are precisely the irreducible representations of $DG$. Here we will skip this part of the reasoning and rely on the intuition that the operators $A_g$ and $P_h$ correspond to the symmetries of the system, i.e the dynamics which are `constantly being applied'. So the allowed processes of the systems are processes that commute with all of those operators, i.e the system lives in a representation of $DG$ and the allowed processes are intertwiners. We obtain the process theory $Rep(DG)$. An excitation is then a state of some non-trivial irreducible representation of $DG$ being created at some site $a$ on the lattice. Those excitations are the `quasi-particles' that exhibit anyonic behaviour. In what follows we will assume the lattice was `layered' enough so that we can create more than one excitation and we can move them around without fusing them. If the lattice is big enough we have obtained a practical implementation of anyons whose behaviour is described by the modular category $Rep(DG)$. When $G$ is abelian, we only have abelian anyons which are very unlikely to be universal for quantum computation. It was shown by Kitaev that if $G=S_5$ the model is universal for quantum computation. In [cite Lahtinen] the $G=S_3$ model was considered but not shown to be universal.
+
 In order to understand the possible anyon types in the model induced by finite group $G$, we must study the irreducible representations of the quantum double finite group algebra $DG$. This has been done by Gould \cite{Gould93}, who showed that irreducible representations of $DG$ are obtained in the following way.\\
 Let $\{C_i\}_{i=1}^n$ be the distinct conjugacy classes in $G$. To each of those conjugacy classes corresponds a centralizer subgroup $N_i$ (two choices of representatives for $C_i$ yield isomorphic centralizer subgroups). Then for any irreducible representation $(\alpha,V^i_\alpha)$ of $N_i$ with basis elements $v^\alpha_j$, let $V_{i,\alpha} = \mathbb{C}C_i \otimes V^i_\alpha$, this has basis $\{ \ket{k,v^\alpha_j} \}_{j=1,...,dim\alpha}^{k\in C_i}$ and forms an irreducible representation of $D(G)$ under the action 
 \begin{equation}
 P_hg\ket{k,v^\alpha_j} = \delta_{h,gkg^{-1}} \ket{h,\alpha(h^{-1}gk)v^\alpha_j}
 \end{equation}
 and the $\{V_{i,\alpha}\}$ is the complete set of irreducible representations.
-
 \begin{example}[Kitaev's Toric code]
 	The case where $G \simeq \mathbb{Z}_2$ gives rise to Kitaev's toric code. Note that $D(\mathbb{Z}_2) \simeq \mathbb{C}(\mathbb{Z}_2\times \mathbb{Z}_2^\star)$, so that there are $4$ irreducible representations, all of which are 1-dimensional. Each of those corresponds to a different type of excitation.  Let $x$ and $y$ be the generators of the group. The trivial representation is the trivial excitation (or `no excitation'). The other irreducible representations are obtained by mapping $x$ and $y$ to order $2$  elements of $\mathbb{C}$. We obtain two bosons, when both get sent to $-1$ or $i$ and one fermions when $x \mapsto -1$ and $y \mapsto i$. 
+	If we implement the construction on a simple lattice on a torus, we obtain a quantum storage method. Consider the trivial lattice on a torus with spins on the edges, i.e a square with opposite edges identified as follows:
+	\begin{center}
+		\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+		\draw (0,0)--(0,1);
+		\draw (1,0)--(1,1);
+		\draw[blue] (0,1)--(1,1);
+		\draw[blue] (0,0)--(1,0);
+		\end{tikzpicture}
+	\end{center}
+	This lattice has only one site, states of the system are generated by pairs of elements of $\mathbb{Z}_2$, each labelling one edge of the lattice. Let's say that $L^g_\pm(0)$, $L^g_\pm(1)$ and $T^h_\pm(0)$ $T^h_\pm(1)$ are $L_\pm$ and $T_\pm$ operators acting on the first and second particle. Note that in this configuration, we have only one plaquette and one vertex, we will only need to define two types of operators on the lattice, indexed by elements of $G$. For $g,h \in G$ we have:
+	\begin{equation}
+	\begin{aligned}
+	A_g &= L^g_+(0) L^g_+(1) L^g_-(0) L^g_-(1)\\
+	P_h &= \sum_{h_1h_2h_3h_4=h} T^{h_1}_+(0) T^{h_2}_+(1) T^{h_3}_-(0) T^{h_4}_-(1)
+	\end{aligned}
+	\end{equation}
+	As for the general case those operators generate the algebra $DG$, and states of the overall system live in a representation of $DG$.
+	Note that because we chose our lattice to be trivial, the overall dimension of the system is at most $|G|^2$ and we cannot obtain higher dimensional representations. Even if the system is in a non-trivial representation, we cannot really braid anyons as there is no space to move excitations around each other.
 \end{example}
+
+\subsubsection{Generalising the model}
+We will now try to generalize the above construction to the cases where the Hopf algebra $H$ is not a group algebra. We will wait before 'bending cables' (i.e using the dual hopf algebra) to see how far we can go without making too many assumptions on $H$. This will provide an interesting illustration of the proof given in the previous chapter [ref section]. Interpreted in this physical context, the Drinfeld construction can be understood as imposing global (or topological) dependencies on the particles under consideration (e.g in  the form of a Hamiltonian as the one considered by Kitaev) giving rise to anyonic behaviour.\\
+As above, we have an oirented lattice on a $2D$ oriented manifold with particles on the edges taking values in $H$. 
+Let $\mathcal{L}_a$ be the state space of particles at some site $a=(s,p)$ (i.e the particles on edges adjacent to $s$ or $p$ with some order that we give below). We will define a left $H$-module and a left $H$-comodule structure on $\mathcal{L}_a$ and show those satisfy the left-left Yetter-Drinfeld module compatibility condition.\\
+Analogously to \cite{Kitaev03} we first define an $H$-module structure $L$, for $j \in star(s) \cup bound(p)$ given by $L_-$ from (\ref{Lmoduleaction}) if $s$ is the origin of $j \in star(s)$, by $L_+$ if $j$ is not the origin and $j \in star(s)$ and the trivial $H$-module otherwise. The $H$-comodule structure is given by the $T_+$ action from (\ref{Tmodulecoaction}) if $p$ is on the right of $j$, by $T_-$ if it is on the left and by the trivial $H$-comodule otherwise. In his model, Kitaev only needed to order the edges in $bound(p)$ because the comultiplication of $\mathbb{C}G$ is just the copy map, here we will need some more conventions on the ordering of the edges.\\
+We have $bound(p)= \{j_1, j_2,..., j_k\}$ starting and ending at vertex $s$, then order $star(s)=\{i_1, i_2, ..., i_n\}$ where $i_1=j_1$ and $i_n=j_k$ also note that we have $4$ possible configurations of vertex $s$ adjacent to plaquette $p$ and we can choose which of the edges is $j_1$ and which is $j_k$. We choose as follows:
+\begin{center}
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+	\node at (-0.1,0.2) {$s$};
+	\node at (0.2,-0.5) {$p$};
+	\node at (-0.6, -0.3) {$j_1$};
+	\node at (0.6, 0.2) {$j_k$};
+	\draw[postaction=decorate] (0,0)--(0.8,0);
+	\draw[postaction=decorate] (0,0)--(-0.6,-0.6);
+	\end{tikzpicture}
+	\quad
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+	\node at (-0.1,0.2) {$s$};
+	\node at (0.2,-0.5) {$p$};
+	\node at (-0.6, -0.3) {$j_k$};
+	\node at (0.6, 0.2) {$j_1$};
+	\draw[postaction=decorate] (0,0)--(0.8,0);
+	\draw[postaction=decorate] (-0.6,-0.6)--(0,0);
+	\end{tikzpicture}
+	\quad
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+	\node at (-0.1,0.2) {$s$};
+	\node at (0.2,-0.5) {$p$};
+	\node at (-0.6, -0.3) {$j_1$};
+	\node at (0.6, 0.2) {$j_k$};
+	\draw[postaction=decorate] (0.8,0)--(0,0);
+	\draw[postaction=decorate] (-0.6,-0.6)--(0,0);
+	\end{tikzpicture}
+	\quad
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+	\node at (-0.1,0.2) {$s$};
+	\node at (0.2,-0.5) {$p$};
+	\node at (-0.6, -0.3) {$j_1$};
+	\node at (0.6, 0.2) {$j_k$};
+	\draw[postaction=decorate] (0.8,0)--(0,0);
+	\draw[postaction=decorate] (0,0)--(-0.6,-0.6);
+	\end{tikzpicture}
+\end{center}
+Then we can define $\mathcal{L}_a= H_{j_1} \otimes ... \otimes H_{j_{k-1}} \otimes H_{i_2} \otimes ... \otimes H_{i_n}$ where $H_m$ is the copy of $H$ corresponding to edge $m$. Each of the $H_m$'s carries a left $H$-module and left $H$-comodule structure as defined above so that $\mathcal{L}_a$ inherits the tensor product $H$-module (given by using the comultiplication of $H$) and tensor product $H$-comodule structure (using the multiplication).
+We obtain the following result.
+\begin{theorem}
+	If the antipode of $H$ is involutive, then $\mathcal{L}_a$ is a left-left Yetter Drinfeld module.
+\end{theorem} 
+\begin{proof}
+	We need to check the compatibility condition. First note that for all components of $\mathcal{L}_a$ except the first and last one, the $H$-action and $H$-coaction commute (as one of them is trivial). In order to keep our diagrams tidy we will only prove this for the case where $\mathcal{L}_a=H_{j_1} \otimes H_{j_k}$ (i.e $j=n=2$), but it is easy to generalize the proof as all other components would trivially commute.\\
+	For the first configuration we have:
+	
+\end{proof}
+Note that this doesn't require the Hopf algebra to be finite dimensional. If $H=\mathbb{C}G$ then we recover the $DG$-module structure defined by Kitaev from the equivalence seen in the section on the Drinfeld center.
 
 \subsection{Permutational Quantum Computing}
 This section is about a model of quantum computation introduced by Jordan \cite{Jordan09}. We will first introduce the model as it appears in \cite{Jordan09} and then give a categorical presentation not present in the literature which will allow us to generalize the model and compare it to other computational models.
@@ -4553,20 +4877,18 @@ We can easily see that defining $\mathcal{J}_d := Rep(SU(d))$ we obtain the corr
 	of the link complement to the group G. (cite Zhenghan?)
 \end{example}
 
+\subsubsection{Can we boost PQC?}
+Note that if $\mathbb{C}SU(2)$ is an infinite dimensional hopf algebra with involutive antipode. In view of the generalization of Kitaev's model, it is a natural question to ask whether we can apply the same reasoning here, to obtain a model induced by Jordan's model which exhibits topological dependencies. This means applying the Drinfeld center construction to $J_2$ or in other words adding an $SU(2)$ coaction to obtain a theory of $SU(2)$ Yetter-Drinfeld modules. It is not known to the reader whether such model is implementable in practice, but in theory the reasoning works. Indeed, consider
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{A braided representation of quantum computation}
 For an abelian group $G$, we have seen that $Rep(DG)$ doesn't contain enough states to model preparations and measurements. But we will see that for suitably chosen $G$, $Rep(DG)$ contains a universal set of gates as braids. In this section we use functorial boxes \cite{Mellies06} to map the braided pictures in $Rep(DG)$ down to $Hilb$ and obtain a braided representation of quantum gates. This will allow us to to describe preparations and measurements in $Hilb$ and quantum gates as boxed braids from $Rep(DG)$.\\
 We know from [drinfeld center section] that $Rep(DG) \simeq \mathcal{D}_G^{lr}$, so specifying an object of $Rep(DG)$ just corresponds to choosing a vector space $V$ with a left $G$-module structure  and right $G$-comodule structure.\\
 Let $G:= \mathbb{Z}_2$, the reason why we chose this group will become apparent later on, many other choices are possible. Let us denote the standard basis of $\mathbb{C}G$ by $\{ \ket{0}, \ket{1}\}$. This has natural Hopf algebra structure with multiplication given by $\ket{i}\otimes \ket{j} \mapsto \ket{i+j}$ (where $+$ is addition modulo $2$) and comultiplication given by the copy map $\ket{i} \mapsto \ket{i}\otimes \ket{i} $.\\
-We now choose a two-dimensional object of $Rep(DG)$ to serve as our qubit. Take $V=\mathbb{C}^2$ with the $Z$ $G$-action and $X$ $G$-coaction.
-
-
-
+We now choose a two-dimensional object of $Rep(DG)$ to serve as our qubit. Take $V=\mathbb{C}^2$ with the $Z$ $G$-action (i.e $Z$-phases) and $X$ $G$-coaction (i.e $X$ projective measurement).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Conclusion}
 
 \bibliographystyle{unsrt}
 \bibliography{refs}
