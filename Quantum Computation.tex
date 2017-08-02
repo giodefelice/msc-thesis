@@ -542,10 +542,10 @@
 \subsection{Topological Quantum Computation}
 
 \subsubsection{From categories to computation}
-In the previous section we saw that categories can be interpreted as physical process theories. In a very similar way, we can interpret objets as data types and morphisms as computational processes, so that any category corresponds to a theory of computation. Monoidal categories are ones where parallel computation is possible. Quantum computation is a model in which data is encoded in the state of quantum systems (particles) and processes are quantum transformations of the system. A computation consists of the preparation of some quantum states, their manipulation and measurement. This procedure is repeated in order to collect statistics and approximate density distributions. The unit of information in quantum computation is called qubit by analogy with the classical bit. A qubit is a two-level quantum system, that is a Hilbert space of dimension $2$ which is denote by $\mathbb{C}^2$\\
-Modular categories are models for topological quantum computation (TQC) in the sense of \cite{Kitaev03} or \cite{Rowell17}. TQC has been studied extensively in recent years as it allows for fault-tolerant quantum computation. In this model data is encoded in non-abelian anyons and quantum gates are obtained by braiding those particles. Topologically equivalent braids implement the same quantum process so that small perturbations of particle world-lines do not affect the computation and gates are topologically protected from decoherence.
-Another reason for studying topological quantum computation is that some TQC models allow to approximate the Jones polynomial in polynomial time, a problem that is believed to be untractable classically (it is in the complexity class $\# P$) .\\
-The problem of building a topological quantum computer has been addressed by various authors \cite{Kitaev03} [cite freedman]. The difficulty arises in the two-dimensional nature of anyons. Indeed those are only known to arise as quasi-particle excitations on two-dimensional fluids at low temperature, an experimentally difficult setup which was never achieved for non-abelian excitations.\\
+In the previous section we saw that categories can be interpreted as physical process theories. In a very similar way, we can interpret objets as data types and morphisms as computational processes, so that any category corresponds to a theory of computation. Monoidal categories are ones where parallel computation is possible. Quantum computation is a model in which data is encoded in the state of quantum systems and processes are quantum evolutions of the system. A computation consists of the preparation of some quantum states, their manipulation and measurement. Usually this procedure is repeated in order to collect statistics and approximate density distributions. The unit of information in quantum computation is called qubit by analogy with the classical bit. A qubit is a two-level quantum system, that is a Hilbert space of dimension $2$ which is denoted by $\mathbb{C}^2$. Similarly a qudit is a $d$ dimensional system $\mathbb{C}^d$.\\
+Modular categories are models for topological quantum computation (TQC) in the sense of \cite{Kitaev03} or \cite{Rowell17}. TQC has been studied extensively in recent years as it allows for fault-tolerant quantum computation. In this model data is encoded in non-abelian anyons and quantum gates are obtained by braiding those particles. Topologically equivalent braids implement the same quantum process so that small perturbations of particle world-lines do not affect the computation and gates (and quantum information) are topologically protected from decoherence.
+Another reason for studying topological quantum computation is that some TQC models allow to approximate the Jones polynomial in polynomial time, a problem that is believed to be untractable classically.\\
+The problem of building a topological quantum computer has been addressed by various authors \cite{Kitaev03} [cite freedman]. Non-abelian anyons have never been achieved experimentally, much of the difficulty arises in the two-dimensional nature of anyons.\\
 A topological quantum computer runs as follows \cite{Rowell17}:
 \begin{definition}[TQC]
 	\begin{enumerate}
@@ -554,11 +554,12 @@ A topological quantum computer runs as follows \cite{Rowell17}:
 		\item fusing neighbouring anyons and observing the resulting anyon type corresponds to a projective measurement on the system.
 	\end{enumerate}
 \end{definition}
-The computation result is the approximation to a probability distribution (over measurement outcomes) obtained by repeating the procedure polynomially many times and recording the output anyon types. Note that if we postselct on the vacuum sector to be the output anyon type we are effetively approximating an invariant of links. Indeed any process in TQC starting and ending in the vacuum sector is a link, formed by the particle trajectories in space-time (i.e the briading process). The time evolution of the system $V$ must be a unitary operator, so that any braiding process on $n$ particles induces the evaluation of some representation $\beta \rightarrow U_\beta$ of the braid group $B_n$.\\
-In order to make sure the braiding process is a unitary transformation of the state space we will impose one further constraint on our categorical model of computation: unitarity of the braids in the modular category in question.\\
-Take the fusion space to be our computational hilbert space.\\
-Topological qudits are usually encoded as fusion tree basis elements\\
-Topologial gates: braids (can express as action of the braid group) + measurements (=fusions and associators).
+The computation result is the approximation to a probability distribution (over measurement outcomes) obtained by repeating the procedure polynomially many times and recording the output anyon types. Note that if we postselct on the vacuum sector to be the output anyon type we are effetively approximating an invariant of links. Indeed any process in TQC starting and ending in the vacuum sector is a link, formed by the particle trajectories in space-time (i.e the briading process). The operations we can perform on a system $V$ are unitaries, so that any braiding process on $n$ particles induces the evaluation of some unitary representation $\beta \rightarrow U_\beta$ of the braid group $B_n$.\\
+In order to make sure the braiding process is a unitary transformation of the state space we will assume one further constraint on our categorical model of computation: unitarity of the braids in the modular category in question.\\
+\begin{definition}[UMC]
+	A unitary modular category (UMC) is a modular category where each component of the braiding is a unitary.
+\end{definition}
+Given a UMC $\cat$, we have a finite set of data types $I$ given by the isomorphism classes of simple objects in $\cat$. The topological qudit is usually encoded in some fusion space as follows. We usually fix some data type $a$ and consider the fusion of $n$ copies of $a$. We then choose some output type $b$ on which to post-select in order to obtain a fusion space $V := V_{a^{\otimes n}}^b = Hom(a^{\otimes n}, b)$ of dimension $d$. We can picture standard basis as labelled binary fusion trees with $b$ at the root and $a$ on the $n$ leaves. Each binary tree shape (with $n$ leaves) corresponds to a different bracketing of $a^{\otimes n}$ and usually yields distinct bases related to each other via $F$-moves. Braiding a pair of type $a$ anyons before fusing is an $R$-move. All computational processes on $V$ can be decomposed in sequences of $F$-moves (re-bracketing) and $R$-moves (braiding).
 
 \begin{example}[Fibonacci anyons]
 	We now look back at example [ref] on Fibonacci anyons and show how to compute in the model.
@@ -654,7 +655,7 @@ Topologial gates: braids (can express as action of the braid group) + measuremen
 \end{example}
 
 \subsubsection{Kitaev's quantum double model}
-Classiclaly, there are three phases of matter: solid, liquid and gas. As temperature decreases we move from gas phase to liquid and solid phases. Close to zero temperature, phases of matter are quantized and we obtain exotic behaviours of matter. These are contexts in which anyonic behaviour can arise. The models which we present here have first been introduced by Kitaev \cite{Kitaev03} and some special cases have been implemented experimentally on two dimensional materials at very low temperatures.\\
+The models which we present here have first been introduced by Kitaev \cite{Kitaev03} and some special cases have been implemented experimentally on two dimensional materials at very low temperatures.\\
 Suppose we have particles living in state space $H$ where $H$ is a Hopf algebra (with black multiplication, white comultiplication and antipode $S$ as usual). We can define two canonical types of left $H$-module structures on $H$ given by the right and left multiplication as follows:
 \begin{equation}\label{Lmoduleaction}
 	L_+ =
@@ -679,7 +680,7 @@ Suppose we have particles living in state space $H$ where $H$ is a Hopf algebra 
 	\end{tikzpicture}
 	\end{gathered}
 \end{equation}
-Right multiplication obviously defines a module by associativity, left multiplication also works because the antipode is an antialgebra morphism:
+Right multiplication defines a module by associativity, left multiplication also works because the antipode is an antialgebra morphism:
 \begin{equation}
 	\begin{gathered}
 	\begin{tikzpicture}[whit/.style={draw,regular polygon,
@@ -912,9 +913,9 @@ We then consider a lattice with oriented edges embedded in some $2D$ oriented ma
 	P_h(a) &= \sum_{h_1...h_k=h} \prod_{m=1}^{k} T^{h_m}(j_m,p)
 	\end{aligned}
 \end{equation}
-We will write the general diagrammatic form of these operators in the next section. For the moment let us go through Kitev's reasoning.\\
+We will write the general diagrammatic form of these operators in the next section. For the moment let us go through Kitaev's reasoning \cite{Kitaev03}.\\
 From a physical point of view $P_h$ operators can be understood as measuring the magnetic flux of the system at some site and $A_g$ are local symmetry transformations on the charge. Flux measurements are projection $P_h \in \mathbb{C}G^*$ onto flux sector $h$. The allowed residual global symmetry transformations are then implemented via $A_g$ for $g \in N(h)$. \\
-Naturally the projectors form a Von Neumann family and satisfy 
+The projectors form a Von Neumann family and satisfy 
 $$P_hP_{h'}= \delta_{h,h'} P_h.$$ 
 Operators $A_g$ are global symmetry transformation 
 $$A_gA_h = A_gh$$
@@ -924,11 +925,11 @@ A_gP_h = P_{ghg^{-1}}A_g
 \end{equation}
 (this was shown was shown by Kitaev \cite{Kitaev03}). Operators $A_g$ and $P_h$ generate the algebra $DG$. So the quantum double construction allows to capture both global symmetry transformations and projective measurements in one algebraic structure. It is easy to check, rewriting the definition, that the following is true. 
 \begin{proposition}
-	For any finite group $G$, its quantum double $D(G)$ is the algebra generated by $\{P_hA_g\}_{h,g\in G}$ with multiplication induced by (\ref{doublemult}) comultiplication and antipode as defined in [first section]. 
+	For any finite group $G$, its quantum double $D(G)$ is the algebra generated by $\{P_hA_g\}_{h,g\in G}$ with multiplication induced by (\ref{doublemult}), comultiplication and antipode as defined in [first section]. 
 \end{proposition}
 $D(G)$ has a natural quasi-triangular structure witnessed by the universal R-matrix $R=\sum_{g,h \in G}P_he \otimes P_hg$, making $RepDG$ braided.\\
 Kitaev then builds a Hamiltonian for the system and shows that the ground state of the Hamiltonian is an irreducible representations of $DG$. Here we will skip this part of the reasoning and rely on the intuition that the operators $A_g$ and $P_h$ correspond to the symmetries of the system, i.e the dynamics which are `constantly being applied'. So the allowed processes of the systems are processes that commute with all of those operators, i.e the system lives in a representation of $DG$. The ground state of the Hamiltonian has degeneracy $4^g$ where $g$ is the genus of the surface in which we embedded the lattice.\\
-In the case of a sphere, $g=0$, so there is no degeneracy and the overall system lives in a one dimensional (trivial) representation of $DG$, the vacuum sector. An excitation can arise at some site on the lattice when the constraints given by the Hamiltonian are violated. In representation theoretic terms this corresponds to the creation of a state of some higher dimensional irreducible representation of $DG$. Those excitations (or quasi-particles) are anyons and can only be created in pairs. When the lattice is `layered' enough (i.e contains many particles) we can move those excitations on the lattice (practically this is done by applying charge and flux operators at given sites on the lattice). All the excitations can then be fused pairwise to end back in the vacuum sector and obtain fusion results. There are different possible types of excitations (anyon flavours) we can create on the lattice, corresponding to different ways violation of the constraints. These are precisely indexed by the irreducible representations of $DG$. We can see that we have obtained a physical setting giving rise to anyons whose behaviour is modeled by the modular category $Rep(DG)$.\\
+In the case of a sphere, $g=0$, so there is no degeneracy and the overall system lives in a one dimensional (trivial) representation of $DG$, the vacuum sector. An excitation can arise at some site on the lattice when the constraints given by the Hamiltonian are violated. In representation theoretic terms this corresponds to the creation of a state of some higher dimensional irreducible representation of $DG$. Those excitations (or quasi-particles) are anyons and can only be created in pairs (particle-antiparticle pairs). When the lattice is `layered' enough (i.e contains many particles) we can move those excitations on the lattice (practically this is done by applying charge and flux operators at given sites on the lattice). All the excitations can then be fused pairwise to end back in the vacuum sector and obtain fusion results. There are different possible types of excitations (anyon flavours) we can create on the lattice, corresponding to different possible violations of the constraints. These are precisely indexed by the irreducible representations of $DG$. We can see that we have obtained a physical setting giving rise to anyons whose behaviour is modeled by the modular category $Rep(DG)$.\\
 In order to understand the possible anyon types in the model, we must study the irreducible representations of the quantum double finite group algebra $DG$. This has been done by Gould \cite{Gould93}, who showed that irreducible representations of $DG$ are obtained in the following way.\\
 Let $\{C_i\}_{i=1}^n$ be the distinct conjugacy classes in $G$. To each of those conjugacy classes corresponds a centralizer subgroup $N_i$ (two choices of representatives for $C_i$ yield isomorphic centralizer subgroups). Then for any irreducible representation $(\alpha,V^i_\alpha)$ of $N_i$ with basis elements $v^\alpha_j$, let $V_{i,\alpha} = \mathbb{C}C_i \otimes V^i_\alpha$, this has basis $\{ \ket{k,v^\alpha_j} \}_{j=1,...,dim\alpha}^{k\in C_i}$ and forms an irreducible representation of $D(G)$ under the action 
 \begin{equation}
@@ -1181,6 +1182,7 @@ Note that this doesn't require the Hopf algebra to be finite dimensional. If $H=
 This section is about a model of quantum computation introduced by Jordan \cite{Jordan09}. We will first introduce the model as it appears in \cite{Jordan09} and then give a categorical presentation not present in the literature which will allow us to generalize the model and compare it to other computational models.
 
 \subsubsection{Jordan's model}
+This section was developed with Vojtech Havlicek and is based on \cite{Havlicek17} and \cite{Jordan09}.
 Let $\mathcal{L}$ be an $n$-qubit quantum system. Basis states of an $n$-qubit quantum systems are often specified by listing eigenvalues of Pauli-$Z$ operators applied to each qubit, which is known as computational basis.
 Permutational quantum computing (PQC) works with another choice of basis states: eigenstates of complete set of commuting spin measurements on qubit subsets. Let us fix a finite set $I=\{1,2,3...,n\}$ indexing the qubits. With a convention that $\hbar = 1$, the spin of the $k$-th qubit is defined by a triple:
 \begin{align*}
@@ -1199,7 +1201,7 @@ S^2  \ket{J, \, M} = J (J +1 ) \ket{J, \, M},  \\
 Z \ket{J, \, M} = M \ket{J, \, M},
 \end{equation} 
 where $J$ is the total spin of all qubits and $M$ takes values $ -J \leq M \leq J$ in an integer steps. There are therefore $2J + 1$ $Z$-operator eigenstates for each $J$ and we will refer to this degeneracy as $M$-degeneracy. \\
-Now, it is easy to see that the operators $S_A^2$ and $S_B^2$ on sets $A, B$ commute if and only if $A$ and $B$ are disjoint or one is subset of the other. We can therefore give a complete set of commuting operators on $I$:
+Now, the operators $S_A^2$ and $S_B^2$ on sets $A, B$ commute if and only if $A$ and $B$ are disjoint or one is subset of the other. We can then give a complete set of commuting operators on $I$:
 \begin{equation} \label{comS}
 S_{\lbrace12\rbrace}^2, \, S_{\lbrace123\rbrace}^2, \, \ldots S^2, \, Z
 \end{equation}
@@ -1212,7 +1214,7 @@ j_{A \cup B} + j_A + j_B & \in \mathbb{Z},
 For example if $n=3$, there are two ways to obtain $J=\frac{1}{2}$ eigenstate of three spins - either by adding a qubit to a two-qubit singlet $(J=0)$ state, or by adding a qubit to a triplet $(J=1)$ \cite{Pauncz67}.
 We can picture those states as labeled binary trees with $n$ leaves, which we refer to as labeled recoupling diagrams. For instance, for $n=3$ we have:
 
-Note that the shape of those binary trees is induced by the choices (\ref{comS}). Every rooted binary tree shape with $n$ leaves (which we will refer to as recoupling diagram) yields a different choice of complete set of commuting observables, and therefore a different choice of basis for $\mathcal{L}$. And clearly there are $2^n$ of labelled recoupling diagrams for every recoupling diagram, one for each basis state.
+Note that the shape of those binary trees is induced by the choices (\ref{comS}). Every rooted binary tree shape with $n$ leaves (which we will refer to as recoupling diagram) yields a different choice of complete set of commuting observables, and therefore a different choice of basis for $\mathcal{L}$. And there are $2^n$ labelled recoupling diagrams for every recoupling diagram, one for each basis state.
 A computation in PQC is given by the following procedure:
 \begin{definition}[PQC]\label{pqcomputation} 
 	Given a permutation $\pi$: %and an error threshold $\epsilon$:
@@ -1225,9 +1227,40 @@ A computation in PQC is given by the following procedure:
 \end{definition}
 In his paper \cite{Jordan09}, Jordan shows that PQC can approximate the irreducible representations of the symmetric group in polynomial tyme. This is a relatively surprising result as this problem no classical polynomial time algorithm is known that solves the same problem. This hints that although the the PQC model seems trivial in comparison with other quantum computation models it is still superior to classical computation. Any PQC computation (\ref{pqcomputation}), corresponds to a sequence of phase and racah moves.
 \begin{definition}[Phase and Racah moves]
+	\begin{itemize}
+		\item A phase move is obtained by swapping adjacent particles, diagrammatically we picture it as:
+		\begin{equation}
+			\begin{gathered}
+			\begin{tikzpicture}
+			\node (0) at (0.5, -0.3) {$j_{A\cup B}$};
+			\node (0) at (-0.7, 0.5) {$j_A$};
+			\node (0) at (0.7, 0.5) {$j_B$};
+			\draw (-0.5, 0.7)--(0,0)--(0,-0.5);
+			\draw (0.5, 0.7)--(0,0);
+			\end{tikzpicture}
+			\end{gathered}
+			\mapsto
+			(-1)^{j_A+j_B-j_{A \cup B}}
+			\begin{gathered}
+			\begin{tikzpicture}
+			\node (0) at (0.5, -0.3) {$j_{A\cup B}$};
+			\node (0) at (-0.7, 0.5) {$j_A$};
+			\node (0) at (0.7, 0.5) {$j_B$};
+			\draw [bend right=80, looseness=1.5] (0,0) to (0,0.4);
+			\draw [bend left=80, looseness=1.5] (0,0) to (0,0.4);
+			\draw (0,0)--(0,-0.5);
+			\draw (0.5, 0.7)--(0,0.4)--(-0.5, 0.7);
+			\end{tikzpicture}
+			\end{gathered}
+		\end{equation}
+		\item Racah moves (or $F$-moves):
+		\begin{equation}
+			\mapsto \sum_{f = |j_A - j_B|}^{j_A+j_B}  F^{j_A,\, j_B, \, f}_{j_C, \, j_{ABC}, \, j_{BC}} 
+		\end{equation}
+	\end{itemize}
 \end{definition}
 \begin{theorem}[Biedenharn-Louck \cite{Aquilanti09}] 
-	Let $A,B,C$ be disjoint sets of qubits and use the shorthand $AB := A \cup B$.
+	Let $A,B,C$ be disjoint sets of qubits.
 	Any quantum state corresponding to a labelled recoupling diagram can be transformed to a superposition of sequentially coupled labelled recoupling diagram states using a $poly(n)$ sequence of Racah and Phase moves.
 \end{theorem}
 Those moves have a general categorical description as we will see.
@@ -1280,9 +1313,7 @@ Note that if $SU(2)$ is an infinite dimensional hopf algebra with involutive ant
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{A braided representation of quantum computation}
 Recall our discussion on functorial semantics. We talked about categories representing syntax (such as $PROs$ and $PROPs$) and smenatic categories (such as $Vect$ or $Sets$). The category $Rep(DG)$ is a category which we filled with meaning and we have used it as a semantic category so far. Syntax and semantics are relative notions, in this section we forget all the meaning we associated to the category $Rep(DG)$ (e.g as a theory of anyons, as a model for Kitaev's lattice construction, as aboosting of PQC etc...) and we just see it as a syntax for diagrams which we will interpret in $Vect$.\\
-
-
-We will use functorial boxes \cite{Mellies06} to map the braided pictures in $\cat := Rep(DG)$ down to $Vect$ and obtain a braided representation of quantum gates. We will give a description of quantum computation in the ambient world o vector spaces, but using pictures borrowed from $\cat$. Preparations and measurements will be performed in $Vect$ and quantum gates described by boxed braids from $\cat$. The description looks like this:
+We will use functorial boxes \cite{Mellies06} to map the braided pictures in $\cat := Rep(DG)$ down to $Vect$ and obtain a braided representation of quantum gates. We will give a description of quantum computation in the ambient world of vector spaces, but using pictures borrowed from $\cat$. Preparations and measurements will be performed in $Vect$ and quantum gates described by boxed braids from $\cat$. The description looks like this:
 \begin{center}
 	\begin{tikzpicture}
 		\node at (-0.2,-0.4) {$Vect$};
@@ -1347,7 +1378,7 @@ Consider the forgetfull functor $U: Rep(DG) \rightarrow Vect$. It just picks the
 \end{tikzpicture}
 \end{gathered}
 \end{equation}
-This is a well defined $\mathbb{C}\mathbb{Z}_2$-module structure as $-1 \in mathbb{Z}_2$ and the comultiplication of $\mathbb{C}\mathbb{Z}_2$ is precisely the map that copies elements of $\mathbb{Z}_2$. Then braiding $V$ with $\pi$ gives the following:
+This is a well defined $\mathbb{C}\mathbb{Z}_2$-module structure as $-1 \in \mathbb{Z}_2$ and the comultiplication of $\mathbb{C}\mathbb{Z}_2$ is precisely the map that copies elements of $\mathbb{Z}_2$. Then braiding $V$ with $\pi$ gives the following:
 \begin{equation}
 \begin{gathered}
 \begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,

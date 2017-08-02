@@ -6,45 +6,45 @@ Database file #1: refs.bib
 Warning--I didn't find a database entry for "Woit17"
 Warning--I didn't find a database entry for "Pauncz67"
 Warning--I didn't find a database entry for "Aquilanti09"
-You've used 7 entries,
+You've used 8 entries,
             1791 wiz_defined-function locations,
-            500 strings with 4405 characters,
-and the built_in function-call counts, 1229 in all, are:
-= -- 104
-> -- 40
+            505 strings with 4534 characters,
+and the built_in function-call counts, 1360 in all, are:
+= -- 115
+> -- 44
 < -- 3
-+ -- 17
-- -- 10
-* -- 50
-:= -- 208
-add.period$ -- 21
-call.type$ -- 7
-change.case$ -- 6
++ -- 19
+- -- 11
+* -- 53
+:= -- 228
+add.period$ -- 24
+call.type$ -- 8
+change.case$ -- 7
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 70
-empty$ -- 129
-format.name$ -- 10
-if$ -- 281
+cite$ -- 8
+duplicate$ -- 75
+empty$ -- 147
+format.name$ -- 11
+if$ -- 312
 int.to.chr$ -- 0
-int.to.str$ -- 7
+int.to.str$ -- 8
 missing$ -- 7
-newline$ -- 38
-num.names$ -- 9
-pop$ -- 24
+newline$ -- 43
+num.names$ -- 10
+pop$ -- 30
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 33
+skip$ -- 36
 stack$ -- 0
 substring$ -- 30
-swap$ -- 19
+swap$ -- 20
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 12
-width$ -- 8
-write$ -- 75
+while$ -- 13
+width$ -- 9
+write$ -- 85
 (There were 3 warnings)

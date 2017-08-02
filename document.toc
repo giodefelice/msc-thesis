@@ -11,12 +11,12 @@
 \contentsline {section}{\numberline {4}Quantum Computation}{37}
 \contentsline {subsection}{\numberline {4.1}Topological Quantum Computation}{37}
 \contentsline {subsubsection}{\numberline {4.1.1}From categories to computation}{37}
-\contentsline {subsubsection}{\numberline {4.1.2}Kitaev's quantum double model}{39}
-\contentsline {subsubsection}{\numberline {4.1.3}Generalising the model}{43}
-\contentsline {subsection}{\numberline {4.2}Permutational Quantum Computing}{44}
-\contentsline {subsubsection}{\numberline {4.2.1}Jordan's model}{44}
-\contentsline {subsubsection}{\numberline {4.2.2}Categorical PQC}{46}
-\contentsline {subsubsection}{\numberline {4.2.3}Can we boost PQC?}{48}
-\contentsline {subsection}{\numberline {4.3}A braided representation of quantum computation}{48}
-\contentsline {section}{\numberline {A}Tensor categories}{49}
-\contentsline {section}{\numberline {B}Fusion categories}{50}
+\contentsline {subsubsection}{\numberline {4.1.2}Kitaev's quantum double model}{40}
+\contentsline {subsubsection}{\numberline {4.1.3}Generalising the model}{44}
+\contentsline {subsection}{\numberline {4.2}Permutational Quantum Computing}{45}
+\contentsline {subsubsection}{\numberline {4.2.1}Jordan's model}{45}
+\contentsline {subsubsection}{\numberline {4.2.2}Categorical PQC}{47}
+\contentsline {subsubsection}{\numberline {4.2.3}Can we boost PQC?}{49}
+\contentsline {subsection}{\numberline {4.3}A braided representation of quantum computation}{50}
+\contentsline {section}{\numberline {A}Tensor categories}{52}
+\contentsline {section}{\numberline {B}Fusion categories}{53}
