@@ -1,0 +1,160 @@
+\begin{thebibliography}{10}
+
+\bibitem{Baez98}
+J.~Baez and D.~James.
+\newblock Categorification.
+\newblock {\em eprint arXiv:math/9802029}, 1998.
+
+\bibitem{Rowell17}
+E.~Rowell and W.~Zhenghan.
+\newblock Mathematics of topological quantum computing.
+\newblock {\em eprint arXiv:1705.06206}, 2017.
+
+\bibitem{MacLane71}
+S.~{Mac Lane}.
+\newblock {\em Categories for the working mathematician}.
+\newblock Springer Verlag, 1971.
+
+\bibitem{Abramsky11}
+S.~Abramsky and N.~Tzevelekos.
+\newblock {\em Introduction to Categories and Categorical Logic}, volume 813 of
+  {\em New Structures for Physics, Lecture Notes in Physics}.
+\newblock Springer-Verlag Berlin Heidelberg, 2011.
+
+\bibitem{Etingof15}
+P.~Etingof, S.~Gelaki, D.~Nikshych, and V.~Ostrik.
+\newblock {\em Tensor Categories}, volume 205 of {\em Mathematical Surveys and
+  Monographs}.
+\newblock American Mathematical Society, 2015.
+
+\bibitem{Coecke17}
+B.~Coecke and A.~Kissinger.
+\newblock {\em Picturing Quantum Processes}.
+\newblock Cambridge University Press, 2017.
+
+\bibitem{Vicary12}
+J.~Vicary and C.~Heunen.
+\newblock Lectures on categorical quantum mechanics, 2012.
+\newblock https://www.cs.ox.ac.uk/files/4551/cqm-notes.pdf.
+
+\bibitem{Lawvere63}
+F:~W. Lawvere.
+\newblock {\em Functorial semantics of algebraic theories}.
+\newblock PhD thesis, Columbia University, 1963.
+
+\bibitem{Mueger12}
+M.~Mueger.
+\newblock Modular categories.
+\newblock http://www.math.ru.nl/~mueger/PDF/oxford.pdf, 2012.
+
+\bibitem{Majid95}
+Sh. Majid.
+\newblock {\em Foundations of Quantum Group Theory}.
+\newblock Cambridge University Press, 1995.
+
+\bibitem{Slingerland02}
+J.~K. Slingerland.
+\newblock {\em Hopf symmetry and its breaking: braid statistics and confinement
+  in planar physics}.
+\newblock PhD thesis, Universiteit van Amsterdam, 2002.
+
+\bibitem{Drinfeld87}
+V.~Drinfeld.
+\newblock {\em Quantum groups}.
+\newblock American Mathematical Society, 1987.
+
+\bibitem{Gould93}
+M.~Gould.
+\newblock Quantum double finite group algebras and their representations.
+\newblock {\em Bulletin of the Australian Mathematical Society}, 1993.
+
+\bibitem{Vercruysse12}
+J.~Vercruysse.
+\newblock Hopf algebras, variant notions and reconstruction theorems.
+\newblock {\em eprint arXiv:1202.3613}, 2012.
+
+\bibitem{Joyal91}
+A.~Joyal and R.~Street.
+\newblock An introduction to tannaka duality and quantum groups.
+\newblock In {\em Category Theory}, volume 1488 of {\em Lecture Notes in
+  Methematics}, pages 413--492. Springer, Berlin, 1991.
+
+\bibitem{Abramsky04}
+S.~Abramsky and B.~Coecke.
+\newblock A categorical semantics of quantum protocols.
+\newblock {\em Proceedings of the 19th IEEE conference on Logic in Computer
+  Science}, 2004.
+
+\bibitem{Kitaev06}
+A.~Kitaev.
+\newblock Anyons in an exactly solved modeland beyond.
+\newblock {\em Annals Phys. 30}, pages 2--111, 2006.
+
+\bibitem{Simon16}
+S.~Simon.
+\newblock Toplogical quantum.
+\newblock http://oxfordtopquantum.tiddlyspot.com/, 2016.
+
+\bibitem{Panangaden11}
+P.~Panangaden and E.~Paquette.
+\newblock {\em A categorical presentation of quantum computation with anyons},
+  volume 813 of {\em Lecture Notes in Physics}.
+\newblock Springer Berlin Heidelberg, 2011.
+
+\bibitem{Mueger02}
+M.~Mueger.
+\newblock On the structure of modular categories.
+\newblock {\em eprint arXiv:math/0201017}, 2002.
+
+\bibitem{Bakalov00}
+B.~Bakalov and A.~Kirillov.
+\newblock {\em Lectures on tensor categories and modular functors}, volume~21
+  of {\em University Lectures Series}.
+\newblock American Mathematical Society, 2000.
+
+\bibitem{Balsam12}
+B.~Balsam and A.~Kirillov.
+\newblock Kitaev's lattice model and turaev-viro tqfts.
+\newblock {\em eprint arXiv:1206.2308}, 2012.
+
+\bibitem{Handzihasanovic}
+Private communication, May 2017.
+
+\bibitem{Kitaev03}
+A.~Kitaev.
+\newblock Fault-tolerant quantum computation by anyons.
+\newblock {\em Annals Phys. 303}, pages 2--30, 2003.
+
+\bibitem{Jordan09}
+S.~P. Jordan.
+\newblock Permutational quantum computing.
+\newblock {\em Arxiv e-prints}, 2009.
+
+\bibitem{Havlicek17}
+Vojtech Havlicek.
+\newblock Search for computational advantage in permutational quantum
+  computing.
+\newblock unpublished (Term paper), April 2017.
+
+\bibitem{Mellies06}
+P.~Mellies.
+\newblock Functorial boxes in string diagrams.
+\newblock In Springer Verlag, editor, {\em Computer Science Logic}, pages
+  1--30, 2006.
+
+\bibitem{Mueger08}
+M.~Mueger.
+\newblock Tensor categories: A selective guided tour.
+\newblock {\em eprint arXiv:0804.3587}, 2008.
+
+\bibitem{Bartlett15}
+B.~Bartlett.
+\newblock Fusion categories via string diagrams.
+\newblock {\em eprint arXiv:1502.02882}, 2015.
+
+\bibitem{Freyd66}
+P.~Freyd.
+\newblock {\em Abelian Categories}.
+\newblock Harper & Row, 1966.
+
+\end{thebibliography}

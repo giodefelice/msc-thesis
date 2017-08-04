@@ -18,5 +18,5 @@
 \contentsline {subsubsection}{\numberline {4.2.2}Categorical PQC}{50}
 \contentsline {subsubsection}{\numberline {4.2.3}Can we boost PQC?}{51}
 \contentsline {subsection}{\numberline {4.3}A braided representation of quantum computation}{52}
-\contentsline {section}{\numberline {A}Tensor categories}{54}
-\contentsline {section}{\numberline {B}Fusion categories}{56}
+\contentsline {section}{\numberline {A}Tensor categories}{56}
+\contentsline {section}{\numberline {B}Fusion categories}{57}
