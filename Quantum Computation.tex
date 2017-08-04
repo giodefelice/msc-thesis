@@ -1179,10 +1179,9 @@ Note that this doesn't require the Hopf algebra to be finite dimensional. If $H=
 {\color{blue} [Is there a categorical description of the Hamiltonian formalism that we could use here, in order to obtain the more concrete formulation of Kitaev \cite{Kitaev03}]}\\
 
 \subsection{Permutational Quantum Computing}
-This section is about a model of quantum computation introduced by Jordan \cite{Jordan09}. We will first introduce the model as it appears in \cite{Jordan09} and then give a categorical presentation not present in the literature which will allow us to generalize the model and compare it to other computational models.
+Permutational quantum computing is a model of quantum computation introduced by Jordan \cite{Jordan09}. This section was developed in collaboration with Vojtech Havlicek, (\ref{jordansection}) is based on \cite{Havlicek17} and \cite{Jordan09}. We will first introduce the model and then give a categorical presentation not present in the literature which will allow us to generalize the model and compare it to other computational models.
 
-\subsubsection{Jordan's model}
-This section was developed with Vojtech Havlicek and is based on \cite{Havlicek17} and \cite{Jordan09}.
+\subsubsection{Jordan's model}\label{jordansection}
 Let $\mathcal{L}$ be an $n$-qubit quantum system. Basis states of an $n$-qubit quantum systems are often specified by listing eigenvalues of Pauli-$Z$ operators applied to each qubit, which is known as computational basis.
 Permutational quantum computing (PQC) works with another choice of basis states: eigenstates of complete set of commuting spin measurements on qubit subsets. Let us fix a finite set $I=\{1,2,3...,n\}$ indexing the qubits. With a convention that $\hbar = 1$, the spin of the $k$-th qubit is defined by a triple:
 \begin{align*}

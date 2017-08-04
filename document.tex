@@ -325,7 +325,52 @@
 	\draw[bend left] (0) to (2);
 	\draw[bend left] (2) to (1);
 	\draw (0,-0.5) to (0);
-	\draw (0,1.5) to (1);
+	\draw (0,2) to (1);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+}
+\newcommand{\skewhopflaw}{
+	\begin{equation}
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, squr/.style={scale=0.5,draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5,draw,circle,fill=white] (0) at (0,0) {};
+	\node[scale=0.5,draw,circle,fill=black] (1) at (0,1.5) {};
+	\node[squr,scale=0.7] (2) at (0.5,0.5) {$\bar{S}$};
+	\draw[bend left=80] (0) to (0,1);
+	\draw[bend right=70] (0,1) to (1);
+	\draw[bend right] (0) to (2);
+	\draw[bend right] (2) to (0,1);
+	\draw[bend left=70] (0,1) to (1);
+	\draw (0,-0.5) to (0);
+	\draw (0,2) to (1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5,draw,circle,fill=white] (0) at (0,0) {};
+	\node[scale=0.5,draw,circle,fill=black] (1) at (0,1.5) {};
+	\draw (0,-0.5) to (0);
+	\draw (0,2) to (1);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.8, squr/.style={scale=0.5,draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node[scale=0.5,draw,circle,fill=white] (0) at (0,0) {};
+	\node[scale=0.5,draw,circle,fill=black] (1) at (0,1.5) {};
+	\node[squr,scale=0.7] (2) at (-0.5,0.5) {$\bar{S}$};
+	\draw[bend right=80] (0) to (0,1);
+	\draw[bend left=70] (0,1) to (1);
+	\draw[bend left] (0) to (2);
+	\draw[bend left] (2) to (0,1);
+	\draw[bend right=70] (0,1) to (1);
+	\draw (0,-0.5) to (0);
+	\draw (0,2) to (1);
 	\end{tikzpicture}
 	\end{gathered}
 	\end{equation}
@@ -658,7 +703,8 @@ Given two functors with matching source and target we can have natural transform
 Recall that a monoid is a triple $(X, \times, 1)$ where $X$ is a set, $1 \in X$ and $\times$ is an associative and unital multiplication on $X$. The notion of a monoidal category is the categorification of a monoid. Elements of the set are replaced by objects in a category $\mathcal{C}$, multiplication by a bifunctor $\otimes: \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$ and the equalities in the unit and association axioms are replaced by natural isomorphisms. In order for this new structure to be well-behaved we will also need to impose compatibility conditions. We obtain the following definition:
 \begin{definition}[Monoidal category]
 A monoidal category is a category $\mathcal{C}$ equipped with a bifunctor $\otimes: \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$ called tensor product, an object $1$ called unit object, a natural isomorphism
-$$ a : -\otimes(- \otimes -) \xRightarrow{\sim} (-\otimes -) \otimes -$$ called associator, a natural isomorphism 
+$$ a : -\otimes(- \otimes -) \xRightarrow{\sim} (-\otimes -) \otimes -$$ 
+called associator, a natural isomorphism 
 $$\lambda: 1 \otimes (-) \Rightarrow (-)$$ called left unitor and a natural isomorphism
 $$ \rho: (-) \otimes 1 \Rightarrow (-)$$
 called right unitor. Subject to the following coherence conditions holding for all objects $a,b,c,d$ in $\mathcal{C}$:
@@ -1114,7 +1160,7 @@ The previous example gives the usual definition of a group algebra which, for fi
 In this case the comultiplication in $Hilb$ is the linearisation of the copy map (the copy map on some basis extended linearly to the whole Hilbert space) which is co-commutative. For a general $H:Hopf \rightarrow Vect$ this doesn't have to be the case. Hopf algebras provide a broader framework to talk about symmetry, as we can have non co-commutative Hopf algebras. We can see it as a quantization of the notion of symmetry, it will allow us to describe symmetries of quantum systems. Physically we will see that Hopf algebras allow to talk about local symmetries and exchange statistics on the same footing \cite{Slingerland02}. In particular if the Hopf algebra is not cocommutative the exchange statistics can be highly non-trivial, in which case they will describe the symmetries of anyons.
 The following two propositions are simple but important results about the antipode of a hopf algebra.
 \begin{proposition}
-	The antipode of a Hopf algebra is unique. It follows that being a Hopf algebra is a property of bialgebras. 
+	The antipode of a Hopf algebra is unique, i.e being a Hopf algebra is a property of bialgebras. 
 \end{proposition}
 \begin{proof}
 	Suppose $S$ and $S'$ are two antipodes for some Hopf algebra, then:
@@ -1214,7 +1260,9 @@ The following two propositions are simple but important results about the antipo
 	\end{gathered}
 	\end{equation}
 \end{proof}
-
+Some of the bialgebras have a skew antipode instead of an antipode. A skew antipode $\bar{S}$ is defined by the following axiom:
+\skewhopflaw
+It is easy to replicate the proof above for skew antipodes to see that it is a property of bialgebras too. Most of the Hopf algebras we will meet also have a skew antipode. In particular, it is a well-known fact that Hopf algebras with invertible antipode $S$ always have a skew antipode defined by $\bar{S}= S - S^{-1}$. Note that this argument applies to Hopf algebras, as they are models of $Hopf$ in $Vect$ where addition in the hom-sets is well-defined ($Vect$ is an abelian category, check the appendix) but it doesn't hold in general for models of the $Hopf$ $PROP$.
 \begin{proposition}
 	The antipode is an anti-(co)algebra homomorphism.
 	\begin{equation}
@@ -1867,7 +1915,7 @@ Given any finite dimensional hopf algebra $H$ with invertible antipode there is 
 	\end{itemize}
 	
 \end{definition}
-It is easy to check this is indeed a Hopf algebra and that it is quasitriangular with universal $R$-matrix:
+It is shown in \cite{Majid95} and \cite{Gould93} that this is indeed a Hopf algebra and that it is quasitriangular with universal $R$-matrix:
 \begin{center}
 	\begin{tikzpicture}[scale=0.7]
 		\node [scale=0.5, draw, circle, fill=white] (0) at (0,-0.3) {};
@@ -2976,7 +3024,8 @@ N_{ij}^k = \sum_{r\in I} \frac{S_{ir}S_{jr}S_{kr}}{S_{1r}}
 
 
 \subsection{The Drinfeld center}
-In this section we introduce a general construction that turns braided fusion categories into modular categories, and we show its relationship with the Quantum double construction on a Hopf Algebra introduced in the first chapter.\\
+In this section we introduce a general construction that turns braided fusion categories into modular categories, and we show its relationship with the Quantum double construction on a Hopf Algebra introduced in the first chapter.
+The proofs and results of this section were developed with Amar Handzihasanovic \cite{Handzihasanovic}.\\
 Topological dependencies between objects in fusion categories are captured by the braided structure. Let us fix some definitions before discussing the Drinfeld construction.
 \begin{definition}[Half-braiding]
 	A half-braiding on some object $X$ in a monoidal category $\cat$ is a natural isomorphism 
@@ -3082,6 +3131,10 @@ In general $Z(\cat)$ is not symmetric as we will see, but in the case of $Vect$ 
 	$$Z(Vect) \simeq Vect \boxtimes C_{Z(Vect)}(Vect)$$
 	But if $(A, e^A)$ is an object of $C_{Z(Vect)}(Vect)$ then any component $e^A_B$ must be the inverse of the symmetry morphism on $A\otimes B$ $\implies$ it must be the symmetry morphism $\implies$  $C_{Z(Vect)}(Vect)	\simeq Vect$ and so $Z(Vect) \simeq Vect$
 \end{proof} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+We now aim to prove theorems \ref{yetterdrinfeldtheorem} and \ref{interactingydtheorem} that relate Yetter-Drinfeld modules and the Drinfeld center construction.\\ 
 Fix a bialgebra $H$ and suppose $ \left( V, \begin{tikzpicture}[scale=0.5, squr/.style={draw,regular polygon,
 	regular polygon sides=4,fill=black}]
 \node [scale=0.3, squr] (0) at (0,0.4) {};
@@ -3102,7 +3155,7 @@ Note that $H$ has a natural $H$-module structure given by right multiplication. 
 In the arguments that follow we will use repeatedly the following trick which we state as a Lemma, it exploits the copy of $Vect$ which lives inside any category of representations.
 \begin{lemma}\label{lemma}
 	For any $W$ object of $Rep(H)$ with white action and $V$ with half braiding.
-	\begin{equation}
+	\begin{equation}\label{lemmap1}
 	\begin{gathered}
 	\begin{tikzpicture}[whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
@@ -3133,6 +3186,72 @@ In the arguments that follow we will use repeatedly the following trick which we
 	\draw (-0.3,0.9)--(0);
 	\draw (0) to (0,0);
 	\draw (0,0) to (0.3,-0.7);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+	\begin{equation}\label{lemmap2}
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node (0) at (0,0) {};
+	\node [scale=0.5,whit] (1) at (-0.2,-0.3) {};
+	\node (4) at (-0.7,-0.9) {$H$};
+	\node (5) at (-0.2,-0.9) {$W$};
+	\node (5) at (0.3,-0.9) {$V$};
+	\draw (-0.2,-0.7)--(1)--(0)--(0.4,0.7);
+	\draw[bend left] (4) to (1);
+	\draw  (0.3,-0.7) to (-0.3,0.7);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node (0) at (-0.1,0.3) {};
+	\node [scale=0.5,whit] (1) at (0.3,0.5) {};
+	\node (4) at (-0.7,-0.9) {$H$};
+	\node (5) at (-0.2,-0.9) {$W$}; 
+	\node (5) at (0.3,-0.9) {$V$};
+	\draw (-0.2,-0.7)--(1)--(0.4,0.9);
+	\draw[bend left] (4) to (0);
+	\draw (0) to (1);
+	\draw (-0.3,0.9)--(0,0);
+	\draw (0,0) to (0.3,-0.7);
+	\end{tikzpicture}
+	\end{gathered}
+	\end{equation}
+	\begin{equation}\label{lemmap3}
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node (0) at (0,0) {};
+	\node [scale=0.5,whit] (1) at (0.2,-0.3) {};
+	\node (4) at (0.2,-0.9) {$H$};
+	\node (5) at (0.7,-0.9) {$W$};
+	\node (6) at (-0.3,-0.9) {$V$};
+	\draw (0.2,-0.7)--(1)--(0)--(-0.4,0.7);
+	\draw (5) to (1);
+	\draw  (-0.3,-0.7) to (0.3,0.7);
+	\end{tikzpicture}
+	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, squr/.style={draw,regular polygon,
+		regular polygon sides=4,fill=black}]
+	\node (0) at (0,0) {};
+	\node [scale=0.5,whit] (1) at (-0.1,0.5) {};
+	\node (4) at (0.2,-0.9) {$H$};
+	\node (5) at (0.7,-0.9) {$W$};
+	\node (6) at (-0.3,-0.9) {$V$};
+	\draw (5)--(1)--(-0.4,0.9);
+	\draw [bend right=10] (4) to (0);
+	\draw [bend left=10] (0) to (1);
+	\draw (0.3,0.9)--(0,0);
+	\draw (0,0) to (-0.3,-0.7);
 	\end{tikzpicture}
 	\end{gathered}
 	\end{equation}
@@ -3191,7 +3310,7 @@ In the arguments that follow we will use repeatedly the following trick which we
 	\draw (0,-0.5)--(0,0.5);
 	\end{tikzpicture}
 	\end{gathered} \,\right) $$ 
-	is an intertwiner. And it follows from $Z(Vect)=Vect$ that it must be the $W$-component (where $W$ has the trivial action) of the half braiding on $V$ as $W$ lives in the copy of $Vect$ in $Rep(H)$.
+	is an intertwiner. And it follows from $Z(Vect)=Vect$ that it must be the $W$-component (where $W$ has the trivial action) of the half braiding on $V$ as $W$ lives in the copy of $Vect$ in $Rep(H)$. The equations then follow from naturality of the half -braiding.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Define a right coaction of $H$ on $V$:
@@ -3594,10 +3713,11 @@ Similarly we can define a functor $F_2: Z(Rep(H)) \rightarrow \mathcal{D}_H^{ll}
 	\end{equation}
 \end{proof}
 For the same reasons as for $F_1$, $F_2$ is faithful. To show $F_1$ and $F_2$ are equivalences of categories we still need to show they are full and essentially surjective.
-\begin{proposition}
-	$F_1$ and $F_2$ are full.
+\begin{proposition}\label{F12full}
+	If $H$ is a bialgebra, then $F_1: Z(Rep(H)) \rightarrow \mathcal{D}_H^{lr}$ and $F_2: Z(Rep(H)) \rightarrow \mathcal{D}_H^{ll}$ are full and faithful.
 \end{proposition}
 \begin{proof}
+	Note that in all previous claims and definitions we have only assumed that $H$ is a bialgebra. We have already shown that $F_1$ and $F_2$ are faithful, it remains to show they are full.\\
 	Suppose $f$ is a morphism $V \rightarrow W$ in $\mathcal{D}_H^{lr}$, then using the Lemma we see that for any $Z$ in $Rep(H)$ with gray $H$-action:
 	\begin{equation}
 	\begin{gathered}
@@ -3693,7 +3813,8 @@ For the same reasons as for $F_1$, $F_2$ is faithful. To show $F_1$ and $F_2$ ar
 	So $f$ commutes with the half braiding $\implies$ it is a morphism in $Z(Rep(H))$. Therefore $F_1$ is full. And a similar proof applies to $F_2$.	 
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{proposition}
+Until now we have only assumed $H$ is a bialgebra. 
+\begin{proposition}\label{antipodeprop}
 	If $H$ is a Hopf algebra, $F_1$ is essentially surjective.
 \end{proposition}
 \begin{proof}
@@ -3767,7 +3888,7 @@ For the same reasons as for $F_1$, $F_2$ is faithful. To show $F_1$ and $F_2$ ar
 	is an inverse by the hopf law. It is natural in $W$ as all morphisms are intertwiners (so they commute with the $H$-action on $W$). And it satisfies the compatibility condition by definition of $H$-comodule.
 	Clearly setting $W=H$ in (\ref{rightbraid}) with the natural left-multiplication action, and inserting \unit on the left of the tensor yields the $H$-coaction.
 \end{proof}
-\begin{proposition}
+\begin{proposition}\label{skewprop}
 	If $H$ has a skew antipode, $F_2$ is essentially surjective.
 \end{proposition}
 \begin{proof}
@@ -3822,163 +3943,240 @@ For the same reasons as for $F_1$, $F_2$ is faithful. To show $F_1$ and $F_2$ ar
 	\end{gathered}
 	\end{equation}
 \end{proof}
-\begin{corollary}
+We have proved the following theorem.
+\begin{theorem}\label{yetterdrinfeldtheorem}
 	If $H$ is a Hopf algebra then $Z(RepH) \simeq \mathcal{D}_H^{lr}$. If $H$ has a skew antipode then $Z(RepH) \simeq \mathcal{D}_H^{ll}$.
-\end{corollary}
+\end{theorem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Let us see how the two kinds of Yetter Drinfeld modules interact with one another. For any 
-$\left( W, \begin{tikzpicture}[scale=0.3, whit/.style={draw,regular polygon,
+
+
+We now want to obtain a generalization of Theorem \ref{yetterdrinfeldtheorem} to the case where $H$ is only a bialgebra. To do this we need to make the two kinds of Yetter Drinfeld modules interact with one another. 
+\begin{definition}[Interacting Yetter-Drinfeld modules]
+	For a bialgebra $H$, the category $\mathcal{Y}\mathcal{D}_H$ has objects given by left $H$-modules which are also left $H$-comodules and right $H$-comodules such that both the left-left and left-right Yetter Drinfeld compatibility conditions are satisfied and the comodules structures additionally satisfy:
+	\begin{equation}
+		\begin{gathered}
+		\begin{tikzpicture}[scale=0.8, whit/.style={draw,regular polygon,
+			regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+		\node[scale=0.5, whit] (0) at (0.5,0.5) {};
+		\node[scale=0.5, whit] (1) at (0.5,1) {};
+		\node[scale=0.5, draw, circle, fill=black] (b) at (0,1.3) {};
+		\draw (b) to (0,1.5);
+		\draw [bend right=70, looseness=1.5] (0) to (b);
+		\draw [bend left] (1) to (b);
+		\draw (0.5,0)--(0)--(1)--(0.5,1.5);
+		\end{tikzpicture}
+		\end{gathered}
+		\, = \,
+		\begin{gathered}
+		\begin{tikzpicture}[scale=0.8, whit/.style={draw,regular polygon,
+			regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+		\node[scale=0.5, draw, circle, fill=black] (b) at (0,1.3) {};
+		\draw (b) to (0,1.5);
+		\draw (0.5,0)--(0.5,1.5);
+		\end{tikzpicture}
+		\end{gathered}
+		\quad ; \quad
+		\begin{gathered}
+		\begin{tikzpicture}[scale=0.8, whit/.style={draw,regular polygon,
+			regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+		\node[scale=0.5, whit] (0) at (0.5,0.3) {};
+		\node[scale=0.5, whit] (1) at (0.5,1) {};
+		\node[scale=0.5, draw, circle, fill=black] (b) at (1,1.3) {};
+		\draw (b) to (1,1.5);
+		\draw [bend left=80, looseness=1.8] (0) to (0.6,0.6);
+		\draw [bend right=50] (0.6,0.6) to (b);
+		\draw (1) to (b);
+		\draw (0.5,0)--(0)--(1)--(0.5,1.5);
+		\end{tikzpicture}
+		\end{gathered}
+		\, = \,
+		\begin{gathered}
+		\begin{tikzpicture}[scale=0.8, whit/.style={draw,regular polygon,
+			regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+		\node[scale=0.5, draw, circle, fill=black] (b) at (1,1.3) {};
+		\draw (b) to (1,1.5);
+		\draw (0.5,0)--(0.5,1.5);
+		\end{tikzpicture}
+		\end{gathered}
+	\end{equation}
+\end{definition}
+We now define a functor $F: Z(Rep(H)) \rightarrow \mathcal{YD}_H$ in a similar fashion to $F_1$ and $F_2$ as above. Fix any object $V$ of $Z(Rep(H))$ and consider the component $e^V_H$ of the half braiding on $V$ at $H$.
+\begin{center}	
+	\begin{tikzpicture}
+	\node (0) at (0,0) {};
+	\node (1) at (-0.7, -0.7) {$V$};
+	\node (2) at (0.7, -0.7) {$H$};
+	\draw (1)--(0.5,0.5);
+	\draw (2)--(0)--(-0.5,0.5);
+	\end{tikzpicture}
+\end{center}
+Define a left $H$-comodule structure on $V$ by: 
+\begin{equation}\label{Fleft}
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
 	regular polygon sides=4,fill=white}]
-\node [scale=0.4,whit, fill=gray] (0) at (0, 0.5) {};
-\draw[bend left] (-0.5,0) to (0);
-\draw (0,0)--(0)--(0,1);
-\end{tikzpicture} \, \right) $
-we have
-\begin{equation}
-\begin{gathered}
-\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
-	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-\node (0) at (0.5,0.5) {};
-\node (v) at (0,-0.3) {$W$};
-\node (w) at (1,-0.3) {$V$};
-\draw (0,0)--(1,1);
-\draw (1,0)--(0)--(0,1);
+\node[scale=0.5,whit] (0) at (0,0) {};
+\node (1) at (-0.5, 0.7) {$H$};
+\node (2) at (0, -0.7) {$V$};
+\draw[bend left] (0) to (-0.5,0.5);
+\draw (2)--(0)--(0,0.5);
 \end{tikzpicture}
 \end{gathered}
 \, := \,
 \begin{gathered}
-\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
-	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-\node[scale=0.5, whit] (0) at (0,0.8) {};
-\node [scale=0.4,whit, fill=gray] (1) at (1,1) {};
-\draw [bend left] (0,0) to (0.5,0.5);
-\draw [bend right] (0.5,0.5) to (1);
-\draw (1) to (1,1.3);
-\draw [bend right] (1,0) to (0.5,0.5);
-\draw [bend left=20] (0.5,0.5) to (0);
-\draw (0) to (0,1.3);
-\draw (0) to (1);
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node (0) at (0,0) {};
+\node [scale=0.5, draw, circle, fill=black] (1) at (0.3,-0.3) {};
+\draw (1)--(0)--(-0.5,0.5);
+\draw [bend left] (-0.5, -0.5) to (0,0);
+\draw [bend right] (0,0) to (0.5,0.5);
 \end{tikzpicture}
-\end{gathered}
-\quad;\quad
-\begin{gathered}
-\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
-	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-\node (0) at (0.5,0.5) {};
-\node (v) at (0,-0.3) {$V$};
-\node (w) at (1,-0.3) {$W$};
-\draw (1,0)--(0,1);
-\draw (0,0)--(0)--(1,1);
-\end{tikzpicture}
-\end{gathered}
-\, := \,
-\begin{gathered}
-\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
-	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-\node[scale=0.5, whit] (0) at (0,0.3) {};
-\node [scale=0.4,whit, fill=gray] (1) at (0,0.9) {};
-\draw [bend left=70, looseness=1.5] (0) to (1);
-\draw (0,0)--(0)--(0.8,1.2);
-\draw (0.8,0)--(1)--(0,1.2);
-\end{tikzpicture}
-\end{gathered}
+\end{gathered}			
 \end{equation}
-\begin{claim}
+Note that this is precisely the left $H$-comodule structure in the definition of $F_2$. As the half-braiding on $V$ is a natural isomorphism we can consider the inverse of the $H$ component:
+\begin{center}	
+	\begin{tikzpicture}
+	\node (0) at (0,0) {};
+	\node (1) at (-0.7, -0.7) {$H$};
+	\node (2) at (0.7, -0.7) {$V$};
+	\draw (1)--(0)--(0.5,0.5);
+	\draw (2)--(-0.5,0.5);
+	\end{tikzpicture}
+\end{center}
+And define the right $H$-comodule structure on $V$ by:
+\begin{equation}\label{Fright}
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node[scale=0.5,whit] (0) at (0,0) {};
+\node (1) at (0.5, 0.7) {$H$};
+\node (2) at (0, -0.7) {$V$};
+\draw[bend right] (0) to (0.5,0.5);
+\draw (2)--(0)--(0,0.5);
+\end{tikzpicture}
+\end{gathered}
+\, := \,
+\begin{gathered}
+\begin{tikzpicture}[whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node (0) at (0,0) {};
+\node [scale=0.5, draw, circle, fill=black] (1) at (-0.3,-0.3) {};
+\draw (1)--(0)--(0.5,0.5);
+\draw [bend right] (0.5, -0.5) to (0,0);
+\draw [bend left] (0,0) to (-0.5,0.5);
+\end{tikzpicture}
+\end{gathered}			
+\end{equation}
+In general this is not the same coaction as in the definition of $F_1$. (\ref{Fleft}) and (\ref{Fright}) define a mapping $F: Z(Rep(H)) \rightarrow \mathcal{YD}_H$ for a bialgebra $H$. We now show $F$ is an equivalence  of categories.
+\begin{itemize}
+	\item To see that $F$ is well-defined on objects note that (\ref{Fleft}) and (\ref{Fright}) satisfy left-left and left-right Yetter-Drinfeld compatibility conditions (resp.) by claim 2 and an adaptation of claim 1 where overcrossing is replaced by undercrossing (resp.). The additional compatibility conditions of $\mathcal{YD}_H$ are easily seen to hold.Indeed using the Lemma \ref{lemma} we have
+	\begin{equation}
+		\begin{gathered}
+		\begin{tikzpicture}[scale=0.8]
+			\node (0) at (0,0.5) {};
+			\node (1) at (0,-0.5) {};
+			\node [scale=0.5, draw, circle, fill=black] (b1) at (-0.5,0.7) {};
+			\node [scale=0.5, draw, circle, fill=black] (b2) at (-0.5,-0.8) {};
+			\node [scale=0.5, draw, circle, fill=black] (b3) at (0.4,0.4) {};
+			\draw (0,-1)--(0,1);
+			\draw (b2)--(1);
+			\draw (b3)--(0);
+			\draw [bend right] (b1) to (0);
+			\draw (b1) to (-0.5,1);
+			\draw [bend right=80, looseness=2] (1) to (b1);
+		\end{tikzpicture}
+		\end{gathered}
+		\, = \,
+		\begin{gathered}
+		\begin{tikzpicture}[scale=0.8]
+		\node (0) at (0,0.5) {};
+		\node (1) at (0,-0.5) {};
+		\node [scale=0.5, draw, circle, fill=black] (b2) at (-0.5,-0.8) {};
+		\draw (0,-1)--(0,1);
+		\draw (b2)--(1);
+		\draw [bend left] (0) to (-0.5,1);
+		\draw [bend right=80, looseness=2] (1) to (0);
+		\end{tikzpicture}
+		\end{gathered}
+		\, = \,
+		\begin{gathered}
+		\begin{tikzpicture}[scale=0.8]
+		\node (0) at (0,0.5) {};
+		\node (1) at (0,-0.5) {};
+		\node [scale=0.5, draw, circle, fill=black] (b2) at (-0.5,0.7) {};
+		\draw (0,-1)--(0,1);
+		\draw (b2)--(-0.5,1);
+		\end{tikzpicture}
+		\end{gathered}
+	\end{equation}
+	\item As for $F_1$ and $F_2$ we can define $F$ to be identity on arrows. This is because if some linear map commutes with the half braiding then it commutes with both left and right $H$-coactions. So $F$ is well-defined on arrows and it is faithful.
+	\item The proof that $F$ is full is the same as for Proposition \ref{F12full} only that it uses the (\ref{lemmap2}) and (\ref{lemmap3}) instead of (\ref{lemmap1}) from Lemma \ref{lemma}.
+	\item To see $F$ is essentially surjective. Fix any object $V$ of $\mathcal{YD}_H$ (with white left and right comodule structures). Then for any
+	$\left( W, \begin{tikzpicture}[scale=0.3, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}]
+	\node [scale=0.4,whit, fill=gray] (0) at (0, 0.5) {};
+	\draw[bend left] (-0.5,0) to (0);
+	\draw (0,0)--(0)--(0,1);
+	\end{tikzpicture} \, \right) $ in $Rep(H)$ define:
 	\begin{equation}
 	\begin{gathered}
 	\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 	\node (0) at (0.5,0.5) {};
-	\node (3) at (0.5,1.5) {};
-	\draw (1,0)--(0)--(0,1)-- (3)--(1,2);
-	\draw (0,0)--(1,1)--(0,2);
+	\node (v) at (0,-0.3) {$V$};
+	\node (w) at (1,-0.3) {$W$};
+	\draw (1,0)--(0)--(0,1);
+	\draw (0,0)--(1,1);
 	\end{tikzpicture}
 	\end{gathered}
-	\, = \,
+	\, := \,
 	\begin{gathered}
 	\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-	\draw (0.8,0)--(0.8,2);
-	\draw (0.1,0)--(0.1,2);
+	\node[scale=0.5, whit] (0) at (0,0.3) {};
+	\node [scale=0.4,whit, fill=gray] (1) at (0,0.9) {};
+	\draw [bend left=70, looseness=1.5] (0) to (1);
+	\draw (0,0)--(0)--(0.8,1.2);
+	\draw (0.8,0)--(1)--(0,1.2);
 	\end{tikzpicture}
 	\end{gathered}
-	\quad \iff \quad
-	\begin{gathered}
-	\begin{tikzpicture}[scale=0.8, whit/.style={draw,regular polygon,
-		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-	\node[scale=0.5, whit] (0) at (0.5,0.5) {};
-	\node[scale=0.5, whit] (1) at (0.5,1) {};
-	\node[scale=0.5, draw, circle, fill=black] (b) at (0,1.3) {};
-	\draw (b) to (0,1.5);
-	\draw [bend right=70, looseness=1.5] (0) to (b);
-	\draw [bend left] (1) to (b);
-	\draw (0.5,0)--(0)--(1)--(0.5,1.5);
-	\end{tikzpicture}
-	\end{gathered}
-	\, = \,
-	\begin{gathered}
-	\begin{tikzpicture}[scale=0.8, whit/.style={draw,regular polygon,
-		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-	\node[scale=0.5, draw, circle, fill=black] (b) at (0,1.3) {};
-	\draw (b) to (0,1.5);
-	\draw (0.5,0)--(0.5,1.5);
-	\end{tikzpicture}
-	\end{gathered}
-	\end{equation}
-	
-	\begin{equation}
+	\quad ; \quad
 	\begin{gathered}
 	\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 	\node (0) at (0.5,0.5) {};
-	\node (3) at (0.5,1.5) {};
-	\draw (1,0)--(0,1)--(1,2);
-	\draw (0,0)--(0)--(1,1)--(3)--(0,2);
+	\node (v) at (0,-0.3) {$W$};
+	\node (w) at (1,-0.3) {$V$};
+	\draw (0,0)--(0)--(1,1);
+	\draw (1,0)--(0,1);
 	\end{tikzpicture}
 	\end{gathered}
-	\, = \,
+	\, := \,
 	\begin{gathered}
 	\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-	\draw (0.8,0)--(0.8,2);
-	\draw (0.1,0)--(0.1,2);
-	\end{tikzpicture}
-	\end{gathered}
-	\quad \iff \quad
-	\begin{gathered}
-	\begin{tikzpicture}[scale=0.8, whit/.style={draw,regular polygon,
-		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-	\node[scale=0.5, whit] (0) at (0.5,0.3) {};
-	\node[scale=0.5, whit] (1) at (0.5,1) {};
-	\node[scale=0.5, draw, circle, fill=black] (b) at (1,1.3) {};
-	\draw (b) to (1,1.5);
-	\draw [bend left=80, looseness=1.8] (0) to (0.6,0.6);
-	\draw [bend right=50] (0.6,0.6) to (b);
-	\draw (1) to (b);
-	\draw (0.5,0)--(0)--(1)--(0.5,1.5);
-	\end{tikzpicture}
-	\end{gathered}
-	\, = \,
-	\begin{gathered}
-	\begin{tikzpicture}[scale=0.8, whit/.style={draw,regular polygon,
-		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
-	\node[scale=0.5, draw, circle, fill=black] (b) at (1,1.3) {};
-	\draw (b) to (1,1.5);
-	\draw (0.5,0)--(0.5,1.5);
+	\node[scale=0.5, whit] (0) at (0,0.8) {};
+	\node [scale=0.4,whit, fill=gray] (1) at (1,1) {};
+	\draw [bend left] (0,0) to (0.5,0.5);
+	\draw [bend right] (0.5,0.5) to (1);
+	\draw (1) to (1,1.3);
+	\draw [bend right] (1,0) to (0.5,0.5);
+	\draw [bend left=20] (0.5,0.5) to (0);
+	\draw (0) to (0,1.3);
+	\draw (0) to (1);
 	\end{tikzpicture}
 	\end{gathered}
 	\end{equation}
-\end{claim}
-\begin{proof}
-	We will only prove the first statement, the second proof is very similar. First note that from the definition and as W is a $H$-module: 
+	These are inverses of each other as:
 	\begin{equation}
 	\begin{gathered}
 	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
 	\node (0) at (0.5,0.5) {};
 	\node (3) at (0.5,1.5) {};
-	\draw (1,0)--(0)--(0,1)-- (3)--(1,2);
-	\draw (0,0)--(1,1)--(0,2);
+	\draw (1,0)--(0,1)--(1,2);
+	\draw (0,0)--(0)--(1,1)-- (3)--(0,2);
 	\end{tikzpicture}
 	\end{gathered}
 	\, = \,
@@ -4010,11 +4208,42 @@ we have
 	\draw[bend right=80, looseness=1.6] (0) to (3);
 	\end{tikzpicture}
 	\end{gathered}
+	\, = \,
+	\begin{gathered}
+	\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
+		regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+	\draw (0.8,0)--(0.8,2);
+	\draw (0.1,0)--(0.1,2);
+	\end{tikzpicture}
+	\end{gathered}
 	\end{equation}
-	$(\Longleftarrow)$ is straightforward.
-	To show $(\implies)$ set $W=H$ with the natural left module structure given by left multiplication, then inserting the unit state \unit on the left of the tensor we obtain the required identity.
-\end{proof}
-And we say that if $H$ is a hopf algebra with a skew antipode we can make the right hand sides hold imposing:
+	and similarly 
+	\begin{equation}
+		\begin{gathered}
+		\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+			regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+		\node (0) at (0.5,0.5) {};
+		\node (3) at (0.5,1.5) {};
+		\draw (1,0)--(0)--(0,1)-- (3)--(1,2);
+		\draw (0,0)--(1,1)--(0,2);
+		\end{tikzpicture}
+		\end{gathered}
+		\, = \,
+		\begin{gathered}
+		\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+			regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+		\draw (0.8,0)--(0.8,2);
+		\draw (0.1,0)--(0.1,2);
+		\end{tikzpicture}
+		\end{gathered}
+	\end{equation}
+	from the second compatibility condition of interacting Yetter-Drinfeld modules. Naturality follows from. And setting $W=H$ and plugging units \unit in the $H$-components we recover the left and right $H$-coactions defined. 
+\end{itemize}
+This proves the following result.
+\begin{theorem}\label{interactingydtheorem}
+	If $H$ is a bialgebra then $Z(Rep(H)) \simeq \mathcal{YD}_H$.
+\end{theorem}
+If $H$ is a hopf algebra or has a skew antipode we recover Propositions \ref{antipodeprop} and \ref{skewprop}. Indeed given a skew antipode and left $H$-comodule structure we can define
 \begin{equation}
 \begin{gathered}
 \begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
@@ -4024,7 +4253,7 @@ And we say that if $H$ is a hopf algebra with a skew antipode we can make the ri
 \draw [bend right] (0) to (0.5,1);
 \end{tikzpicture}
 \end{gathered}
-\, = \,
+\, := \,
 \begin{gathered}
 \begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
 	regular polygon sides=4,fill=white}]
@@ -4036,12 +4265,39 @@ And we say that if $H$ is a hopf algebra with a skew antipode we can make the ri
 \end{tikzpicture}
 \end{gathered}
 \end{equation}
+to obtain a right $H$-comodule structure. And similarly given an antipode and a right $H$-comodule structure we obtain a left $H$-comodule structure by defining:
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node [whit,scale=0.5] (0) at (0,0) {};
+\draw (0,-1)--(0)--(0,1);
+\draw [bend left] (0) to (-0.5,1);
+\end{tikzpicture}
+\end{gathered}
+\, := \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.7, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}]
+\node [scale=0.5,whit] (0) at (0,0) {};
+\node [scale=0.3, whit] (S) at (0.5,0.2) {$S$};
+\draw (0,-1)--(0)--(0,1);
+\draw [bend right] (0) to (S);
+\draw (S) to (-0.5,1);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{proposition}
-	If $H$ is a finite-dimensional Hopf Algebra with invertible antipode then left-left Yetter Drinfeld modules are $DH$-modules.
-\end{proposition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+When $H$ is a finite-dimensional Hopf algebra we obtain the better known results below. 
+\begin{theorem}
+	If $H$ is a finite dimensional Hopf algebra with invertible antipode $Z(RepH) \simeq RepDH$
+\end{theorem}
 \begin{proof}
-	Note that defining $DH$ requires the antipode to be invertible (it is used in the definition of the antipode for $DH$). Making use of the antipode and the compatibility condition we obtain:
+	Note that defining $DH$ requires the antipode to be invertible (it is used in the definition of the antipode for $DH$), so such condition is inevitable.
+	As $H$ has invertible antipode it also has a skew antipode. Therefore we already know $Z(Rep(H)) \simeq \mathcal{D}_H^{ll} \simeq \mathcal{D}_H^{lr}$ From theorem \ref{yetterdrinfeldtheorem}. So it is sufficient to show that $Rep(DH) \simeq \mathcal{D}_H^{ll}$. Fix an object of $\mathcal{D}_H^{ll}$ with black $H$-action and white $H$-coaction. Making use of the antipode and the compatibility condition we obtain:
 	\begin{equation}
 	\begin{gathered}
 	\begin{tikzpicture}[whit/.style={draw,regular polygon,
@@ -4093,7 +4349,7 @@ And we say that if $H$ is a hopf algebra with a skew antipode we can make the ri
 	\end{tikzpicture}
 	\end{gathered}
 	\end{equation}
-	When $H$ is finite dimensional, we can define the action of $DH$ on $V$ as follows (where thick wires carry $DH$ and thin wires carry $H$)
+	As $H$ is finite dimensional, we can define the action of $DH$ on $V$ as follows (where thick wires carry $DH$ and thin wires carry $H$)
 	\begin{equation}
 	\begin{gathered}
 	\begin{tikzpicture}[whit/.style={draw,regular polygon,
@@ -4301,9 +4557,6 @@ And we say that if $H$ is a hopf algebra with a skew antipode we can make the ri
 	\end{gathered}
 	\end{equation}
 \end{proof}
-\begin{corollary}
-	If $H$ is a finite dimensional Hopf algebra with invertible antipode $Z(RepH) \simeq RepDH$
-\end{corollary}
 We have found many equivalent ways of constructing non-degenerate theories of anyons. In the next section we will use the simplest examples induced by groups, justified by the following proposition
 \begin{proposition}
 	If $G$ is a finite non-abelian group then $Rep(D(G))$ is modular.
@@ -4311,7 +4564,6 @@ We have found many equivalent ways of constructing non-degenerate theories of an
 \begin{proof}
 	A direct proof is given in the third chapter of \cite{Bakalov00}. But this also follows from the fact that $Z(Rep(G))$ is modular.
 \end{proof}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -5211,8 +5463,8 @@ Which, by definition of the action on $V$, is the Pauli $Z$ operator applied to 
 \appendix
 	\section{Tensor categories}
 	Categorification is the process of replacing sets by categories, functions by functors and weakening equalities to natural isomorphisms. Tensor categories are the categorification of rings. Multiplication becomes a tensor product $\otimes$ and addition becomes a direct product $\oplus$. Monoidal categories are defined in the first chapter of the thesis. They are obtained by categorifying the notion of a monoid. We also defined rigidity, as the property that any object has a right dual and a left dual. The notion of tensor categories is obtained by considering rigid monoidal structures on abelian categories.\\
-	In order to define abelian categories we need a few preliminary notions.\\
-	The following two definitions are generalisations of the notions of injection and surjection from set theory.
+	In order to define abelian categories we need a few preliminary notions.
+	With start by generalising the notions of injection and surjection from set theory.
 	\begin{definition}[Mono]
 		A morphism $f: a \rightarrow b$ is a monomorphism if for any $g,h: c \rightarrow a$
 		$$f \circ g = f \circ h \implies h=g$$
@@ -5231,16 +5483,41 @@ Which, by definition of the action on $V$, is the Pauli $Z$ operator applied to 
 			\begin{tikzpicture}[scale=0.8]
 				\node (a) at (0,0) {$a$};
 				\node (b) at (1.5,0) {$b$};
-				\node (c) at (-1,-1) {$c$};
-				\node (s) at (-1,1) {$S$};
-				\node at (0.2,0.9) {$0$};
-				\node at (0.2,-0.9) {$0$};
+				\node (c) at (-1,-1.5) {$c$};
+				\node (s) at (-1,1.5) {$S$};
+				\node at (0.4,1.1) {$0$};
+				\node at (0.4,-1.1) {$0$};
+				\node at (0.5,0.25) {$f$};
+				\node at (-0.65,-0.4) {$h$};
+				\node at (-0.65,0.4) {$k$};
+				\node at (-1.3,0) {$h'$};
 				\draw [->] (a)--(b);
 				\draw [->] (s)--(a);
 				\draw [->] (c)--(a);
 				\draw [->] (s)--(b);
 				\draw [->] (c)--(b);
 				\draw [->] (c)--(s);
+			\end{tikzpicture}
+		\end{center}
+		Dually the cokernel of a morphism $f:a \rightarrow b$ is a morphism $u:b \rightarrow S$ making the following commute:
+		\begin{center}
+			\begin{tikzpicture}[scale=0.8]
+			\node (a) at (0,0) {$b$};
+			\node (b) at (-1.5,0) {$a$};
+			\node (c) at (1,-1.5) {$c$};
+			\node (s) at (1,1.5) {$S$};
+			\node at (-0.4,1.1) {$0$};
+			\node at (-0.4,-1.1) {$0$};
+			\node at (-0.5,0.25) {$f$};
+			\node at (0.65,-0.4) {$h$};
+			\node at (0.65,0.4) {$u$};
+			\node at (1.3,0) {$h'$};
+			\draw [->] (b)--(a);
+			\draw [->] (a)--(s);
+			\draw [->] (a)--(c);
+			\draw [->] (b)--(s);
+			\draw [->] (b)--(c);
+			\draw [->] (s)--(c);
 			\end{tikzpicture}
 		\end{center}
 	\end{definition}
@@ -5254,15 +5531,18 @@ Which, by definition of the action on $V$, is the Pauli $Z$ operator applied to 
 	\begin{definition}[Additive category]
 		An Ab-category $\mathcal{C}$ is additive if it has zero object and every pair of objects has a direct sum $\oplus$.
 	\end{definition}
-	It can be shown that the zero morphism of any hom-set is then the unit of the abelian group structure \cite{Vicary12}.
-	In an additive category, the zero object allows us to define kernels and cokernels.
+	It can be shown that the zero morphism of any hom-set is then the unit of the abelian group structure \cite{Vicary12}. We can now define abelian categories.
 	\begin{definition}[Abelian category]
 		An abelian category is an additive category where every morphism has a kernel and a cokernel and every monic (epic) is a kernel (cokernel).
 	\end{definition} 
-
+	Note that this is precisely the behaviour of kernels and cokernels from vector spaces. In an abelian category hom-sets are abelian groups, but we can explicitly require hom-sets to be vector spaces over some field $k$.
+	\begin{definition}
+		content...
+	\end{definition}
 	\begin{definition}[k-linear category]
 	Let k be field, we say $\mathcal{C}$ is $k$-linear if all hom-sets are k-vector spaces and composition is bilinear.
 	\end{definition}
+	
 	
 	\section{Fusion categories}
 	Many of the results and definitions  of this section can be found in \cite{Mueger08}, \cite{Bartlett15} and \cite{Freyd66}.
