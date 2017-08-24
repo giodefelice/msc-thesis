@@ -126,7 +126,7 @@
 \end{equation}
 }
 \newcommand{\unitlaw}{
-\begin{equation}
+\begin{equation}\label{unitlaw}
 \begin{gathered}
 \begin{tikzpicture}[scale=0.8]
 \node[scale=0.5,draw,circle,fill=black] (0) at (0,0.5) {};
@@ -155,7 +155,7 @@
 \end{equation}
 }
 \newcommand{\coassociativity}{
-\begin{equation}
+\begin{equation}\label{coassociativity}
 \begin{gathered}
 \begin{tikzpicture}[scale=0.8]
 \node[scale=0.5,draw,circle,fill=white] (0) at (0,-0.5) {};
@@ -182,7 +182,7 @@
 \end{equation}
 }
 \newcommand{\counitlaw}{
-\begin{equation}
+\begin{equation}\label{counitlaw}
 \begin{gathered}
 \begin{tikzpicture}[scale=0.8]
 \node[scale=0.5,draw,circle,fill=white] (0) at (0,-0.5) {};
@@ -212,7 +212,7 @@
 }
 
 \newcommand{\bialgebralaw}{
-\begin{equation}
+\begin{equation}\label{bialgebralaw}
 \begin{gathered}
 \begin{tikzpicture}[scale=0.8]
 \node[scale=0.5,draw,circle,fill=white] (0) at (0,0) {};
@@ -244,7 +244,7 @@
 \end{equation}
 }
 \newcommand{\copylaw}{
-\begin{equation}
+\begin{equation}\label{copylaw}
 \begin{gathered}
 \begin{tikzpicture}[scale=0.7, squr/.style={scale=0.5,draw,regular polygon,
 	regular polygon sides=4,fill=white}, black/.style={scale=0.5,draw,shape=circle,fill=black}, whit/.style={scale=0.5,draw,shape=circle,fill=white}]
@@ -267,7 +267,7 @@
 \end{equation}
 }
 \newcommand{\cocopylaw}{
-	\begin{equation}
+	\begin{equation}\label{cocopylaw}
 	\begin{gathered}
 	\begin{tikzpicture}[scale=0.7, squr/.style={scale=0.5,draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={scale=0.5,draw,shape=circle,fill=black}, whit/.style={scale=0.5,draw,shape=circle,fill=white}]
@@ -290,7 +290,7 @@
 	\end{equation}
 }
 \newcommand{\hopflaw}{
-	\begin{equation}
+	\begin{equation}\label{hopflaw}
 	\begin{gathered}
 	\begin{tikzpicture}[scale=0.8, squr/.style={scale=0.5,draw,regular polygon,
 		regular polygon sides=4,fill=white}]
@@ -331,7 +331,7 @@
 	\end{equation}
 }
 \newcommand{\skewhopflaw}{
-	\begin{equation}
+	\begin{equation}\label{skewhopflaw}
 	\begin{gathered}
 	\begin{tikzpicture}[scale=0.8, squr/.style={scale=0.5,draw,regular polygon,
 		regular polygon sides=4,fill=white}]
@@ -376,7 +376,7 @@
 	\end{equation}
 }
 \newcommand{\modulelaw}{
-	\begin{equation}
+	\begin{equation}\label{modulelaw}
 	\begin{gathered}
 	\begin{tikzpicture}[scale=0.6, squr/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={scale=0.5,draw,shape=circle,fill=black}]
@@ -410,7 +410,7 @@
 	\end{equation}
 }
 \newcommand{\comodulelaw}{
-	\begin{equation}
+	\begin{equation}\label{comodulelaw}
 	\begin{gathered}
 	\begin{tikzpicture}[scale=0.6, squr/.style={draw,regular polygon,
 		regular polygon sides=4,fill=white}, black/.style={scale=0.5,draw,shape=circle,fill=white}]
@@ -586,36 +586,33 @@
 
 \pagebreak
 \section{Introduction}
-Categories and diagrams \\
-Symmetry, quantization and categorification \\
-Categorification = replacing equalities with isomorphisms \cite{Baez98}.\\
-For an account of the relationships between categorification and quantization consider \cite{Rowell17}.\\à 
-Mathematically: from groups to quasitriangular hopf algebras, G to DG\\
-Categorically: from symmetric fusion categories to modular categories\\
-Physically: fermions/bosons to anyons, local symmetries to topological symmetries, 3D to 2D\\
-Computation: from PQC to TQC, complexity theory\\
-Logic: mirror the relationship, all statements about RepDG are statements in RepG, a modality, programming language
+Algebraic structures have historically been described in set-theoretic terms. One usually considers a set equipped with functions satisfying certain axioms. For example, a monoid is a set equipped with a multiplication and a unit element satisfying associativity and the unit law. Category theory has first been introduced in 1971 by MacLane \cite{MacLane71} and provides a unifying framework for describing algebraic theories. Many of the driving notions of category theory arise through categorification of old set-theoretic notions \cite{Baez98}. Categorification is the process of replacing sets by categories, functions by functors and relaxing equations to natural isomorphisms between the functors. For example, the notion of a monoidal category is the categorification of that of a monoid. Since their preliminary study \cite{MacLane71} monoidal categories have been used as building blocks for more complex algebraic theories and have found many applications to quantum physics \cite{Abramsky04} \cite{Bartlett05} \cite{Vicary12} \cite{Rowell17}. They have a very intuitive two-dimensional diagrammatic language where algebraic equations are topological moves. Using this language it is possible to represent processes on physical systems \cite{Coecke17}, which can often be characterized by their symmetries. These latter are traditionally described by groups, as for instance for the symmetries of crystals \cite{Auslander65} or spin-$\frac{1}{2}$ particles \cite{Pauncz67}. Hopf algebras provide a generalization of group theory which allows describing the symmetries of many-body quantum systems as they treat local and global (or topological) symmetries on the same level \cite{Slingerland02}.\\
+The aim of this thesis is to provide a diagrammatic treatment of Hopf algebras outlining their relationship to quantum computation.\\
+In the first chapter we introduce monoidal categories to obtain a diagrammatic characterisation of Hopf Algebras as in [cite Sobocinski]. We then recall some standard results and move on to representation theory. Given a Hopf algebra $H$, the category of its representations $Rep(H)$ is monoidal and every object has a dual. If we additionally require $H$ to be quasitriangular, we obtain braids, making the language of $Rep(H)$ three dimensional. In these categories knots and links are endomorphisms of the unit object (i.e scalars), so that we naturally obtain topological invariants.\\
+The second chapter is dedicated to the study of special types of particles called anyons. Their symmetries and exchange statistics are captured by quasitriangular Hopf algebras, so that categories of representations can be interpreted as process theories of anyons. We also see how the Drinfeld center construction, which takes place at the categorical level, corresponds to a certain quantization of the symmetries: the quantum double construction on a Hopf algebra.\\
+In the last chapter we study two different models of quantum computation induced by Hopf algebras. 
+Kitaev's double model for topological quantum computation (TQC) \cite{Kitaev03}, which is based on a group, is generalized to the Hopf algebra framework. 
+Jordan's model for permutational quantum computing (PQC) \cite{Jordan09} is described from a categorical perspective in view of relating it to TQC. 
+Finally, we project the pictures of knots from braided fusion categories into Hilbert spaces to obtain a braided syntax for quantum gates. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Diagrams and Hopf Algebras}
+\section{Diagrams and Hopf Algebras}\label{Diagramsandhopfalgebras}
 
-\subsection{Monoidal categories}
-In this section, we set in place the basic definitions and diagrammatic  intuitions which we will use throughout the thesis. The standard reference about basic category theory results is \cite{MacLane71}. Many of the definitions are taken from \cite{Abramsky11}. A more detailed and up to date survey on monoidal categories can be found in \cite{Etingof15}. For an introduction to diagrammatic reasoning in monoidal categories consider the first two chapters of \cite{Coecke17}. Many of the results in this section and their relationship to quantum mechanics can be found in \cite{Vicary12}. \\
-%%CATEGORIES:
-Recall the definition of a category.
-\begin{definition}
+\subsection{Monoidal categories}\label{Monoidalcategories}
+In this section, we set in place the basic definitions and the diagrammatic framework which we will use throughout the thesis. The standard reference about basic category theory is \cite{MacLane71}. Many of the definitions are taken from \cite{Abramsky11}. For an introduction to diagrammatic reasoning in monoidal categories consider the first two chapters of \cite{Coecke17}. A more technical and up to date survey on monoidal categories can be found in \cite{Etingof15}. Many of the results recalled in this section and their relationship to quantum mechanics can be found in \cite{Vicary12}.
+\begin{definition}[Category]
 	A category $\cat$ consists of the data:
 	\begin{itemize}
-		\item a collection of objects $obj(\cat)$ 
-		\item a collection of morphisms (or arrows) $arr(\cat)$
-		\item domain and codomain assignments $dom, cod: arr(\cat) \rightarrow obj(\cat)$. For any two objects $a,b \in obj(\cat)$ we define the hom-set 
+		\item a collection of objects $obj(\cat)$,
+		\item a collection of morphisms (or arrows) $arr(\cat)$,
+		\item domain and codomain assignments: $dom, cod: arr(\cat) \rightarrow obj(\cat)$. For any two objects $a,b \in obj(\cat)$ we define the hom-set 
 		$$ \cat (a,b) := \{ f \in arr(\cat) : a= dom(f), b=cod(f) \}$$
-		\item for any triple of objects $a,b,c$ a composition map 
-		$$c_{a,b,c}: \cat (a,b) \times \cat (b,c) \rightarrow \cat (a,c)$$
-		We denote the composition by $g \circ f$, diagrammatically:
+		\item for any triple of objects $a$,$b$ and $c$, a composition map 
+		$$ \cat (a,b) \times \cat (b,c) \rightarrow \cat (a,c)$$
+		we denote the composition by $g \circ f$, diagrammatically:
 		\begin{center}
 			\begin{tikzpicture}
 			\node (0) at (-1, 0) {$a$};
@@ -629,60 +626,26 @@ Recall the definition of a category.
 			\draw [->] (0) to (2);
 			\end{tikzpicture}
 		\end{center}
-		\item For any object $a$ an identity morphism $id_a: a \rightarrow a$ 
+		\item For any object $a$ an identity morphism $id_a: a \rightarrow a$. 
 	\end{itemize}
 	Satisfying the following axioms:
 	\begin{equation*}
-		h \circ (g \circ f) = (h \circ g) \circ f \quad f \circ id_a = f = id_b \circ f
-	\end{equation*}
-	
+		h \circ (g \circ f) = (h \circ g) \circ f \quad; \quad f \circ id_a = f = id_b \circ f
+	\end{equation*}	
 \end{definition}
-\begin{center}
-	\begin{tikzpicture}
-	\node (0) at (-1, 0) {$A$};
-	\node (1) at (0, 0.5) {$B$};
-	\node (2) at (1, 0) {$C$};
-	\node (3) at (-0.7, 0.4) {$f$};
-	\node (3) at (0.7, 0.4) {$g$};
-	\node (3) at (0, -0.3) {$g\circ f$};
-	\draw [->] (0) to (1);
-	\draw [->] (1) to (2);
-	\draw [->] (0) to (2);
-	\end{tikzpicture}
-\end{center}
-The commutativity of the above diagram is a statement about $\cat$, and it has exactly the same information to its dual diagram. Where objects are one-dimensional wires and morphisms are (zero dimensional) boxes:
-\begin{center}
-	\begin{tikzpicture}[scale=0.7]
-	\node (0) at (-1, -1.4) {$A$};
-	\node (1) at (-1.4, -0.1) {$B$};
-	\node (2) at (-1, 1.4) {$C$};
-	\node (3) at (1, -1.4) {$A$};
-	\node (4) at (1, 1.4) {$C$};
-	\node[scale=0.6,draw,circle] (5) at (-1, -0.5) {$f$};
-	\node[scale=0.7,draw,circle] (6) at (-1, 0.4) {$g$};
-	\node[scale=0.5,draw,circle] (7) at (1, 0) {$g\circ f$};
-	\node (8) at (0, 0) {$=$};
-	\draw (0) to (5);
-	\draw (5) to (6);
-	\draw [->] (6) to (2);
-	\draw (3) to (7);
-	\draw [->] (7) to (4);
-	\end{tikzpicture}
-\end{center}
-We will mainly use this second diagrammatic language in this work. When $\cat$ is just a category we only have one way of composing morphisms and the language is one dimensional.
 \begin{example}
-	Examples of categories are: $Sets$ of sets and functions, $FSets$ of finite sets and functions, $Rel$ of sets and relations, $Vect_k$ of vector spaces over $k$ and linear maps and $FVect_k$ of finite dimensional vector spaces and linear maps.
+	Examples of categories are: $Sets$ of sets and functions, $FSets$ of finite sets and functions, $Rel$ of sets and relations, $Vect_k$ of vector spaces over a field $k$ and linear maps and $FVect_k$ of finite dimensional vector spaces and linear maps.
 \end{example}
-Category theory is a really good language for talking about equivalences and relationships between structures. This is achieved with the following tools.
+Category theory expresses equivalences and relationships between structures by means of the following tools.
 \begin{definition}[Functor]
 	A functor $F:\mathcal{C} \rightarrow \mathcal{D}$ is a mapping that
 	\begin{itemize}
-		\item associates an object $F(X)$ of $\mathcal{D}$ to each object $X$ of $\mathcal{C}$.
-		\item associates to each morphism $f:X \rightarrow Y$ a morphism $F(f): F(X) \rightarrow F(Y)$ such that $F(id_X)=id_Y$ and $F(g\circ f)= F(g)\circ F(f)$ for all morphisms $f:X \rightarrow Y$ and $g:Y \rightarrow Z$.
+		\item associates an object $F(a)$ of $\mathcal{D}$ to each object $a$ of $\mathcal{C}$,
+		\item associates to each morphism $f: a \rightarrow b$ in $\cat$ a morphism $F(f): F(a) \rightarrow F(b)$ in $\mathcal{D}$ such that $F(id_a)=id_{F(a)}$ and $F(g\circ f)= F(g)\circ F(f)$ for all morphisms $f:a \rightarrow b$ and $g:b \rightarrow c$.
 	\end{itemize}
 \end{definition}
-For instance there is a functor $Q: Sets \rightarrow Vect_k$ called `1st quantization' and taking a set to the free vector space generated by that set.
-Given two functors with matching source and target we can have natural transformations between them
+For instance, there is a functor $Q: FSets \rightarrow FVect_k$ (which we will call `1st quantization') taking a set to the free vector space generated by that set.
+Given two functors with matching source and target we can have natural transformations between them.
 \begin{definition}[Natural Transformation]
 	Given categories $\cat$ and $\mathcal{D}$ and functors $F,G:\cat \rightarrow \mathcal{D}$ a natural transformation $\alpha: F \Rightarrow G$ is an assignment to every object $a$ in $\cat$ of a morphism $\alpha_a:F(a) \rightarrow G(a)$ in $\mathcal{D}$ such that for each morphism $f:a \rightarrow b$, the following commutes:
 	\begin{center}
@@ -700,13 +663,13 @@ Given two functors with matching source and target we can have natural transform
 	A natural isomorphism is a natural transformation such that all components are isomorphisms.
 \end{definition}
 %%%MONOIDAL CATEGORIES:
-Recall that a monoid is a triple $(X, \times, 1)$ where $X$ is a set, $1 \in X$ and $\times$ is an associative and unital multiplication on $X$. The notion of a monoidal category is the categorification of a monoid. Elements of the set are replaced by objects in a category $\mathcal{C}$, multiplication by a bifunctor $\otimes: \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$ and the equalities in the unit and association axioms are replaced by natural isomorphisms. In order for this new structure to be well-behaved we will also need to impose compatibility conditions. We obtain the following definition:
+Recall that a monoid is a triple $(X, \times, 1)$ where $X$ is a set, $1 \in X$ and $\times$ is an associative and unital multiplication on $X$. The notion of a monoidal category is the categorification of a monoid. Elements of the set are replaced by objects in a category $\mathcal{C}$, multiplication by a functor $\otimes: \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$ and the equalities in the unit and association axioms are replaced by natural isomorphisms. In order for this new structure to be well-behaved we will also need to impose compatibility conditions. We obtain the following definition:
 \begin{definition}[Monoidal category]
-A monoidal category is a category $\mathcal{C}$ equipped with a bifunctor $\otimes: \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$ called tensor product, an object $1$ called unit object, a natural isomorphism
-$$ a : -\otimes(- \otimes -) \xRightarrow{\sim} (-\otimes -) \otimes -$$ 
+A monoidal category is a category $\mathcal{C}$ equipped with a functor $\otimes: \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$ called tensor product, an object $1$ called unit object, a natural isomorphism
+$$ \alpha : (-\otimes -) \otimes - \xRightarrow{\sim} -\otimes (- \otimes -)$$ 
 called associator, a natural isomorphism 
-$$\lambda: 1 \otimes (-) \Rightarrow (-)$$ called left unitor and a natural isomorphism
-$$ \rho: (-) \otimes 1 \Rightarrow (-)$$
+$$\lambda: 1 \otimes (-) \xRightarrow{\sim} (-)$$ called left unitor and a natural isomorphism
+$$ \rho: (-) \otimes 1 \xRightarrow{\sim} (-)$$
 called right unitor. Subject to the following coherence conditions holding for all objects $a,b,c,d$ in $\mathcal{C}$:
 \begin{enumerate}
     \item Pentagon axiom: the following diagram commutes
@@ -728,7 +691,7 @@ called right unitor. Subject to the following coherence conditions holding for a
     \begin{center}
     	\begin{tikzpicture}[scale=2]
     	\node (0) at (0,0) {$(a\otimes 1) \otimes b$};
-    	\node (1) at (2,0) {$(a\otimes 1) \otimes b$};
+    	\node (1) at (2,0) {$a\otimes (1 \otimes b)$};
     	\node (2) at (1,-1) {$a\otimes b$};
     	\draw [->] (0)--(1) node[midway,above] {$\alpha_{a ,1,b}$};
     	\draw [->] (1)--(2) node[midway,right] {$id_a \otimes \lambda_b$};
@@ -737,20 +700,46 @@ called right unitor. Subject to the following coherence conditions holding for a
     \end{center}
 \end{enumerate}
 \end{definition}
-Let us give three important examples of monoidal categories.
 \begin{example}
-The category $Sets$ of sets and functions is monoidal with the cartesian product $\times$ as bifunctor and the singleton set as unit object.\\
+The category $Sets$ of sets and functions is monoidal with the cartesian product $\times$ and the singleton set as unit object.\\
 The category $Vect_k$ of finite dimensional vector spaces over a field $k$ is monoidal with the usual tensor product $\otimes$ and the one dimensional vector space $k$ as unit object.\\
-The category $Rel$ of sets and relations is monoidal with the cartesian product $\times$ and the singleton as unit object.
+The category $Rel$ of sets and relations is monoidal with the cartesian product $\times$ and the singleton as unit object.\\
+The category $Hilb$ of Hilbert spaces and linear maps is monoidal when equipped with the usual tensor product $\otimes$.
 \end{example}
-The more structure comes with a category the more complicated diagrams we can draw. Monoidal categories have a two-dimensional diagrammatic language. The presence of unitors and associators and the conditions they satisfy make sure that this graphical language is well behaved. This is known as the coherence theorem for monoidal categories and can be found in \cite{MacLane71}. It says that any well formed diagram in a monoidal category, made up of associators and unitors commutes. When the associators are trivial morphisms (i.e identity morphisms) we say the category is strict monoidal. It is known that every monoidal category is equivalent to a strict one \cite{MacLane71}, but it is sometimes useful to take associators into account as we will see in our discussion on permutational quantum computation.\\
-We write the tensor of two morphisms $f \otimes g : A \otimes B \rightarrow C \otimes D$ simply putting them side by side:
+The pentagon and triangle axioms make sure that any well formed diagram in a monoidal category, made up of associators and unitors, commutes. This is known as the coherence theorem for monoidal categories and can be found in \cite{MacLane71}. When the associators and unitors are trivial morphisms (i.e identity morphisms) we say the category is strict monoidal. It is known that every monoidal category is equivalent to a strict one \cite{MacLane71}, but it is sometimes useful to take associators into account as we will see in our discussion on permutational quantum computation. Strict monoidal categories have a two-dimensional diagrammatic language which is rigorous \cite{Vicary12}. Objects are represented by their identity morphisms which we draw as labelled wires:
 \begin{center}
 	\begin{tikzpicture}[scale=0.7]
-	\node (0) at (0, -1.2) {$A$};
-	\node (1) at (1, -1.2) {$B$};
-	\node (2) at (0, 1.2) {$C$};
-	\node (3) at (1, 1.2) {$D$};
+	\node (0) at (-0.4, 1) {$a$};
+	\draw[->] (0,0)--(0,2);
+	\end{tikzpicture}
+\end{center}
+A morphism $f:a \rightarrow c$ is drawn as a box with input and output wires going from bottom to top:
+\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+	\node (0) at (0, -1.2) {$a$};
+	\node (2) at (0, 1.2) {$c$};
+	\node[scale=0.6,draw,circle] (5) at (0, 0) {$f$};
+	\draw[->] (0)--(5)--(2);
+	\end{tikzpicture}
+\end{center}
+The vertical composition $h\circ f$ where $h:c \rightarrow e$ is denoted as:
+\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+	\node (0) at (0, -1.2) {$a$};
+	\node (1) at (-0.4, 0.2) {$c$};
+	\node (2) at (0, 1.8) {$e$};
+	\node[scale=0.6,draw,circle] (5) at (0, -0.3) {$f$};
+	\node[scale=0.6,draw,circle] (6) at (0, 0.8) {$h$};
+	\draw[->] (0)--(5)--(6)--(2);
+	\end{tikzpicture}
+\end{center}
+We write the tensor of two morphisms $f \otimes g : a \otimes b \rightarrow c \otimes d$ simply putting them side by side:
+\begin{center}
+	\begin{tikzpicture}[scale=0.7]
+	\node (0) at (0, -1.2) {$a$};
+	\node (1) at (1, -1.2) {$b$};
+	\node (2) at (0, 1.2) {$c$};
+	\node (3) at (1, 1.2) {$d$};
 	\node[scale=0.7,draw,circle] (5) at (0, 0) {$f$};
 	\node[scale=0.7,draw,circle] (6) at (1, 0) {$g$};
 	\draw (0) to (5);
@@ -759,63 +748,25 @@ We write the tensor of two morphisms $f \otimes g : A \otimes B \rightarrow C \o
 	\draw [->] (6) to (3);
 	\end{tikzpicture}
 \end{center}
-In our diagrams we can picture the unit $I$ of the tensor as the plane on which we are drawing. Indeed we could imagine drawing as many copies as we wanted of $id_I$ on the previous diagram to obtain obtain an equivalent diagram as $id_I \otimes f = f$ for any morphism $f$. So really the identity on $I$ is just the empty diagram which we can stick next to any diagram we like.
+Note that because the category is strict $id_1 \otimes f = f = f \otimes id_1$ for any $f$, so we could draw as many copies as we like of $id_1$ on any diagram to obtain an equivalent one. So really the identity on $1$ is just the empty diagram which we can stick next to any diagram we like.
 \begin{definition}[States and costates]
-	Given a system $A$, a state of is a morphism $1 \rightarrow A$. A costate (or effect) of $A$ is a morphism $A \rightarrow 1$. In the diagrammatic language we draw states and costates respectively:
+	Given a system $A$, a state of $A$ is a morphism $y:1 \rightarrow a$. A costate (or effect) of $a$ is a morphism $x:a \rightarrow 1$. In the diagrammatic language we draw states and costates respectively:
 	\begin{center}
 		\begin{tikzpicture}[scale=0.7]
-		\node[scale=0.5,buffer] (1) {$a$}; 
-		\node (2) at (0.3,0.7) {$A$};
+		\node[scale=0.5,buffer] (1) {$y$}; 
+		\node (2) at (0.3,0.7) {$a$};
 		\draw (1)--(0,1);
 		\end{tikzpicture}
-		\quad \quad
+		\quad \quad \quad
 		\begin{tikzpicture}[scale=0.7]
-		\node[scale=0.5,buffer,rotate=180] (1) at (0,0) {$q$}; 
-		\node (2) at (0.3,-0.7) {$B$};
+		\node[scale=0.5,buffer,rotate=180] (1) at (0,0) {$x$}; 
+		\node (2) at (0.3,-0.7) {$a$};
 		\draw (1)--(0,-1);
 		\end{tikzpicture}
 	\end{center}
-			
-	
 \end{definition}
-
-
-%%%DIAGRAMS:
-\begin{remark}
-	It is perhaps useful to understand monoidal categories as degenerate 2-categories. Although this viewpoint requires one additional initial step of abstraction (the definition of a 2-category), it gives us the diagrammatic language for monoidal categories for free. For the rigorous definition of a 2-category we refer to [BAEZ], for our purposes we will only need the intuition. A 2-category is a collection of objects with 1-arrows between them and 2-arrows between the 1-arrows. Note that there are two ways of composing the 2-arrows:
-	\begin{itemize}
-		\item vertical composition:
-		\begin{center}
-			\begin{tikzpicture}
-			\node (0) at (0,0) {.};
-			\node (1) at (2,0) {.};
-			\draw[->] (0) to (1);
-			\draw[->, bend right=90] (0) to (1);
-			\draw[->, bend left=90] (0) to (1);
-			\draw[double, thick, ->] (1,-0.6) to (1,-0.2);
-			\draw[double, thick, ->] (1,0.2) to (1,0.6);
-			\end{tikzpicture}
-		\end{center}
-		\item parallel composition:
-		\begin{center}
-			\begin{tikzpicture}
-			\node (0) at (0,0) {.};
-			\node (1) at (2,0) {.};
-			\node (2) at (4,0) {.};
-			\draw[->, bend right=40] (0) to (1);
-			\draw[->, bend left=40] (0) to (1);
-			\draw[->, bend right=40] (1) to (2);
-			\draw[->, bend left=40] (1) to (2);
-			\draw[double, thick, ->] (1,-0.2) to (1,0.2);
-			\draw[double, thick, ->] (3,-0.2) to (3,0.2);
-			\end{tikzpicture}
-		\end{center}
-	\end{itemize}
-	Taking the dual of the above diagrams we obtain the diagrammatic language. Monoidal categories are 2-categories with only one 0-object called $1$. We can think of the 0-object as the underlying plane, wires carry systems (1-arrows), boxes are morphisms (2-arrows). We recover the given definition of monoidal category by calling 1-arrow objects, and 2-arrows morphisms. The unit object $1$ is then the identity 1-arrow $1 \rightarrow 1$ which is simply denoted $1$.
-\end{remark}
- 
 \begin{example}
-The cartesian product in $Sets$ $A \times B$ of sets $A$ and $B$, satisfies the universal properties of a categorical product, in the sense that we have projections $p_1$ and $p_2$ such that if $f$ and $g$ are maps from some set $C$ there is a unique function $h$ making the following diagram commute:
+The cartesian product $\times$ in $Sets$ satisfies the universal properties of a categorical product, in the sense that we have projections $p_1: A \times B \rightarrow A$ and $p_2: A \times B \rightarrow B$  such that if $f$ and $g$ are maps from some set $C$ there is a unique function $h$ making the following diagram commute:
 \begin{center}
 	\begin{tikzpicture}
 	\node (0) at (-1, 0) {$A$};
@@ -834,15 +785,15 @@ The cartesian product in $Sets$ $A \times B$ of sets $A$ and $B$, satisfies the 
 	\draw [->] (3) to (2);
 	\end{tikzpicture}
 \end{center}
-Because of this property all states of $(Sets,\times)$ are separable. This category is the ambient Cartesian world of classical physics.
+This implies that all states in $(Sets, \times)$ are separable, in the sense that any state $c$ of $A \times B$ is a product state $a \times b$. $Sets$ is the ambient Cartesian world of classical physics.
 \end{example}
 \begin{example}
-In $Vect_k$ states are vectors and costates are functionals. Note that the diagrammatic notation provides a two-dimensional generalisation of Dirac's notation. The category $Hilb$ of Hilbert spaces and linear maps is monoidal when equipped with the usual tensor product $\otimes$. Note that $\otimes$ is not a categorical product, and in fact we can have entangled states. Quantum mechanics is based on $(Hilb, \otimes)$ \cite{Vicary12}.
+In $Vect_k$ states are vectors and costates are functionals. Note that the diagrammatic notation provides a two-dimensional generalisation of Dirac's notation. Note that the tensor of vector spaces $\otimes$ is not a categorical product, and in fact we can have entangled states.
 \end{example}
 \begin{definition}[Scalars]
 Scalars in a monoidal category are morphisms $1 \rightarrow 1$.
 \end{definition}
-The category $Sets$ has only one scalar. $Rel$ has two scalars forming the cyclic group $\mathbb{Z}_2$ under composition. $Vect_k$ has scalars from $k$. Given a vector and a functional we obtain a scalar by composing them analogously to Dirac's formalism.
+The category $Sets$ has only one scalar. $Rel$ has two scalars forming the booleans $\mathbb{B}_2$ under composition. $Vect_k$ has scalars from $k$. Given a vector and a functional we obtain a scalar by composing them analogously to Dirac's formalism.
 \begin{definition}[BMC]
 	A braided monoidal category is a monoidal category $\mathcal{C}$ equipped with a natural isomorphism $B_{a,b} : a \otimes b \rightarrow b \otimes a$ called braiding, subject to the following compatibility conditions (called hexagon equations):
 	\begin{center}
@@ -1094,7 +1045,7 @@ For a braided monoidal category, giving a spherical structure is equivalent to g
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Hopf Algebras}
+\subsection{Hopf Algebras}\label{Hopfalgebras}
 Now that we have set in place a diagrammatic machinery based on monoidal categories, let us make use of it. In this section we will meet some mathematical structures which have been used by mathematicians to describe symmetry. The notion of Hopf algebras is a powerful generalization of that of a group. Since their discovery in the 1940s, Hopf algebras have been used in various fields of pure mathematics (such as number theory, algebraic geometry, and representation theory) and have found applications in Quantum mechanics. Most of the results of this section can be found in \cite{Majid95}. 
 \begin{definition}[Monoid]
 	$\Delta$ is a $PRO$ generated by morphisms (\mult, \unit) satisfying associativity: \associativity
@@ -1851,58 +1802,63 @@ We will only be considering finite dimensional Hopf Algebras, as for finite dime
 \begin{definition}[Dual Hopf Algebra]
 	For a finite dimensional Hopf Algebra $H$ the dual Hopf algebra is the vector space $H^{\star}$ of linear functionals on $H$ with Hopf Algebra structure given by transposing all of the structure.
 \end{definition}
-Given any finite dimensional hopf algebra $H$ with invertible antipode there is a standard way of constructing a Quasitriangular Hopf Algebra first introduced by Drinfeld \cite{Drinfeld87}. It will be implicit from now on that all Hopf algebras (and vector spaces) are finite-dimensional unless stated otherwise.
+Given any finite dimensional Hopf algebra $H$ with invertible antipode there is a standard way of constructing a Quasitriangular Hopf Algebra first introduced by Drinfeld \cite{Drinfeld87}. It will be implicit from now on that all Hopf algebras (and vector spaces) are finite-dimensional unless stated otherwise.
 \begin{definition}[Quantum double of a Hopf algebra]
 	The quantum double of a finite dimensional Hopf algebra $(H,\mu, 1, \Delta, \epsilon, S)$ with invertible antipode is the vector space $H \otimes H^\star$, with the following structure:
 	\begin{itemize}
 		\item multiplication and unit:
 		\begin{center}
-			\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{<}}},scale=0.7, squr/.style={draw,regular polygon,
+			\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}, squr/.style={draw,regular polygon,
 				regular polygon sides=4,fill=white}]
-			\node [scale=0.5, draw, circle, fill=black] (0) at (-0.5,0.6) {};
-			\node [scale=0.5,draw, circle, fill=white] (1) at (0.5,0.6) {};
-			\node [scale=0.5,draw, circle, fill=black] (2) at (-0.5,0) {};
-			\node [scale=0.5,draw, circle, fill=white] (3) at (0.5,0) {};
-			\node [scale=0.3, squr] (S) at (0.2,0) {$S$};
-			\draw (2)--(S)--(3);
-			\draw[bend left=90] (2) to (-0.5,0.3);
-			\draw (-0.5,0.3)--(0.5,-0.4);
-			\draw[bend left=90] (3) to (0.5,-0.4);
-			\draw (-0.5,-0.5)--(2)--(1)--(0.5,1);
-			\draw (0.5,-0.5)--(3)--(0)--(-0.5,1);
-			\draw (-1.5,-0.5) to (0);
-			\draw (1.5,-0.5) to (1);
+			\node [scale=0.5, draw, circle, fill=black] (0) at (-0.7,0.6) {};
+			\node [scale=0.5,draw, circle, fill=white] (1) at (0.7,0.6) {};
+			\node [scale=0.5,draw, circle, fill=black] (2) at (-0.5,0.2) {};
+			\node [scale=0.5,draw, circle, fill=white] (3) at (0.5,-0.2) {};
+			\node [scale=0.3, squr] (S) at (-0.1,0.7) {$S$};
+			\draw [bend right, postaction=decorate] (3) to (S);
+			\draw [bend right, postaction=decorate] (S) to (2);
+			\draw [postaction=decorate] (3) to (2);
+			\draw [postaction=decorate] (0.5,-0.5) to (3);
+			\draw [postaction=decorate] (2) to (-0.5,-0.5);
+			\draw [postaction=decorate] (1) to (2);
+			\draw [postaction=decorate] (3) to (0);
+			\draw [postaction=decorate] (0.7,1) to (1);
+			\draw [postaction=decorate] (0) to (-0.7,1);
+			\draw [bend left, postaction= decorate] (-1.5,-0.5) to (0);
+			\draw [bend left, postaction= decorate] (1) to (1.5,-0.5);
 			\end{tikzpicture}
 			\quad ; \quad
-			\begin{tikzpicture}[scale=0.7]
+			\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
 				\node [scale=0.5, draw, circle, fill=black] (0) at (0,0) {};
 				\node [scale=0.5, draw, circle, fill=white] (1) at (0.5,0) {};
-				\draw (0) to (0,0.5);
-				\draw (1) to (0.5,0.5);
+				\draw [postaction=decorate] (0) to (0,0.5);
+				\draw [postaction=decorate] (0.5,0.5) to (1);
 			\end{tikzpicture}
 		\end{center}
 		\item comultiplication and counit:
 		\begin{center}
-			\begin{tikzpicture}[scale=0.7, squr/.style={draw,regular polygon,
-				regular polygon sides=4,fill=white}]
+			\begin{tikzpicture}[squr/.style={draw,regular polygon,
+				regular polygon sides=4,fill=white}, decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
 			\node [scale=0.5, draw, circle, fill=white] (0) at (-0.5,-0.6) {};
 			\node [scale=0.5,draw, circle, fill=black] (1) at (0.5,-0.6) {};
-			\draw (-0.5,-1)--(0)--(0.5,0);
-			\draw (0.5,-1)--(1)--(-0.5,0);
-			\draw (0) to (-1,0);
-			\draw (1) to (1,0);
+			\draw [postaction=decorate] (0) to (-0.5,-1);
+			\draw [postaction=decorate, bend right] (-1,0) to (0);
+			\draw [postaction=decorate, bend left] (0.5,0) to (0);
+			\draw [postaction=decorate, bend left] (1) to (-0.5,0);
+			\draw [postaction=decorate, bend right] (1) to (1,0) ;
+			\draw [postaction=decorate] (0.5,-1) to (1);
 			\end{tikzpicture}
 			\quad ; \quad
-			\begin{tikzpicture}[scale=0.7]
+			\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
 			\node [scale=0.5, draw, circle, fill=white] (0) at (0,0) {};
 			\node [scale=0.5, draw, circle, fill=black] (1) at (0.5,0) {};
-			\draw (0) to (0,-0.5);
-			\draw (1) to (0.5,-0.5);
+			\draw [postaction=decorate] (0) to (0,-0.5);
+			\draw [postaction=decorate] (0.5,-0.5) to (1);
 			\end{tikzpicture}
 		\end{center}
 		\item antipode:
 		\begin{center}
-			\begin{tikzpicture}[scale=0.7, squr/.style={draw,regular polygon,
+			\begin{tikzpicture}[squr/.style={draw,regular polygon,
 				regular polygon sides=4,fill=white},decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
 			\node [scale=0.4, draw, trapezium, trapezium angle=70] (0) at (0,0) {$S$};
 			\node [scale=0.4, draw, trapezium, trapezium angle=70 , shape border rotate=180] (1) at (0.7,0) {$S^{-1}$};
@@ -1912,23 +1868,22 @@ Given any finite dimensional hopf algebra $H$ with invertible antipode there is 
 			\draw[postaction=decorate] (1)--(0.7,0.5);
 			\end{tikzpicture}
 		\end{center}
-	\end{itemize}
-	
+	\end{itemize}	
 \end{definition}
-It is shown in \cite{Majid95} and \cite{Gould93} that this is indeed a Hopf algebra and that it is quasitriangular with universal $R$-matrix:
+It is shown in \cite{Majid95} that this is indeed a Hopf algebra and that it is quasitriangular with universal $R$-matrix:
 \begin{center}
-	\begin{tikzpicture}[scale=0.7]
+	\begin{tikzpicture}[decoration={markings,mark=at position 0.5 with {\arrow{<}}}]
 		\node [scale=0.5, draw, circle, fill=white] (0) at (0,-0.3) {};
 		\node [scale=0.5, draw, circle, fill=black] (1) at (1,-0.3) {};
-		\draw [bend right=90,looseness=1.5] (-0.5,0) to (1.5,0);
-		\draw (0) to (0,0);
-		\draw (1) to (1,0);
+		\draw [bend right=90,looseness=1.5, postaction=decorate] (-0.5,0) to (1.5,0);
+		\draw [postaction=decorate] (0) to (0,0);
+		\draw [postaction=decorate] (1,0) to (1);
 	\end{tikzpicture}
 \end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Representations of Hopf algebras}
+\subsection{Representations of Hopf algebras}\label{Representationsofhopfalgebras}
 Recall that a group describes the symmetries of some space $X$ when it acts on it (e.g crystals, classical symmetries= symmetries of sets). If we apply the same reasoning to Hopf Algebras we have to make $H$ act on some quantum state space (i.e Hilbert space). So our object of study is not $H$ on its own but rather a module (or representation) of $H$.
 
 Where $V$ is a finite dimensional vector space. Note that the above diagram represents a linear map, all diagrams we will be drawing in this section are diagrams in $Hilb$. In order for $V$ to be a representation the following must hold.
@@ -2657,7 +2612,7 @@ We can see that the proof relies on the existence of the antipode. If a skew-ant
 \end{equation}
 The proof that this choice works is very similar to the one above. In particular, $\bar{S}$ exists when the antipode is an invertible morphism as we can define $\bar{S}=S - S^{-1}$ If the antipode coincides with the skew antipode then $Rep(H)$ then left and right duals in $Rep(H)$ coincide, we say it is rigid.
 
-\subsection{Tannaka duality}
+\subsection{Tannaka duality}\label{Tannakaduality}
 This section is only meant as a motivation for the study of Hopf Algebras and we wont prove the reconstruction theorems, surveys on Tannaka reconstruction are given by \cite{Vercruysse12} and \cite{Joyal91}.\\
 Reconstruction results are recipes which produce all the examples of a class of categories (i.e categories with some fixed structure) from simpler mathematical objects. As we have seen in the previous sections, the structure of categories of $H$-modules is induced from the axioms of the Hopf Algebra $H$. It is surprising that Hopf algebras underly most of the categories with this structure.
 \begin{theorem}[Tannaka reconstruction]
@@ -2666,8 +2621,7 @@ Reconstruction results are recipes which produce all the examples of a class of 
 		\item Any (braided) rigid monoidal category equipped with a fiber functor (here this means strict (braided) rigid monoidal functor) to $Vect$ is equivalent to $Rep(H)$ for some (quasitriangular) hopf algebra $H$.
 	\end{itemize}
 \end{theorem}
-Note that any category can be seen as a process theory in the sense of \cite{Abramsky04} and \cite{Coecke17}. Objects are systems and morphisms are their possible physical evolutions. The tensor product of a monoidal category can then be regarded as a way of forming composed systems. Quantum systems usually exhibit duality (particle, antiparticle pairs) and entanglement which are captured by the rigid structure of the category. From this perspective, this reconstruction result has an interesting physical interpretation. It says that any physical theory (monoidal category) is completely determined by the symmetries of the systems under consideration (the algebra structure). In the next section we will take this reasoning further to study physical theories of certain topological quantum systems.\\
-
+Note that any category can be seen as a process theory in the sense of \cite{Abramsky04} and \cite{Coecke17}. Objects are systems and morphisms are their possible physical evolutions. The tensor product of a monoidal category can then be regarded as a way of forming composed systems. Quantum systems usually exhibit duality (particle, antiparticle pairs) and entanglement which are captured by the rigid structure of the category. From this perspective, this reconstruction result has an interesting physical interpretation. It says that any physical theory based on vector spaces (monoidal category with fiber functor) is completely determined by the symmetries of the systems under consideration (the algebra structure). In the next section we will take this reasoning further to study physical theories of certain topological quantum systems.\\
 In the following chapters we will frequently use the notion of a comodule. We have only talked about the structure of the category of $H$-modules but all this structure can be shown to apply to $H$-comodules as well. Here we give a brief argument, but all we will need is the tensor product of $H$-comodules which we define below.
 Note that if we flip the axioms of a Hopf algebra upside down we obtain the axioms back. An $H$-comodule is precisely the flipped version of an $H$-module, therefore all the structure of the category of $H$ modules is also the structure of $H$-comodules. The definitions are simply obtained by flipping and interchanging white with black and the proofs too. So in particular the category of $H$-comodules is monoidal with tensor product given by:
 \begin{center}
@@ -2687,7 +2641,7 @@ Note that if we flip the axioms of a Hopf algebra upside down we obtain the axio
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The Algebra of Anyons}
+\section{The Algebra of Anyons}\label{Thealgebraofanyons}
 In this section we introduce the physics of Anyons and use the framework developed in the first section to define categorical models for theories of these particles. For an introduction to the physics of anyons consider the foundational paper \cite{Kitaev06} or Simon's notes \cite{Simon16}, for a categorical presentation \cite{Panangaden11} and for a thorough survey of the mathematical aspects of anyons \cite{Rowell17}.\\
 In the first section we introduce the physics and make the link with braided fusion categories, in the second part of we will develop the categorical formalism and the third part is dedicated to one result where quantification and categorical constructions play an important role.\\~\\
 To understand how anyons arise physically, let us consider $n$ indistinguishable particles evolving in space. The quantum amplitude for a space-time evolution of the system will depend on the topology of the particle word-lines and not on the detailed geometry. This means that isotopic space-time evolution will yield the same amplitude.\\
@@ -2748,7 +2702,7 @@ In the non-abelian case, the wave function lives in a higher-dimensional represe
 In $2+1$ dimensions we obtain degeneracy, non-abelian anyons, braidings give all unitaries.\\~\\
 In the previous section, we only considered groups of symmetries of a Hamiltonian. In order take topological symmetries of a system into account, we need the more general framework of Hopf Algebras. In particular, as those symmetries arise from braids, we need quasitriangular hopf algebras (or quantum groups) to treat all symmetries on the same level. We will see that the universal $R$-matrix plays an important role in the description of topological dependencies.
 
-\subsection{Models of anyons}
+\subsection{Models of anyons}\label{Modelsofanyons}
 We want to construct a category $\cat$ that models the behaviour of anyons. Ojects of $\cat$ will correspond to quantum systems and morphisms to their possible evolutions, or to the processes we can perform on them.\\
 Let us first set a finite set of labels $I = \{a,b,c...\}$ of distinct particle types, these will be objects of $\cat$. In our theory we must be able to consider many particles at the same time, so $\cat$ must be monoidal \cite{Coecke17}. The unit of the tensor $\mathbf{1}$ corresponds to the vacuum particle type (or "no-particle") and must be within our labels. So for the moment our theory is a monoidal category $\mathcal{C}$ and we can already use the diagrammatic language. A particle of type $a$ evolving trivially in time is denoted:
 \begin{center}
@@ -2923,7 +2877,7 @@ If $G$ is not abelian we must have a higher dimensional irreducible representati
 Groups are therefore not enough to describe interesting anyon theories. In the next section we pin down a smaller class of categories which correspond to non-degenerate theories of anyons.
 
 
-\subsection{Modular categories}
+\subsection{Modular categories}\label{Modularcategories}
 In this section we  define modular categories and state a few results that we will use in the next section. As we have seen, braided fusion categories are well suited to describe theories of anyons. These form a big class of categories, some of which are uninteresting from the physical point of view. To distinguish between them we can place braided fusion categories in a spectrum by asking what their symmetric center $Z_2$ is. 
 
 \begin{definition}[Symmetric center]
@@ -3023,7 +2977,7 @@ N_{ij}^k = \sum_{r\in I} \frac{S_{ir}S_{jr}S_{kr}}{S_{1r}}
 \end{example}
 
 
-\subsection{The Drinfeld center}
+\subsection{The Drinfeld center}\label{Thedrinfeldcenter}
 In this section we introduce a general construction that turns braided fusion categories into modular categories, and we show its relationship with the Quantum double construction on a Hopf Algebra introduced in the first chapter.
 The proofs and results of this section were developed with Amar Handzihasanovic \cite{Handzihasanovic}.\\
 Topological dependencies between objects in fusion categories are captured by the braided structure. Let us fix some definitions before discussing the Drinfeld construction.
@@ -4570,9 +4524,9 @@ We have found many equivalent ways of constructing non-degenerate theories of an
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Quantum Computation}
+\section{Quantum Computation}\label{Quantumcomputation}
 
-\subsection{Topological Quantum Computation}
+\subsection{Topological Quantum Computation}\label{Topologicalquantumcomputation}
 
 \subsubsection{From categories to computation}
 In the previous section we saw that categories can be interpreted as physical process theories. In a very similar way, we can interpret objets as data types and morphisms as computational processes, so that any category corresponds to a theory of computation. Monoidal categories are ones where parallel computation is possible. Quantum computation is a model in which data is encoded in the state of quantum systems and processes are quantum evolutions of the system. A computation consists of the preparation of some quantum states, their manipulation and measurement. Usually this procedure is repeated in order to collect statistics and approximate density distributions. The unit of information in quantum computation is called qubit by analogy with the classical bit. A qubit is a two-level quantum system, that is a Hilbert space of dimension $2$ which is denoted by $\mathbb{C}^2$. Similarly a qudit is a $d$ dimensional system $\mathbb{C}^d$.\\
@@ -4687,7 +4641,7 @@ Given a UMC $\cat$, we have a finite set of data types $I$ given by the isomorph
 	In \cite{Panangaden11} it is shown that the Fibonacci model allows universal quantum computation. This is done by first noting that polynomially many $R$ and $F$ matrices as above can approximate any unitary on one qubit, and then by constructing a CNOT gate on two topological qubits.
 \end{example}
 
-\subsubsection{Kitaev's quantum double model}
+\subsubsection{Kitaev's quantum double model}\label{Kitaevquantumdoublemodel}
 The models which we present here have first been introduced by Kitaev \cite{Kitaev03} and some special cases have been implemented experimentally on two dimensional materials at very low temperatures.\\
 Suppose we have particles living in state space $H$ where $H$ is a Hopf algebra (with black multiplication, white comultiplication and antipode $S$ as usual). We can define two canonical types of left $H$-module structures on $H$ given by the right and left multiplication as follows:
 \begin{equation}\label{Lmoduleaction}
@@ -4968,7 +4922,7 @@ Let $\{C_i\}_{i=1}^n$ be the distinct conjugacy classes in $G$. To each of those
 \begin{equation}
 P_hg\ket{k,v^\alpha_j} = \delta_{h,gkg^{-1}} \ket{h,\alpha(h^{-1}gk)v^\alpha_j}
 \end{equation}
-and the $\{V_{i,\alpha}\}$ is the complete set of irreducible representations. When $G$ is abelian, all irreducible representations are one-dimensional and we only have abelian anyons which are very unlikely to be universal for quantum computation. It was shown by Kitaev that if $G=S_5$ the model is universal for quantum computation. In [cite Lahtinen] the $G=S_3$ model was considered but not shown to be universal.
+and the $\{V_{i,\alpha}\}$ is the complete set of irreducible representations. When $G$ is abelian, all irreducible representations are one-dimensional and we only have abelian anyons which are very unlikely to be universal for quantum computation. It was shown by Kitaev that if $G=S_5$ the model is universal for quantum computation. In \cite{Lahtinen06} the $G=S_3$ model was described throughly but not shown to be universal.
 \begin{example}[Quantum memory]
 	The case where $G \simeq \mathbb{Z}_2$ gives rise to Kitaev's toric code. Note that $D(\mathbb{Z}_2) \simeq \mathbb{C}(\mathbb{Z}_2\times \mathbb{Z}_2^\star)$, so that there are $4$ irreducible representations, all of which are 1-dimensional. Each of those corresponds to a different type of excitation.  Let $x$ and $y$ be the generators of the group. The trivial representation is the trivial excitation (or `no excitation'). The other irreducible representations are obtained by mapping $x$ and $y$ to order $2$  elements of $\mathbb{C}$. We obtain two bosons, when both get sent to $-1$ or $i$ and one fermions when $x \mapsto -1$ and $y \mapsto i$.\\
 	If we implement the construction on a lattice embedded on a torus, we obtain a model for a topologically protected quantum memory. Consider a (layered enough) lattice on a torus with spins on the edges. Let $C_1$ and $C_2$ be two cycles. States of the system are generated by labellings of the lattice with elements of $\mathbb{Z}_2$. As shown by Kitaev, the ground state degeneracy has dimension $4$, so that we can think of the system as storing two qubits of information. If a particle-antiparticle pair is created at some site on the lattice it will re annihilate at some other site. The world-lines will form a loop on the torus and we have three possible behaviours. If the loop can be shrinked to a point, this won't affect the underlying information otherwise we obtain two non-trivial operations $T_1$ and $T_2$ affecting the ground state when the world-lines loop around cycle $C_1$ and $C_2$. If we initialise the lattice in some ground state it will remain in that state unless a $T_1$ or $T_2$ operation is implemented. If the lattice is layered enough, it is very unlikely that such processes occur spontaneously, and therefore the quantum information is protected.
@@ -5211,11 +5165,10 @@ We obtain the following result.
 Note that this doesn't require the Hopf algebra to be finite dimensional. If $H=\mathbb{C}G$ then we recover the $DG$-module structure defined by Kitaev from the equivalence seen in the section on the Drinfeld center.
 {\color{blue} [Is there a categorical description of the Hamiltonian formalism that we could use here, in order to obtain the more concrete formulation of Kitaev \cite{Kitaev03}]}\\
 
-\subsection{Permutational Quantum Computing}
-This section is about a model of quantum computation introduced by Jordan \cite{Jordan09}. We will first introduce the model as it appears in \cite{Jordan09} and then give a categorical presentation not present in the literature which will allow us to generalize the model and compare it to other computational models.
+\subsection{Permutational Quantum Computing}\label{Permutationalquantumcomputing}
+This section is about a model of quantum computation introduced by Jordan \cite{Jordan09}. It is a highly restricted model of quantum computation which still seems to yield advantage over classical computation. For instance, Jordan shows the model allows to compute some irreducible representations of $S_n$ in polynomial time \cite{Jordan09}, problem for which no classical polynomial time algorithm is known. This section is the beginning of a collaboration with Vojtech Havlicek and consists in a categorical presentation of permutational quantum computing (PQC). The categorical perspective puts PQC on a broader picture and highlights its relationship to TQC but hasn't yielded interesting results yet.
 
 \subsubsection{Jordan's model}
-This section was developed with Vojtech Havlicek and is based on \cite{Havlicek17} and \cite{Jordan09}.
 Let $\mathcal{L}$ be an $n$-qubit quantum system. Basis states of an $n$-qubit quantum systems are often specified by listing eigenvalues of Pauli-$Z$ operators applied to each qubit, which is known as computational basis.
 Permutational quantum computing (PQC) works with another choice of basis states: eigenstates of complete set of commuting spin measurements on qubit subsets. Let us fix a finite set $I=\{1,2,3...,n\}$ indexing the qubits. With a convention that $\hbar = 1$, the spin of the $k$-th qubit is defined by a triple:
 \begin{align*}
@@ -5327,24 +5280,19 @@ We can easily see that defining $\mathcal{J}_d := Rep(SU(d))$ we obtain the corr
 \begin{proof}
 	Fix $n \in \mathbb{N}$ and a simple object $a \in obj(\cat)$ then $S_n$ acts on $a^{\otimes n}$ by permutations, and this clearly defines a module as we can consider $a$ as a vector space using the fiber functor.
 \end{proof}
-
-
-\begin{example}[Permutational quantum computation in $Rep(S_3)$]
-\end{example}
-
-\begin{example}[Approximation of Dijkgraaf-Witten link invariants]
-	The link invariant essentially counts homomorphisms from the fundamental group
-	of the link complement to the group G. (cite Zhenghan?)
+\begin{example}[$S_3$ PQC]
+	The PQC model based on $S_3$ is rather trivial. $Rep(S_3)$ is symmetric so that phase moves are trivial. The only process is the $F$-matrix which 
 \end{example}
 
 \subsubsection{Can we boost PQC?}
-Note that if $SU(2)$ is an infinite dimensional hopf algebra with involutive antipode. In view of the generalization of Kitaev's model, it is a natural question to ask whether we can apply a similar reasoning here, to obtain a model induced by Jordan's model which exhibits topological dependencies. This means applying the Drinfeld center construction to $J_2$ or in other words pairing the $SU(2)$-modules of Jordan's model with an $SU(2)$ coaction to obtain a theory of $SU(2)$ Yetter-Drinfeld modules. It is not known to the reader whether such model is implementable in practice. \\
+This section 
+Note that $SU(2)$ is an infinite dimensional Hopf algebra with involutive antipode. In view of the generalization of Kitaev's model, it is a natural question to ask whether we can apply a similar reasoning here, to obtain a model induced by Jordan's model which exhibits topological dependencies. This means applying the Drinfeld center construction to $J_2$ or in other words pairing the $SU(2)$-modules of Jordan's model with an $SU(2)$ coaction to obtain a theory of $SU(2)$ Yetter-Drinfeld modules. It is not known to the reader whether such model is implementable in practice. \\
 {\color{blue} [If we want to repeat the same construction on the lattice as for Kitaev's model, then we are assuming that particles live in SU(2), I don't know if it makes any sense... if it does then the exact same reasoning as the section on generalising Kitaev can be applied]}\\
 {\color{blue} [If that doesn't make sense then does it make sense to construct a lattice labelled by representations of SU(2) (say for instance they are all initialised in sector 1/2 as in the PQC framework) and define similar vertex operators (SU(2) action on the tensor) and plaquette operators which measure the the overall angular momentum of the plaquette(SU(2) coaction: fusing the particles on the plaquette). Then maybe we could show these form Yetter Drinfeld modules which give rise to a theory described by a non-symmetric braided monoidal category $Z(J_2)$ $\implies$ we have built a theory from Jordan's model which exhibits topological dependencies between particles ]}\\
 {\color{blue} [The previous reasoning gives rise to a theory with infinitely many particle types, but the assumption of TQC (and reasoning why we take modular categories as models) is that there can only be finitely many anyon types in nature, under that assumption the above theory can actually not be physically implemented, or maybe the category $Z(J_2)$ has only finitely many simple objects, which i doesn't seem to be the case... ]}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{A braided representation of quantum computation}
+\subsection{A braided representation of quantum computation}\label{Abraidedrepresentationofquantumcomputation}
 Recall our discussion on functorial semantics. We talked about categories representing syntax (such as $PROs$ and $PROPs$) and smenatic categories (such as $Vect$ or $Sets$). The category $Rep(DG)$ is a category which we filled with meaning and we have used it as a semantic category so far. Syntax and semantics are relative notions, in this section we forget all the meaning we associated to the category $Rep(DG)$ (e.g as a theory of anyons, as a model for Kitaev's lattice construction, as aboosting of PQC etc...) and we just see it as a syntax for diagrams which we will interpret in $Vect$.\\
 We will use functorial boxes \cite{Mellies06} to map the braided pictures in $\cat := Rep(DG)$ down to $Vect$ and obtain a braided representation of quantum gates. We will give a description of quantum computation in the ambient world of vector spaces, but using pictures borrowed from $\cat$. Preparations and measurements will be performed in $Vect$ and quantum gates described by boxed braids from $\cat$. The description looks like this:
 \begin{center}
@@ -5358,8 +5306,8 @@ We will use functorial boxes \cite{Mellies06} to map the braided pictures in $\c
 	\end{tikzpicture}
 \end{center}
 Where the center box corresponds to the forgetfull functor $U: Rep(DG) \rightarrow Vect$ applied to some diagram from $Rep(DG)$ (i.e some sequence of structural morphisms) and states and tests are prepared in $Vect$.\\
-We know from [drinfeld center section] that $Rep(DG) \simeq \mathcal{D}_G^{lr}$, so specifying an object of $Rep(DG)$ just corresponds to choosing a vector space $V$ with a left $G$-module structure  and right $G$-comodule structure.\\
-Let $G:= \mathbb{Z}_2$, the reason why we chose this group will become apparent later on, many other choices are possible. Let us denote the standard basis of $\mathbb{C}G$ by $\{ \ket{0}, \ket{1}\}$. This has natural Hopf algebra structure with multiplication given by $\ket{i}\otimes \ket{j} \mapsto \ket{i+j}$ (where $+$ is addition modulo $2$) and comultiplication given by the copy map $\ket{i} \mapsto \ket{i}\otimes \ket{i} $.\\
+We know from [drinfeld center section] that $Rep(DG) \simeq \mathcal{D}_G^{lr}$, so specifying an object of $Rep(DG)$ just corresponds to choosing a vector space $V$ with a left $G$-module structure  and right $G$-comodule structure.
+First, let us pick $G:= \mathbb{Z}_2$. Let us denote the standard basis of $\mathbb{C}\mathbb{Z}_2$ by $\{ \ket{0}, \ket{1}\}$. This has natural Hopf algebra structure with multiplication given by $\ket{i}\otimes \ket{j} \mapsto \ket{i+j}$ (where $+$ is addition modulo $2$) and comultiplication given by the copy map $\ket{i} \mapsto \ket{i}\otimes \ket{i} $.
 We now choose a two-dimensional object of $Rep(DG)$ to serve as our qubit. Take $V=\mathbb{C}^2$ with the $Z$ $G$-action (given by $1 \mapsto id$ and $-1 \mapsto Z$ the Pauli $Z$ operator) and the $X$ $G$-coaction (i.e $X$ projective measurement). From [drinfeld section] we know $RepDG$ is braided, and the braid on $V \otimes V$ is:
 \begin{equation}
 \begin{gathered}
@@ -5390,8 +5338,8 @@ We now choose a two-dimensional object of $Rep(DG)$ to serve as our qubit. Take 
 \end{tikzpicture}
 \end{gathered}
 \end{equation}
-Consider the forgetfull functor $U: Rep(DG) \rightarrow Vect$. It just picks the underlying vector space of each object and the underlying linear map of each morphism. Under $U$, the braid is precisely a SWAP gate followed by a CNOT. We now want a way to apply phases on our system $V$, we will do this using ancillary systems which will implement a phase when braiding around $V$. Define $\pi$ as the one-dimensional representation with trivial action and the following coaction:
-
+Consider the forgetfull functor $U: Rep(DG) \rightarrow Vect$. It just picks the underlying vector space of each object and the underlying linear map of each morphism. Under $U$, the braid is precisely a SWAP gate followed by a CNOT.\\
+We now want a way to apply phases on our system $V$, we will do this using ancillary systems which will implement a phase when braiding around $V$. Define $\pi$ as the one-dimensional representation with trivial action and the following coaction:
 \begin{equation}
 \begin{gathered}
 \begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
@@ -5452,8 +5400,71 @@ This is a well defined $\mathbb{C}\mathbb{Z}_2$-module structure as $-1 \in \mat
 \end{tikzpicture}
 \end{gathered}
 \end{equation}
-Which, by definition of the action on $V$, is the Pauli $Z$ operator applied to $V$, i.e the $Z$ $\pi$ phase. Having obtained a braided description of the CNOT and the $\pi$-phase this shows that any stabilizer quantum gate can be described via braids. 
+Which, by definition of the action on $V$, is the Pauli $Z$ operator applied to $V$, i.e the $Z$ $\pi$ phase. Now we can perform an $X$ $\pi$ phase by using the $G$-action instead of the coaction. Indeed consider the cocopyable state $x=\ket{0}-\ket{1}$ and define a an action on $\pi$ (as defined above) by the following:
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+\node[scale=0.4, black] (0) at (0.5,0.5) {};
+\node (w) at (0.5,-0.3) {$\pi$};
+\draw [bend right] (0) to (-0.5,0);
+\draw (0.5,0)--(0)--(0.5,1);
+\end{tikzpicture}
+\end{gathered}
+\, := \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+\node[scale=0.5, draw, circle] (0) at (0.5,0.5) {x};
+\draw [bend right] (0) to (-0.5,0);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
+Then this defines an action as $x$ is cocopyable. And the following holds:
+\begin{equation}
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+\node (0) at (0.5,0.5) {};
+\node (v) at (0,-0.3) {$\pi$};
+\node (w) at (1,-0.3) {$V$};
+\draw (0,0)--(1,1);
+\draw (1,0)--(0)--(0,1);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+\node[scale=0.4, whit] (0) at (0,0.8) {};
+\node[scale=0.4, black] (1) at (1,1) {};
+\node (v) at (0,-0.3) {$\pi$};
+\node (w) at (1,-0.3) {$V$};
+\draw [bend left] (0,0) to (0.5,0.5);
+\draw [bend right] (0.5,0.5) to (1);
+\draw (1) to (1,1.3);
+\draw [bend right] (1,0) to (0.5,0.5);
+\draw [bend left=20] (0.5,0.5) to (0);
+\draw (0) to (0,1.3);
+\draw (0) to (1);
+\end{tikzpicture}
+\end{gathered}
+\, = \,
+\begin{gathered}
+\begin{tikzpicture}[scale=0.6, whit/.style={draw,regular polygon,
+	regular polygon sides=4,fill=white}, black/.style={draw,regular polygon, regular polygon sides=4,fill=black}]
+\node[scale=0.4, draw, circle] (0) at (1.8,0.9) {$x$};
+\node[scale=0.4, whit] (1) at (1,0.4) {};
+\node (w) at (1,-0.3) {$V$};
+\draw (1,0)--(1)--(1,1.3);
+\draw [bend left] (0) to (1);
+\end{tikzpicture}
+\end{gathered}
+\end{equation}
 
+Which precisely yields an $X$ $\pi$ phase. Now $\pi$ phases are not enough to obtain interesting computations. For instance we would wish to perform a $\pi/2$ phase in order to get stabilizer quantum mechanics. For this reason we will need to choose a bigger group and again consider functorial semantics onto $FVect$, but the ideas to describe gates as braids will be the same as above.\\
+Pick the group $\mathbb{Z}_4$ and consider $Rep(D\mathbb{Z}_4)$. First of all note that any $\mathbb{Z}_2$-module is also a $\mathbb{Z}_4$-module under the injection homomorphism $i: \mathbb{Z}_2 \rightarrow \mathbb{Z}_4$. Similarly any $\mathbb{Z}_2$-comodule is a $\mathbb{Z}_4$-comodule. Therefore there is a copy of $Rep(D\mathbb{Z}_2)$ living inside $Rep(D\mathbb{Z}_4)$. We need to fix an object $Q$ to serve as our qubit. Let $Q$ be the two dimensional Yetter-Drinfeld module given by the $X$ coaction and $Z$ action. The actions and coactions of $\mathbb{Z}_4$ on $Q$ yield $V$ under the restriction to $\mathbb{Z}_2$.
+{\color{blue} how do you show that the braid on $Q$ is the same as the braid on $V$ (as linear maps), is it true?}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -5462,9 +5473,8 @@ Which, by definition of the action on $V$, is the Pauli $Z$ operator applied to 
 
 \appendix
 	\section{Tensor categories}
-	Categorification is the process of replacing sets by categories, functions by functors and weakening equalities to natural isomorphisms. Tensor categories are the categorification of rings. Multiplication becomes a tensor product $\otimes$ and addition becomes a direct product $\oplus$. Monoidal categories are defined in the first chapter of the thesis. They are obtained by categorifying the notion of a monoid. We also defined rigidity, as the property that any object has a right dual and a left dual. The notion of tensor categories is obtained by considering rigid monoidal structures on abelian categories.\\
-	In order to define abelian categories we need a few preliminary notions.
-	With start by generalising the notions of injection and surjection from set theory.
+	Categorification is the process of replacing sets by categories, functions by functors and weakening equalities to natural isomorphisms. Tensor categories are the categorification of rings. Multiplication becomes a tensor product $\otimes$ and addition becomes a direct product $\oplus$. Monoidal categories are defined in the first chapter of the thesis. They are obtained by categorifying the notion of a monoid. We also defined rigidity, as the property that any object has a right dual and a left dual. The notion of tensor categories is obtained by considering rigid monoidal structures on abelian categories. Many of the results and definitions  of this appendix can be found in \cite{Etingof15}, \cite{Bartlett15} and \cite{Freyd66}.\\
+	Abelian categories are frameworks for theories that have similar behaviour to linear algebra. In order to define abelian categories we need a few preliminary notions. We start by generalising the notions of injection and surjection from set theory.
 	\begin{definition}[Mono]
 		A morphism $f: a \rightarrow b$ is a monomorphism if for any $g,h: c \rightarrow a$
 		$$f \circ g = f \circ h \implies h=g$$
@@ -5473,10 +5483,11 @@ Which, by definition of the action on $V$, is the Pauli $Z$ operator applied to 
 		A morphism $f: a \rightarrow b$ is an epimorphism if for any $g,h: b \rightarrow c$
 		$$g \circ f = h \circ f \implies h=g$$
 	\end{definition}
+	One important feature of linear algebra is the presence of the following object.
 	\begin{definition}[Zero object]
 		We say $0 \in obj(\cat)$ is a zero object if it is both initial and terminal, i.e for any object $a$ in $\cat$ there are unique arrows $0 \rightarrow a$ and $a \rightarrow 0$.
 	\end{definition}
-	Such object gives rise to the presence of zero morphisms in any hom-set as the unique morphism $a \rightarrow 0 \rightarrow b$ for any $a,b \in obj(\cat)$. Note that $Sets$ has no zero object, the zero object is the first step in obtaining theories that generalize linear algebra. We obtain generalizations of the notions of kernels from vector spaces.
+	Such object gives rise to the presence of zero morphisms in any hom-set as the unique morphism $a \rightarrow 0 \rightarrow b$ for any $a,b \in obj(\cat)$. Note that $Sets$ has no zero object. We obtain generalizations of the notions of kernels from vector spaces.
 	\begin{definition}[Kernel and cokernel]
 		The kernel of a morphism $f: a \rightarrow b$ in a category with zero object $0$ is a morphism $k:S \rightarrow a$ such that $f \circ k = 0$ and for any $h: c \rightarrow a$ such that $h \circ f = 0$ there is a unique $h': c \rightarrow S$ such that the following diagram commutes:
 		\begin{center}
@@ -5525,7 +5536,7 @@ Which, by definition of the action on $V$, is the Pauli $Z$ operator applied to 
 		The category $\mathcal{C}$ is Ab if it is enriched over abelian groups. That is all hom-sets have abelian group structures and composition of morphisms is a group homomorphism. 
 	\end{definition}
 	\begin{definition}[Direct sums]
-	A category $\mathcal{C}$ has direct sums if it has a monoidal structure with tensor $\oplus$ and such that $\oplus$ is the categorical product ad coproduct. This means for any objects $A,B \in obj(\cat)$ the direct product $A\oplus B$ comes with projections $p_A$, $p_B$ and injections $i_A$, $i_B$ satisfying the universal properties of the categorical product and coproduct.
+	A category $\mathcal{C}$ has direct sums if it has a monoidal structure with tensor $\oplus$ and such that $\oplus$ is the categorical product and coproduct. This means for any objects $A,B \in obj(\cat)$ the direct product $A\oplus B$ comes with projections $p_A$, $p_B$ and injections $i_A$, $i_B$ satisfying the universal properties of the categorical product and coproduct (respectively).
 	\end{definition}
 	For $\oplus$ to be the categorical product means that for any morphisms $f:C \rightarrow A$ $g: C \rightarrow B$ there is a unique arrow $h: C \rightarrow A \oplus B$ such that $p_A\circ h = f$ and $p_B \circ h =g$. The universal property of the coproduct is the dual notion where all arrows are flipped and projections are replaced by injections.
 	\begin{definition}[Additive category]
@@ -5536,17 +5547,14 @@ Which, by definition of the action on $V$, is the Pauli $Z$ operator applied to 
 		An abelian category is an additive category where every morphism has a kernel and a cokernel and every monic (epic) is a kernel (cokernel).
 	\end{definition} 
 	Note that this is precisely the behaviour of kernels and cokernels from vector spaces. In an abelian category hom-sets are abelian groups, but we can explicitly require hom-sets to be vector spaces over some field $k$.
-	\begin{definition}
-		content...
+	\begin{definition}[k-linearity]
+		Let k be field, we say $\mathcal{C}$ is $k$-linear if all hom-sets are k-vector spaces and composition is bilinear.
+	\end{definition}We will assume throughout the thesis that $k=\mathbb{C}$ so in particular the field is algebraically closed.\\
+	If we equip an abelian category with a rigid monoidal structure we obtain the categorification of rings.
+	\begin{definition}[Tensor category]
+		A tensor category is an abelian rigid monoidal category.
 	\end{definition}
-	\begin{definition}[k-linear category]
-	Let k be field, we say $\mathcal{C}$ is $k$-linear if all hom-sets are k-vector spaces and composition is bilinear.
-	\end{definition}
-	
-	
-	\section{Fusion categories}
-	Many of the results and definitions  of this section can be found in \cite{Mueger08}, \cite{Bartlett15} and \cite{Freyd66}.
-	We will assume throughout the thesis that $k=\mathbb{C}$ so in particular the field is algebraically closed. 
+	Fusion categories are special types of tensor categories where the objects are generated under $\oplus$ by a finite set of simple objects.
 	\begin{definition}
 		An object $X$ in a $\mathbb{C}$-linear category is called simple if End$X=k$id$_X$.
 	\end{definition}
@@ -5554,18 +5562,14 @@ Which, by definition of the action on $V$, is the Pauli $Z$ operator applied to 
 		$\mathcal{C}$ is semisimple if every object is isomorphic to a direct sum of simple objects. $\mathcal{C}$ is finite if there are finitely many isomorphism classes of simple objects.
 	\end{definition}
 	\begin{definition}
-		A $\mathbb{C}$-linear tensor category is a fusion category if it has finite-dimensional hom-spaces, is semisimple with finitely many isomorphism classes of simple objects, the unit $\mathbf{1}$ is simple  and all objects have duals.
+		A $\mathbb{C}$-linear tensor category is a fusion category if it has finite-dimensional hom-spaces, is semisimple with finitely many isomorphism classes of simple objects and the unit $\mathbf{1}$ is simple.
 	\end{definition}
-	
 	\begin{theorem}
 		$Rep(H)$ is a fusion category
 	\end{theorem}
-	
-	\begin{example}
-		Any group $G$ is a hopf algebra (comonoid = copy).\\
-		Therefore $RepG$ can also be made monoidal and rigid.
-	\end{example}
-	
+	\begin{proof}
+		Find reference!
+	\end{proof}
 	\begin{example}
 		Recall the group $S_3=\{e, g, g^2, \sigma, \sigma g, \sigma g^2 \}$. The category $Rep(S_3)$ is a fusion category. By the known representation theory of $S_3$, $Rep(S_3)$ has three simple objects: the trivial representation $1$, the sign representation $-1$ and the geometric two dimensional representation $\tau$:
 		\begin{equation*}
@@ -5576,24 +5580,13 @@ Which, by definition of the action on $V$, is the Pauli $Z$ operator applied to 
 		\end{equation*}
 		These satisfy the following fusion rules $\forall X$ simple object:
 		\begin{equation}
-		1 \otimes X \simeq X \simeq X \otimes 1\\
-		-1 \otimes -1 \simeq 1\\
-		-1 \otimes \tau \simeq \tau \simeq \tau \otimes -1\\
-		\tau \otimes \tau \simeq 1 \oplus -1 \oplus \tau\\
+		\begin{aligned}
+		1 \otimes X \simeq X& \simeq X \otimes 1 \\
+		-1 \otimes -1 \simeq 1& \\
+		-1 \otimes \tau \simeq \tau& \simeq \tau \otimes -1 \\
+		\tau \otimes \tau \simeq 1& \oplus -1 \oplus \tau 
+		\end{aligned}
 		\end{equation}		
 	\end{example}
-	
-	\begin{example}[Graph invariants from spherical fusion categories]
-	\end{example}
-
-	\begin{theorem}
-		If $\mathcal{C}$ is $k$-linear, spherical or a *-category (k-linear dagger) then so is $Z_1(\mathcal{C})$ 
-	\end{theorem}
-
-	\begin{theorem}
-		If $H$ is a quasitriangular Hopf Algebra then $Rep(H)$ is a braided fusion category.
-	\end{theorem}
-	
-	N-matrix, R-matrix
 
 \end{document}

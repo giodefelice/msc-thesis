@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 AUG 2017 17:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  15 AUG 2017 12:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1648,84 +1648,89 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 612.
+
+LaTeX Warning: Citation `Bartlett05' on page 2 undefined on input line 589.
 
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
+LaTeX Warning: Citation `Auslander65' on page 2 undefined on input line 589.
+
+
+LaTeX Warning: Citation `Pauncz67' on page 2 undefined on input line 589.
+
+[2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 609.
+
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 612.
- [2]
-Overfull \hbox (3.32031pt too wide) in paragraph at lines 687--688
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 609.
+ [3]
+Overfull \hbox (3.32031pt too wide) in paragraph at lines 650--651
 []\OT1/cmr/m/it/10 Given cat-e-gories $\OMS/cmsy/m/n/10 C$ \OT1/cmr/m/it/10 and
  $\OMS/cmsy/m/n/10 D$ \OT1/cmr/m/it/10 and func-
  []
 
-[3]
-Overfull \hbox (16.1093pt too wide) in paragraph at lines 705--706
+
+Overfull \hbox (16.1093pt too wide) in paragraph at lines 668--669
 []\OT1/cmr/m/it/10 A monoidal cat-e-gory is a cat-e-gory $\OMS/cmsy/m/n/10 C$ \
 OT1/cmr/m/it/10 equipped
  []
 
-[4] [5]
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 787.
- [6] [7] [8] [9] [10] [11] [12] [13] [14]
-Overfull \hbox (6.59302pt too wide) in paragraph at lines 1674--1675
+[4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
+Overfull \hbox (6.59302pt too wide) in paragraph at lines 1625--1626
 []\OT1/cmr/m/it/10 The uni-ver-sal $\OML/cmm/m/it/10 R$\OT1/cmr/m/it/10 -matrix
  sat-is-fies the Quan-tum Yang-Baxter equa-
  []
 
 [15]
-Overfull \hbox (0.57443pt too wide) in paragraph at lines 1856--1857
+Overfull \hbox (0.57443pt too wide) in paragraph at lines 1807--1808
 []\OT1/cmr/m/it/10 The quan-tum dou-ble
  []
 
 [16] [17] [18] [19] [20]
-Overfull \hbox (15.54112pt too wide) in paragraph at lines 2665--2666
+Overfull \hbox (15.54112pt too wide) in paragraph at lines 2620--2621
 []\OT1/cmr/m/it/10 Any monoidal cat-e-gory $\OMS/cmsy/m/n/10 C$ \OT1/cmr/m/it/1
 0 equipped
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 2669--2670
-
- []
-
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 2691--2695
+Underfull \hbox (badness 10000) in paragraph at lines 2645--2649
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 2742--2744
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2694.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2696--2698
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2747--2750
+Underfull \hbox (badness 10000) in paragraph at lines 2701--2704
 
  []
 
 [23] [24] [25] [26]
-Underfull \hbox (badness 10000) in paragraph at lines 2906--2910
+Underfull \hbox (badness 10000) in paragraph at lines 2860--2864
 
  []
 
 [27] [28] [29]
-Overfull \hbox (7.15947pt too wide) in paragraph at lines 3031--3032
+Overfull \hbox (7.15947pt too wide) in paragraph at lines 2985--2986
 []\OT1/cmr/m/it/10 A half-braiding on some ob-ject $\OML/cmm/m/it/10 X$ \OT1/cm
 r/m/it/10 in a monoidal
  []
 
 [30]
-Overfull \hbox (0.81467pt too wide) in paragraph at lines 3037--3038
+Overfull \hbox (0.81467pt too wide) in paragraph at lines 2991--2992
 []\OT1/cmr/m/it/10 The braided (Drin-feld) cen-ter of a monoidal
  []
 
 [31]
-Overfull \hbox (4.97093pt too wide) in paragraph at lines 3137--3146
+Overfull \hbox (4.97093pt too wide) in paragraph at lines 3091--3100
 \OT1/cmr/m/n/10 Fix a bial-ge-bra $\OML/cmm/m/it/10 H$ \OT1/cmr/m/n/10 and sup-
 pose $[]  \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 obj\OT1/cmr/m/n/10 (\OML/cmm/m/it
 /10 Rep\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 H\OT1/cmr/m/n/10 ))$ and $(\OML/cmm/m/
@@ -1734,31 +1739,35 @@ mm/m/it/10 RepG\OT1/cmr/m/n/10 )$.
  []
 
 [32] [33] [34] [35] [36] [37] [38] [39]
-Overfull \hbox (1.33406pt too wide) in paragraph at lines 4590--4592
+Overfull \hbox (1.33406pt too wide) in paragraph at lines 4544--4546
 \OT1/cmr/m/n/10 mea-sure-ment out-comes) ob-tained by re-peat-ing the pro-ce-du
 re poly-no-mi-ally many
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4590--4592
+Underfull \hbox (badness 10000) in paragraph at lines 4544--4546
 
  []
 
-[40] [41] [42] [43] [44] [45] [46]
-Underfull \hbox (badness 10000) in paragraph at lines 5211--5213
+[40] [41] [42] [43] [44]
+
+LaTeX Warning: Citation `Lahtinen06' on page 45 undefined on input line 4925.
+
+[45] [46]
+Underfull \hbox (badness 10000) in paragraph at lines 5165--5167
 
  []
 
 [47]
 
-LaTeX Warning: Citation `Woit17' on page 48 undefined on input line 5242.
+LaTeX Warning: Citation `Woit17' on page 48 undefined on input line 5195.
 
 [48]
 
-LaTeX Warning: Citation `Pauncz67' on page 49 undefined on input line 5247.
+LaTeX Warning: Citation `Pauncz67' on page 49 undefined on input line 5200.
 
 
-Overfull \hbox (34.5888pt too wide) in paragraph at lines 5255--5257
+Overfull \hbox (34.5888pt too wide) in paragraph at lines 5208--5210
 []\OT1/cmr/m/it/10 Prepare a si-mul-ta-ne-ous eigen-state $[] \OT1/cmr/m/n/10 =
  []$ \OT1/cmr/m/it/10 of $\OML/cmm/m/it/10 S[];  S[];  [] S[]; Z$\OT1/cmr/m/it/
 10 .
@@ -1766,26 +1775,28 @@ Overfull \hbox (34.5888pt too wide) in paragraph at lines 5255--5257
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 5257
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 5210
 .
 
 
-Overfull \hbox (2.43042pt too wide) in paragraph at lines 5257--5258
+Overfull \hbox (2.43042pt too wide) in paragraph at lines 5210--5211
 \OT1/cmr/m/it/10 cir-cuit model and mea-sur-ing a $\OML/cmm/m/it/10 J$\OT1/cmr/
 m/it/10 -spin eigen-state $[] \OT1/cmr/m/n/10 = []$
  []
 
 [49]
 
-LaTeX Warning: Citation `Aquilanti09' on page 50 undefined on input line 5295.
+LaTeX Warning: Citation `Aquilanti09' on page 50 undefined on input line 5248.
 
 [50]
 
-LaTeX Warning: Citation `Woit17' on page 51 undefined on input line 5321.
+LaTeX Warning: Citation `Woit17' on page 51 undefined on input line 5274.
 
 
-Overfull \hbox (3.13693pt too wide) in paragraph at lines 5336--5338
-[]\OT1/cmr/m/it/10 The
+Overfull \hbox (1.06pt too wide) in paragraph at lines 5284--5285
+[]\OT1/cmr/m/it/10 The PQC model based on $\OML/cmm/m/it/10 S[]$ \OT1/cmr/m/it/
+10 is rather triv-ial. $\OML/cmm/m/it/10 Rep\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 S
+[]\OT1/cmr/m/n/10 )$
  []
 
 [51] [52] [53] (./document.bbl [54]
@@ -1794,7 +1805,7 @@ Underfull \hbox (badness 3536) in paragraph at lines 105--108
 1/cmr/m/it/10 eprint
  []
 
-
+[55]
 Underfull \hbox (badness 1448) in paragraph at lines 146--149
 []\OT1/cmr/m/n/10 M. Mueger.  Ten-sor cat-e-gories: A se-lec-tive guided tour. 
  \OT1/cmr/m/it/10 eprint
@@ -1810,22 +1821,27 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[55]) [56]
-Overfull \hbox (4.42892pt too wide) in paragraph at lines 5528--5529
+) [56]
+Overfull \hbox (4.42892pt too wide) in paragraph at lines 5539--5540
 []\OT1/cmr/m/it/10 A cat-e-gory $\OMS/cmsy/m/n/10 C$ \OT1/cmr/m/it/10 has di-re
 ct sums if it has a monoidal
  []
 
-[57] [58] (./document.aux)
+[57]
+Overfull \hbox (13.93297pt too wide) in paragraph at lines 5555--5556
+[]\OT1/cmr/m/it/10 A ten-sor cat-e-gory is an abelian rigid monoidal
+ []
+
+[58] [59] (./document.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 38388 strings out of 493014
- 910139 string characters out of 6133351
- 1105873 words of memory out of 5000000
- 41272 multiletter control sequences out of 15000+600000
+ 38446 strings out of 493014
+ 911333 string characters out of 6133351
+ 1106107 words of memory out of 5000000
+ 41330 multiletter control sequences out of 15000+600000
  12824 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,23n,103p,10453b,1046s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1847,10 +1863,10 @@ e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 6/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/
 2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (58 pages, 446033 bytes).
+Output written on document.pdf (59 pages, 448109 bytes).
 PDF statistics:
- 267 PDF objects out of 1000 (max. 8388607)
- 187 compressed objects within 2 object streams
+ 270 PDF objects out of 1000 (max. 8388607)
+ 189 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
